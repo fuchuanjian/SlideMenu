@@ -1,4 +1,4 @@
-package cn.fu.slidemenu;
+package cn.fu.slidemenu.menu;
 
 import android.content.Context;
 import android.util.AttributeSet;

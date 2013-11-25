@@ -1,4 +1,4 @@
-package cn.fu.slidemenu;
+package cn.fu.slidemenu.menu;
 
 /**
  * Enums used for positioning the drawer.

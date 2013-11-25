@@ -2,6 +2,8 @@ package cn.fu.slidemenu;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.fu.slidemenu.menu.MenuDrawer;
 import android.os.Build;
 import android.os.Bundle;
 import android.annotation.SuppressLint;

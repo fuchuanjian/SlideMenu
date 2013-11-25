@@ -1,5 +1,10 @@
-package cn.fu.slidemenu;
+package cn.fu.slidemenu.menu;
 
+import cn.fu.slidemenu.R;
+import cn.fu.slidemenu.R.attr;
+import cn.fu.slidemenu.R.id;
+import cn.fu.slidemenu.R.style;
+import cn.fu.slidemenu.R.styleable;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;

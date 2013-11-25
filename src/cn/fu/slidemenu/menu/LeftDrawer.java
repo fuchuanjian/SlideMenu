@@ -1,5 +1,7 @@
-package cn.fu.slidemenu;
+package cn.fu.slidemenu.menu;
 
+import cn.fu.slidemenu.R;
+import cn.fu.slidemenu.R.id;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
