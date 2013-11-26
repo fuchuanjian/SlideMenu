@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.opengl.GLES20;
 import cn.fu.slidemenu.MyApplication;
 
-@SuppressLint("NewApi")
 public class ShaderManager
 {
 	public static ShaderManager instance = null;
@@ -53,11 +52,8 @@ public class ShaderManager
 				tryCnt++;
 				mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);
 			}
-			// 获取程序中顶点位置属性引用id
 			maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");
-			// 获取程序中顶点纹理坐标属性引用id
 			maTexCoorHandle = GLES20.glGetAttribLocation(mProgram, "aTexCoor");
-			// 获取程序中总变换矩阵引用id
 			muMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
 			//
 			mAlphaHandle = GLES20.glGetUniformLocation(mProgram, "alpha");

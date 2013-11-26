@@ -34,23 +34,15 @@ public class GLOvercast extends BaseScene
   
  	    
  	   if ((mDensity > 0.0F) && (mDensity <= 1.0F)) {
-//			localHashMap.put("cloudyscale", Float.valueOf(1.0F));
-//			localHashMap.put("cloudymaskscale", Float.valueOf(0.8F));
  	    	cloudyscale = 1.0f;
  	 	    cloudymaskscale = 0.8f;
 		} else if ((mDensity > 1.0F) && (mDensity <= 1.5F)) {
-//			localHashMap.put("cloudyscale", Float.valueOf(2.0F));
-//			localHashMap.put("cloudymaskscale", Float.valueOf(1.2F));
  	    	cloudyscale = 2.0f;
  	 	    cloudymaskscale = 1.2f;
 		} else if (mDensity > 1.5F && mDensity <= 2.0F) {
-//			localHashMap.put("cloudyscale", Float.valueOf(3.2F));
-//			localHashMap.put("cloudymaskscale", Float.valueOf( 1.5F));
  	    	cloudyscale = 3.2f;
  	 	    cloudymaskscale = 1.5f;
 		} else {
-//			localHashMap.put("cloudyscale", Float.valueOf(3.6F));
-//			localHashMap.put("cloudymaskscale", Float.valueOf(2.0F));
  	    	cloudyscale = 3.6f;
  	 	    cloudymaskscale = 2.0f;
 		}
@@ -121,7 +113,6 @@ public class GLOvercast extends BaseScene
 		return 0;
 	}
 	private long lastTime = 0;
-	/** 每帧画图  */
 	public void draw(GL10 gl)
 	{
 		if (isLoadBitmap == false)
@@ -129,24 +120,14 @@ public class GLOvercast extends BaseScene
 			loadGLTexture(gl);
 			return;
 		}
-		//初始化
-		// 制定使用某套shader程序
 		GLES20.glUseProgram(mProgram);
 
-//		// 将最终变换矩阵传入shader程序
-//		GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, MatrixState.getFinalMatrix(), 0);
-//		GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, maPositionHandle);
-//		GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, maTexCoorHandle);
-		// 为画笔指定顶点纹理坐标数据
 		GLES20.glVertexAttribPointer(maTexCoorHandle, 3, GLES20.GL_FLOAT, false, texture.length, mTexCoorBuffer);
-		// 允许顶点位置数据数组
 		GLES20.glEnableVertexAttribArray(maPositionHandle);
 		GLES20.glEnableVertexAttribArray(maTexCoorHandle);
 
-		// 绑定纹理
 		GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
 		
-		//计算每帧之间的间隔
 		float offset = 0;
 		if (lastTime != 0)
 		{
@@ -170,13 +151,11 @@ public class GLOvercast extends BaseScene
 			}
 			
 			float glPos[] = MatrixState.convertUVToGLpoint(p.getX(), p.getY() ,mScreenWidth, mScreenHeight);
-			// 为画笔指定顶点位置数据
 			GLES20.glVertexAttribPointer(maPositionHandle, 3, GLES20.GL_FLOAT, false, itemVertices.length, mVertexBuffer);			
 			
 			MatrixState.pushMatrix();			
 			MatrixState.translate(glPos[0], glPos[1], 3.0f);
 			MatrixState.scale( p.getWidth()/UNIT,p.getHeight()/UNIT, 1);
-			// 将最终变换矩阵传入shader程序
 			GLES20.glUniform1f(mAlphaHandle, 1.0f * GLOBE_ALPHA);
 			GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, MatrixState.getFinalMatrix(), 0);
 			GLES20.glDrawElements(GLES20.GL_TRIANGLES, vCount, GLES20.GL_UNSIGNED_SHORT, mIndicesBuffer);
@@ -191,7 +170,6 @@ public class GLOvercast extends BaseScene
 	@Override
 	public String getBackground()
 	{
-		// TODO Auto-generated method stub
 		return "bg_overcast";
 	}
 }

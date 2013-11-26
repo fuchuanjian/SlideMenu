@@ -2,20 +2,21 @@ package cn.fu.slidemenu;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observer;
 
-import cn.fu.slidemenu.menu.MenuDrawer;
-import android.os.Build;
-import android.os.Bundle;
-import android.annotation.SuppressLint;
-import android.app.Activity;
+import android.R.integer;
 import android.content.Context;
+
+import java.util.Observable;
+
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +26,9 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import cn.fu.slidemenu.menu.MenuDrawer;
+import cn.fu.slidemenu.model.WeatherType;
 
-@SuppressLint("NewApi")
 public class MainActivity extends FragmentActivity
 {
 
@@ -52,15 +54,23 @@ public class MainActivity extends FragmentActivity
 	        mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.MENU_DRAG_CONTENT);
 	        mMenuDrawer.setContentView(R.layout.activity_viewpagersample);
 
+	        String index[] = getResources().getStringArray(R.array.weather_array);
+	        
 	        List<Object> items = new ArrayList<Object>();
-	        items.add(new Item("Item 1", R.drawable.ic_action_refresh_dark));
-	        items.add(new Item("Item 2", R.drawable.ic_action_select_all_dark));
+	        for (int i = 0; i < index.length; i++)
+			{
+	        	items.add(new Item(index[i], R.drawable.ic_action_refresh_dark));
+			}
 	        items.add(new Category("Cat 1"));
-	        items.add(new Item("Item 3", R.drawable.ic_action_refresh_dark));
-	        items.add(new Item("Item 4", R.drawable.ic_action_select_all_dark));
 	        items.add(new Category("Cat 2"));
-	        items.add(new Item("Item 5", R.drawable.ic_action_refresh_dark));
-	        items.add(new Item("Item 6", R.drawable.ic_action_select_all_dark));
+//	        items.add(new Category("Cat 1"));
+//	        items.add(new Item("Item 1", R.drawable.ic_action_refresh_dark));
+//	        items.add(new Item("Item 2", R.drawable.ic_action_select_all_dark));
+//	        items.add(new Item("Item 3", R.drawable.ic_action_refresh_dark));
+//	        items.add(new Item("Item 4", R.drawable.ic_action_select_all_dark));
+//	        items.add(new Category("Cat 2"));
+//	        items.add(new Item("Item 5", R.drawable.ic_action_refresh_dark));
+//	        items.add(new Item("Item 6", R.drawable.ic_action_select_all_dark));
 
 	        // A custom ListView is needed so the drawer can be notified when it's
 	        // scrolled. This is to update the position
@@ -101,8 +111,8 @@ public class MainActivity extends FragmentActivity
 
 	        mPagerAdapter = new PagerAdapter(this);
 	        mPagerAdapter.addTab(TextViewFragment.class, null);
-	        mPagerAdapter.addTab(TextViewFragment.class, null);
-	        mPagerAdapter.addTab(TextViewFragment.class, null);
+//	        mPagerAdapter.addTab(TextViewFragment.class, null);
+//	        mPagerAdapter.addTab(TextViewFragment.class, null);
 
 	        mViewPager.setAdapter(mPagerAdapter);
 		
@@ -117,6 +127,9 @@ public class MainActivity extends FragmentActivity
 	            mActivePosition = position;
 	            mMenuDrawer.setActiveView(view, position);
 	            mMenuDrawer.closeMenu();
+	            int index = convertIndex2Category(position);
+//	            TextViewFragment textViewFragment = (TextViewFragment) mPagerAdapter.getItem(0);
+	            TextViewFragment.myObservable.notifyChange(index);
 	        }
 	    };
 
@@ -286,8 +299,10 @@ public class MainActivity extends FragmentActivity
         }
 
     }
-    public static class TextViewFragment extends Fragment {
+    public static class TextViewFragment extends Fragment implements Observer {
 
+    	private FragmentView fview;
+    	public static MyObservable myObservable = new MyObservable();
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
@@ -296,10 +311,116 @@ public class MainActivity extends FragmentActivity
                     FrameLayout.LayoutParams.MATCH_PARENT,
                     FrameLayout.LayoutParams.MATCH_PARENT, Gravity.CENTER));
 
-            TextView tv = new TextView(getActivity());
-            tv.setText("This is an example of a Fragment in a View Pager");
-            frameLayout.addView(tv);
+//            TextView tv = new TextView(getActivity());
+//            tv.setText("This is an example of a Fragment in a View Pager");
+//            frameLayout.addView(tv);
+            fview = new FragmentView(getActivity());
+            frameLayout.addView(fview);
+            
             return frameLayout;
         }
+		@Override
+        public void onResume()
+        {
+			myObservable.addObserver(this);
+        	super.onResume();
+        	fview.onResume();
+        }
+        @Override
+        public void onPause()
+        {
+        	myObservable.deleteObserver(this);
+        	fview.onPause();
+        	super.onPause();
+        }
+		@Override
+		public void update(Observable observable, Object data)
+		{
+			if (fview == null)
+        	{
+        		Log.e("fu", "fview == null");
+        	}else {				
+        		fview.setDirty((Integer)data);
+			}
+			
+		}
+    }
+    private static int convertIndex2Category(int index) {
+		int category = WeatherType.RAINY_LIGHT;
+		
+		switch (index) {
+		case 0:
+			category = WeatherType.RAINY_LIGHT;
+			break;
+		case 1:
+			category = WeatherType.RAINY_MODERATE;
+			break;
+		case 2:
+			category = WeatherType.RAINY_HEAVY;
+			break;
+		case 3:
+			category = WeatherType.RAINY_STORM;
+			break;
+		case 4:
+			category = WeatherType.SHOWER;
+			break;
+		case 5:
+			category = WeatherType.SHOWER_THUNDER;
+			break;
+		case 6:
+			category = WeatherType.CLOUDY;
+			break;
+		case 7:
+			category = WeatherType.FINE;
+			break;
+		case 8:
+			category = WeatherType.FOG;
+			break;
+		case 9:
+			category = WeatherType.HAZE;
+			break;
+		case 10:
+			category = WeatherType.DUST_FLOATING;
+			break;
+		case 11:
+			category = WeatherType.SAND_STORM;
+			break;
+		case 12:
+			category = WeatherType.HAILSTONE;
+			break;
+		case 13:
+			category = WeatherType.SNOW_LIGHT;
+			break;
+		case 14:
+			category = WeatherType.SNOW_MODERATE;
+			break;
+		case 15:
+			category = WeatherType.SNOW_HEAVY;
+			break;
+		case 16:
+			category = WeatherType.SNOW_STORM;
+			break;
+		case 17:
+			category = WeatherType.SNOW_SHOWER;
+			break;
+		case 18:
+			category = WeatherType.OVERCAST;
+			break;
+		case 19:
+			category = WeatherType.FINE_NIGHT;
+			break;
+		case 20:
+			category = WeatherType.CLOUDY_NIGHT;
+			break;
+		}
+		
+		return category;
+	}
+    public static class MyObservable extends Observable
+    {
+    	public void notifyChange(int weatherType) {
+    		setChanged();
+    		notifyObservers(weatherType);
+    	}
     }
 }

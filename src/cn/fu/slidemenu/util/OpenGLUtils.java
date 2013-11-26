@@ -7,6 +7,8 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
+
+import cn.fu.slidemenu.MyApplication;
 import cn.fu.slidemenu.model.TextureInfo;
 import android.R.integer;
 import android.annotation.SuppressLint;
@@ -68,8 +70,7 @@ public class OpenGLUtils {
 	public static Bitmap decodeResource(int drawableId, float scaleX, float scaleY, int angle)
 	{	
 		Bitmap bitmap = null;
-//		  InputStream is = ClockWeatherApplication.getInstance().getResources().openRawResource(drawableId);
-		InputStream is = null;   
+		InputStream is = MyApplication.getInstance().getResources().openRawResource(drawableId);
 		try {
 	        	bitmap= BitmapFactory.decodeStream(is);
 	        	Matrix matrix = new Matrix();

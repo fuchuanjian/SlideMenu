@@ -8,6 +8,9 @@
 package cn.fu.slidemenu;
 
 public final class R {
+    public static final class array {
+        public static final int weather_array=0x7f080000;
+    }
     public static final class attr {
         /**  Drawable used as indicator for the active view. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -213,7 +216,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int menu_row_item=0x7f030003;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main=0x7f0a0000;
     }
     public static final class string {
         public static final int action_settings=0x7f070001;
@@ -242,26 +245,26 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
-        public static final int MenuDrawerStyle=0x7f080004;
-        public static final int MenuDrawerStyle_Bottom=0x7f080007;
-        public static final int MenuDrawerStyle_Right=0x7f080005;
-        public static final int MenuDrawerStyle_Top=0x7f080006;
-        public static final int MenuDrawerWidgetCategory=0x7f080002;
-        public static final int MenuDrawerWidgetTitle=0x7f080003;
-        public static final int SampleBase=0x7f08000a;
-        public static final int SampleTheme=0x7f08000b;
-        public static final int SampleTheme_BottomDrawer=0x7f08000e;
-        public static final int SampleTheme_RightDrawer=0x7f08000c;
-        public static final int SampleTheme_TopDrawer=0x7f08000d;
-        public static final int Widget=0x7f080008;
+        public static final int AppTheme=0x7f090001;
+        public static final int MenuDrawerStyle=0x7f090004;
+        public static final int MenuDrawerStyle_Bottom=0x7f090007;
+        public static final int MenuDrawerStyle_Right=0x7f090005;
+        public static final int MenuDrawerStyle_Top=0x7f090006;
+        public static final int MenuDrawerWidgetCategory=0x7f090002;
+        public static final int MenuDrawerWidgetTitle=0x7f090003;
+        public static final int SampleBase=0x7f09000a;
+        public static final int SampleTheme=0x7f09000b;
+        public static final int SampleTheme_BottomDrawer=0x7f09000e;
+        public static final int SampleTheme_RightDrawer=0x7f09000c;
+        public static final int SampleTheme_TopDrawer=0x7f09000d;
+        public static final int Widget=0x7f090008;
         /**  Base theme for the menu drawer. 
          */
-        public static final int Widget_MenuDrawer=0x7f080009;
+        public static final int Widget_MenuDrawer=0x7f090009;
     }
     public static final class styleable {
         /**  Styleables used for styling the menu drawer. 

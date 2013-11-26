@@ -4,20 +4,16 @@ import java.util.ArrayList;
 
 import javax.microedition.khronos.opengles.GL10;
 
-
-
+import android.graphics.Bitmap;
+import android.opengl.GLES20;
 import cn.fu.slidemenu.R;
 import cn.fu.slidemenu.model.Particle;
 import cn.fu.slidemenu.model.ParticleDrop;
-import cn.fu.slidemenu.model.ParticleRect;
 import cn.fu.slidemenu.model.TextureInfo;
 import cn.fu.slidemenu.model.WeatherType;
 import cn.fu.slidemenu.util.CacheTextrue;
 import cn.fu.slidemenu.util.MatrixState;
 import cn.fu.slidemenu.util.OpenGLUtils;
-import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
-import android.opengl.GLES20;
 
 public class GLHalistoneScene extends BaseScene {
 
