@@ -1,0 +1,8 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="Live WallPaper"
+    android:title="Live WallPaper" >
+
+    <PreferenceCategory>
+    </PreferenceCategory>
+
+</PreferenceScreen>

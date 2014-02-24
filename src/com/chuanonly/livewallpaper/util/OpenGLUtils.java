@@ -1,4 +1,4 @@
-package cn.fu.slidemenu.util;
+package com.chuanonly.livewallpaper.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,8 +8,9 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 
-import cn.fu.slidemenu.MyApplication;
-import cn.fu.slidemenu.model.TextureInfo;
+import com.chuanonly.livewallpaper.MyApplication;
+import com.chuanonly.livewallpaper.model.TextureInfo;
+
 import android.R.integer;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -70,7 +71,7 @@ public class OpenGLUtils {
 	public static Bitmap decodeResource(int drawableId, float scaleX, float scaleY, int angle)
 	{	
 		Bitmap bitmap = null;
-		InputStream is = MyApplication.getInstance().getResources().openRawResource(drawableId);
+		InputStream is = MyApplication.getContext().getResources().openRawResource(drawableId);
 		try {
 	        	bitmap= BitmapFactory.decodeStream(is);
 	        	Matrix matrix = new Matrix();

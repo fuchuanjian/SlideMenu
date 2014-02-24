@@ -1,19 +1,21 @@
-package cn.fu.slidemenu;
+package com.chuanonly.livewallpaper.view;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import cn.fu.slidemenu.util.CacheTextrue;
+import com.chuanonly.livewallpaper.service.WallPaperRender;
+import com.chuanonly.livewallpaper.util.CacheTextrue;
+
 import android.content.Context;
 import android.opengl.GLSurfaceView;
-public class FragmentView extends GLSurfaceView
+public class WallPaperGLsurfaceView extends GLSurfaceView
 {
 	
 	private final int RATE = 60;
-	private Render mRender;
+	private WallPaperRender mRender;
 	
-	public FragmentView(Context context)
+	public WallPaperGLsurfaceView(Context context)
 	{
 		super(context);
 		init(context);
@@ -23,9 +25,9 @@ public class FragmentView extends GLSurfaceView
 	{
 		setEGLContextClientVersion(2);
 		setEGLConfigChooser(false);
-		mRender = new Render(context);
+		mRender = new WallPaperRender();
 		setRenderer(mRender);
-		setRenderMode(CustomGLSurfaceView.RENDERMODE_WHEN_DIRTY); //必须在setRenderer之后
+		setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY); //必须在setRenderer之后
 		
 	}
 	

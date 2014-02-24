@@ -1,4 +1,4 @@
-package cn.fu.slidemenu.scenes;
+package com.chuanonly.livewallpaper.scenes;
 
 
 import java.util.ArrayList;
@@ -6,17 +6,18 @@ import java.util.Random;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import com.chuanonly.livewallpaper.R;
+import com.chuanonly.livewallpaper.model.Particle;
+import com.chuanonly.livewallpaper.model.ParticleMetor;
+import com.chuanonly.livewallpaper.model.ParticleStar;
+import com.chuanonly.livewallpaper.model.TextureInfo;
+import com.chuanonly.livewallpaper.model.WeatherType;
+import com.chuanonly.livewallpaper.util.CacheTextrue;
+import com.chuanonly.livewallpaper.util.MatrixState;
+import com.chuanonly.livewallpaper.util.OpenGLUtils;
+
 import android.graphics.Bitmap;
 import android.opengl.GLES20;
-import cn.fu.slidemenu.R;
-import cn.fu.slidemenu.model.Particle;
-import cn.fu.slidemenu.model.ParticleMetor;
-import cn.fu.slidemenu.model.ParticleStar;
-import cn.fu.slidemenu.model.TextureInfo;
-import cn.fu.slidemenu.model.WeatherType;
-import cn.fu.slidemenu.util.CacheTextrue;
-import cn.fu.slidemenu.util.MatrixState;
-import cn.fu.slidemenu.util.OpenGLUtils;
 
 public class GLSunnyNight extends BaseScene
 {

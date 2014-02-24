@@ -1,8 +1,9 @@
-package cn.fu.slidemenu.util;
+package com.chuanonly.livewallpaper.util;
+
+import com.chuanonly.livewallpaper.MyApplication;
 
 import android.annotation.SuppressLint;
 import android.opengl.GLES20;
-import cn.fu.slidemenu.MyApplication;
 
 public class ShaderManager
 {
@@ -36,9 +37,9 @@ public class ShaderManager
 
 	private void init()
 	{
-		screenWidth = MyApplication.getInstance().getResources().getDisplayMetrics().widthPixels;
-		screenHeight = MyApplication.getInstance().getResources().getDisplayMetrics().heightPixels;
-		density = MyApplication.getInstance().getResources().getDisplayMetrics().density;
+		screenWidth = MyApplication.getContext().getResources().getDisplayMetrics().widthPixels;
+		screenHeight = MyApplication.getContext().getResources().getDisplayMetrics().heightPixels;
+		density = MyApplication.getContext().getResources().getDisplayMetrics().density;
 		initShader();	
 	}
 		private synchronized void initShader()

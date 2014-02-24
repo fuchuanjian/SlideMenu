@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SlideMenu</string>
+    <string name="wallpaper_name">Weather Live Wallpaper</string>
+    <string name="app_name">Weather Wallpaper</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-<string-array name="weather_array" translatable="false">
+    <string name="toast_exit">Press return key again to exit</string>
+
+    <string-array name="weather_array" translatable="false">
         <item>Light Rain</item>
         <item>Rain</item>
         <item>Heavy Rain</item>
         <item>Rainstorm</item>
         <item>Shower Rain</item>
         <item>Thunders</item>
-    	<item>Cloudy</item>
+        <item>Cloudy</item>
         <item>Sunny</item>
         <item>Fog</item>
         <item>Haze</item>
@@ -19,7 +21,7 @@
         <item>Dust</item>
         <item>Hail</item>
         <item>Shower Snow</item>
-         <item>Light Snow</item>
+        <item>Light Snow</item>
         <item>Snow</item>
         <item>Heavy Snow</item>
         <item>Snowstorm</item>
@@ -27,4 +29,5 @@
         <item>Sunny Night</item>
         <item>Cloudy Night</item>
     </string-array>
+
 </resources>

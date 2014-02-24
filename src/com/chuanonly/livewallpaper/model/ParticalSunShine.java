@@ -1,4 +1,4 @@
-package cn.fu.slidemenu.model;
+package com.chuanonly.livewallpaper.model;
 
 public class ParticalSunShine extends Particle
 {

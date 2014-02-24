@@ -1,4 +1,4 @@
-package cn.fu.slidemenu.util;
+package com.chuanonly.livewallpaper.util;
 
 import java.util.HashMap;
 

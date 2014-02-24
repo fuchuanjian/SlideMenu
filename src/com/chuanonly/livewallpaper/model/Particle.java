@@ -1,6 +1,6 @@
-package cn.fu.slidemenu.model;
+package com.chuanonly.livewallpaper.model;
 
-import cn.fu.slidemenu.util.ShaderManager;
+import com.chuanonly.livewallpaper.util.ShaderManager;
 
 
 public  class Particle

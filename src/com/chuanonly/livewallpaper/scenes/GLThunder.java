@@ -1,22 +1,23 @@
-package cn.fu.slidemenu.scenes;
+package com.chuanonly.livewallpaper.scenes;
 
 
 import java.util.ArrayList;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import com.chuanonly.livewallpaper.R;
+import com.chuanonly.livewallpaper.model.Particle;
+import com.chuanonly.livewallpaper.model.ParticleThunderLight;
+import com.chuanonly.livewallpaper.model.ParticleWhiteBg;
+import com.chuanonly.livewallpaper.model.TextureInfo;
+import com.chuanonly.livewallpaper.model.WeatherType;
+import com.chuanonly.livewallpaper.util.MatrixState;
+import com.chuanonly.livewallpaper.util.OpenGLUtils;
+
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Color;
 import android.opengl.GLES20;
-import cn.fu.slidemenu.R;
-import cn.fu.slidemenu.model.Particle;
-import cn.fu.slidemenu.model.ParticleThunderLight;
-import cn.fu.slidemenu.model.ParticleWhiteBg;
-import cn.fu.slidemenu.model.TextureInfo;
-import cn.fu.slidemenu.model.WeatherType;
-import cn.fu.slidemenu.util.MatrixState;
-import cn.fu.slidemenu.util.OpenGLUtils;
 
 public class GLThunder extends BaseScene
 {

@@ -1,4 +1,4 @@
-package cn.fu.slidemenu.scenes;
+package com.chuanonly.livewallpaper.scenes;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -7,15 +7,16 @@ import java.nio.ShortBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import com.chuanonly.livewallpaper.MyApplication;
+import com.chuanonly.livewallpaper.R;
+import com.chuanonly.livewallpaper.util.CacheTextrue;
+import com.chuanonly.livewallpaper.util.MatrixState;
+import com.chuanonly.livewallpaper.util.OpenGLUtils;
+import com.chuanonly.livewallpaper.util.ShaderManager;
+
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.opengl.GLES20;
-import cn.fu.slidemenu.MyApplication;
-import cn.fu.slidemenu.R;
-import cn.fu.slidemenu.util.CacheTextrue;
-import cn.fu.slidemenu.util.MatrixState;
-import cn.fu.slidemenu.util.OpenGLUtils;
-import cn.fu.slidemenu.util.ShaderManager;
 
 public class Background {
 
@@ -82,7 +83,7 @@ public class Background {
 		mDensity = ShaderManager.getInstance().getDensity();
 		initShader();
 		
-		resId = MyApplication.getInstance().getResources().getIdentifier(bgStr, "drawable", MyApplication.getInstance().getPackageName());
+		resId = MyApplication.getContext().getResources().getIdentifier(bgStr, "drawable", MyApplication.getContext().getPackageName());
 		initVertexData();
 		
 	}
@@ -166,7 +167,7 @@ public class Background {
 	public void setDirty(String str)
 	{
 		mBgStr = str;
-		int newId = MyApplication.getInstance().getResources().getIdentifier(str, "drawable", MyApplication.getInstance().getPackageName());
+		int newId = MyApplication.getContext().getResources().getIdentifier(str, "drawable", MyApplication.getContext().getPackageName());
 		if (resId != newId)
 		{
 			resId = newId;

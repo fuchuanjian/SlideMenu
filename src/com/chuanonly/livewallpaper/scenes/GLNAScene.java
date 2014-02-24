@@ -1,8 +1,8 @@
-package cn.fu.slidemenu.scenes;
+package com.chuanonly.livewallpaper.scenes;
 
 import javax.microedition.khronos.opengles.GL10;
 
-import cn.fu.slidemenu.model.WeatherType;
+import com.chuanonly.livewallpaper.model.WeatherType;
 
 public class GLNAScene extends BaseScene {
 

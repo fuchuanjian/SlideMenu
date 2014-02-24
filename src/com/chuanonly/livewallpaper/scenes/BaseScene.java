@@ -1,4 +1,4 @@
-package cn.fu.slidemenu.scenes;
+package com.chuanonly.livewallpaper.scenes;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -8,9 +8,10 @@ import java.util.ArrayList;
 
 import javax.microedition.khronos.opengles.GL10;
 
-import cn.fu.slidemenu.model.TextureInfo;
-import cn.fu.slidemenu.util.OpenGLUtils;
-import cn.fu.slidemenu.util.ShaderManager;
+import com.chuanonly.livewallpaper.model.TextureInfo;
+import com.chuanonly.livewallpaper.util.OpenGLUtils;
+import com.chuanonly.livewallpaper.util.ShaderManager;
+
 import android.R.integer;
 import android.os.Build;
 
