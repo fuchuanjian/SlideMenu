@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.chuanonly.livewallpaper.data.City;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.util.QueryCityHandler;
+import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 
 public class ChooseCityActivity extends Activity implements OnClickListener
@@ -84,6 +85,7 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				Util.setStringToSharedPref(Util.CODE, mCity.code);
 				Util.setStringToSharedPref(Util.NAME, mCity.name);
 				Util.setStringToSharedPref(Util.EN_NAME, mCity.enName);
+				Trace.i("fu",mCity.enName);
 			}
 		});
 		mList.setScrollbarFadingEnabled(true);

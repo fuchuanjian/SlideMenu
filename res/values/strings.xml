@@ -5,7 +5,8 @@
     <string name="app_name">Weather Wallpaper</string>
     <string name="action_settings">Settings</string>
     <string name="toast_exit">Press return key again to exit</string>
-
+    <string name="temp_unit">°C</string>
+    
     <string-array name="weather_array" translatable="false">
         <item>Light Rain</item>
         <item>Rain</item>

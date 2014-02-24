@@ -91,6 +91,7 @@ public class QueryCityHandler
 					} else
 					{
 						enName = pinyin.substring(pos1, pinyin.length());
+						enProvice = "China";
 					}
 
 					retCities.add(new City(name, province, code, enName,
@@ -125,12 +126,31 @@ public class QueryCityHandler
 	            String sql = "select * from hotcity";
 	            c = db.rawQuery(sql, null);
 	            if (c.getCount() > 0 && c.moveToFirst()) {
-	                final int nameIndex = c.getColumnIndexOrThrow("name");
-	                final int codeIndex = c.getColumnIndexOrThrow("code");
+					final int nameIndex = c.getColumnIndexOrThrow("name");
+					final int provinceIndex = c.getColumnIndexOrThrow("province");
+					final int codeIndex = c.getColumnIndexOrThrow("code");
+					final int pinyinIndex = c.getColumnIndexOrThrow("fullpinyin");
 	                do {
-	                    String name = c.getString(nameIndex);
-	                    String code = c.getString(codeIndex);
-	                    retCities.add(new City(name, null, code, null, null));
+						String name = c.getString(nameIndex);
+						String code = c.getString(codeIndex);
+						String province = c.getString(provinceIndex);
+						String pinyin = c.getString(pinyinIndex);
+						String enName = "";
+						String enProvice = "";
+						int pos1 = pinyin.lastIndexOf(",") + 1;
+						int pos2 = pinyin.lastIndexOf(".") + 1;
+						if (pos2 > pos1)
+						{
+							enName = pinyin.substring(pos1, pos2 - 1);
+							enProvice = pinyin.substring(pos2, pinyin.length());
+						} else
+						{
+							enName = pinyin.substring(pos1, pinyin.length());
+							enProvice = "China";
+						}
+
+						retCities.add(new City(name, province, code, enName,
+								enProvice));
 	                } while (c.moveToNext());
 	            }
 	        } catch (Exception e) {

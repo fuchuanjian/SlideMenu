@@ -124,39 +124,16 @@
 
                     <TextView
                         style="@style/setting_item_sum_text"
-                        android:text="城市是：北京" />
+                        android:text="城市是：北京   天气:晴   温度:28" />
                 </LinearLayout>
+                <TextView
+                        style="@style/setting_item_main_text"
+                        android:drawableRight="@drawable/arrow_right"
+                        android:background="@drawable/circle_rect_shape"
+                        android:padding="5dp"
+                        android:text="选择城市" />
+                   
             </LinearLayout>
-
-            <EditText
-                android:id="@+id/queryCityText"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/search_input_bg"
-                android:drawableLeft="@drawable/search_input_left"
-                android:gravity="left|center_vertical"
-                android:hint="请输入查询的城市名"
-                android:paddingRight="35dip"
-                android:singleLine="true"
-                android:textColor="#FFFFFFFF"
-                android:textColorHint="@color/gray"
-                android:textSize="14sp" />
-
-            <ListView
-                android:id="@+id/cityList"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10.5dip"
-                android:layout_marginRight="10.5dip"
-                android:layout_marginTop="5dp"
-                android:cacheColorHint="@null"
-                android:divider="@drawable/divider"
-                android:dividerHeight="1dip"
-                android:listSelector="@drawable/list_selector"
-                android:overScrollMode="ifContentScrolls"
-                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
