@@ -35,6 +35,7 @@ import com.chuanonly.livewallpaper.scenes.GLSunnyNight;
 import com.chuanonly.livewallpaper.scenes.GLThunder;
 import com.chuanonly.livewallpaper.util.MatrixState;
 import com.chuanonly.livewallpaper.util.ShaderManager;
+import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 
 /**
@@ -259,12 +260,12 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
                 newScene = new GLHalistoneScene();
                 break;
             case WeatherType.NA_SCENE:
-                newScene = new GLNAScene();
+                newScene = new GLSunny();
             default:
                 break;
         }
         if (newScene == null) {
-            newScene = new GLNAScene();
+            newScene = new GLSunny();
         }
         return newScene;
     }
@@ -306,13 +307,4 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
         System.gc();
     }
 
-    private Runnable changeRunnable = new Runnable()
-	{
-		@Override
-		public void run()
-		{
-			// TODO Auto-generated method stub
-			
-		}
-	};
 }

@@ -7,6 +7,10 @@
     <string name="toast_exit">Press return key again to exit</string>
     <string name="temp_unit">°C</string>
     
+     <string name="setting">Settings</string>
+     <string name="set_wallpaper">Set Wallpaper</string>
+     <string name="error">Unable to Start Live Wallpaper Chooser</string>
+    
     <string-array name="weather_array" translatable="false">
         <item>Light Rain</item>
         <item>Rain</item>

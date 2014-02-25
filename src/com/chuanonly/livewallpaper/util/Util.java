@@ -109,7 +109,7 @@ public class Util
     }
     
     
-    public static int convertWeatherTypeToCategory(int weatherType, boolean isDay) {
+    public static int normalDayOrNight(int weatherType, boolean isDay) {
         int category = weatherType;
         switch (weatherType) {
             case WeatherType.FINE:
@@ -188,20 +188,13 @@ public class Util
             case WeatherType.NA_SCENE:
                 category = WeatherType.NA_SCENE;
                 break;
-             default:
-            	 if (!isDay) {
-                     category = WeatherType.FINE_NIGHT;
-                 } else {
-                     category = WeatherType.FINE;
-                 }
-            	break;
         }
         return category;
     }
     
     public static int getCurrentCategory(int category) {
         boolean isDay = true;
-        SharedPreferences sp = MyApplication.getContext().getSharedPreferences(Util.SPF_SETTING, Context.MODE_PRIVATE);
+        SharedPreferences sp = MyApplication.getContext().getSharedPreferences(Util.SPF_SETTING, Context.MODE_MULTI_PROCESS );
         String dayTimeStr = "06:00";
         String nightTimeStr = "18:00";
         if (sp != null)
@@ -241,8 +234,7 @@ public class Util
 
             }
         }
-        
-        int index = Util.convertWeatherTypeToCategory(category, isDay);
+        int index = Util.normalDayOrNight(category, isDay);
 
         return index;
     }
@@ -266,7 +258,7 @@ public class Util
 	public static final String SPF_SETTING = "setting";
     public static void setStringToSharedPref(String key, String value)
     {
-    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_PRIVATE);
+    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
     	Editor editor =  sp.edit();
     	editor.putString(key, value);
     	editor.commit();
@@ -274,14 +266,14 @@ public class Util
     
     public static void setIntToSharedPref(String key, int value)
     {
-    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_PRIVATE);
+    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
     	Editor editor =  sp.edit();
     	editor.putInt(key, value);
     	editor.commit();
     }
     public static void setLongToSharedPref(String key, long value)
     {
-    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_PRIVATE);
+    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
     	Editor editor =  sp.edit();
     	editor.putLong(key, value);
     	editor.commit();
@@ -289,17 +281,17 @@ public class Util
     
     public static String getStringFromSharedPref(String key, String defValue)
     {
-    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_PRIVATE);
+    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
     	return sp.getString(key, defValue);
     }
     public static int getIntFromSharedPref(String key, int defValue)
     {
-    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_PRIVATE);
+    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
     	return sp.getInt(key, defValue);
     }
     public static long getLongFromSharedPref(String key, long defValue)
     {
-    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_PRIVATE);
+    	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
     	return sp.getLong(key, defValue);
     }
     public static String getToken()

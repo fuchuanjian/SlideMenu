@@ -294,6 +294,6 @@ public class GLSunnyNight extends BaseScene
 	
 	@Override
 	public String getBackground() {
-		return "bg_fine_night";
+		return "bg_cloudy_night";
 	}
 }
