@@ -2,10 +2,9 @@
 
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="android:Theme.Light">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
-    
+    <style name="AppTheme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@null</item>
+     </style>
     <style name="setting_item_layout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
