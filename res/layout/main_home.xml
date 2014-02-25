@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000" >
+
+    <FrameLayout
+        android:id="@+id/wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <com.chuanonly.livewallpaper.view.GalleryScrollView
+        android:id="@+id/scrollview_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black_alpha"
+        android:orientation="horizontal" />
+    <LinearLayout
+        android:id="@+id/setting_panel"
+        android:layout_above="@id/scrollview_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView 
+            android:id="@+id/setting_wallpaper"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/set_wallpaper"
+            android:textColor="@color/white"
+            android:background="@drawable/setting_btn_selector"
+            android:textSize="20sp"/>
+        <TextView 
+            android:id="@+id/setting_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center"
+            android:text="@string/setting"
+            android:textColor="@color/white"
+            android:background="@drawable/setting_btn_selector"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

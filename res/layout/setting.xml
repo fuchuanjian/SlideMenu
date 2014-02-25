@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/setting_bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/titlebar"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/return_btn"
+            android:layout_width="43dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_selector"
+            android:src="@drawable/arrow_left" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_weight="1"
+            android:text="设置"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_bar_title_text_size" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+
+            <TextView
+                style="@style/setting_item_desc_text"
+                android:text="显示设置" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider" />
+
+            <LinearLayout
+                 android:id="@+id/layout_1"
+                style="@style/setting_item_layout"
+                android:background="@drawable/list_selector" >
+
+                <CheckBox 
+                    android:clickable="false"
+                    android:id="@+id/checkbox_1"
+                    style="@style/setting_item_checkbox" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:duplicateParentState="true"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/setting_item_main_text"
+                        android:text="只使用当前壁纸,不切换" />
+
+                    <TextView
+                        style="@style/setting_item_sum_text"
+                        android:text="当前壁纸是: 无" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider" />
+
+            <LinearLayout
+                 android:id="@+id/layout_2"
+                style="@style/setting_item_layout"
+                android:background="@drawable/list_selector" >
+
+                <CheckBox 
+                    android:clickable="false"
+                     android:id="@+id/checkbox_2"
+                    style="@style/setting_item_checkbox" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:duplicateParentState="true"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/setting_item_main_text"
+                        android:text="随机显示动态壁纸" />
+
+                    <TextView
+                        style="@style/setting_item_sum_text"
+                        android:text="每3小时变化" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider" />
+
+            <LinearLayout
+                 android:id="@+id/layout_3"
+                style="@style/setting_item_layout"
+                android:background="@drawable/list_selector" >
+
+                <CheckBox 
+                    android:clickable="false"
+                    android:id="@+id/checkbox_3"
+                    style="@style/setting_item_checkbox" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:duplicateParentState="true"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/setting_item_main_text"
+                        android:text="根据所在城市显示壁纸" />
+
+                    <TextView
+                        style="@style/setting_item_sum_text"
+                        android:text="城市是：北京   天气:晴   温度:28" />
+                </LinearLayout>
+                <TextView
+                    	android:id="@+id/set_city"
+                        style="@style/setting_item_main_text"
+                        android:drawableRight="@drawable/arrow_right"
+                        android:background="@drawable/circle_rect_shape"
+                        android:padding="5dp"
+                        android:text="选择城市" />
+                   
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider" />
+
+            <TextView
+                style="@style/setting_item_desc_text"
+                android:text="关于壁纸" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider" />
+
+            <LinearLayout
+                style="@style/setting_item_layout"
+                android:background="@drawable/list_selector" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:duplicateParentState="true"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/setting_item_main_text"
+                        android:text="下载完整版天气壁纸" />
+
+                    <TextView
+                        style="@style/setting_item_sum_text"
+                        android:text="本应用模仿自360天气,这是原版下载链接" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
