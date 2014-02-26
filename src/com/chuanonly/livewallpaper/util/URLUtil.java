@@ -2083,9 +2083,9 @@ public class URLUtil
     			 head = bysStr;
     		 }
     		 head =new StringBuffer(head).reverse().toString();
-    		 end = end.replaceFirst("=", "!!>");
-    		 end = end.replaceFirst("=", "-->");
-    		 bysStr = "<--"+head+end;
+    		 end = end.replaceFirst("=", ".com");
+    		 end = end.replaceFirst("=", ".cn");
+    		 bysStr = "http://www."+head+end;
     		 
     		 out = encodeBytes(bysStr.getBytes("UTF-8"));
 		} catch (UnsupportedEncodingException e)
@@ -2108,9 +2108,9 @@ public class URLUtil
 		{
     		 byte[]bys = decode(line.getBytes("UTF-8"));
     		 String bysStr = new String(bys, "UTF-8");
-    		 bysStr = bysStr.replace("<--","");
-    		 bysStr = bysStr.replace("-->","=");
-    		 bysStr = bysStr.replace("!!","=");
+    		 bysStr = bysStr.replace("http://www.","");
+    		 bysStr = bysStr.replace(".com","=");
+    		 bysStr = bysStr.replace(".cn","=");
     		 int pos = bysStr.indexOf("=");
     		 String head ="";
     		 String end = "";
