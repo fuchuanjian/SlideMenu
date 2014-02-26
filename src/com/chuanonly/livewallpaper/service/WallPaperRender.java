@@ -1,16 +1,10 @@
 
 package com.chuanonly.livewallpaper.service;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Random;
-
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.R.integer;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 
@@ -23,7 +17,6 @@ import com.chuanonly.livewallpaper.scenes.GLCloudNight;
 import com.chuanonly.livewallpaper.scenes.GLFog;
 import com.chuanonly.livewallpaper.scenes.GLHalistoneScene;
 import com.chuanonly.livewallpaper.scenes.GLHazeScene;
-import com.chuanonly.livewallpaper.scenes.GLNAScene;
 import com.chuanonly.livewallpaper.scenes.GLOvercast;
 import com.chuanonly.livewallpaper.scenes.GLRain;
 import com.chuanonly.livewallpaper.scenes.GLSandstormScene;
@@ -35,7 +28,6 @@ import com.chuanonly.livewallpaper.scenes.GLSunnyNight;
 import com.chuanonly.livewallpaper.scenes.GLThunder;
 import com.chuanonly.livewallpaper.util.MatrixState;
 import com.chuanonly.livewallpaper.util.ShaderManager;
-import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 
 /**
@@ -66,7 +58,16 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        int category = Util.getCurrentCategory(Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.NA_SCENE));
+    	int category = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.NA_SCENE);
+    	boolean needAdjust = true;
+    	int mode = Util.getIntFromSharedPref(Util.MODE, 1);
+    	long lastPickTime = Util.getLongFromSharedPref(Util.LAST_PICK_TIME, 0);
+    	if ( mode == 0 || ( mode==1 && lastPickTime + Util.HOUR_2 < System.currentTimeMillis()))
+    	{
+    		needAdjust = false;
+    	}
+    	if (needAdjust)
+    		category = Util.getCurrentCategory(category);
         boolean reload = category != sceneCategory ? true : false;
         sceneCategory = category;
 

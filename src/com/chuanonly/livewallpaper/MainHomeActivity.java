@@ -16,6 +16,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,9 +25,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.chuanonly.livewallpaper.service.LocateAsyncTask;
 import com.chuanonly.livewallpaper.service.WallpaperService;
+import com.chuanonly.livewallpaper.task.LocateHandler;
+import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.util.Trace;
+import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
 import com.chuanonly.livewallpaper.view.GalleryScrollView;
 import com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView;
@@ -57,13 +60,11 @@ public class MainHomeActivity extends Activity
 
 	private int mItemWidth = MyApplication.width / 7 ;
 	private int mItemHeight = (int) (mItemWidth * 1.5);
-	private LocateAsyncTask mlLocateAsyncTask = null;
+	private LocateHandler mlLocateAsyncTask = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		mlLocateAsyncTask =new LocateAsyncTask();
-		mlLocateAsyncTask.getLocate();
 		setContentView(R.layout.main_home);
 		mInflater = LayoutInflater.from(this);
 		mScrollView = (GalleryScrollView) findViewById(R.id.scrollview_gallery);
@@ -93,7 +94,21 @@ public class MainHomeActivity extends Activity
 		imgType[8] = new int[]{20,29};
 		//bg_na
 		imgType[9] = new int[]{5};
-}
+		
+		String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
+		String canLocate = Util.getStringFromSharedPref(Util.CAN_NOT_LOACATE_FLG, "") ;
+		if (TextUtils.isEmpty(cityCode) && TextUtils.isEmpty(canLocate)  &&  Util.isNetworkAvailable(getApplicationContext()))
+		{
+			mlLocateAsyncTask = new LocateHandler(this);
+			mlLocateAsyncTask.tryToLacate();
+		}
+		Trace.i("fu", "360MobileDesktop="+URLUtil.encodeURL("360MobileDesktop"));
+		Trace.i("fu", "http="+URLUtil.encodeURL("http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}"));
+		Trace.i("fu", "net.qihoo.launcher.widget.clockweather="+URLUtil.encodeURL("net.qihoo.launcher.widget.clockweather"));
+//		new HTTPTask().execute();
+		Trace.i("fu",URLUtil.decodeURL("PC0tUWYwc1hQdVYyYXZSbko5TnplOUlYWjJaU2Z5c1hQeVZtZGpaU2Z4c1hQbnRHYy8wSE03OVNlMGwyWXY0Mll1QWpOejRTWnNsbVl2MW1McEJYWXhSM0x2b0RjMFJIYSEhPi0tPg=="));
+		Trace.i("fu",URLUtil.decodeURL("PC0tQWN2UjNhelZHUmx4V2FpOVdUd1l6TSEhPi0tPg=="));
+	}
 
 	private void refreshView()
 	{
@@ -159,6 +174,7 @@ public class MainHomeActivity extends Activity
 				startIntentWallpaperChooser();
 			}else {				
 				int index = ((ViewHolder)view.getTag()).index;
+				Util.setLongToSharedPref(Util.LAST_PICK_TIME, System.currentTimeMillis());
 				changeWallPaper(index);
 			}
 		}
@@ -203,7 +219,7 @@ public class MainHomeActivity extends Activity
 	{
 		if (mlLocateAsyncTask != null)
 		{			
-			mlLocateAsyncTask.relese();
+			mlLocateAsyncTask.release();
 		}
 		super.onDestroy();
 	}

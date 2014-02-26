@@ -19,13 +19,10 @@ import android.view.SurfaceHolder;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.model.WeatherType;
-import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 
 public class WallpaperService extends GLWallpaperService
 {
-
-	public static final long HOUR_3 = 3 * 60 * 60 * 1000;
 
 	public static final String ACTION_CHANGE_BROCAST = "com.chuanonly.livewallpaper.changewallpaper";
 
@@ -121,14 +118,22 @@ public class WallpaperService extends GLWallpaperService
 				//3hour
 				long curTime = System.currentTimeMillis();
 				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
-				if (lasttime + HOUR_3 < curTime)
+				if (lasttime + Util.HOUR_2 < curTime)
 				{
 					mHandler.postDelayed(changeRunnable, 200);
 				}
 				
 			}else if (mode == 3)
 			{
-				//getlastupdate
+				long curTime = System.currentTimeMillis();
+				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
+				if (lasttime + Util.HOUR_2 <curTime )
+				{
+					if (Util.isNetworkAvailable(getApplicationContext()))
+					{
+						//todo
+					}
+				}
 			}
 			
 		}

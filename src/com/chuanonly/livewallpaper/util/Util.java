@@ -9,6 +9,8 @@ import java.util.Date;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.SystemProperties;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
@@ -33,8 +35,14 @@ public class Util
 	public static final String EN_NAME = "en_name";
 	
 	public static final String MODE = "mode";
+
+	public static final String LAST_PICK_TIME = "last_pick_time";
+	
+	public static final long HOUR_2 = 2*60*60*1000;
 	
 	public static final String LAST_UPDATETIME = "lasttime";
+	
+	public static final String CAN_NOT_LOACATE_FLG = "can_locate";
 	
     public static int convertIndex2Category(int index) {
 		int category = WeatherType.RAINY_LIGHT;
@@ -325,7 +333,7 @@ public class Util
  	        MessageDigest hash = MessageDigest.getInstance("MD5");
  	        hash.update(data.getBytes("UTF-8"));
  	        byte[] bytes = hash.digest();
- 			token = new String(Base64.encodeBytesToBytes(bytes), "UTF-8");
+ 			token = new String(URLUtil.encodeBytesToBytes(bytes), "UTF-8");
  		} catch (UnsupportedEncodingException e)
  		{
  			success = false;
@@ -338,5 +346,26 @@ public class Util
          if (success)
         	 Util.setStringToSharedPref("id", token);
         return token;
+    }
+    
+    public static boolean isNetworkAvailable(Context context) {
+        try {
+            ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (connectivity == null) {
+                return false;
+            }
+            NetworkInfo[] networkInfos = connectivity.getAllNetworkInfo();
+            if (networkInfos == null) {
+                return false;
+            }
+            for (NetworkInfo networkInfo : networkInfos) {
+                if (networkInfo.isConnectedOrConnecting()) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (Throwable e) {
+            return false;
+        }
     }
 }

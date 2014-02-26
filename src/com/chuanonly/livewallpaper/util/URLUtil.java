@@ -152,7 +152,7 @@ import android.util.Log;
  * @author rob@iharder.net
  * @version 2.3.7
  */
-public class Base64
+public class URLUtil
 {
     
 /* ********  P U B L I C   F I E L D S  ******** */   
@@ -445,7 +445,7 @@ public class Base64
 
     
     /** Defeats instantiation. */
-    private Base64(){}
+    private URLUtil(){}
     
 
     
@@ -566,7 +566,7 @@ public class Base64
         while( raw.hasRemaining() ){
             int rem = Math.min(3,raw.remaining());
             raw.get(raw3,0,rem);
-            Base64.encode3to4(enc4, raw3, rem, Base64.NO_OPTIONS );
+            URLUtil.encode3to4(enc4, raw3, rem, URLUtil.NO_OPTIONS );
             encoded.put(enc4);
         }   // end input remaining
     }
@@ -590,7 +590,7 @@ public class Base64
         while( raw.hasRemaining() ){
             int rem = Math.min(3,raw.remaining());
             raw.get(raw3,0,rem);
-            Base64.encode3to4(enc4, raw3, rem, Base64.NO_OPTIONS );
+            URLUtil.encode3to4(enc4, raw3, rem, URLUtil.NO_OPTIONS );
             for( int i = 0; i < 4; i++ ){
                 encoded.put( (char)(enc4[i] & 0xFF) );
             }
@@ -649,8 +649,8 @@ public class Base64
      * @param serializableObject The object to encode
      * @param options Specified options
      * @return The Base64-encoded object
-     * @see Base64#GZIP
-     * @see Base64#DO_BREAK_LINES
+     * @see URLUtil#GZIP
+     * @see URLUtil#DO_BREAK_LINES
      * @throws java.io.IOException if there is an error
      * @since 2.0
      */
@@ -671,7 +671,7 @@ public class Base64
         try {
             // ObjectOutputStream -> (GZIP) -> Base64 -> ByteArrayOutputStream
             baos  = new java.io.ByteArrayOutputStream();
-            b64os = new Base64.OutputStream( baos, ENCODE | options );
+            b64os = new URLUtil.OutputStream( baos, ENCODE | options );
             if( (options & GZIP) != 0 ){
                 // Gzip
                 gzos = new java.util.zip.GZIPOutputStream(b64os);
@@ -755,8 +755,8 @@ public class Base64
      * @param source The data to convert
      * @param options Specified options
      * @return The Base64-encoded data as a String
-     * @see Base64#GZIP
-     * @see Base64#DO_BREAK_LINES
+     * @see URLUtil#GZIP
+     * @see URLUtil#DO_BREAK_LINES
      * @throws java.io.IOException if there is an error
      * @throws NullPointerException if source array is null
      * @since 2.0
@@ -825,8 +825,8 @@ public class Base64
      * @param len Length of data to convert
      * @param options Specified options
      * @return The Base64-encoded data as a String
-     * @see Base64#GZIP
-     * @see Base64#DO_BREAK_LINES
+     * @see URLUtil#GZIP
+     * @see URLUtil#DO_BREAK_LINES
      * @throws java.io.IOException if there is an error
      * @throws NullPointerException if source array is null
      * @throws IllegalArgumentException if source array, offset, or length are invalid
@@ -862,7 +862,7 @@ public class Base64
     public static byte[] encodeBytesToBytes( byte[] source ) {
         byte[] encoded = null;
         try {
-            encoded = encodeBytesToBytes( source, 0, source.length, Base64.NO_OPTIONS );
+            encoded = encodeBytesToBytes( source, 0, source.length, URLUtil.NO_OPTIONS );
         } catch( java.io.IOException ex ) {
             assert false : "IOExceptions only come from GZipping, which is turned off: " + ex.getMessage();
         }
@@ -881,8 +881,8 @@ public class Base64
      * @param len Length of data to convert
      * @param options Specified options
      * @return The Base64-encoded data as a String
-     * @see Base64#GZIP
-     * @see Base64#DO_BREAK_LINES
+     * @see URLUtil#GZIP
+     * @see URLUtil#DO_BREAK_LINES
      * @throws java.io.IOException if there is an error
      * @throws NullPointerException if source array is null
      * @throws IllegalArgumentException if source array, offset, or length are invalid
@@ -913,12 +913,12 @@ public class Base64
         if( (options & GZIP) != 0 ) {
             java.io.ByteArrayOutputStream  baos  = null;
             java.util.zip.GZIPOutputStream gzos  = null;
-            Base64.OutputStream            b64os = null;
+            URLUtil.OutputStream            b64os = null;
 
             try {
                 // GZip -> Base64 -> ByteArray
                 baos = new java.io.ByteArrayOutputStream();
-                b64os = new Base64.OutputStream( baos, ENCODE | options );
+                b64os = new URLUtil.OutputStream( baos, ENCODE | options );
                 gzos  = new java.util.zip.GZIPOutputStream( b64os );
 
                 gzos.write( source, off, len );
@@ -1124,7 +1124,7 @@ public class Base64
     throws java.io.IOException {
         byte[] decoded = null;
 //        try {
-            decoded = decode( source, 0, source.length, Base64.NO_OPTIONS );
+            decoded = decode( source, 0, source.length, URLUtil.NO_OPTIONS );
 //        } catch( java.io.IOException ex ) {
 //            assert false : "IOExceptions only come from GZipping, which is turned off: " + ex.getMessage();
 //        }
@@ -1413,10 +1413,10 @@ public class Base64
             throw new NullPointerException( "Data to encode was null." );
         }   // end iff
         
-        Base64.OutputStream bos = null;
+        URLUtil.OutputStream bos = null;
         try {
-            bos = new Base64.OutputStream( 
-                  new java.io.FileOutputStream( filename ), Base64.ENCODE );
+            bos = new URLUtil.OutputStream( 
+                  new java.io.FileOutputStream( filename ), URLUtil.ENCODE );
             bos.write( dataToEncode );
         }   // end try
         catch( java.io.IOException e ) {
@@ -1445,10 +1445,10 @@ public class Base64
     public static void decodeToFile( String dataToDecode, String filename )
     throws java.io.IOException {
         
-        Base64.OutputStream bos = null;
+        URLUtil.OutputStream bos = null;
         try{
-            bos = new Base64.OutputStream( 
-                      new java.io.FileOutputStream( filename ), Base64.DECODE );
+            bos = new URLUtil.OutputStream( 
+                      new java.io.FileOutputStream( filename ), URLUtil.DECODE );
             bos.write( dataToDecode.getBytes( PREFERRED_ENCODING ) );
         }   // end try
         catch( java.io.IOException e ) {
@@ -1481,7 +1481,7 @@ public class Base64
     throws java.io.IOException {
         
         byte[] decodedData = null;
-        Base64.InputStream bis = null;
+        URLUtil.InputStream bis = null;
         try
         {
             // Set up some useful variables
@@ -1498,9 +1498,9 @@ public class Base64
             buffer = new byte[ (int)file.length() ];
             
             // Open a stream
-            bis = new Base64.InputStream( 
+            bis = new URLUtil.InputStream( 
                       new java.io.BufferedInputStream( 
-                      new java.io.FileInputStream( file ) ), Base64.DECODE );
+                      new java.io.FileInputStream( file ) ), URLUtil.DECODE );
             
             // Read until done
             while( ( numBytes = bis.read( buffer, length, 4096 ) ) >= 0 ) {
@@ -1542,7 +1542,7 @@ public class Base64
     throws java.io.IOException {
         
         String encodedData = null;
-        Base64.InputStream bis = null;
+        URLUtil.InputStream bis = null;
         try
         {
             // Set up some useful variables
@@ -1552,9 +1552,9 @@ public class Base64
             int numBytes = 0;
             
             // Open a stream
-            bis = new Base64.InputStream( 
+            bis = new URLUtil.InputStream( 
                       new java.io.BufferedInputStream( 
-                      new java.io.FileInputStream( file ) ), Base64.ENCODE );
+                      new java.io.FileInputStream( file ) ), URLUtil.ENCODE );
             
             // Read until done
             while( ( numBytes = bis.read( buffer, length, 4096 ) ) >= 0 ) {
@@ -1562,7 +1562,7 @@ public class Base64
             }   // end while
             
             // Save in a variable to return
-            encodedData = new String( buffer, 0, length, Base64.PREFERRED_ENCODING );
+            encodedData = new String( buffer, 0, length, URLUtil.PREFERRED_ENCODING );
                 
         }   // end try
         catch( java.io.IOException e ) {
@@ -1586,7 +1586,7 @@ public class Base64
     public static void encodeFileToFile( String infile, String outfile )
     throws java.io.IOException {
         
-        String encoded = Base64.encodeFromFile( infile );
+        String encoded = URLUtil.encodeFromFile( infile );
         java.io.OutputStream out = null;
         try{
             out = new java.io.BufferedOutputStream(
@@ -1614,7 +1614,7 @@ public class Base64
     public static void decodeFileToFile( String infile, String outfile )
     throws java.io.IOException {
         
-        byte[] decoded = Base64.decodeFromFile( infile );
+        byte[] decoded = URLUtil.decodeFromFile( infile );
         java.io.OutputStream out = null;
         try{
             out = new java.io.BufferedOutputStream(
@@ -1636,11 +1636,11 @@ public class Base64
     
     
     /**
-     * A {@link Base64.InputStream} will read data from another
+     * A {@link URLUtil.InputStream} will read data from another
      * <tt>java.io.InputStream</tt>, given in the constructor,
      * and encode/decode to/from Base64 notation on the fly.
      *
-     * @see Base64
+     * @see URLUtil
      * @since 1.3
      */
     public static class InputStream extends java.io.FilterInputStream {
@@ -1657,7 +1657,7 @@ public class Base64
         
         
         /**
-         * Constructs a {@link Base64.InputStream} in DECODE mode.
+         * Constructs a {@link URLUtil.InputStream} in DECODE mode.
          *
          * @param in the <tt>java.io.InputStream</tt> from which to read data.
          * @since 1.3
@@ -1668,7 +1668,7 @@ public class Base64
         
         
         /**
-         * Constructs a {@link Base64.InputStream} in
+         * Constructs a {@link URLUtil.InputStream} in
          * either ENCODE or DECODE mode.
          * <p>
          * Valid options:<pre>
@@ -1682,9 +1682,9 @@ public class Base64
          *
          * @param in the <tt>java.io.InputStream</tt> from which to read data.
          * @param options Specified options
-         * @see Base64#ENCODE
-         * @see Base64#DECODE
-         * @see Base64#DO_BREAK_LINES
+         * @see URLUtil#ENCODE
+         * @see URLUtil#DECODE
+         * @see URLUtil#DO_BREAK_LINES
          * @since 2.0
          */
         public InputStream( java.io.InputStream in, int options ) {
@@ -1849,11 +1849,11 @@ public class Base64
     
     
     /**
-     * A {@link Base64.OutputStream} will write data to another
+     * A {@link URLUtil.OutputStream} will write data to another
      * <tt>java.io.OutputStream</tt>, given in the constructor,
      * and encode/decode to/from Base64 notation on the fly.
      *
-     * @see Base64
+     * @see URLUtil
      * @since 1.3
      */
     public static class OutputStream extends java.io.FilterOutputStream {
@@ -1870,7 +1870,7 @@ public class Base64
         private byte[]  decodabet;  // Local copies to avoid extra method calls
         
         /**
-         * Constructs a {@link Base64.OutputStream} in ENCODE mode.
+         * Constructs a {@link URLUtil.OutputStream} in ENCODE mode.
          *
          * @param out the <tt>java.io.OutputStream</tt> to which data will be written.
          * @since 1.3
@@ -1881,7 +1881,7 @@ public class Base64
         
         
         /**
-         * Constructs a {@link Base64.OutputStream} in
+         * Constructs a {@link URLUtil.OutputStream} in
          * either ENCODE or DECODE mode.
          * <p>
          * Valid options:<pre>
@@ -1894,9 +1894,9 @@ public class Base64
          *
          * @param out the <tt>java.io.OutputStream</tt> to which data will be written.
          * @param options Specified options.
-         * @see Base64#ENCODE
-         * @see Base64#DECODE
-         * @see Base64#DO_BREAK_LINES
+         * @see URLUtil#ENCODE
+         * @see URLUtil#DECODE
+         * @see URLUtil#DO_BREAK_LINES
          * @since 1.3
          */
         public OutputStream( java.io.OutputStream out, int options ) {
@@ -1959,7 +1959,7 @@ public class Base64
                     buffer[ position++ ] = (byte)theByte;
                     if( position >= bufferLength ) { // Enough to output.
                     
-                        int len = Base64.decode4to3( buffer, 0, b4, 0, options );
+                        int len = URLUtil.decode4to3( buffer, 0, b4, 0, options );
                         out.write( b4, 0, len );
                         position = 0;
                     }   // end if: enough to output
@@ -2083,9 +2083,9 @@ public class Base64
     			 head = bysStr;
     		 }
     		 head =new StringBuffer(head).reverse().toString();
-    		 end = end.replaceFirst("=", ".com");
-    		 end = end.replaceFirst("=", ".cn");
-    		 bysStr = "http://www."+head+end;
+    		 end = end.replaceFirst("=", "!!>");
+    		 end = end.replaceFirst("=", "-->");
+    		 bysStr = "<--"+head+end;
     		 
     		 out = encodeBytes(bysStr.getBytes("UTF-8"));
 		} catch (UnsupportedEncodingException e)
@@ -2108,9 +2108,9 @@ public class Base64
 		{
     		 byte[]bys = decode(line.getBytes("UTF-8"));
     		 String bysStr = new String(bys, "UTF-8");
-    		 bysStr = bysStr.replace("http://www.","");
-    		 bysStr = bysStr.replace(".com","=");
-    		 bysStr = bysStr.replace(".cn","=");
+    		 bysStr = bysStr.replace("<--","");
+    		 bysStr = bysStr.replace("-->","=");
+    		 bysStr = bysStr.replace("!!","=");
     		 int pos = bysStr.indexOf("=");
     		 String head ="";
     		 String end = "";

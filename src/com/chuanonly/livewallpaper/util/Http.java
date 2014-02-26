@@ -29,7 +29,7 @@ import android.net.Proxy;
 
 public class Http
 {
-	private static final String USER_AGENT = "360MobileDesktop";
+	private static final String USER_AGENT = URLUtil.decodeURL("PC0tQWN2UjNhelZHUmx4V2FpOVdUd1l6TSEhPi0tPg=="); //360MobileDesktop
 
 	public static HttpResponse getResponse(Context context, String url)
 			throws ClientProtocolException, IOException

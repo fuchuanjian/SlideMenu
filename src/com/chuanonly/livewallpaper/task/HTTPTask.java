@@ -1,4 +1,4 @@
-package com.chuanonly.livewallpaper.service;
+package com.chuanonly.livewallpaper.task;
 
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -8,28 +8,33 @@ import java.text.MessageFormat;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 
+import android.os.AsyncTask;
+
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.data.WallpaperInfo;
 import com.chuanonly.livewallpaper.util.Http;
 import com.chuanonly.livewallpaper.util.Trace;
-
-import android.os.AsyncTask;
-
+import com.chuanonly.livewallpaper.util.URLUtil;
+import com.chuanonly.livewallpaper.util.Util;
+//http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}
+//net.qihoo.launcher.widget.clockweather
+//360MobileDesktop
 public class HTTPTask extends AsyncTask<Void, Void, String>
 {
 
 	@Override
 	protected String doInBackground(Void... params)
 	{
-		String cityCode = "101010100";
-		String url = "http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}";
-		String pkg = "net.qihoo.launcher.widget.clockweather";
-		String token = "rNXyXJ12nyG4oSA%3D%3D";
-		String cver = "20";
+		String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
+		String url ="PC0tUWYwc1hQdVYyYXZSbko5TnplOUlYWjJaU2Z5c1hQeVZtZGpaU2Z4c1hQbnRHYy8wSE03OVNlMGwyWXY0Mll1QWpOejRTWnNsbVl2MW1McEJYWXhSM0x2b0RjMFJIYSEhPi0tPg==";//http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}";
+		String pkg ="PC0tSVhab1JYWWxkM2FqOUdiajVDZGxkR1pwZG5MeVZHYWo1V2RoeG1MdjlHYXBGbkwwVm1iISE+";// "net.qihoo.launcher.widget.clockweather";
+		String token = Util.getToken();
+		String cver = "29";
 		String api = "1";
 		try
 		{
-			url = MessageFormat.format(url, URLEncoder.encode(cityCode, "utf-8"), URLEncoder.encode(pkg, "utf-8"), URLEncoder.encode(cver, "utf-8"),
+			url = URLUtil.decodeURL(url);
+			url = MessageFormat.format(url, URLEncoder.encode(cityCode, "utf-8"), URLEncoder.encode(URLUtil.decodeURL(pkg), "utf-8"), URLEncoder.encode(cver, "utf-8"),
 			        URLEncoder.encode(api, "utf-8"), URLEncoder.encode(token, "utf-8"));
 		} catch (UnsupportedEncodingException e)
 		{
