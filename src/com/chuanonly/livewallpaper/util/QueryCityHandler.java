@@ -14,7 +14,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.chuanonly.livewallpaper.R;
 import com.chuanonly.livewallpaper.data.City;

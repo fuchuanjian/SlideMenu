@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
+import com.chuanonly.livewallpaper.service.LocateAsyncTask;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
@@ -56,12 +57,13 @@ public class MainHomeActivity extends Activity
 
 	private int mItemWidth = MyApplication.width / 7 ;
 	private int mItemHeight = (int) (mItemWidth * 1.5);
-
-	
+	private LocateAsyncTask mlLocateAsyncTask = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		mlLocateAsyncTask =new LocateAsyncTask();
+		mlLocateAsyncTask.getLocate();
 		setContentView(R.layout.main_home);
 		mInflater = LayoutInflater.from(this);
 		mScrollView = (GalleryScrollView) findViewById(R.id.scrollview_gallery);
@@ -196,7 +198,15 @@ public class MainHomeActivity extends Activity
 		mWallpaperView.onResume();
 		super.onPause();
 	}
-
+	@Override
+	protected void onDestroy()
+	{
+		if (mlLocateAsyncTask != null)
+		{			
+			mlLocateAsyncTask.relese();
+		}
+		super.onDestroy();
+	}
 	private long lastPressback = 0;
 
 	@Override

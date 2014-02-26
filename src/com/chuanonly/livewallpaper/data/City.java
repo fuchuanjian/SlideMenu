@@ -15,4 +15,9 @@ public class City
 		this.enName = enName;
 		this.enProvice = enProvice;
 	}
+	 @Override
+	 public String toString()
+	 {
+		 return "City [code=" + code + ", name=" + name + ", parentName=" + parentName + ", enName=" + enName + ", enProvice=" + enProvice + "]";
+	 }
 }
