@@ -215,6 +215,7 @@ public class LocateHandler
             	Util.setStringToSharedPref(Util.CODE, retCity.code);
             	Util.setStringToSharedPref(Util.NAME, retCity.name);
             	Util.setStringToSharedPref(Util.EN_NAME, retCity.enName);
+            	Util.setIntToSharedPref(Util.MODE, 2);
             	Trace.i("fu",retCity.toString());
             }
 		}

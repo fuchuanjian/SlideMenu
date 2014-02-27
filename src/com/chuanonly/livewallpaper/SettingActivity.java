@@ -1,15 +1,13 @@
 package com.chuanonly.livewallpaper;
 
-import android.R.integer;
+import com.chuanonly.livewallpaper.util.Util;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class SettingActivity extends Activity
 {
@@ -26,7 +24,6 @@ public class SettingActivity extends Activity
 					getPackageName());
 			checkBoxs[i] = (CheckBox) findViewById(id);
 		}
-
 		for (int i = 0; i < 3; i++)
 		{
 			int id = getResources().getIdentifier("layout_" + (i + 1), "id",
@@ -36,8 +33,25 @@ public class SettingActivity extends Activity
 		}
 		findViewById(R.id.set_city).setOnClickListener(click);
 		
+		
 	}
 
+	@Override
+	protected void onResume()
+	{
+		super.onResume();
+		int mode = Util.getIntFromSharedPref(Util.MODE, 1);
+		for (int i = 0; i < checkBoxs.length; i++)
+		{
+			if (i == mode)
+			{
+				checkBoxs[i].setChecked(true);
+			}else
+			{
+				checkBoxs[i].setChecked(false);
+			}
+		}
+	}
 	private OnClickListener click = new OnClickListener()
 	{
 
@@ -49,13 +63,16 @@ public class SettingActivity extends Activity
 			if (v.getId() == R.id.layout_1)
 			{
 				pos = 0;
+				Util.setIntToSharedPref(Util.MODE, 0);
 			} else if (v.getId() == R.id.layout_2)
 			{
 				pos = 1;
+				Util.setIntToSharedPref(Util.MODE, 1);
 			} else if (v.getId() == R.id.layout_3)
 			{
 				pos = 2;
 			}else if (v.getId() == R.id.set_city){
+				Util.setIntToSharedPref(Util.MODE, 2);
 				Intent intent = new Intent(SettingActivity.this, ChooseCityActivity.class);
 				startActivity(intent);
 			}

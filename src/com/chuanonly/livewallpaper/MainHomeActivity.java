@@ -102,9 +102,6 @@ public class MainHomeActivity extends Activity
 			mlLocateAsyncTask = new LocateHandler(this);
 			mlLocateAsyncTask.tryToLacate();
 		}
-//		new HTTPTask().execute();
-		Trace.i("fu",URLUtil.decodeURL("90TYIJFMjR0b2x0MShXWYJEcM1WM2lVbsNnWTRjeOpWQ1llM0YXWywGMlNVO30ESw8yYHRnbQh1c4Z2UapGZtZVeQh1c5Z2UaJjWYlUOlpnT5okbSZXYyYVdQh1cwYWU"));
-		Trace.i("fu",URLUtil.decodeURL("QPi1mVwwkbGBXYHljdM1GeoR2V1oWYHZVeM5GZwp1RkxGZDVjaidUOqF2MkxWWYJ1bahVS=="));
 	}
 
 	private void refreshView()
