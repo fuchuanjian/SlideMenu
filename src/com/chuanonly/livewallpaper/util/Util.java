@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.R.integer;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -23,7 +24,13 @@ public class Util
 {
 	
 	public static final String SCENE_TYPE = "scene_type";
+	
+	public static final String SCENE_REAL_TYPE = "scene_real_type";
 
+	public static final String SCENE_INFO = "info";
+	
+	public static final String SCENE_TEMPERATUR = "temperature";
+	
 	public static final String SUN_RISE = "rise_time";
 
 	public static final String SUN_SET = "set_time";
@@ -40,9 +47,9 @@ public class Util
 	
 	public static final long HOUR_2 = 2*60*60*1000;
 	
-	public static final String LAST_UPDATETIME = "lasttime";
+	public static final long HOUR_1 = 1*60*60*1000;
 	
-	public static final String CAN_NOT_LOACATE_FLG = "can_locate";
+	public static final String LAST_UPDATETIME = "lasttime";
 	
     public static int convertIndex2Category(int index) {
 		int category = WeatherType.RAINY_LIGHT;
@@ -242,6 +249,7 @@ public class Util
 
             }
         }
+        Trace.i("fu",category +" "+ isDay);
         int index = Util.normalDayOrNight(category, isDay);
 
         return index;
@@ -272,6 +280,7 @@ public class Util
     	editor.commit();
     }
     
+    
     public static void setIntToSharedPref(String key, int value)
     {
     	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
@@ -297,6 +306,21 @@ public class Util
     	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
     	return sp.getInt(key, defValue);
     }
+    
+    public static int getWeathType()
+    {
+    	long lastpickTime = Util.getLongFromSharedPref(LAST_PICK_TIME, 0);
+    	int realType = Util.getIntFromSharedPref(SCENE_REAL_TYPE, 0);
+    	int tpye = Util.getIntFromSharedPref(SCENE_TYPE, 0);
+    	int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+    	if (mode == 2 && lastpickTime + HOUR_1 < System.currentTimeMillis())
+    	{
+    		return realType;
+    	}else {
+			return tpye;
+		}
+    }
+    
     public static long getLongFromSharedPref(String key, long defValue)
     {
     	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
@@ -368,4 +392,5 @@ public class Util
             return false;
         }
     }
+    
 }

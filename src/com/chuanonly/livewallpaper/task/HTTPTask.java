@@ -8,10 +8,12 @@ import java.text.MessageFormat;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.data.WallpaperInfo;
+import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.util.Http;
 import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.URLUtil;
@@ -38,6 +40,7 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 			        URLEncoder.encode(api, "utf-8"), URLEncoder.encode(token, "utf-8"));
 		} catch (UnsupportedEncodingException e)
 		{
+			return null;
 		}
 		HttpResponse response = null;
 		try
@@ -79,9 +82,17 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 	protected void onPostExecute(String result)
 	{
 		Trace.i("fu", "result: "+ result);
-		
-		WallpaperInfo info = new WallpaperInfo(result);
-		Trace.i("fu",info.toString());
+		try
+		{
+			WallpaperInfo.parseWallpaperInfo(result);
+			MyApplication.getContext().sendBroadcast(new Intent(WallpaperService.ACTION_CHANGE_BROCAST));				
+			Trace.i("fu",WallpaperInfo.toStr());
+			Util.showToast(WallpaperInfo.toStr());
+			
+		} catch (Exception e)
+		{
+			// TODO: handle exception
+		}
 	}
 
 }

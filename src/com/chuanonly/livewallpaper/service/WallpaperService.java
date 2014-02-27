@@ -15,10 +15,12 @@ import android.content.IntentFilter;
 import android.content.pm.ConfigurationInfo;
 import android.opengl.GLSurfaceView;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.SurfaceHolder;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.model.WeatherType;
+import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.util.Util;
 
 public class WallpaperService extends GLWallpaperService
@@ -123,15 +125,17 @@ public class WallpaperService extends GLWallpaperService
 					mHandler.postDelayed(changeRunnable, 200);
 				}
 				
-			}else if (mode == 3)
+			}else if (mode == 2)
 			{
 				long curTime = System.currentTimeMillis();
 				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
-				if (lasttime + Util.HOUR_2 <curTime )
+				String city = Util.getStringFromSharedPref(Util.CODE, "");
+				if (!TextUtils.isEmpty(city) && lasttime + Util.HOUR_2 <curTime )
 				{
 					if (Util.isNetworkAvailable(getApplicationContext()))
 					{
 						//todo
+						new HTTPTask().execute();
 					}
 				}
 			}

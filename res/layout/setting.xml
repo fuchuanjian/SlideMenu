@@ -135,8 +135,9 @@
                         android:text="根据所在城市显示壁纸" />
 
                     <TextView
+                        android:id="@+id/weather_info_txt"
                         style="@style/setting_item_sum_text"
-                        android:text="城市是：北京   天气:晴   温度:28" />
+                        android:text="@string/empty" />
                 </LinearLayout>
                 <TextView
                     	android:id="@+id/set_city"

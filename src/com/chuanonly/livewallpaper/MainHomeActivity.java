@@ -4,32 +4,37 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
 
+import android.R.integer;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.WallpaperManager;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ConfigurationInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
+import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.service.WallpaperService;
-import com.chuanonly.livewallpaper.task.LocateHandler;
 import com.chuanonly.livewallpaper.task.HTTPTask;
+import com.chuanonly.livewallpaper.task.LocateHandler;
 import com.chuanonly.livewallpaper.util.Trace;
-import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
 import com.chuanonly.livewallpaper.view.GalleryScrollView;
 import com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView;
@@ -58,16 +63,19 @@ public class MainHomeActivity extends Activity
 	private static LinkedList<View> mViewList = new LinkedList<View>();
 	private LayoutInflater mInflater;
 
-	private int mItemWidth = MyApplication.width / 7 ;
-	private int mItemHeight = (int) (mItemWidth * 1.5);
+	private int mItemWidth =(int) ((float) MyApplication.width / 6.5 );
+	private int mItemHeight = (int) (mItemWidth * 1.4);
 	private LocateHandler mlLocateAsyncTask = null;
+	private Handler mHandler = new Handler();
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_home);
 		mInflater = LayoutInflater.from(this);
-		mScrollView = (GalleryScrollView) findViewById(R.id.scrollview_gallery);
+		LinearLayout layout = (LinearLayout)findViewById(R.id.layout_content);
+		mScrollView = new GalleryScrollView(this);
+		layout.addView(mScrollView);
 		refreshView();
 		FrameLayout fLayout = (FrameLayout) findViewById(R.id.wallpaper);
 		mWallpaperView = new WallPaperGLsurfaceView(this);
@@ -96,11 +104,21 @@ public class MainHomeActivity extends Activity
 		imgType[9] = new int[]{5};
 		
 		String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
-		String canLocate = Util.getStringFromSharedPref(Util.CAN_NOT_LOACATE_FLG, "") ;
-		if (TextUtils.isEmpty(cityCode) && TextUtils.isEmpty(canLocate)  &&  Util.isNetworkAvailable(getApplicationContext()))
+		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+		
+		if (Util.isNetworkAvailable(MyApplication.getContext()))
 		{
-			mlLocateAsyncTask = new LocateHandler(this);
-			mlLocateAsyncTask.tryToLacate();
+			if (TextUtils.isEmpty(cityCode))
+			{
+				if (mode == -1)
+				{
+					mlLocateAsyncTask = new LocateHandler(this);
+					mlLocateAsyncTask.tryToLacate();
+				}
+			}else {
+				if (mode == 2)
+					new HTTPTask().execute();
+			}
 		}
 	}
 
@@ -199,15 +217,57 @@ public class MainHomeActivity extends Activity
 	protected void onResume()
 	{
 		super.onResume();
+		registerReceiver();
 		mWallpaperView.onResume();
+		mHandler.postDelayed(changeRunnable, 200);
+		
+		checkTitleBar();
+		
+	}
+
+	private void checkTitleBar()
+	{
+		String cityName = Util.getStringFromSharedPref(Util.NAME, "");
+		String info = Util.getStringFromSharedPref(Util.SCENE_INFO, "");
+		String temperatrue = Util.getStringFromSharedPref(Util.SCENE_TEMPERATUR, "");
+		if (!TextUtils.isEmpty(temperatrue))
+		{
+			temperatrue = temperatrue + MyApplication.getContext().getString(R.string.temp_unit);
+		}
+		if (!TextUtils.isEmpty(cityName))
+		{
+			findViewById(R.id.title_bar).setVisibility(View.VISIBLE);
+			((TextView)findViewById(R.id.city_name)).setText(cityName);
+			((TextView)findViewById(R.id.city_info)).setText(info+" \t "+temperatrue);
+		}else {
+			findViewById(R.id.title_bar).setVisibility(View.GONE);
+		}
+		
 	}
 
 	@Override
 	protected void onPause()
 	{
+		unregisterReceiver();
 		mWallpaperView.onResume();
 		super.onPause();
 	}
+	private Runnable changeRunnable = new Runnable()
+	{
+		
+		@Override
+		public void run()
+		{
+			int mode = Util.getIntFromSharedPref(Util.MODE, 1);
+			int category = Util.getIntFromSharedPref(Util.SCENE_REAL_TYPE, WeatherType.FINE);
+			category = Util.convertIndex2Category(category);
+			if (mode == 2 )
+			{				
+				mWallpaperView.setDirty(category);
+			}
+		}
+	};
+
 	@Override
 	protected void onDestroy()
 	{
@@ -222,7 +282,7 @@ public class MainHomeActivity extends Activity
 	@Override
 	public void onBackPressed()
 	{
-		if (lastPressback + 2000 < System.currentTimeMillis())
+		if (lastPressback + 3000 < System.currentTimeMillis())
 		{
 			lastPressback = System.currentTimeMillis();
 			Util.showToast(MyApplication.getContext().getString(
@@ -269,4 +329,44 @@ public class MainHomeActivity extends Activity
         	Util.showToast(MyApplication.getContext().getString(R.string.error));
         }
     }
+    private IntentFilter mFilter;
+    private void registerReceiver()
+	{
+		if (mFilter == null)
+		{
+			mFilter = new IntentFilter();
+			mFilter.addAction(WallpaperService.ACTION_CHANGE_BROCAST);
+		}
+		try
+		{
+			registerReceiver(mReceiver, mFilter);
+		} catch (Exception e)
+		{
+		}
+	}
+    private void unregisterReceiver()
+	{
+		try
+		{
+			this.unregisterReceiver(mReceiver);
+		} catch (Exception e)
+		{
+		}
+	}
+    private BroadcastReceiver mReceiver = new BroadcastReceiver()
+	{
+		public void onReceive(Context context, Intent intent)
+		{
+			String action = intent.getAction();
+			if (WallpaperService.ACTION_CHANGE_BROCAST.equals(action))
+			{
+				if (mWallpaperView == null)
+					return;
+				int category  = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.NA_SCENE);
+				Trace.i("fu","收到广播设置壁纸"+ category);
+				mWallpaperView.setDirty(category);
+				checkTitleBar();
+			}
+		};
+	};
 }

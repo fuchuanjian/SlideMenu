@@ -16,6 +16,7 @@ import com.amap.api.location.LocationProviderProxy;
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.R;
 import com.chuanonly.livewallpaper.data.City;
+import com.chuanonly.livewallpaper.util.Http;
 import com.chuanonly.livewallpaper.util.QueryCityHandler;
 import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
@@ -27,6 +28,8 @@ public class LocateHandler
 	private static ArrayList<String> MDN_CITY_CODES; // 直辖市区号
 	private QueryCityHandler suggestionSource;
 	private Context context;
+	
+	private boolean isSucess = false;
 	public LocateHandler(Context context)
 	{
 		this.context = context;
@@ -47,7 +50,7 @@ public class LocateHandler
 			suggestionSource = new QueryCityHandler(MyApplication.getContext());
 			LocationManagerProxy mAMapLocManager = LocationManagerProxy.getInstance(context);
 			mAMapLocManager.setGpsEnable(false);
-			mAMapLocManager.requestLocationUpdates(LocationProviderProxy.AMapNetwork, 5000, 1000, locationListener);
+			mAMapLocManager.requestLocationUpdates(LocationProviderProxy.AMapNetwork, 20000, 1000, locationListener);
 			mHandler.postDelayed(cancelRuanble, 10000);// 设置超过12秒还没有定位到就停止定位
 		}
 	}
@@ -84,6 +87,9 @@ public class LocateHandler
 		@Override
 		public void onLocationChanged(final AMapLocation location)
 		{
+			if (location == null || isSucess ) return;
+			
+			
 			new Thread(new Runnable()
 			{
 				
@@ -212,10 +218,13 @@ public class LocateHandler
             
             if (retCity != null)
             {
+            	isSucess = true;
             	Util.setStringToSharedPref(Util.CODE, retCity.code);
             	Util.setStringToSharedPref(Util.NAME, retCity.name);
             	Util.setStringToSharedPref(Util.EN_NAME, retCity.enName);
             	Util.setIntToSharedPref(Util.MODE, 2);
+            	
+            	new HTTPTask().execute();
             	Trace.i("fu",retCity.toString());
             }
 		}

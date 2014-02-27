@@ -58,13 +58,19 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-    	int category = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.NA_SCENE);
+    	int category = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.FINE);
     	boolean needAdjust = true;
     	int mode = Util.getIntFromSharedPref(Util.MODE, 1);
     	long lastPickTime = Util.getLongFromSharedPref(Util.LAST_PICK_TIME, 0);
-    	if ( mode == 0 || ( mode==1 && lastPickTime + Util.HOUR_2 < System.currentTimeMillis()))
+    	if ( mode == 0  || lastPickTime + Util.HOUR_1 > System.currentTimeMillis())
     	{
     		needAdjust = false;
+    	}
+    	
+    	if (mode == 2)
+    	{
+    		category = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.FINE);
+    		needAdjust = true;
     	}
     	if (needAdjust)
     		category = Util.getCurrentCategory(category);
@@ -178,13 +184,25 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
     }
 
     public void setDirtyScene(int k) {
-        if (sceneCategory != k) {
-            sceneCategory = k;
+    	int category = k;
+    	int mode = Util.getIntFromSharedPref(Util.MODE, 1);
+    	boolean needAdjust = true;
+    	long lastPickTime = Util.getLongFromSharedPref(Util.LAST_PICK_TIME, 0);
+    	if ( mode == 0  || lastPickTime + Util.HOUR_1 > System.currentTimeMillis())
+    	{
+    		needAdjust = false;
+    	}
+    	if (needAdjust)
+    		category = Util.getCurrentCategory(category);
+    	
+    	
+        if (sceneCategory != category) {
+            sceneCategory = category;
             isDirty = true;
         }
         if (bg == null || scene == null) {
             isDirty = true;
-        } else if (scene != null && nextScene == null && scene.getCategory() != k) {
+        } else if (scene != null && nextScene == null && scene.getCategory() != category) {
             isDirty = true;
         }
 
