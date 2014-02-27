@@ -102,12 +102,9 @@ public class MainHomeActivity extends Activity
 			mlLocateAsyncTask = new LocateHandler(this);
 			mlLocateAsyncTask.tryToLacate();
 		}
-		Trace.i("fu", "360MobileDesktop="+URLUtil.encodeURL("360MobileDesktop"));
-		Trace.i("fu", "http="+URLUtil.encodeURL("http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}"));
-		Trace.i("fu", "net.qihoo.launcher.widget.clockweather="+URLUtil.encodeURL("net.qihoo.launcher.widget.clockweather"));
 //		new HTTPTask().execute();
-		Trace.i("fu",URLUtil.decodeURL("PC0tUWYwc1hQdVYyYXZSbko5TnplOUlYWjJaU2Z5c1hQeVZtZGpaU2Z4c1hQbnRHYy8wSE03OVNlMGwyWXY0Mll1QWpOejRTWnNsbVl2MW1McEJYWXhSM0x2b0RjMFJIYSEhPi0tPg=="));
-		Trace.i("fu",URLUtil.decodeURL("PC0tQWN2UjNhelZHUmx4V2FpOVdUd1l6TSEhPi0tPg=="));
+		Trace.i("fu",URLUtil.decodeURL("90TYIJFMjR0b2x0MShXWYJEcM1WM2lVbsNnWTRjeOpWQ1llM0YXWywGMlNVO30ESw8yYHRnbQh1c4Z2UapGZtZVeQh1c5Z2UaJjWYlUOlpnT5okbSZXYyYVdQh1cwYWU"));
+		Trace.i("fu",URLUtil.decodeURL("QPi1mVwwkbGBXYHljdM1GeoR2V1oWYHZVeM5GZwp1RkxGZDVjaidUOqF2MkxWWYJ1bahVS=="));
 	}
 
 	private void refreshView()

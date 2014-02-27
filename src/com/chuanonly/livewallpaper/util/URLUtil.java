@@ -2072,6 +2072,7 @@ public class URLUtil
 		{
     		 String bysStr = encodeBytes(line.getBytes("UTF-8"));
     		 int pos = bysStr.indexOf("=");
+    		 Log.i("fu","bysStr ---- "+ bysStr);
     		 String head = "";
     		 String end = "";
     		 if (pos > 0)
@@ -2083,11 +2084,24 @@ public class URLUtil
     			 head = bysStr;
     		 }
     		 head =new StringBuffer(head).reverse().toString();
-    		 end = end.replaceFirst("=", ".com");
-    		 end = end.replaceFirst("=", ".cn");
-    		 bysStr = "http://www."+head+end;
+    		 bysStr = head+end;
+    		 Log.i("fu","head end "+ head+"  "+end);
     		 
-    		 out = encodeBytes(bysStr.getBytes("UTF-8"));
+    		 bysStr = encodeBytes(bysStr.getBytes("UTF-8"));
+    		 pos = bysStr.indexOf("=");
+    		 head = "";
+    		 end = "";
+    		 if (pos > 0)
+    		 {
+    			 head = bysStr.substring(0, pos);
+    			 end = bysStr.substring(pos, bysStr.length());
+    		 }else
+    		 {
+    			 head = bysStr;
+    		 }
+    		 head =new StringBuffer(head).reverse().toString();
+    		 out = head+end;
+    		 
 		} catch (UnsupportedEncodingException e)
 		{
 			// TODO Auto-generated catch block
@@ -2106,11 +2120,7 @@ public class URLUtil
     	String out = null;
     	 try
 		{
-    		 byte[]bys = decode(line.getBytes("UTF-8"));
-    		 String bysStr = new String(bys, "UTF-8");
-    		 bysStr = bysStr.replace("http://www.","");
-    		 bysStr = bysStr.replace(".com","=");
-    		 bysStr = bysStr.replace(".cn","=");
+    		 String bysStr = line;
     		 int pos = bysStr.indexOf("=");
     		 String head ="";
     		 String end = "";
@@ -2123,8 +2133,22 @@ public class URLUtil
     			 head = bysStr;
     		 }
     		 bysStr = new StringBuffer(head).reverse().toString() + end;
+    		 byte[]  bys = decode(bysStr.getBytes("UTF-8"));
+    		 bysStr = new String(bys, "UTF-8");
+    		 pos = bysStr.indexOf("=");
+    		 head ="";
+    		 end = "";
+    		 if (pos > 0)
+    		 {
+    			 head = bysStr.substring(0, pos);
+    			 end = bysStr.substring(pos, bysStr.length());
+    		 }else
+    		 {
+    			 head = bysStr;
+    		 }
+    		 bysStr = new StringBuffer(head).reverse().toString() + end;
     		 bys = decode(bysStr.getBytes("UTF-8"));
-    		 out =  new String(bys, "UTF-8");
+    		 out = new String(bys, "UTF-8");
 		} catch (UnsupportedEncodingException e)
 		{
 			// TODO Auto-generated catch block
