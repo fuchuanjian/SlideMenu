@@ -126,6 +126,11 @@ public class SettingActivity extends Activity
 				pos = 2;
 				Util.setIntToSharedPref(Util.MODE, 2);
 				Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
+				int saveType = Util.getIntFromSharedPref(Util.SAVE_TYPE, -1);
+				if (saveType != -1)
+				{
+					Util.setIntToSharedPref(Util.SCENE_TYPE, saveType);
+				}
 			}else if (v.getId() == R.id.set_city){
 				Intent intent = new Intent(SettingActivity.this, ChooseCityActivity.class);
 				startActivity(intent);

@@ -62,18 +62,13 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
     	boolean needAdjust = true;
     	int mode = Util.getIntFromSharedPref(Util.MODE, 1);
     	long lastPickTime = Util.getLongFromSharedPref(Util.LAST_PICK_TIME, 0);
-    	if ( mode == 0  || lastPickTime + Util.HOUR_1 > System.currentTimeMillis())
+    	if ( mode != 2  && lastPickTime + Util.HOUR_HALF > System.currentTimeMillis())
     	{
     		needAdjust = false;
     	}
     	
-    	if (mode == 2)
-    	{
-    		category = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.FINE);
-    		needAdjust = true;
-    	}
     	if (needAdjust)
-    		category = Util.getCurrentCategory(category);
+    		category = Util.normalDayOrNight(category);
         boolean reload = category != sceneCategory ? true : false;
         sceneCategory = category;
 
@@ -185,16 +180,6 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
 
     public void setDirtyScene(int k) {
     	int category = k;
-    	int mode = Util.getIntFromSharedPref(Util.MODE, 1);
-    	boolean needAdjust = true;
-    	long lastPickTime = Util.getLongFromSharedPref(Util.LAST_PICK_TIME, 0);
-    	if ( mode == 0  || lastPickTime + Util.HOUR_1 > System.currentTimeMillis())
-    	{
-    		needAdjust = false;
-    	}
-    	if (needAdjust)
-    		category = Util.getCurrentCategory(category);
-    	
     	
         if (sceneCategory != category) {
             sceneCategory = category;

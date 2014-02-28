@@ -67,16 +67,18 @@ public class MainHomeActivity extends Activity
 	private int mItemHeight = (int) (mItemWidth * 1.4);
 	private LocateHandler mlLocateAsyncTask = null;
 	private Handler mHandler = new Handler();
+	private LinearLayout mContentLayout ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_home);
 		mInflater = LayoutInflater.from(this);
-		LinearLayout layout = (LinearLayout)findViewById(R.id.layout_content);
+		mContentLayout = (LinearLayout)findViewById(R.id.layout_content);
+		mContentLayout.setVisibility(View.GONE);
 		mScrollView = new GalleryScrollView(this);
-		layout.addView(mScrollView);
-		refreshView();
+		mContentLayout.addView(mScrollView);
+		initScrollView();
 		FrameLayout fLayout = (FrameLayout) findViewById(R.id.wallpaper);
 		mWallpaperView = new WallPaperGLsurfaceView(this);
 		fLayout.addView(mWallpaperView);
@@ -122,7 +124,7 @@ public class MainHomeActivity extends Activity
 		}
 	}
 
-	private void refreshView()
+	private void initScrollView()
 	{
 		// clear
 		int size = mScrollView.getChildCount();
@@ -197,7 +199,11 @@ public class MainHomeActivity extends Activity
 	{
 		int category = imgType[index][new Random().nextInt(imgType[index].length)];
 		mWallpaperView.setDirty(category);
-		Util.setIntToSharedPref(Util.SCENE_TYPE, category);
+		int mode = Util.getIntFromSharedPref(Util.MODE, 1);
+		if (mode != 2)
+		{			
+			Util.setIntToSharedPref(Util.SCENE_TYPE, category);
+		}
 		
 	}
 	private Drawable getIconDrawable(int resId)
@@ -219,11 +225,29 @@ public class MainHomeActivity extends Activity
 		super.onResume();
 		registerReceiver();
 		mWallpaperView.onResume();
-		mHandler.postDelayed(changeRunnable, 200);
-		
 		checkTitleBar();
 		
+		mHandler.postDelayed(mResumeRunnable, 200);
 	}
+	
+	private Runnable mResumeRunnable = new Runnable()
+	{
+		@Override
+		public void run()
+		{
+			mContentLayout.setVisibility(View.VISIBLE);
+			int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+			if (mode == 2)
+			{
+				int realType = Util.getIntFromSharedPref(Util.SAVE_TYPE, -1);
+				if (realType != -1)
+				{
+					realType = Util.normalDayOrNight(realType);
+					mWallpaperView.setDirty(realType);
+				}
+			}
+		}
+	};
 
 	private void checkTitleBar()
 	{
@@ -248,26 +272,11 @@ public class MainHomeActivity extends Activity
 	@Override
 	protected void onPause()
 	{
+		mHandler.removeCallbacks(mResumeRunnable);
 		unregisterReceiver();
 		mWallpaperView.onResume();
 		super.onPause();
 	}
-	private Runnable changeRunnable = new Runnable()
-	{
-		
-		@Override
-		public void run()
-		{
-			int mode = Util.getIntFromSharedPref(Util.MODE, 1);
-			int category = Util.getIntFromSharedPref(Util.SCENE_REAL_TYPE, WeatherType.FINE);
-			category = Util.convertIndex2Category(category);
-			if (mode == 2 )
-			{				
-				mWallpaperView.setDirty(category);
-			}
-		}
-	};
-
 	@Override
 	protected void onDestroy()
 	{
@@ -362,7 +371,8 @@ public class MainHomeActivity extends Activity
 			{
 				if (mWallpaperView == null)
 					return;
-				int category  = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.NA_SCENE);
+				int category  = Util.getIntFromSharedPref(Util.SAVE_TYPE, WeatherType.FINE);
+				category = Util.normalDayOrNight(category);
 				Trace.i("fu","收到广播设置壁纸"+ category);
 				mWallpaperView.setDirty(category);
 				checkTitleBar();

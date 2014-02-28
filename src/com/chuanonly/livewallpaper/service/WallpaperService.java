@@ -103,7 +103,6 @@ public class WallpaperService extends GLWallpaperService
 			} else
 			{
 				super.onVisibilityChanged(visible);
-				registerReceiver();
 				startRendering();
 				checkIFChangeWallpaer();
 			}
@@ -122,6 +121,7 @@ public class WallpaperService extends GLWallpaperService
 				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
 				if (lasttime + Util.HOUR_2 < curTime)
 				{
+					registerReceiver();
 					mHandler.postDelayed(changeRunnable, 200);
 				}
 				
@@ -134,6 +134,7 @@ public class WallpaperService extends GLWallpaperService
 				{
 					if (Util.isNetworkAvailable(getApplicationContext()))
 					{
+						registerReceiver();
 						//todo
 						new HTTPTask().execute();
 					}
@@ -157,7 +158,7 @@ public class WallpaperService extends GLWallpaperService
 				{					
 					category = new Random().nextInt(44);
 				}
-				category = Util.getCurrentCategory(category);
+				category = Util.normalDayOrNight(category);
 				Util.setLongToSharedPref(Util.LAST_UPDATETIME, System.currentTimeMillis());
 				Util.setIntToSharedPref(Util.SCENE_TYPE, category);
 				MyApplication.getContext().sendBroadcast(new Intent(WallpaperService.ACTION_CHANGE_BROCAST));
@@ -274,7 +275,8 @@ public class WallpaperService extends GLWallpaperService
 				if (renderer == null)
 					return;
 				
-				int category  = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.NA_SCENE);
+				int category  = Util.getIntFromSharedPref(Util.SAVE_TYPE, WeatherType.FINE);
+				category = Util.normalDayOrNight(category);
 				renderer.setDirtyScene(category);
 			} else if (ACTION_PAUSE_BROCAST.equals(action))
 			{
