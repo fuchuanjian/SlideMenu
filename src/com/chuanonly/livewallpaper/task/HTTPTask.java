@@ -16,7 +16,6 @@ import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.data.WallpaperInfo;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.util.Http;
-import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
 //http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}
@@ -86,12 +85,10 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 	protected void onPostExecute(String result)
 	{
 		if (result == null) return;
-		Trace.i("fu", "result: "+ result);
 		try
 		{
 			WallpaperInfo.parseWallpaperInfo(result);
 			MyApplication.getContext().sendBroadcast(new Intent(WallpaperService.ACTION_CHANGE_BROCAST));				
-			Trace.i("fu",WallpaperInfo.toStr());
 			Util.showToast(WallpaperInfo.toStr());
 			
 		} catch (Exception e)

@@ -33,7 +33,6 @@ import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.task.LocateHandler;
-import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
 import com.chuanonly.livewallpaper.view.GalleryScrollView;
@@ -132,7 +131,6 @@ public class MainHomeActivity extends Activity
 		if (loginCnt >5 && Util.isNetworkAvailable(getApplicationContext()))
 		{			
 			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
-			Trace.i("fu",URLUtil.decodeURL(ID));
 			mADLayout.addView(mAdView);
 			mAdView.loadAd(new AdRequest());
 			
@@ -416,7 +414,6 @@ public class MainHomeActivity extends Activity
 					return;
 				int category  = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
 				category = Util.normalDayOrNight(category);
-				Trace.i("fu","收到广播设置壁纸"+ category);
 				mWallpaperView.setDirty(category);
 				checkTitleBar();
 			}
@@ -434,7 +431,6 @@ public class MainHomeActivity extends Activity
 			{
 				if (mode == -1)
 				{
-					Trace.i("fu","去定位");
 					mlLocateAsyncTask = new LocateHandler(this);
 					mlLocateAsyncTask.tryToLacate();
 				}

@@ -23,8 +23,6 @@ public static int loadShader
             GLES20.glGetShaderiv(shader, GLES20.GL_COMPILE_STATUS, compiled, 0);
             if (compiled[0] == 0) 
             { 
-            	Trace.e("fu", "Could not compile shader " + shaderType + ":");
-            	Trace.e("fu", GLES20.glGetShaderInfoLog(shader));
                 GLES20.glDeleteShader(shader);
                 shader = 0;      
             }  
@@ -72,7 +70,6 @@ public static int loadShader
         int error;
         while ((error = GLES20.glGetError()) != GLES20.GL_NO_ERROR) 
         {
-        	Trace.e("fu", "ES20_ERROR "+ op + ": glError " + error);
 //            throw new RuntimeException(op + ": glError " + error);
         }
    }

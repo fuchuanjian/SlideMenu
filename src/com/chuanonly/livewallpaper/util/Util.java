@@ -6,7 +6,6 @@ import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import android.R.integer;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -20,7 +19,6 @@ import android.widget.Toast;
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.R;
 import com.chuanonly.livewallpaper.model.WeatherType;
-import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.task.HTTPTask;
 
 public class Util
@@ -74,7 +72,6 @@ public class Util
 	public static final int[][] weatherTypes = {dayfine, daycloud, dayovercast, dayRain, daySnow , dayFog};
     public static String getWeatherInfoOfWallpaper() {
     	int img = Util.getIntFromSharedPref(Util.TYPE, 0);
-    	Trace.i("fu","当前壁纸 "+ img);
     	int index = 0;
     	for (int i = 0; i< weatherTypes.length; i++)
     	{
@@ -92,7 +89,6 @@ public class Util
     
     public static String getWeatherInfoOfReal() {
     	int img = Util.getIntFromSharedPref(Util.REAL_TYPE, 0);
-    	Trace.i("fu","真实 "+ img);
     	int index = 0;
     	for (int i = 0; i< weatherTypes.length; i++)
     	{
@@ -477,7 +473,6 @@ public class Util
     	 }
     	 String sn = SystemProperties.get("ro.serialno");
          String data = imei+"_"+sn;
-         Trace.e("fu","imei="+imei+"   sn="+sn);
          try
          {
  	        MessageDigest hash = MessageDigest.getInstance("MD5");

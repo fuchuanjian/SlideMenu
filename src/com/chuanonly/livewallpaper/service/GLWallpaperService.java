@@ -8,7 +8,6 @@ import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
 
 import com.chuanonly.livewallpaper.data.Constant;
-import com.chuanonly.livewallpaper.util.Trace;
 
 public abstract class GLWallpaperService extends WallpaperService {
     private static final String TAG = "fu";
@@ -38,14 +37,12 @@ public abstract class GLWallpaperService extends WallpaperService {
             WallpaperGLSurfaceView(Context context) {
                 super(context);
                 if (isCanLog) {
-                    Trace.d(TAG, "WallpaperGLSurfaceView(" + context + ")");
                 }
             }
 
             @Override
             public SurfaceHolder getHolder() {
                 if (isCanLog) {
-                    Trace.d(TAG, "getHolder(): returning " + getSurfaceHolder());
                 }
 
                 return getSurfaceHolder();
@@ -53,7 +50,6 @@ public abstract class GLWallpaperService extends WallpaperService {
 
             public void onDestroy() {
                 if (isCanLog) {
-                    Trace.d(TAG, "onDestroy()");
                 }
 
                 super.onDetachedFromWindow();
@@ -87,7 +83,6 @@ public abstract class GLWallpaperService extends WallpaperService {
         @Override
         public void onCreate(SurfaceHolder surfaceHolder) {
             if (isCanLog) {
-                Trace.d(TAG, "onCreate(" + surfaceHolder + ")");
             }
 
             super.onCreate(surfaceHolder);
@@ -98,7 +93,6 @@ public abstract class GLWallpaperService extends WallpaperService {
         @Override
         public void onVisibilityChanged(boolean visible) {
             if (isCanLog) {
-                Trace.d(TAG, "onVisibilityChanged(" + visible + ")");
             }
             mVisble = visible;
             super.onVisibilityChanged(visible);
@@ -115,7 +109,6 @@ public abstract class GLWallpaperService extends WallpaperService {
         @Override
         public void onDestroy() {
             if (isCanLog) {
-                Trace.d(TAG, "onDestroy()");
             }
             glSurfaceView.destroyDrawingCache();
             glSurfaceView.onDestroy();
@@ -125,7 +118,6 @@ public abstract class GLWallpaperService extends WallpaperService {
 
         public void setRenderer(Renderer renderer) {
             if (isCanLog) {
-                Trace.d(TAG, "setRenderer(" + renderer + ")");
             }
 
             glSurfaceView.setRenderer(renderer);
@@ -134,7 +126,6 @@ public abstract class GLWallpaperService extends WallpaperService {
 
         public void setEGLContextClientVersion(int version) {
             if (isCanLog) {
-                Trace.d(TAG, "setEGLContextClientVersion(" + version + ")");
             }
 
             glSurfaceView.setEGLContextClientVersion(version);

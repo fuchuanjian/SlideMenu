@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,9 +22,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.chuanonly.livewallpaper.data.City;
-import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.util.QueryCityHandler;
-import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 
 public class ChooseCityActivity extends Activity implements OnClickListener
@@ -107,7 +104,6 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				Util.setStringToSharedPref(Util.SCENE_TEMPERATUR, "");
 				Util.setLongToSharedPref(Util.LAST_UPDATETIME, 0);
 				Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
-				Trace.i("fu",mCity.enName);
 				Util.checkIfNeedToUpdateWeather();
 				finish();
 			}
