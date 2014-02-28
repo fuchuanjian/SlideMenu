@@ -10,6 +10,7 @@ import org.apache.http.HttpStatus;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.text.TextUtils;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.data.WallpaperInfo;
@@ -27,7 +28,10 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 	@Override
 	protected String doInBackground(Void... params)
 	{
+		
 		String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
+		
+		if (TextUtils.isEmpty(cityCode)) return null;
 		String url ="90TYIJFMjR0b2x0MShXWYJEcM1WM2lVbsNnWTRjeOpWQ1llM0YXWywGMlNVO30ESw8yYHRnbQh1c4Z2UapGZtZVeQh1c5Z2UaJjWYlUOlpnT5okbSZXYyYVdQh1cwYWU";//http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}";
 		String pkg ="QPi1mVwwkbGBXYHljdM1GeoR2V1oWYHZVeM5GZwp1RkxGZDVjaidUOqF2MkxWWYJ1bahVS==";// "net.qihoo.launcher.widget.clockweather";
 		String token = Util.getToken();
@@ -81,6 +85,7 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 	@Override
 	protected void onPostExecute(String result)
 	{
+		if (result == null) return;
 		Trace.i("fu", "result: "+ result);
 		try
 		{

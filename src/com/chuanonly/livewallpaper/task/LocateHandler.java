@@ -47,6 +47,7 @@ public class LocateHandler
 	{
 		if (suggestionSource == null)
 		{
+			Trace.i("fu","定位");
 			suggestionSource = new QueryCityHandler(MyApplication.getContext());
 			LocationManagerProxy mAMapLocManager = LocationManagerProxy.getInstance(context);
 			mAMapLocManager.setGpsEnable(false);
@@ -89,7 +90,7 @@ public class LocateHandler
 		{
 			if (location == null || isSucess ) return;
 			
-			
+			Trace.i("fu","定位返回结果");
 			new Thread(new Runnable()
 			{
 				

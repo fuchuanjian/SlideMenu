@@ -14,11 +14,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.SystemProperties;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.service.WallpaperService;
+import com.chuanonly.livewallpaper.task.HTTPTask;
 
 public class Util
 {
@@ -436,6 +438,21 @@ public class Util
     	return sp.getInt(key, defValue);
     }
     
+    public static String getCityName()
+    {
+    	if (MyApplication.language < 2)
+    	{
+    		return Util.getStringFromSharedPref(Util.NAME, "");
+    	}else
+    	{
+    		return Util.getStringFromSharedPref(Util.EN_NAME, "");
+    	}
+    }
+    public static String getWeatherInfo()
+    {
+    	return Util.getStringFromSharedPref(Util.SCENE_INFO, "");
+    }
+    
 //    public static int getWeathType()
 //    {
 //    	long lastpickTime = Util.getLongFromSharedPref(LAST_PICK_TIME, 0);
@@ -521,5 +538,44 @@ public class Util
             return false;
         }
     }
+
+
+
+	public static void checkIfNeedToUpdateWeather()
+	{
+		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+		if (mode == 2)
+		{
+			if (Util.isNetworkAvailable(MyApplication.getContext()))
+			{
+				if (!TextUtils.isEmpty(Util.getStringFromSharedPref(Util.CODE, "")) 
+						&& ( TextUtils.isEmpty(Util.getStringFromSharedPref(Util.SCENE_INFO, ""))
+								||Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0)+ HOUR_HALF <System.currentTimeMillis() ))
+				{
+					new HTTPTask().execute();
+				}
+			}
+		}
+	}
+	
+	public static int getMode()
+	{
+		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+		String citycode = Util.getStringFromSharedPref(Util.CODE, "");
+		String info = Util.getStringFromSharedPref(Util.SCENE_INFO, "");
+		
+		if (mode == -1)
+		{
+			if (!TextUtils.isEmpty(citycode) && !TextUtils.isEmpty(info) )
+			{
+				mode = 2;
+				Util.setIntToSharedPref(Util.MODE, 2);
+			}else
+			{
+				mode = 1;
+			}
+		}
+		return mode;
+	}
     
 }

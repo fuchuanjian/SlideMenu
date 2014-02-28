@@ -56,11 +56,13 @@
 
                 <CheckBox 
                     android:clickable="false"
+                    android:minWidth="23dp"
                     android:id="@+id/checkbox_1"
                     style="@style/setting_item_checkbox" />
 
                 <LinearLayout
                     android:layout_width="0dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:duplicateParentState="true"
@@ -88,11 +90,13 @@
 
                 <CheckBox 
                     android:clickable="false"
-                     android:id="@+id/checkbox_2"
+                    android:minWidth="23dp"
+                    android:id="@+id/checkbox_2"
                     style="@style/setting_item_checkbox" />
 
                 <LinearLayout
                     android:layout_width="0dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:duplicateParentState="true"
@@ -121,10 +125,12 @@
                 <CheckBox 
                     android:clickable="false"
                     android:id="@+id/checkbox_3"
+                    android:minWidth="23dp"
                     style="@style/setting_item_checkbox" />
 
                 <LinearLayout
                     android:layout_width="0dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:duplicateParentState="true"
@@ -137,6 +143,12 @@
                     <TextView
                         android:id="@+id/weather_info_txt"
                         style="@style/setting_item_sum_text"
+                        android:ellipsize="marquee" 
+				        android:focusable="true" 
+				        android:marqueeRepeatLimit="marquee_forever" 
+				        android:focusableInTouchMode="true" 
+				        android:scrollHorizontally="true"
+				        android:singleLine="true"
                         android:text="@string/empty" />
                 </LinearLayout>
                 <TextView

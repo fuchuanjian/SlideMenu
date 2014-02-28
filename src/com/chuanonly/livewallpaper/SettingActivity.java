@@ -17,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.chuanonly.livewallpaper.data.City;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.util.Util;
 
@@ -44,13 +45,13 @@ public class SettingActivity extends Activity
 			layouts[i].setOnClickListener(click);
 		}
 		findViewById(R.id.set_city).setOnClickListener(click);
-		
+		findViewById(R.id.return_btn).setOnClickListener(click);
 	}
 
 	private void showWeatherInfo()
 	{
-		String cityName = Util.getStringFromSharedPref(Util.NAME, "");
-		String info = Util.getStringFromSharedPref(Util.SCENE_INFO, "");
+		String cityName = Util.getCityName();
+		String info = Util.getWeatherInfo();
 		String temperatrue = Util.getStringFromSharedPref(Util.SCENE_TEMPERATUR, "");
 		if (!TextUtils.isEmpty(temperatrue))
 		{
@@ -72,20 +73,28 @@ public class SettingActivity extends Activity
 	protected void onResume()
 	{
 		super.onResume();
-		String cityName = Util.getStringFromSharedPref(Util.NAME, "");
+		Util.checkIfNeedToUpdateWeather();
+		
+		String cityName = Util.getCityName();
 		weatherInfoTV  = (TextView)findViewById(R.id.weather_info_txt);
 		if (!TextUtils.isEmpty(cityName))
 		{
 			showWeatherInfo();
 		}
-		
 		registerReceiver();
 		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
 		String city = Util.getStringFromSharedPref(Util.CODE, "");
-		if (mode == -1 && !TextUtils.isEmpty(city))
+		if (mode == -1 )
 		{
-			mode = 2;
-			Util.setIntToSharedPref(Util.MODE, 2);
+			if (!TextUtils.isEmpty(city))
+			{
+				mode = 2;
+				Util.setIntToSharedPref(Util.MODE, 2);
+			}else
+			{
+				mode = 1;
+				Util.setIntToSharedPref(Util.MODE, 1);
+			}
 		}
 		for (int i = 0; i < checkBoxs.length; i++)
 		{
@@ -124,17 +133,31 @@ public class SettingActivity extends Activity
 			} else if (v.getId() == R.id.layout_3)
 			{
 				pos = 2;
-				Util.setIntToSharedPref(Util.MODE, 2);
-				Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
-				int saveType = Util.getIntFromSharedPref(Util.SAVE_TYPE, -1);
-				if (saveType != -1)
+				String citycode = Util.getStringFromSharedPref(Util.CODE, "");
+				if (TextUtils.isEmpty(citycode))
 				{
-					Util.setIntToSharedPref(Util.SCENE_TYPE, saveType);
+					Intent intent = new Intent(SettingActivity.this, ChooseCityActivity.class);
+					startActivity(intent);
+					overridePendingTransition(R.anim.anim_right_enter, R.anim.anim_defalut);
+				}else
+				{					
+					Util.setIntToSharedPref(Util.MODE, 2);
+					Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
+					int saveType = Util.getIntFromSharedPref(Util.SAVE_TYPE, -1);
+					if (saveType != -1)
+					{
+						Util.setIntToSharedPref(Util.SCENE_TYPE, saveType);
+					}
+					Util.checkIfNeedToUpdateWeather();
 				}
+				
 			}else if (v.getId() == R.id.set_city){
 				Intent intent = new Intent(SettingActivity.this, ChooseCityActivity.class);
 				startActivity(intent);
 				overridePendingTransition(R.anim.anim_right_enter, R.anim.anim_defalut);
+			}else if (v.getId() == R.id.return_btn)
+			{
+				finish();
 			}
 			
 			if (pos != -1)

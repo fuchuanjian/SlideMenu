@@ -12,7 +12,7 @@
      <string name="error">Unable to Start Live Wallpaper Chooser</string>
      <string name="china">china</string>
      <string name="weather_city">City:\t</string>
-     <string name="weather_info">%1$s \t\t %2$s \t\t %3$s</string>
+     <string name="weather_info">\t%1$s \t %2$s \t %3$s</string>
      <string name="empty">City:\tnull</string>
      <string name="chose_city">Select City</string>
     <string-array name="weather_array" translatable="false">

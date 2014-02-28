@@ -43,7 +43,14 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chose_city);
 		initView();
-		
+		findViewById(R.id.return_btn).setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View arg0)
+			{
+				finish();
+			}
+		});
 	}
 
 	@Override
@@ -84,6 +91,7 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				mSearchEdit.selectAll();
 				mSearchEdit.addTextChangedListener(textWatcher);
 				
+				Util.setIntToSharedPref(Util.MODE, 2);
 				String lasCityCode = Util.getStringFromSharedPref(Util.CODE, "");
 				if (mCity.code .equals(lasCityCode))
 				{
@@ -95,12 +103,11 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				Util.setStringToSharedPref(Util.EN_NAME, mCity.enName);
 				Util.setStringToSharedPref(Util.SCENE_INFO, "");
 				Util.setStringToSharedPref(Util.SCENE_TEMPERATUR, "");
+				Util.setLongToSharedPref(Util.LAST_UPDATETIME, 0);
+				Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
 				Trace.i("fu",mCity.enName);
 				Util.showToast("Choose City "+ mCity.enName, 1);
-				if ( !TextUtils.isEmpty(mCity.code) && Util.isNetworkAvailable(MyApplication.getContext()))
-				{
-					new HTTPTask().execute();
-				}
+				Util.checkIfNeedToUpdateWeather();
 				finish();
 			}
 		});

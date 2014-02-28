@@ -1,5 +1,7 @@
 package com.chuanonly.livewallpaper;
 
+import com.chuanonly.livewallpaper.util.Trace;
+
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
@@ -15,6 +17,8 @@ public class MyApplication extends Application
 	public static int height;
 	public static float density;
 	private boolean isSupportsEs2 = false;
+	
+	public static int language = 0;
 
 	@Override
 	public void onCreate()
@@ -30,6 +34,18 @@ public class MyApplication extends Application
 		final ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 		final ConfigurationInfo configurationInfo = activityManager.getDeviceConfigurationInfo();
 		isSupportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000 && Build.VERSION.SDK_INT >= 8;
+		
+		String country = getResources().getConfiguration().locale.getCountry();
+		if (country.equalsIgnoreCase("CN"))
+		{
+			language = 0;
+		}else if (country.equalsIgnoreCase("TW"))
+		{
+			language = 1;
+		}else 
+		{
+			language = 2;
+		}
 	}
 
 	public static Context getContext()
@@ -41,4 +57,6 @@ public class MyApplication extends Application
 	{
 		return mApplication;
 	}
+	
+	
 }

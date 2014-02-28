@@ -34,10 +34,14 @@ import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.task.LocateHandler;
+import com.chuanonly.livewallpaper.util.Http;
 import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 import com.chuanonly.livewallpaper.view.GalleryScrollView;
 import com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView;
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 
 public class MainHomeActivity extends Activity
 {
@@ -70,6 +74,8 @@ public class MainHomeActivity extends Activity
 	private LinearLayout mContentLayout ;
 	private LinearLayout mSettingLayout;
 	private RelativeLayout mTitleBar;
+	private AdView mAdView;
+	private LinearLayout mBottomLyout;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -78,6 +84,8 @@ public class MainHomeActivity extends Activity
 		mInflater = LayoutInflater.from(this);
 		mContentLayout = (LinearLayout)findViewById(R.id.layout_content);
 		mSettingLayout = (LinearLayout) findViewById(R.id.setting_panel);
+		mBottomLyout = (LinearLayout) findViewById(R.id.layout_bottom);
+		
 		mTitleBar = (RelativeLayout) findViewById(R.id.title_bar);
 		mContentLayout.setVisibility(View.INVISIBLE);
 		mSettingLayout.setVisibility(View.INVISIBLE);
@@ -111,25 +119,12 @@ public class MainHomeActivity extends Activity
 		imgType[8] = new int[]{20,29};
 		//bg_na
 		imgType[9] = new int[]{5};
-		
-		String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
-		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
-		
-		if (Util.isNetworkAvailable(MyApplication.getContext()))
-		{
-			if (TextUtils.isEmpty(cityCode))
-			{
-				if (mode == -1)
-				{
-					mlLocateAsyncTask = new LocateHandler(this);
-					mlLocateAsyncTask.tryToLacate();
-				}
-			}else {
-				if (mode == 2 && Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0) + Util.HOUR_HALF < System.currentTimeMillis() )
-					new HTTPTask().execute();
-			}
-		}
+		mAdView = new AdView(this, AdSize.BANNER, "a15310888895deb");
+		mBottomLyout.addView(mAdView);
+		mAdView.loadAd(new AdRequest());
+		checkifNeedTolacate();
 	}
+
 
 	private void initScrollView()
 	{
@@ -194,7 +189,26 @@ public class MainHomeActivity extends Activity
 			}else if (view.getId() == R.id.setting_wallpaper)
 			{
 				startIntentWallpaperChooser();
-			}else {				
+			}else if (view.getId() == R.id.city_name) 
+			{
+				Intent intent = new Intent(MainHomeActivity.this, ChooseCityActivity.class);
+				startActivity(intent);
+				overridePendingTransition(R.anim.anim_right_enter, R.anim.anim_defalut);
+			}else if (view.getId() == R.id.city_info)
+			{
+				if (Util.isNetworkAvailable(MyApplication.getContext()) 
+						&& !TextUtils.isEmpty( Util.getStringFromSharedPref(Util.CODE, "")))
+				{
+					new HTTPTask().execute();
+				}
+				int sence = Util.getIntFromSharedPref(Util.SAVE_TYPE, -1);
+				if (sence >= 0)
+				{
+					sence = Util.normalDayOrNight(sence);
+					mWallpaperView.setDirty(sence);
+				}
+			}else
+			{				
 				int index = ((ViewHolder)view.getTag()).index;
 				Util.setLongToSharedPref(Util.LAST_PICK_TIME, System.currentTimeMillis());
 				changeWallPaper(index);
@@ -207,7 +221,7 @@ public class MainHomeActivity extends Activity
 	{
 		int category = imgType[index][new Random().nextInt(imgType[index].length)];
 		mWallpaperView.setDirty(category);
-		int mode = Util.getIntFromSharedPref(Util.MODE, 1);
+		int mode = Util.getMode();
 		if (mode != 2)
 		{			
 			Util.setIntToSharedPref(Util.SCENE_TYPE, category);
@@ -232,8 +246,8 @@ public class MainHomeActivity extends Activity
 	{
 		super.onResume();
 		registerReceiver();
+		Util.checkIfNeedToUpdateWeather();
 		mWallpaperView.onResume();
-		
 		mHandler.postDelayed(mResumeRunnable, 200);
 	}
 	
@@ -245,23 +259,13 @@ public class MainHomeActivity extends Activity
 			mContentLayout.setVisibility(View.VISIBLE);
 			mSettingLayout.setVisibility(View.VISIBLE);
 			checkTitleBar();
-			int mode = Util.getIntFromSharedPref(Util.MODE, -1);
-			if (mode == 2)
-			{
-				int realType = Util.getIntFromSharedPref(Util.SAVE_TYPE, -1);
-				if (realType != -1)
-				{
-					realType = Util.normalDayOrNight(realType);
-					mWallpaperView.setDirty(realType);
-				}
-			}
 		}
 	};
 
 	private void checkTitleBar()
 	{
-		String cityName = Util.getStringFromSharedPref(Util.NAME, "");
-		String info = Util.getStringFromSharedPref(Util.SCENE_INFO, "");
+		String cityName = Util.getCityName();
+		String info = Util.getWeatherInfo();
 		String temperatrue = Util.getStringFromSharedPref(Util.SCENE_TEMPERATUR, "");
 		if (!TextUtils.isEmpty(temperatrue))
 		{
@@ -289,10 +293,17 @@ public class MainHomeActivity extends Activity
 	@Override
 	protected void onDestroy()
 	{
+		if (mAdView != null)
+		{
+			mAdView.destroy();
+		}
 		if (mlLocateAsyncTask != null)
 		{			
 			mlLocateAsyncTask.release();
 		}
+		
+		android.os.Process.killProcess(android.os.Process.myPid());
+//		System.exit(0);
 		super.onDestroy();
 	}
 	private long lastPressback = 0;
@@ -390,4 +401,23 @@ public class MainHomeActivity extends Activity
 			}
 		};
 	};
+	
+	private void checkifNeedTolacate()
+	{
+		String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
+		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+		
+		if (Util.isNetworkAvailable(MyApplication.getContext()))
+		{
+			if (TextUtils.isEmpty(cityCode))
+			{
+				if (mode == -1)
+				{
+					Trace.i("fu","去定位");
+					mlLocateAsyncTask = new LocateHandler(this);
+					mlLocateAsyncTask.tryToLacate();
+				}
+			}
+		}
+	}
 }

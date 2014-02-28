@@ -43,19 +43,25 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/layout_content"
+        android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/black_alpha"
-        android:orientation="horizontal" >
-	</LinearLayout>
+        android:orientation="vertical" >
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/setting_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/layout_content"
+        android:layout_above="@id/layout_bottom"
         android:background="@drawable/black_alpha_shape"
         android:orientation="horizontal" >
 

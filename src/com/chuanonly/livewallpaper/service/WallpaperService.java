@@ -103,6 +103,7 @@ public class WallpaperService extends GLWallpaperService
 			} else
 			{
 				super.onVisibilityChanged(visible);
+				registerReceiver();
 				startRendering();
 				checkIFChangeWallpaer();
 			}
@@ -121,7 +122,6 @@ public class WallpaperService extends GLWallpaperService
 				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
 				if (lasttime + Util.HOUR_2 < curTime)
 				{
-					registerReceiver();
 					mHandler.postDelayed(changeRunnable, 200);
 				}
 				
@@ -134,7 +134,6 @@ public class WallpaperService extends GLWallpaperService
 				{
 					if (Util.isNetworkAvailable(getApplicationContext()))
 					{
-						registerReceiver();
 						//todo
 						new HTTPTask().execute();
 					}
@@ -245,7 +244,6 @@ public class WallpaperService extends GLWallpaperService
 		{
 			mFilter = new IntentFilter();
 			mFilter.addAction(ACTION_CHANGE_BROCAST);
-			mFilter.addAction(ACTION_PAUSE_BROCAST);
 		}
 		try
 		{
