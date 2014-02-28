@@ -37,11 +37,13 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 	private InputMethodManager mimm = null;
 	private QueryCityHandler queryHandler = null;
     private City mCity;
+    private TextView mEmptyTV;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chose_city);
+		mEmptyTV = (TextView) findViewById(R.id.empty_city);
 		initView();
 		findViewById(R.id.return_btn).setOnClickListener(new OnClickListener()
 		{
@@ -106,7 +108,6 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				Util.setLongToSharedPref(Util.LAST_UPDATETIME, 0);
 				Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
 				Trace.i("fu",mCity.enName);
-				Util.showToast("Choose City "+ mCity.enName, 1);
 				Util.checkIfNeedToUpdateWeather();
 				finish();
 			}
@@ -151,11 +152,11 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		Collection<City> queryResult = queryHandler.queryHotcities();
 		if (queryResult == null || queryResult.isEmpty())
 		{
-			// mNoCityText.setVisibility(View.VISIBLE);
+			mEmptyTV.setVisibility(View.VISIBLE);
 			mList.setVisibility(View.GONE);
 		} else
 		{
-			// mNoCityText.setVisibility(View.GONE);
+			mEmptyTV.setVisibility(View.GONE);
 			mAdapter.resetItems(queryResult);
 			mList.setAdapter(mAdapter);
 			mList.setVisibility(View.VISIBLE);
@@ -178,6 +179,7 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		if (query == null || query.length() == 0)
 		{
 			mList.setVisibility(View.GONE);
+			mEmptyTV.setVisibility(View.VISIBLE);
 			return;
 		} else
 		{
@@ -187,13 +189,14 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		mAdapter.resetItems(queryResult);
 		mList.setAdapter(mAdapter);
 		mList.setVisibility(View.VISIBLE);
+		mEmptyTV.setVisibility(View.GONE);
 		if (queryResult == null || queryResult.isEmpty())
 		{
-			// mNoCityText.setVisibility(View.VISIBLE);
 			mList.setVisibility(View.GONE);
+			mEmptyTV.setVisibility(View.VISIBLE);
 		} else
 		{
-			// mNoCityText.setVisibility(View.GONE);
+			mEmptyTV.setVisibility(View.GONE);
 			mList.setVisibility(View.VISIBLE);
 		}
 	}
@@ -252,9 +255,15 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 
 			City city = this.getItem(position);
 
-			holder.nameView.setText(city.name);
+			if (MyApplication.language < 2)
+			{
+				holder.nameView.setText(city.name);
+				holder.parentView.setText(city.parentName);				
+			}else {
+				holder.nameView.setText(city.enName);
+				holder.parentView.setText(city.enProvice);	
+			}
 			holder.nameView.setTag(city);
-			holder.parentView.setText(city.parentName);
 			holder.splitView.setText("-");
 			return convertView;
 		}

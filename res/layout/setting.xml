@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dip"
             android:layout_weight="1"
-            android:text="设置"
+            android:text="@string/setting"
             android:textColor="@color/white"
             android:textSize="@dimen/title_bar_title_text_size" />
     </LinearLayout>
@@ -42,7 +42,7 @@
 
             <TextView
                 style="@style/setting_item_desc_text"
-                android:text="显示设置" />
+                android:text="@string/dislpay_setting" />
 
             <View
                 android:layout_width="match_parent"
@@ -70,11 +70,12 @@
 
                     <TextView
                         style="@style/setting_item_main_text"
-                        android:text="只使用当前壁纸,不切换" />
+                        android:text="@string/no_change" />
 
                     <TextView
+                        android:id="@+id/current_wallpaper"
                         style="@style/setting_item_sum_text"
-                        android:text="当前壁纸是: 无" />
+                        android:text="@string/no_change_desc_default" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -104,11 +105,11 @@
 
                     <TextView
                         style="@style/setting_item_main_text"
-                        android:text="随机显示动态壁纸" />
+                        android:text="@string/random_change" />
 
                     <TextView
                         style="@style/setting_item_sum_text"
-                        android:text="每3小时变化" />
+                        android:text="@string/random_change_two_hour" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -138,7 +139,13 @@
 
                     <TextView
                         style="@style/setting_item_main_text"
-                        android:text="根据所在城市显示壁纸" />
+                        android:ellipsize="marquee" 
+				        android:focusable="true" 
+				        android:marqueeRepeatLimit="marquee_forever" 
+				        android:focusableInTouchMode="true" 
+				        android:scrollHorizontally="true"
+				        android:singleLine="true"
+                        android:text="@string/display_base_city" />
 
                     <TextView
                         android:id="@+id/weather_info_txt"
@@ -155,9 +162,9 @@
                     	android:id="@+id/set_city"
                         style="@style/setting_item_main_text"
                         android:drawableRight="@drawable/arrow_right"
-                        android:background="@drawable/circle_rect_shape"
+                        android:background="@drawable/selectcity_pressed_selector"
                         android:padding="5dp"
-                        android:text="选择城市" />
+                        android:text="@string/chose_city" />
                    
             </LinearLayout>
 
@@ -168,7 +175,7 @@
 
             <TextView
                 style="@style/setting_item_desc_text"
-                android:text="关于壁纸" />
+                android:text="@string/about" />
 
             <View
                 android:layout_width="match_parent"

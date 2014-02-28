@@ -7,6 +7,7 @@ import javax.microedition.khronos.opengles.GL10;
 import android.R.integer;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
+import android.text.TextUtils;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.model.WeatherType;
@@ -58,7 +59,7 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-    	int category = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.FINE);
+    	int category = Util.getIntFromSharedPref(Util.TYPE, WeatherType.FINE);
     	boolean needAdjust = true;
     	int mode = Util.getIntFromSharedPref(Util.MODE, 1);
     	long lastPickTime = Util.getLongFromSharedPref(Util.LAST_PICK_TIME, 0);
@@ -66,7 +67,10 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
     	{
     		needAdjust = false;
     	}
-    	
+    	if (mode == 2 && !TextUtils.isEmpty(Util.getStringFromSharedPref(Util.SCENE_INFO, "")) )
+    	{
+    		category = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
+    	}
     	if (needAdjust)
     		category = Util.normalDayOrNight(category);
         boolean reload = category != sceneCategory ? true : false;

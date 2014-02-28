@@ -1,5 +1,7 @@
 package com.chuanonly.livewallpaper;
 
+import java.util.Locale;
+
 import com.chuanonly.livewallpaper.util.Trace;
 
 import android.app.ActivityManager;

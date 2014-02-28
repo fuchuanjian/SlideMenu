@@ -26,6 +26,7 @@ public class SettingActivity extends Activity
 	private CheckBox checkBoxs[] = new CheckBox[3];
 	private View layouts[] = new View[3];
 	private TextView weatherInfoTV;
+	private TextView mCurWallpaerTV;
 	
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -46,12 +47,13 @@ public class SettingActivity extends Activity
 		}
 		findViewById(R.id.set_city).setOnClickListener(click);
 		findViewById(R.id.return_btn).setOnClickListener(click);
+		mCurWallpaerTV = (TextView) findViewById(R.id.current_wallpaper);
 	}
 
 	private void showWeatherInfo()
 	{
 		String cityName = Util.getCityName();
-		String info = Util.getWeatherInfo();
+		String info = Util.getWeatherInfoOfReal();
 		String temperatrue = Util.getStringFromSharedPref(Util.SCENE_TEMPERATUR, "");
 		if (!TextUtils.isEmpty(temperatrue))
 		{
@@ -81,6 +83,8 @@ public class SettingActivity extends Activity
 		{
 			showWeatherInfo();
 		}
+		String wallpaperStr = getString(R.string.no_change_desc, Util.getWeatherInfoOfWallpaper());
+		mCurWallpaerTV.setText(wallpaperStr);
 		registerReceiver();
 		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
 		String city = Util.getStringFromSharedPref(Util.CODE, "");
@@ -143,10 +147,10 @@ public class SettingActivity extends Activity
 				{					
 					Util.setIntToSharedPref(Util.MODE, 2);
 					Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
-					int saveType = Util.getIntFromSharedPref(Util.SAVE_TYPE, -1);
+					int saveType = Util.getIntFromSharedPref(Util.REAL_TYPE, -1);
 					if (saveType != -1)
 					{
-						Util.setIntToSharedPref(Util.SCENE_TYPE, saveType);
+						Util.setIntToSharedPref(Util.TYPE, saveType);
 					}
 					Util.checkIfNeedToUpdateWeather();
 				}

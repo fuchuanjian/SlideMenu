@@ -212,7 +212,7 @@ public class MainHomeActivity extends Activity
 				{
 					new HTTPTask().execute();
 				}
-				int sence = Util.getIntFromSharedPref(Util.SAVE_TYPE, -1);
+				int sence = Util.getIntFromSharedPref(Util.REAL_TYPE, -1);
 				if (sence >= 0)
 				{
 					sence = Util.normalDayOrNight(sence);
@@ -243,11 +243,7 @@ public class MainHomeActivity extends Activity
 	{
 		int category = imgType[index][new Random().nextInt(imgType[index].length)];
 		mWallpaperView.setDirty(category);
-		int mode = Util.getMode();
-		if (mode != 2)
-		{			
-			Util.setIntToSharedPref(Util.SCENE_TYPE, category);
-		}
+		Util.setIntToSharedPref(Util.TYPE, category);
 		
 	}
 	private Drawable getIconDrawable(int resId)
@@ -291,7 +287,7 @@ public class MainHomeActivity extends Activity
 	private void checkTitleBar()
 	{
 		String cityName = Util.getCityName();
-		String info = Util.getWeatherInfo();
+		String info = Util.getWeatherInfoOfReal();
 		String temperatrue = Util.getStringFromSharedPref(Util.SCENE_TEMPERATUR, "");
 		if (!TextUtils.isEmpty(temperatrue))
 		{
@@ -418,7 +414,7 @@ public class MainHomeActivity extends Activity
 			{
 				if (mWallpaperView == null)
 					return;
-				int category  = Util.getIntFromSharedPref(Util.SAVE_TYPE, WeatherType.FINE);
+				int category  = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
 				category = Util.normalDayOrNight(category);
 				Trace.i("fu","收到广播设置壁纸"+ category);
 				mWallpaperView.setDirty(category);

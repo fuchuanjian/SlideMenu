@@ -3,19 +3,49 @@
 
     <string name="wallpaper_name">Weather Live Wallpaper</string>
     <string name="app_name">A Weather Wallpaper</string>
-    <string name="action_settings">Settings</string>
     <string name="toast_exit">Press return key again to exit</string>
     <string name="temp_unit">°C</string>
     
      <string name="setting">Settings</string>
+     <string name="dislpay_setting">Display Settings</string>
      <string name="set_wallpaper">Set Wallpaper</string>
      <string name="error">Unable to Start Live Wallpaper Chooser</string>
      <string name="china">china</string>
      <string name="weather_city">City:\t</string>
      <string name="weather_info">\t%1$s \t %2$s \t %3$s</string>
      <string name="empty">City:\tnull</string>
-     <string name="chose_city">Select City</string>
-    <string-array name="weather_array" translatable="false">
+     
+     <!-- setting -->
+    <string name="no_change">Never Switch Wallpapers</string>
+    <string name="no_change_desc_default">Current : </string>
+    <string name="no_change_desc">Current : %s</string>
+    <string name="random_change">Random Switching Wallpapers</string> 
+    <string name="random_change_two_hour">Switch Wallpaper Every 2 hours</string>
+    <string name="display_base_city">Display Wallpaper by City Location</string>
+    <string name="chose_city">Select City</string>
+    <string name="about">About</string>
+    <string name="input_city_name">Please Enter City Name</string>
+    <string name="not_find_city">The city can not be found</string>
+    
+<!--    <string-array name="weather_array" >
+        <item>晴</item>
+        <item>多云</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>雾霾</item>
+    </string-array>  -->
+    
+    <string-array name="weather_array" >
+        <item>Sunny</item>
+        <item>Cloudy</item>
+        <item>Overcast</item>
+        <item>Rain</item>
+        <item>Snow</item>
+        <item>Fog</item>
+    </string-array> 
+    
+<!--     <string-array name="weather_array" >
         <item>Light Rain</item>
         <item>Rain</item>
         <item>Heavy Rain</item>
@@ -37,6 +67,6 @@
         <item>Overcast</item>
         <item>Sunny Night</item>
         <item>Cloudy Night</item>
-    </string-array>
+    </string-array> -->
 
 </resources>

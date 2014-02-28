@@ -51,8 +51,8 @@ public class WallpaperInfo
 			
 			Util.setStringToSharedPref(Util.SCENE_INFO, info);
 			Util.setStringToSharedPref(Util.SCENE_TEMPERATUR, temperature);
-			Util.setIntToSharedPref(Util.SCENE_TYPE, Integer.valueOf(img));
-			Util.setIntToSharedPref(Util.SAVE_TYPE, Integer.valueOf(img));
+			Util.setIntToSharedPref(Util.TYPE, Integer.valueOf(img));
+			Util.setIntToSharedPref(Util.REAL_TYPE, Integer.valueOf(img));
 			Util.setLongToSharedPref(Util.LAST_UPDATETIME, System.currentTimeMillis());
 			Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
 			int mode = Util.getIntFromSharedPref(Util.MODE, -1);

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+ <string name="wallpaper_name">4季天氣動態壁紙</string>
+    <string name="app_name">天氣動態壁紙</string>
+    <string name="toast_exit">再按壹下返回鍵退出</string>
+    <string name="temp_unit">°C</string>
+    
+     <string name="setting">設置</string>
+     <string name="dislpay_setting">顯示設置</string>
+     <string name="set_wallpaper">設置為桌面動態壁紙</string>
+     <string name="error">無法打開桌面動態壁紙選擇器</string>
+     <string name="china">中國</string>
+     <string name="weather_city">城市:\t</string>
+     <string name="weather_info">\t%1$s \t %2$s \t %3$s</string>
+     <string name="empty">城市:\tnull</string>
+     
+     <!-- setting -->
+    <string name="no_change">不更換動態壁紙</string>
+    <string name="no_change_desc_default">壁紙 : </string>
+    <string name="no_change_desc">壁紙 : %s</string>
+    <string name="random_change">自動更換動態壁紙</string> 
+    <string name="random_change_two_hour">每2小時自動更換</string>
+    <string name="display_base_city">根據所在城市顯示實時天氣壁紙</string>
+    <string name="chose_city">選擇城市</string>
+    <string name="about">關於</string>
+    <string name="input_city_name">請輸入查詢的城市名</string>
+    <string name="not_find_city">找不到該城市 請嘗試英文查找</string>
+    
+    <string-array name="weather_array" >
+        <item>晴</item>
+        <item>多雲</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>霧霾</item>
+    </string-array>
+</resources>

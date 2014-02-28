@@ -5,6 +5,7 @@
     <color name="setting_bg_color">#FF303030</color>
     <color name="setting_sum_text">#919191</color>
   	<color name="blue_alpha">#8047aaec</color>
+  	<color name="blue_half">#6047aaec</color>
   	<color name="black_alpha">#a0000000</color>
   	<color name="title_bg_color">#30303030</color>
 </resources>

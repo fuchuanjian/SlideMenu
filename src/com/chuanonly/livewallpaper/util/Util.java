@@ -18,6 +18,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.chuanonly.livewallpaper.MyApplication;
+import com.chuanonly.livewallpaper.R;
 import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.task.HTTPTask;
@@ -25,8 +26,8 @@ import com.chuanonly.livewallpaper.task.HTTPTask;
 public class Util
 {
 	
-	public static final String SCENE_TYPE = "scene_type";
-	public static final String SAVE_TYPE = "real_tpye";
+	public static final String TYPE = "scene_type";
+	public static final String REAL_TYPE = "real_tpye";
 	
 	public static final String SCENE_INFO = "info";
 	
@@ -55,77 +56,57 @@ public class Util
 	
 	public static final String LAST_UPDATETIME = "lasttime";
 	
-//    public static int convertIndex2Category(int index) {
-//		int category = WeatherType.RAINY_LIGHT;
-//		
-//		switch (index) {
-//		case 0:
-//			category = WeatherType.RAINY_LIGHT;
-//			break;
-//		case 1:
-//			category = WeatherType.RAINY_MODERATE;
-//			break;
-//		case 2:
-//			category = WeatherType.RAINY_HEAVY;
-//			break;
-//		case 3:
-//			category = WeatherType.RAINY_STORM;
-//			break;
-//		case 4:
-//			category = WeatherType.SHOWER;
-//			break;
-//		case 5:
-//			category = WeatherType.SHOWER_THUNDER;
-//			break;
-//		case 6:
-//			category = WeatherType.CLOUDY;
-//			break;
-//		case 7:
-//			category = WeatherType.FINE;
-//			break;
-//		case 8:
-//			category = WeatherType.FOG;
-//			break;
-//		case 9:
-//			category = WeatherType.HAZE;
-//			break;
-//		case 10:
-//			category = WeatherType.DUST_FLOATING;
-//			break;
-//		case 11:
-//			category = WeatherType.SAND_STORM;
-//			break;
-//		case 12:
-//			category = WeatherType.HAILSTONE;
-//			break;
-//		case 13:
-//			category = WeatherType.SNOW_LIGHT;
-//			break;
-//		case 14:
-//			category = WeatherType.SNOW_MODERATE;
-//			break;
-//		case 15:
-//			category = WeatherType.SNOW_HEAVY;
-//			break;
-//		case 16:
-//			category = WeatherType.SNOW_STORM;
-//			break;
-//		case 17:
-//			category = WeatherType.SNOW_SHOWER;
-//			break;
-//		case 18:
-//			category = WeatherType.OVERCAST;
-//			break;
-//		case 19:
-//			category = WeatherType.FINE_NIGHT;
-//			break;
-//		case 20:
-//			category = WeatherType.CLOUDY_NIGHT;
-//			break;
-//		}
-//		
-//		return category;
-//    }
+//	   <string-array name="weather_array" >
+//       <item>晴</item>
+//       <item>多云</item>
+//       <item>阴</item>
+//       <item>雨</item>
+//       <item>雪</item>
+//       <item>雾霾</item>
+//   </string-array> 
+	
+	public static final int[] dayfine = {0, 100};
+	public static final int[] daycloud = {1, 101};
+	public static final int[] dayovercast = {2};
+	public static final int[] dayRain = {3,4,5,6,7,8,9,10,11,12,19,21,22,23,24,25,35,36,37,38};
+	public static final int[] daySnow = {13,14,15,16,17,26,27,28,40,41,42,43};
+	public static final int[] dayFog = {18,20,29,30,31,32,33,34};
+	public static final int[][] weatherTypes = {dayfine, daycloud, dayovercast, dayRain, daySnow , dayFog};
+    public static String getWeatherInfoOfWallpaper() {
+    	int img = Util.getIntFromSharedPref(Util.TYPE, 0);
+    	Trace.i("fu","当前壁纸 "+ img);
+    	int index = 0;
+    	for (int i = 0; i< weatherTypes.length; i++)
+    	{
+    		for (int j = 0; j < weatherTypes[i].length; j++)
+			{
+				if (img == weatherTypes[i][j])
+				{
+					index = i;
+				}
+			}
+    	}
+    	String weatherInfos[]  = MyApplication.getContext().getResources().getStringArray(R.array.weather_array);
+    	return weatherInfos[index];
+    }
+    
+    public static String getWeatherInfoOfReal() {
+    	int img = Util.getIntFromSharedPref(Util.REAL_TYPE, 0);
+    	Trace.i("fu","真实 "+ img);
+    	int index = 0;
+    	for (int i = 0; i< weatherTypes.length; i++)
+    	{
+    		for (int j = 0; j < weatherTypes[i].length; j++)
+			{
+				if (img == weatherTypes[i][j])
+				{
+					index = i;
+				}
+			}
+    	}
+    	String weatherInfos[]  = MyApplication.getContext().getResources().getStringArray(R.array.weather_array);
+    	return weatherInfos[index];
+    }
     
 	 public static int normalDayOrNight(int weatherType) {
 		 boolean isDay = true;
@@ -450,10 +431,6 @@ public class Util
     	{
     		return Util.getStringFromSharedPref(Util.EN_NAME, "");
     	}
-    }
-    public static String getWeatherInfo()
-    {
-    	return Util.getStringFromSharedPref(Util.SCENE_INFO, "");
     }
     
 //    public static int getWeathType()
