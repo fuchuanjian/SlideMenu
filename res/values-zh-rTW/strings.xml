@@ -25,7 +25,7 @@
     <string name="about">關於</string>
     <string name="input_city_name">請輸入查詢的城市名</string>
     <string name="not_find_city">找不到該城市 請嘗試英文查找</string>
-    <string name="thank">親愛的用戶，感謝使用此動態壁紙。關於應用中插入廣告，還請您見諒。如果有意見反饋麻煩請您留言，我會及時改進。</string> 
+    <string name="thank">親愛的用戶，感謝使用此動態壁紙。本壁紙應用模仿自360天氣。關於應用中插入廣告，還請您見諒。如果有意見反饋麻煩請您留言，我會及時改進。</string> 
     <string-array name="weather_array" >
         <item>晴</item>
         <item>多雲</item>

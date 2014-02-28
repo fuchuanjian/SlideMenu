@@ -238,10 +238,12 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
                 newScene = new GLRain(WeatherType.RAINY_STORM);
                 break;
             case WeatherType.SAND_STORM:
-                newScene = new GLSandstormScene(WeatherType.SAND_STORM);
+//                newScene = new GLSandstormScene(WeatherType.SAND_STORM);
+            	 newScene = new GLFog();
                 break;
             case WeatherType.DUST_FLOATING:
-                newScene = new GLSandstormScene(WeatherType.DUST_FLOATING);
+//                newScene = new GLSandstormScene(WeatherType.DUST_FLOATING);
+            	 newScene = new GLFog();
                 break;
             case WeatherType.SNOW_LIGHT:
                 newScene = new GLSnowScene(WeatherType.SNOW_LIGHT);

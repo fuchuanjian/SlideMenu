@@ -30,11 +30,12 @@
                 android:layout_weight="1"
                 android:background="@drawable/setting_btn_selector"
                 android:gravity="center"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
                 android:text="@string/set_wallpaper"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:singleLine="true"
+                android:textSize="18sp" />
             <View android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
@@ -48,11 +49,16 @@
                 android:layout_weight="1"
                 android:background="@drawable/setting_btn_selector"
                 android:gravity="center"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
                 android:text="@string/setting"
+                android:focusable="true" 
+		        android:marqueeRepeatLimit="marquee_forever" 
+		        android:focusableInTouchMode="true" 
+		        android:scrollHorizontally="true"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+               android:singleLine="true"
+                android:textSize="18sp"  />
             <View android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
@@ -81,7 +87,6 @@
         android:id="@+id/layout_ad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@color/black_alpha"
         android:orientation="vertical" />
     </LinearLayout>
@@ -94,6 +99,11 @@
         android:layout_alignParentTop="true"
         android:gravity="center_vertical"
         android:text=""
+        android:focusable="true" 
+        android:marqueeRepeatLimit="marquee_forever" 
+        android:focusableInTouchMode="true" 
+        android:scrollHorizontally="true"
+        android:singleLine="true"
         android:textColor="@color/white"
         android:textSize="20sp" />
 

@@ -56,7 +56,7 @@ public class MainHomeActivity extends Activity
 			R.drawable.bg_snow,
 			R.drawable.bg_overcast, 
 			R.drawable.bg_cloudy_night,
-			R.drawable.bg_sand_storm,
+//			R.drawable.bg_sand_storm,
 			R.drawable.bg_na};
 		int[][] imgType = new int[10][];
 		
@@ -107,7 +107,7 @@ public class MainHomeActivity extends Activity
 		//bg_fine_day
 		imgType[2] = new int[]{0};
 		//bg_fog
-		imgType[3] = new int[]{18};
+		imgType[3] = new int[]{18,20,29};
 		//bg_haze
 		imgType[4] = new int[]{33};
 		//bg_snow
@@ -117,9 +117,9 @@ public class MainHomeActivity extends Activity
 		//bg_fine_night
 		imgType[7] = new int[]{100,101};
 		//bg_sand_storm
-		imgType[8] = new int[]{20,29};
+//		imgType[8] = new int[]{20,29};
 		//bg_na
-		imgType[9] = new int[]{5};
+		imgType[8] = new int[]{5};
 		checkifNeedTolacate();
 		checkCanShowAd();
 //		String enString = URLUtil.encodeURL("a15310888895deb");
