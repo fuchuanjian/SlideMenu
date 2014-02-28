@@ -27,15 +27,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.task.LocateHandler;
-import com.chuanonly.livewallpaper.util.Http;
 import com.chuanonly.livewallpaper.util.Trace;
+import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
 import com.chuanonly.livewallpaper.view.GalleryScrollView;
 import com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView;
@@ -45,6 +44,7 @@ import com.google.ads.AdView;
 
 public class MainHomeActivity extends Activity
 {
+	private static final String ID = "kFVFFTT6V0dPR0Z08ERrFjWHZVa=";
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
 	{ 
@@ -73,9 +73,10 @@ public class MainHomeActivity extends Activity
 	private Handler mHandler = new Handler();
 	private LinearLayout mContentLayout ;
 	private LinearLayout mSettingLayout;
-	private RelativeLayout mTitleBar;
 	private AdView mAdView;
-	private LinearLayout mBottomLyout;
+	private LinearLayout mADLayout;
+	private ImageView mArrowIV;
+	private TextView mWeatherInfo;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -83,14 +84,12 @@ public class MainHomeActivity extends Activity
 		setContentView(R.layout.main_home);
 		mInflater = LayoutInflater.from(this);
 		mContentLayout = (LinearLayout)findViewById(R.id.layout_content);
-		mSettingLayout = (LinearLayout) findViewById(R.id.setting_panel);
-		mBottomLyout = (LinearLayout) findViewById(R.id.layout_bottom);
-		
-		mTitleBar = (RelativeLayout) findViewById(R.id.title_bar);
+		mSettingLayout = (LinearLayout) findViewById(R.id.setting_panel_layout);
+		mADLayout = (LinearLayout) findViewById(R.id.layout_ad);
+		mWeatherInfo = (TextView) findViewById(R.id.city_info);
 		mContentLayout.setVisibility(View.INVISIBLE);
 		mSettingLayout.setVisibility(View.INVISIBLE);
-		mTitleBar.setVisibility(View.INVISIBLE);
-		
+		mWeatherInfo.setVisibility(View.INVISIBLE);
 		mScrollView = new GalleryScrollView(this);
 		mContentLayout.addView(mScrollView);
 		initScrollView();
@@ -99,6 +98,8 @@ public class MainHomeActivity extends Activity
 		fLayout.addView(mWallpaperView);
 		findViewById(R.id.setting_menu).setOnClickListener(clickListener);
 		findViewById(R.id.setting_wallpaper).setOnClickListener(clickListener);
+		mArrowIV = (ImageView) findViewById(R.id.setting_arrow);
+		mArrowIV.setOnClickListener(clickListener);
 		//bg_rain
 		imgType[0] = new int[]{7,8,9,10,3};
 		//bg_cloudy_day
@@ -119,10 +120,25 @@ public class MainHomeActivity extends Activity
 		imgType[8] = new int[]{20,29};
 		//bg_na
 		imgType[9] = new int[]{5};
-		mAdView = new AdView(this, AdSize.BANNER, "a15310888895deb");
-		mBottomLyout.addView(mAdView);
-		mAdView.loadAd(new AdRequest());
 		checkifNeedTolacate();
+		checkCanShowAd();
+//		String enString = URLUtil.encodeURL("a15310888895deb");
+	}
+
+
+	private void checkCanShowAd()
+	{
+		int loginCnt = Util.getIntFromSharedPref(Util.LOG_INT_CNT, 0);
+		if (loginCnt >5 && Util.isNetworkAvailable(getApplicationContext()))
+		{			
+			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
+			Trace.i("fu",URLUtil.decodeURL(ID));
+			mADLayout.addView(mAdView);
+			mAdView.loadAd(new AdRequest());
+			
+		}
+		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
+		
 	}
 
 
@@ -189,11 +205,6 @@ public class MainHomeActivity extends Activity
 			}else if (view.getId() == R.id.setting_wallpaper)
 			{
 				startIntentWallpaperChooser();
-			}else if (view.getId() == R.id.city_name) 
-			{
-				Intent intent = new Intent(MainHomeActivity.this, ChooseCityActivity.class);
-				startActivity(intent);
-				overridePendingTransition(R.anim.anim_right_enter, R.anim.anim_defalut);
 			}else if (view.getId() == R.id.city_info)
 			{
 				if (Util.isNetworkAvailable(MyApplication.getContext()) 
@@ -206,6 +217,17 @@ public class MainHomeActivity extends Activity
 				{
 					sence = Util.normalDayOrNight(sence);
 					mWallpaperView.setDirty(sence);
+				}
+			}else if (view.getId() == R.id.setting_arrow)
+			{
+				if (mContentLayout.getVisibility() == View.VISIBLE)
+				{
+					mContentLayout.setVisibility(View.GONE);
+					mArrowIV.setImageResource(R.drawable.arrow_up);
+				}else 
+				{
+					mContentLayout.setVisibility(View.VISIBLE);
+					mArrowIV.setImageResource(R.drawable.arrow_down);
 				}
 			}else
 			{				
@@ -256,7 +278,11 @@ public class MainHomeActivity extends Activity
 		@Override
 		public void run()
 		{
-			mContentLayout.setVisibility(View.VISIBLE);
+			if (mContentLayout.getVisibility() == View.GONE)
+			{				
+			}else {
+				mContentLayout.setVisibility(View.VISIBLE);
+			}
 			mSettingLayout.setVisibility(View.VISIBLE);
 			checkTitleBar();
 		}
@@ -273,11 +299,10 @@ public class MainHomeActivity extends Activity
 		}
 		if (!TextUtils.isEmpty(cityName))
 		{
-			mTitleBar.setVisibility(View.VISIBLE);
-			((TextView)findViewById(R.id.city_name)).setText(cityName);
-			((TextView)findViewById(R.id.city_info)).setText(info+" \t "+temperatrue);
+			mWeatherInfo.setVisibility(View.VISIBLE);
+			mWeatherInfo.setText(cityName +" \t "+info +" \t "+ temperatrue);
 		}else {
-			mTitleBar.setVisibility(View.GONE);
+			mWeatherInfo.setVisibility(View.GONE);
 		}
 		
 	}

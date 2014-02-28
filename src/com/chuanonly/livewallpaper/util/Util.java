@@ -45,10 +45,13 @@ public class Util
 	public static final String MODE = "mode";
 
 	public static final String LAST_PICK_TIME = "last_pick_time";
+
+	public static final String LOG_INT_CNT = "login";
 	
 	public static final long HOUR_2 = 2*60*60*1000;
 	
 	public static final long HOUR_HALF = 30*60*1000;
+	
 	
 	public static final String LAST_UPDATETIME = "lasttime";
 	

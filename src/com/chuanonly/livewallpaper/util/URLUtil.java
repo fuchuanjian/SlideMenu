@@ -2072,7 +2072,6 @@ public class URLUtil
 		{
     		 String bysStr = encodeBytes(line.getBytes("UTF-8"));
     		 int pos = bysStr.indexOf("=");
-    		 Log.i("fu","bysStr ---- "+ bysStr);
     		 String head = "";
     		 String end = "";
     		 if (pos > 0)
@@ -2085,7 +2084,6 @@ public class URLUtil
     		 }
     		 head =new StringBuffer(head).reverse().toString();
     		 bysStr = head+end;
-    		 Log.i("fu","head end "+ head+"  "+end);
     		 
     		 bysStr = encodeBytes(bysStr.getBytes("UTF-8"));
     		 pos = bysStr.indexOf("=");
