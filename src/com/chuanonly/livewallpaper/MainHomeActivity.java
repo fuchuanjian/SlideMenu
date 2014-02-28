@@ -428,7 +428,7 @@ public class MainHomeActivity extends Activity
 		String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
 		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
 		
-		if (Util.isNetworkAvailable(MyApplication.getContext()))
+		if (MyApplication.language <2 && Util.isNetworkAvailable(MyApplication.getContext()))
 		{
 			if (TextUtils.isEmpty(cityCode))
 			{

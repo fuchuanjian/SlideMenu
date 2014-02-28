@@ -186,21 +186,10 @@
                 style="@style/setting_item_layout"
                 android:background="@drawable/list_selector" >
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:duplicateParentState="true"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        style="@style/setting_item_main_text"
-                        android:text="下载完整版天气壁纸" />
 
                     <TextView
                         style="@style/setting_item_sum_text"
-                        android:text="本应用模仿自360天气,这是原版下载链接" />
-                </LinearLayout>
+                        android:text="@string/thank" />
             </LinearLayout>
 
             <View
