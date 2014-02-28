@@ -1,6 +1,5 @@
 package com.chuanonly.livewallpaper;
 
-import android.R.integer;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -46,12 +45,6 @@ public class SettingActivity extends Activity
 		}
 		findViewById(R.id.set_city).setOnClickListener(click);
 		
-		String cityName = Util.getStringFromSharedPref(Util.NAME, "");
-		weatherInfoTV  = (TextView)findViewById(R.id.weather_info_txt);
-		if (!TextUtils.isEmpty(cityName))
-		{
-			showWeatherInfo();
-		}
 	}
 
 	private void showWeatherInfo()
@@ -79,6 +72,13 @@ public class SettingActivity extends Activity
 	protected void onResume()
 	{
 		super.onResume();
+		String cityName = Util.getStringFromSharedPref(Util.NAME, "");
+		weatherInfoTV  = (TextView)findViewById(R.id.weather_info_txt);
+		if (!TextUtils.isEmpty(cityName))
+		{
+			showWeatherInfo();
+		}
+		
 		registerReceiver();
 		int mode = Util.getIntFromSharedPref(Util.MODE, -1);
 		String city = Util.getStringFromSharedPref(Util.CODE, "");
@@ -134,6 +134,7 @@ public class SettingActivity extends Activity
 			}else if (v.getId() == R.id.set_city){
 				Intent intent = new Intent(SettingActivity.this, ChooseCityActivity.class);
 				startActivity(intent);
+				overridePendingTransition(R.anim.anim_right_enter, R.anim.anim_defalut);
 			}
 			
 			if (pos != -1)
@@ -186,5 +187,10 @@ public class SettingActivity extends Activity
 			}
 		};
 	};
-	
+	@Override
+	public void finish()
+	{
+		super.finish();
+		overridePendingTransition(R.anim.anim_defalut, R.anim.anim_right_exit);
+	}
 }

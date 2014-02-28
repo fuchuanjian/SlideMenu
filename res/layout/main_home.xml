@@ -14,7 +14,7 @@
         android:id="@+id/title_bar"
         android:layout_width="fill_parent"
         android:layout_height="44dp"
-        android:background="@drawable/title_bar_bg"
+        android:background="@color/title_bg_color"
         android:gravity="center_vertical" >
 
         <TextView
@@ -56,6 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/layout_content"
+        android:background="@drawable/black_alpha_shape"
         android:orientation="horizontal" >
 
         <TextView

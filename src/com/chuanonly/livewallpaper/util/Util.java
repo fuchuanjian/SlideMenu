@@ -381,16 +381,20 @@ public class Util
 //    }
     private static Toast toast;
     public static void showToast(String str) {
-        try {
-            if (toast == null) {
-                toast = Toast.makeText(MyApplication.getContext(), str, Toast.LENGTH_SHORT);
-            }
-            toast.setText(str);
-            toast.setDuration(0);
-            toast.show();
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+       showToast(str, 0);
+    }
+    public static void showToast(String str, int n) {
+      int time = Math.min(1, Math.max(n, 0));
+      try {
+          if (toast == null) {
+              toast = Toast.makeText(MyApplication.getContext(), str, Toast.LENGTH_SHORT);
+          }
+          toast.setText(str);
+          toast.setDuration(n);
+          toast.show();
+      } catch (Exception e) {
+          // TODO: handle exception
+      }
     }
     
     public static void release() {

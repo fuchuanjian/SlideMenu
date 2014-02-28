@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.chuanonly.livewallpaper.data.City;
-import com.chuanonly.livewallpaper.service.WallpaperService;
+import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.util.QueryCityHandler;
 import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
@@ -82,10 +83,25 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				mSearchEdit.setText(mCity.name);
 				mSearchEdit.selectAll();
 				mSearchEdit.addTextChangedListener(textWatcher);
+				
+				String lasCityCode = Util.getStringFromSharedPref(Util.CODE, "");
+				if (mCity.code .equals(lasCityCode))
+				{
+					finish();
+				}
+				
 				Util.setStringToSharedPref(Util.CODE, mCity.code);
 				Util.setStringToSharedPref(Util.NAME, mCity.name);
 				Util.setStringToSharedPref(Util.EN_NAME, mCity.enName);
+				Util.setStringToSharedPref(Util.SCENE_INFO, "");
+				Util.setStringToSharedPref(Util.SCENE_TEMPERATUR, "");
 				Trace.i("fu",mCity.enName);
+				Util.showToast("Choose City "+ mCity.enName, 1);
+				if ( !TextUtils.isEmpty(mCity.code) && Util.isNetworkAvailable(MyApplication.getContext()))
+				{
+					new HTTPTask().execute();
+				}
+				finish();
 			}
 		});
 		mList.setScrollbarFadingEnabled(true);
@@ -250,5 +266,12 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 			mimm.showSoftInput(mSearchEdit, InputMethodManager.SHOW_IMPLICIT);
 		}
 
+	}
+	
+	@Override
+	public void finish()
+	{
+		super.finish();
+		overridePendingTransition(R.anim.anim_defalut, R.anim.anim_right_exit);
 	}
 }

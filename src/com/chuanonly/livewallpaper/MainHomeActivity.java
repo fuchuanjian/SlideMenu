@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
 
-import android.R.integer;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.WallpaperManager;
@@ -28,6 +27,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.chuanonly.livewallpaper.model.WeatherType;
@@ -68,6 +68,8 @@ public class MainHomeActivity extends Activity
 	private LocateHandler mlLocateAsyncTask = null;
 	private Handler mHandler = new Handler();
 	private LinearLayout mContentLayout ;
+	private LinearLayout mSettingLayout;
+	private RelativeLayout mTitleBar;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -75,7 +77,12 @@ public class MainHomeActivity extends Activity
 		setContentView(R.layout.main_home);
 		mInflater = LayoutInflater.from(this);
 		mContentLayout = (LinearLayout)findViewById(R.id.layout_content);
-		mContentLayout.setVisibility(View.GONE);
+		mSettingLayout = (LinearLayout) findViewById(R.id.setting_panel);
+		mTitleBar = (RelativeLayout) findViewById(R.id.title_bar);
+		mContentLayout.setVisibility(View.INVISIBLE);
+		mSettingLayout.setVisibility(View.INVISIBLE);
+		mTitleBar.setVisibility(View.INVISIBLE);
+		
 		mScrollView = new GalleryScrollView(this);
 		mContentLayout.addView(mScrollView);
 		initScrollView();
@@ -118,7 +125,7 @@ public class MainHomeActivity extends Activity
 					mlLocateAsyncTask.tryToLacate();
 				}
 			}else {
-				if (mode == 2)
+				if (mode == 2 && Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0) + Util.HOUR_HALF < System.currentTimeMillis() )
 					new HTTPTask().execute();
 			}
 		}
@@ -183,6 +190,7 @@ public class MainHomeActivity extends Activity
 			{
 				Intent intent = new Intent(MainHomeActivity.this, SettingActivity.class);
 				startActivity(intent);
+				overridePendingTransition(R.anim.anim_right_enter, R.anim.anim_defalut);
 			}else if (view.getId() == R.id.setting_wallpaper)
 			{
 				startIntentWallpaperChooser();
@@ -225,7 +233,6 @@ public class MainHomeActivity extends Activity
 		super.onResume();
 		registerReceiver();
 		mWallpaperView.onResume();
-		checkTitleBar();
 		
 		mHandler.postDelayed(mResumeRunnable, 200);
 	}
@@ -236,6 +243,8 @@ public class MainHomeActivity extends Activity
 		public void run()
 		{
 			mContentLayout.setVisibility(View.VISIBLE);
+			mSettingLayout.setVisibility(View.VISIBLE);
+			checkTitleBar();
 			int mode = Util.getIntFromSharedPref(Util.MODE, -1);
 			if (mode == 2)
 			{
@@ -260,11 +269,11 @@ public class MainHomeActivity extends Activity
 		}
 		if (!TextUtils.isEmpty(cityName))
 		{
-			findViewById(R.id.title_bar).setVisibility(View.VISIBLE);
+			mTitleBar.setVisibility(View.VISIBLE);
 			((TextView)findViewById(R.id.city_name)).setText(cityName);
 			((TextView)findViewById(R.id.city_info)).setText(info+" \t "+temperatrue);
 		}else {
-			findViewById(R.id.title_bar).setVisibility(View.GONE);
+			mTitleBar.setVisibility(View.GONE);
 		}
 		
 	}
@@ -325,11 +334,13 @@ public class MainHomeActivity extends Activity
         intent.putExtra(WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT, new ComponentName(this, WallpaperService.class));
         try {
             startActivity(intent);
+			overridePendingTransition(R.anim.anim_right_enter, R.anim.anim_defalut);
         } catch (Exception e) {
             intent = new Intent();
             intent.setAction(WallpaperManager.ACTION_LIVE_WALLPAPER_CHOOSER);
             try {
                 startActivity(intent);
+				overridePendingTransition(R.anim.anim_right_enter, R.anim.anim_defalut);
             } catch (Exception e2) {
                 sucess = false;
             }
