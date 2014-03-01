@@ -22,9 +22,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.chuanonly.livewallpaper.data.City;
-import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.util.QueryCityHandler;
-import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 
 public class ChooseCityActivity extends Activity implements OnClickListener
@@ -36,13 +34,22 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 	private InputMethodManager mimm = null;
 	private QueryCityHandler queryHandler = null;
     private City mCity;
+    private TextView mEmptyTV;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chose_city);
+		mEmptyTV = (TextView) findViewById(R.id.empty_city);
 		initView();
-		
+		findViewById(R.id.return_btn).setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View arg0)
+			{
+				finish();
+			}
+		});
 	}
 
 	@Override
@@ -82,10 +89,23 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				mSearchEdit.setText(mCity.name);
 				mSearchEdit.selectAll();
 				mSearchEdit.addTextChangedListener(textWatcher);
+				
+				Util.setIntToSharedPref(Util.MODE, 2);
+				String lasCityCode = Util.getStringFromSharedPref(Util.CODE, "");
+				if (mCity.code .equals(lasCityCode))
+				{
+					finish();
+				}
+				
 				Util.setStringToSharedPref(Util.CODE, mCity.code);
 				Util.setStringToSharedPref(Util.NAME, mCity.name);
 				Util.setStringToSharedPref(Util.EN_NAME, mCity.enName);
-				Trace.i("fu",mCity.enName);
+				Util.setStringToSharedPref(Util.SCENE_INFO, "");
+				Util.setStringToSharedPref(Util.SCENE_TEMPERATUR, "");
+				Util.setLongToSharedPref(Util.LAST_UPDATETIME, 0);
+				Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
+				Util.checkIfNeedToUpdateWeather();
+				finish();
 			}
 		});
 		mList.setScrollbarFadingEnabled(true);
@@ -128,11 +148,11 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		Collection<City> queryResult = queryHandler.queryHotcities();
 		if (queryResult == null || queryResult.isEmpty())
 		{
-			// mNoCityText.setVisibility(View.VISIBLE);
+			mEmptyTV.setVisibility(View.VISIBLE);
 			mList.setVisibility(View.GONE);
 		} else
 		{
-			// mNoCityText.setVisibility(View.GONE);
+			mEmptyTV.setVisibility(View.GONE);
 			mAdapter.resetItems(queryResult);
 			mList.setAdapter(mAdapter);
 			mList.setVisibility(View.VISIBLE);
@@ -155,6 +175,7 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		if (query == null || query.length() == 0)
 		{
 			mList.setVisibility(View.GONE);
+			mEmptyTV.setVisibility(View.VISIBLE);
 			return;
 		} else
 		{
@@ -164,13 +185,14 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		mAdapter.resetItems(queryResult);
 		mList.setAdapter(mAdapter);
 		mList.setVisibility(View.VISIBLE);
+		mEmptyTV.setVisibility(View.GONE);
 		if (queryResult == null || queryResult.isEmpty())
 		{
-			// mNoCityText.setVisibility(View.VISIBLE);
 			mList.setVisibility(View.GONE);
+			mEmptyTV.setVisibility(View.VISIBLE);
 		} else
 		{
-			// mNoCityText.setVisibility(View.GONE);
+			mEmptyTV.setVisibility(View.GONE);
 			mList.setVisibility(View.VISIBLE);
 		}
 	}
@@ -229,9 +251,15 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 
 			City city = this.getItem(position);
 
-			holder.nameView.setText(city.name);
+			if (MyApplication.language < 2)
+			{
+				holder.nameView.setText(city.name);
+				holder.parentView.setText(city.parentName);				
+			}else {
+				holder.nameView.setText(city.enName);
+				holder.parentView.setText(city.enProvice);	
+			}
 			holder.nameView.setTag(city);
-			holder.parentView.setText(city.parentName);
 			holder.splitView.setText("-");
 			return convertView;
 		}
@@ -250,5 +278,12 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 			mimm.showSoftInput(mSearchEdit, InputMethodManager.SHOW_IMPLICIT);
 		}
 
+	}
+	
+	@Override
+	public void finish()
+	{
+		super.finish();
+		overridePendingTransition(R.anim.anim_defalut, R.anim.anim_right_exit);
 	}
 }

@@ -131,7 +131,7 @@ public class Background {
 		{		
 			if (resId <= 0)
 			{
-				resId = R.drawable.bg_na;			
+				resId = R.drawable.bg_fine_day;			
 				return -1;					
 			}
 			if (isNeedCache)
@@ -206,7 +206,7 @@ public class Background {
 	public String getBgStr()
 	{
 		if (mBgStr == null || mBgStr.equals(""))
-			return "bg_na";
+			return "bg_fine_day";
 		return mBgStr;
 	}
 

@@ -75,7 +75,7 @@ public class GLSunnyNight extends BaseScene
 			   seawaterSpeedMax = 200f;
 		}
 		if ((mDensity > 0.0F) && (mDensity <= 1.0F)) {
-		    starScale = 0.8f;
+		    starScale = 0.7f;
 		    fickerStarLargeScale = 1.0f;
 		    fickerStarNormalScale = 1.0f;
 		    fickerStarSmallScale = 1.0f;
@@ -83,7 +83,7 @@ public class GLSunnyNight extends BaseScene
 		    moonScale = 0.6f;
 		    tringleDiff = 0.1f;
 		} else if ((mDensity > 1.0F) && (mDensity <= 1.5F)) {
-		    starScale = 1.0f;
+		    starScale = 1.1f;
 		    fickerStarLargeScale = 1.2f;
 		    fickerStarNormalScale = 1.0f;
 		    fickerStarSmallScale = 1.0f;
@@ -91,7 +91,7 @@ public class GLSunnyNight extends BaseScene
 		    moonScale = 0.75f;
 		    tringleDiff = 0.2f;
 		} else if (mDensity > 1.5F) {
-		    starScale = 1.2f;
+		    starScale = 1.3f;
 		    fickerStarLargeScale = 1.5f;
 		    fickerStarNormalScale = 1.2f;
 		    fickerStarSmallScale = 1.2f;

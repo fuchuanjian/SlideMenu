@@ -2,7 +2,6 @@ package com.chuanonly.livewallpaper.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -263,14 +262,15 @@ public class GalleryScrollView extends LinearLayout {
 
     private void requestViewPagerDisallowInterceptTouchEvent() {
 
-        ViewParent parent = getParent();
-        while (parent != null) {
-            if (parent instanceof ViewPager) {
-                parent.requestDisallowInterceptTouchEvent(true);
-                break;
-            }
-            parent = parent.getParent();
-        }
+    	//todo
+//        ViewParent parent = getParent();
+//        while (parent != null) {
+//            if (parent instanceof ViewPager) {
+//                parent.requestDisallowInterceptTouchEvent(true);
+//                break;
+//            }
+//            parent = parent.getParent();
+//        }
     }
 
     private int getScrollRange() {

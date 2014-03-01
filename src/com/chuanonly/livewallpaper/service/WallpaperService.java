@@ -15,17 +15,16 @@ import android.content.IntentFilter;
 import android.content.pm.ConfigurationInfo;
 import android.opengl.GLSurfaceView;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.SurfaceHolder;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.model.WeatherType;
-import com.chuanonly.livewallpaper.util.Trace;
+import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.util.Util;
 
 public class WallpaperService extends GLWallpaperService
 {
-
-	public static final long HOUR_3 = 3 * 60 * 60 * 1000;
 
 	public static final String ACTION_CHANGE_BROCAST = "com.chuanonly.livewallpaper.changewallpaper";
 
@@ -121,14 +120,24 @@ public class WallpaperService extends GLWallpaperService
 				//3hour
 				long curTime = System.currentTimeMillis();
 				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
-				if (lasttime + HOUR_3 < curTime)
+				if (lasttime + Util.HOUR_2 < curTime)
 				{
 					mHandler.postDelayed(changeRunnable, 200);
 				}
 				
-			}else if (mode == 3)
+			}else if (mode == 2)
 			{
-				//getlastupdate
+				long curTime = System.currentTimeMillis();
+				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
+				String city = Util.getStringFromSharedPref(Util.CODE, "");
+				if (!TextUtils.isEmpty(city) && lasttime + Util.HOUR_2 <curTime )
+				{
+					if (Util.isNetworkAvailable(getApplicationContext()))
+					{
+						//todo
+						new HTTPTask().execute();
+					}
+				}
 			}
 			
 		}
@@ -148,9 +157,9 @@ public class WallpaperService extends GLWallpaperService
 				{					
 					category = new Random().nextInt(44);
 				}
-				category = Util.getCurrentCategory(category);
+				category = Util.normalDayOrNight(category);
 				Util.setLongToSharedPref(Util.LAST_UPDATETIME, System.currentTimeMillis());
-				Util.setIntToSharedPref(Util.SCENE_TYPE, category);
+				Util.setIntToSharedPref(Util.TYPE, category);
 				MyApplication.getContext().sendBroadcast(new Intent(WallpaperService.ACTION_CHANGE_BROCAST));
 			}
 		};
@@ -235,7 +244,6 @@ public class WallpaperService extends GLWallpaperService
 		{
 			mFilter = new IntentFilter();
 			mFilter.addAction(ACTION_CHANGE_BROCAST);
-			mFilter.addAction(ACTION_PAUSE_BROCAST);
 		}
 		try
 		{
@@ -265,7 +273,8 @@ public class WallpaperService extends GLWallpaperService
 				if (renderer == null)
 					return;
 				
-				int category  = Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.NA_SCENE);
+				int category  = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
+				category = Util.normalDayOrNight(category);
 				renderer.setDirtyScene(category);
 			} else if (ACTION_PAUSE_BROCAST.equals(action))
 			{

@@ -10,44 +10,101 @@
         android:layout_height="match_parent" >
     </FrameLayout>
 
-    <com.chuanonly.livewallpaper.view.GalleryScrollView
-        android:id="@+id/scrollview_gallery"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/black_alpha"
-        android:orientation="horizontal" />
     <LinearLayout
-        android:id="@+id/setting_panel"
-        android:layout_above="@id/scrollview_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView 
-            android:id="@+id/setting_wallpaper"
-            android:layout_width="0dp"
-            android:gravity="center"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/setting_panel_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/set_wallpaper"
-            android:textColor="@color/white"
-            android:background="@drawable/setting_btn_selector"
-            android:textSize="20sp"/>
-        <TextView 
-            android:id="@+id/setting_menu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:gravity="center"
-            android:text="@string/setting"
-            android:textColor="@color/white"
-            android:background="@drawable/setting_btn_selector"
-            android:textSize="20sp"/>
+            android:background="@drawable/black_alpha_shape"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/setting_wallpaper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/setting_btn_selector"
+                android:gravity="center"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:text="@string/set_wallpaper"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:textSize="18sp" />
+            <View android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/divider"/>
+
+            <TextView
+                android:id="@+id/setting_menu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/setting_btn_selector"
+                android:gravity="center"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp"
+                android:text="@string/setting"
+                android:focusable="true" 
+		        android:marqueeRepeatLimit="marquee_forever" 
+		        android:focusableInTouchMode="true" 
+		        android:scrollHorizontally="true"
+                android:textColor="@color/white"
+               android:singleLine="true"
+                android:textSize="18sp"  />
+            <View android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/divider"/>
+            <ImageView
+                android:id="@+id/setting_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/setting_btn_selector"
+                android:minWidth="35dp"
+                android:src="@drawable/arrow_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/black_alpha"
+            android:orientation="horizontal" >
+        </LinearLayout>
+      <LinearLayout
+        android:id="@+id/layout_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_alpha"
+        android:orientation="vertical" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/city_info"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:text=""
+        android:focusable="true" 
+        android:marqueeRepeatLimit="marquee_forever" 
+        android:focusableInTouchMode="true" 
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </RelativeLayout>

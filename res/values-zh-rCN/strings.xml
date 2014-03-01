@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+ <string name="wallpaper_name">4季天气动态壁纸</string>
+    <string name="app_name">天气动态壁纸</string>
+    <string name="toast_exit">再按一下返回键退出</string>
+    <string name="temp_unit">°C</string>
+    
+     <string name="setting">设置</string>
+     <string name="dislpay_setting">显示设置</string>
+     <string name="set_wallpaper">设置为桌面动态壁纸</string>
+     <string name="error">无法打开桌面动态壁纸选择器</string>
+     <string name="china">中国</string>
+     <string name="weather_city">城市:\t</string>
+     <string name="weather_info">\t%1$s \t %2$s \t %3$s</string>
+     <string name="empty">城市:\tnull</string>
+     
+     <!-- setting -->
+    <string name="no_change">不切换动态壁纸</string>
+    <string name="no_change_desc_default">当前壁纸 : </string>
+    <string name="no_change_desc">当前壁纸 : %s</string>
+    <string name="random_change">自动切换动态壁纸</string> 
+    <string name="random_change_two_hour">每2小时自动更换</string>
+    <string name="display_base_city">根据所在城市显示实时天气壁纸</string>
+    <string name="chose_city">选择城市</string>
+    <string name="about">关于壁纸</string>
+    <string name="input_city_name">请输入查询的城市名</string>
+    <string name="not_find_city">找不到该城市</string>
+    <string name="thank">亲爱的用户，感谢使用此动态壁纸。本壁纸应用模仿自360天气。关于应用中插入广告，还请您见谅。如果有意见反馈麻烦请您留言，我会及时改进。</string> 
+    
+    <string-array name="weather_array" >
+        <item>晴</item>
+        <item>多云</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>雾霾</item>
+    </string-array>
+</resources>

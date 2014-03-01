@@ -7,16 +7,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.chuanonly.livewallpaper.util.Util;
+
 public class WallpaperInfo
 {
-	public String city;
-	public String info;
-	public String img;
-	public String temperature;
-	public String high;
-	public String low;
-	public String time;
-	public WallpaperInfo(String json)
+	public static String city;
+	public static String info;
+	public static String img;
+	public static String temperature;
+	public static String high;
+	public static String low;
+	public static String time;
+	public static void parseWallpaperInfo(String json)
 	{
 		if (json == null)
 			return;
@@ -46,14 +48,25 @@ public class WallpaperInfo
 			}
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 			time = formatter.format(new Date(System.currentTimeMillis()));
+			
+			Util.setStringToSharedPref(Util.SCENE_INFO, info);
+			Util.setStringToSharedPref(Util.SCENE_TEMPERATUR, temperature);
+			Util.setIntToSharedPref(Util.TYPE, Integer.valueOf(img));
+			Util.setIntToSharedPref(Util.REAL_TYPE, Integer.valueOf(img));
+			Util.setLongToSharedPref(Util.LAST_UPDATETIME, System.currentTimeMillis());
+			Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
+			int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+			if (mode ==-1)
+			{
+				 Util.setIntToSharedPref(Util.MODE, 2);
+			}
 		} catch (JSONException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	@Override
-	public String toString()
+	public static String toStr()
 	{
 		return "WallpaperInfo [city=" + city + ", info=" + info + ", img="
 				+ img + ", temperature=" + temperature + ", high=" + high

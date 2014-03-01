@@ -1,18 +1,13 @@
 
 package com.chuanonly.livewallpaper.service;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Random;
-
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.R.integer;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
+import android.text.TextUtils;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.model.WeatherType;
@@ -23,7 +18,6 @@ import com.chuanonly.livewallpaper.scenes.GLCloudNight;
 import com.chuanonly.livewallpaper.scenes.GLFog;
 import com.chuanonly.livewallpaper.scenes.GLHalistoneScene;
 import com.chuanonly.livewallpaper.scenes.GLHazeScene;
-import com.chuanonly.livewallpaper.scenes.GLNAScene;
 import com.chuanonly.livewallpaper.scenes.GLOvercast;
 import com.chuanonly.livewallpaper.scenes.GLRain;
 import com.chuanonly.livewallpaper.scenes.GLSandstormScene;
@@ -35,7 +29,6 @@ import com.chuanonly.livewallpaper.scenes.GLSunnyNight;
 import com.chuanonly.livewallpaper.scenes.GLThunder;
 import com.chuanonly.livewallpaper.util.MatrixState;
 import com.chuanonly.livewallpaper.util.ShaderManager;
-import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 
 /**
@@ -66,7 +59,20 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        int category = Util.getCurrentCategory(Util.getIntFromSharedPref(Util.SCENE_TYPE, WeatherType.NA_SCENE));
+    	int category = Util.getIntFromSharedPref(Util.TYPE, WeatherType.FINE);
+    	boolean needAdjust = true;
+    	int mode = Util.getIntFromSharedPref(Util.MODE, 1);
+    	long lastPickTime = Util.getLongFromSharedPref(Util.LAST_PICK_TIME, 0);
+    	if ( mode != 2  && lastPickTime + Util.HOUR_HALF > System.currentTimeMillis())
+    	{
+    		needAdjust = false;
+    	}
+    	if (mode == 2 && !TextUtils.isEmpty(Util.getStringFromSharedPref(Util.SCENE_INFO, "")) )
+    	{
+    		category = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
+    	}
+    	if (needAdjust)
+    		category = Util.normalDayOrNight(category);
         boolean reload = category != sceneCategory ? true : false;
         sceneCategory = category;
 
@@ -177,13 +183,15 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
     }
 
     public void setDirtyScene(int k) {
-        if (sceneCategory != k) {
-            sceneCategory = k;
+    	int category = k;
+    	
+        if (sceneCategory != category) {
+            sceneCategory = category;
             isDirty = true;
         }
         if (bg == null || scene == null) {
             isDirty = true;
-        } else if (scene != null && nextScene == null && scene.getCategory() != k) {
+        } else if (scene != null && nextScene == null && scene.getCategory() != category) {
             isDirty = true;
         }
 
@@ -230,10 +238,12 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
                 newScene = new GLRain(WeatherType.RAINY_STORM);
                 break;
             case WeatherType.SAND_STORM:
-                newScene = new GLSandstormScene(WeatherType.SAND_STORM);
+//                newScene = new GLSandstormScene(WeatherType.SAND_STORM);
+            	 newScene = new GLFog();
                 break;
             case WeatherType.DUST_FLOATING:
-                newScene = new GLSandstormScene(WeatherType.DUST_FLOATING);
+//                newScene = new GLSandstormScene(WeatherType.DUST_FLOATING);
+            	 newScene = new GLFog();
                 break;
             case WeatherType.SNOW_LIGHT:
                 newScene = new GLSnowScene(WeatherType.SNOW_LIGHT);
