@@ -1,0 +1,3031 @@
+com.amap.api.location.AMapLocation -> a:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    java.lang.String d -> d
+    java.lang.String e -> e
+    23:23:java.lang.String getProvince() -> a
+    27:28:void setProvince(java.lang.String) -> a
+    31:31:java.lang.String getCity() -> b
+    35:36:void setCity(java.lang.String) -> b
+    39:39:java.lang.String getDistrict() -> c
+    43:44:void setDistrict(java.lang.String) -> c
+    47:47:java.lang.String getCityCode() -> d
+    51:52:void setCityCode(java.lang.String) -> d
+    55:55:java.lang.String getAdCode() -> e
+    59:60:void setAdCode(java.lang.String) -> e
+com.amap.api.location.AMapLocationListener -> b:
+    void onLocationChanged(com.amap.api.location.AMapLocation) -> a
+com.amap.api.location.LocationManagerProxy -> c:
+    android.location.LocationManager a -> a
+    com.amap.api.location.LocationManagerProxy b -> b
+    com.amap.api.location.a c -> c
+    android.content.Context d -> d
+    java.util.ArrayList g -> e
+    java.util.Hashtable h -> f
+    java.lang.String i -> g
+    com.amap.api.location.core.b j -> h
+    java.lang.String k -> i
+    java.util.List l -> j
+    70:73:com.amap.api.location.LocationManagerProxy getInstance(android.content.Context) -> a
+    78:88:void a(android.content.Context) -> b
+    164:165:void setGpsEnable(boolean) -> a
+    170:190:void requestLocationUpdates(java.lang.String,long,float,com.amap.api.location.AMapLocationListener) -> a
+    195:201:void removeUpdates(com.amap.api.location.AMapLocationListener) -> a
+    379:397:void destory() -> a
+com.amap.api.location.a -> d:
+    android.content.Context f -> f
+    java.util.Vector g -> g
+    com.amap.api.location.a$a h -> h
+    int a -> a
+    com.amap.api.location.c i -> i
+    com.amap.api.location.b j -> j
+    com.amap.api.location.a k -> k
+    com.amap.api.location.AMapLocation l -> l
+    java.lang.Thread m -> m
+    boolean b -> b
+    long c -> c
+    boolean d -> d
+    boolean e -> e
+    56:59:com.amap.api.location.a a(android.content.Context,android.location.LocationManager) -> a
+    71:93:void a(long,float,com.amap.api.location.AMapLocationListener,java.lang.String) -> a
+    96:116:void a(com.amap.api.location.AMapLocationListener) -> a
+    119:120:void a(boolean) -> a
+    123:135:void b() -> a
+    13:13:java.util.Vector d() -> b
+    13:13:com.amap.api.location.AMapLocation a(com.amap.api.location.a,com.amap.api.location.AMapLocation) -> a
+    13:13:com.amap.api.location.AMapLocation a(com.amap.api.location.a) -> a
+    13:13:android.content.Context b(com.amap.api.location.a) -> b
+com.amap.api.location.a$a -> e:
+    com.amap.api.location.a a -> a
+    140:150:void handleMessage(android.os.Message) -> handleMessage
+com.amap.api.location.b -> f:
+    com.aps.i a -> a
+    boolean b -> b
+    java.lang.Thread c -> c
+    android.content.Context d -> d
+    com.amap.api.location.b e -> e
+    long f -> f
+    com.amap.api.location.a$a g -> g
+    62:65:com.amap.api.location.b a(android.content.Context,com.amap.api.location.a$a) -> a
+    69:76:void a() -> a
+    80:126:void run() -> run
+    129:132:void a(long) -> a
+    135:137:com.aps.c c() -> b
+    141:150:com.aps.c d() -> c
+    154:159:boolean e() -> d
+    164:183:com.amap.api.location.AMapLocation a(com.aps.c) -> a
+    188:204:void a(com.amap.api.location.AMapLocation,java.lang.String,java.lang.String,java.lang.String) -> a
+    207:211:boolean a(java.lang.String) -> a
+com.amap.api.location.c -> g:
+    android.location.LocationManager a -> a
+    com.amap.api.location.c b -> b
+    com.amap.api.location.a$a c -> c
+    com.amap.api.location.core.b d -> d
+    java.lang.String e -> e
+    android.location.LocationListener f -> f
+    30:34:com.amap.api.location.c a(android.content.Context,android.location.LocationManager,com.amap.api.location.a$a) -> a
+    40:57:void a(long,float,android.location.LocationListener,java.lang.String) -> a
+    60:66:void a() -> a
+    12:12:java.lang.String a(com.amap.api.location.c) -> a
+    12:12:com.amap.api.location.core.b b(com.amap.api.location.c) -> b
+    12:12:com.amap.api.location.a$a c(com.amap.api.location.c) -> c
+com.amap.api.location.core.a -> h:
+    int a -> a
+    java.lang.String b -> b
+    int c -> c
+    19:41:boolean a(android.content.Context) -> a
+    45:45:java.lang.String a() -> a
+    117:140:boolean a(java.lang.String) -> a
+    146:148:byte[] b() -> b
+com.amap.api.location.core.b -> i:
+    com.amap.api.location.core.b b -> b
+    java.lang.String c -> c
+    android.content.Context d -> d
+    android.telephony.TelephonyManager e -> e
+    android.net.ConnectivityManager f -> f
+    java.lang.String g -> g
+    java.lang.String h -> h
+    java.lang.String i -> i
+    java.lang.String j -> j
+    java.lang.String a -> a
+    34:47:com.amap.api.location.core.b a(android.content.Context) -> a
+    51:51:java.lang.String a() -> a
+    55:63:java.lang.String j() -> j
+    71:78:boolean a(java.lang.String) -> a
+    83:103:java.lang.String b() -> b
+    107:142:java.lang.String c() -> c
+    146:152:java.lang.String d() -> d
+    156:156:java.lang.String e() -> e
+    160:160:java.lang.String f() -> f
+    168:179:java.lang.String g() -> g
+    191:201:java.lang.String b(android.content.Context) -> b
+    205:217:java.lang.String c(android.content.Context) -> c
+    221:233:java.lang.String h() -> h
+    237:246:java.lang.String i() -> i
+com.amap.api.location.core.c -> j:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    int d -> d
+    205:220:void a(android.content.Context,com.amap.api.location.AMapLocation) -> a
+com.amap.api.location.core.d -> k:
+    byte[] a -> a
+    27:31:byte[] a(byte[],byte[]) -> a
+    35:37:byte[] a(byte[],java.security.Key) -> a
+    41:46:java.lang.String a() -> a
+    50:70:java.security.PublicKey a(android.content.Context) -> a
+com.amap.api.location.d -> l:
+    com.amap.api.location.c a -> a
+    72:103:void onLocationChanged(android.location.Location) -> onLocationChanged
+    113:113:void onProviderDisabled(java.lang.String) -> onProviderDisabled
+    123:123:void onProviderEnabled(java.lang.String) -> onProviderEnabled
+    134:134:void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
+com.amap.api.location.f -> m:
+    long a -> a
+    float b -> b
+    com.amap.api.location.AMapLocationListener c -> c
+    boolean d -> d
+    com.amap.api.location.AMapLocation e -> e
+    java.lang.String f -> f
+    22:26:int hashCode() -> hashCode
+    31:43:boolean equals(java.lang.Object) -> equals
+com.aps.a -> n:
+    com.aps.a a -> a
+    android.content.Context b -> b
+    int c -> c
+    android.net.ConnectivityManager d -> d
+    android.net.wifi.WifiManager e -> e
+    android.telephony.TelephonyManager f -> f
+    java.util.List g -> g
+    java.util.List h -> h
+    java.util.Map i -> i
+    com.aps.b j -> j
+    android.telephony.PhoneStateListener k -> k
+    int l -> l
+    com.aps.a$a m -> m
+    android.net.wifi.WifiInfo n -> n
+    org.json.JSONObject o -> o
+    java.lang.String p -> p
+    com.aps.c q -> q
+    long r -> r
+    long s -> s
+    boolean t -> t
+    boolean u -> u
+    long v -> v
+    long w -> w
+    long x -> x
+    com.aps.j y -> y
+    int z -> z
+    java.lang.String A -> A
+    com.aps.s B -> B
+    com.aps.y C -> C
+    long D -> D
+    long E -> E
+    android.telephony.CellLocation F -> F
+    boolean G -> G
+    118:121:com.aps.i a() -> a
+    132:178:void a(android.content.Context) -> a
+    264:423:com.aps.c b() -> b
+    457:476:void a(java.lang.String) -> a
+    486:490:void a(org.json.JSONObject) -> a
+    560:632:void c() -> c
+    652:663:void f() -> e
+    674:802:void g() -> f
+    837:870:void a(android.telephony.CellLocation) -> a
+    879:905:boolean a(long) -> a
+    924:1009:java.lang.String h() -> g
+    1019:1029:boolean a(android.net.wifi.WifiInfo) -> a
+    1043:1095:java.lang.StringBuilder i() -> h
+    1105:1344:java.lang.StringBuilder a(java.lang.Object) -> a
+    1354:1390:void a(java.util.List) -> a
+    1399:1409:boolean a(int) -> a
+    1419:1506:java.lang.String j() -> i
+    1517:1525:boolean k() -> j
+    1535:1543:boolean l() -> k
+    1738:1849:com.aps.c a(java.lang.String,boolean) -> a
+    1859:1897:void a(java.lang.StringBuilder) -> a
+    1936:1939:boolean m() -> l
+    1949:1964:void b(int) -> b
+    2195:2203:com.aps.e b(android.telephony.CellLocation) -> b
+    2213:2235:com.aps.e a(android.telephony.NeighboringCellInfo) -> a
+    2245:2276:void c(android.telephony.CellLocation) -> c
+    2285:2327:void d(android.telephony.CellLocation) -> d
+    2336:2338:void n() -> m
+    2362:2375:void o() -> n
+    2436:2458:boolean a(com.aps.c,com.aps.c) -> a
+    2468:2475:boolean p() -> o
+    2519:2536:void d() -> d
+    2589:2636:void q() -> p
+    2645:2665:void r() -> q
+    2697:2706:boolean s() -> r
+    2781:2798:com.aps.c t() -> s
+    2805:2814:void u() -> t
+    40:40:boolean a(com.aps.a) -> a
+    40:40:android.telephony.TelephonyManager b(com.aps.a) -> b
+    40:40:android.telephony.CellLocation a(com.aps.a,android.telephony.CellLocation) -> a
+    40:40:android.telephony.CellLocation c(com.aps.a) -> c
+    40:40:long a(com.aps.a,long) -> a
+    40:40:int d(com.aps.a) -> d
+    40:40:void a(com.aps.a,int) -> a
+    40:40:java.util.List e(com.aps.a) -> e
+    40:40:int b(com.aps.a,int) -> b
+    40:40:android.net.wifi.WifiManager f(com.aps.a) -> f
+    40:40:java.util.List a(com.aps.a,java.util.List) -> a
+    40:40:java.util.List g(com.aps.a) -> g
+    40:40:void h(com.aps.a) -> h
+    40:40:void i(com.aps.a) -> i
+    40:40:int j(com.aps.a) -> j
+    40:40:boolean a(com.aps.a,boolean) -> a
+    40:40:boolean b(com.aps.a,boolean) -> b
+com.aps.a$1 -> o:
+    com.aps.a a -> a
+    695:720:void onCellLocationChanged(android.telephony.CellLocation) -> onCellLocationChanged
+    727:739:void onSignalStrengthChanged(int) -> onSignalStrengthChanged
+    746:758:void onSignalStrengthsChanged(android.telephony.SignalStrength) -> onSignalStrengthsChanged
+    762:771:void onServiceStateChanged(android.telephony.ServiceState) -> onServiceStateChanged
+com.aps.a$a -> p:
+    com.aps.a a -> a
+    1559:1672:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.aps.aa -> q:
+    byte g -> g
+    int a -> a
+    int b -> b
+    short c -> c
+    short d -> d
+    int e -> e
+    byte f -> f
+    java.lang.Boolean a(java.io.DataOutputStream) -> a
+com.aps.ab -> r:
+    short a -> a
+    int b -> b
+    byte c -> c
+com.aps.ac -> s:
+    android.content.Context a -> a
+    android.telephony.TelephonyManager b -> b
+    android.location.LocationManager c -> c
+    android.net.wifi.WifiManager d -> d
+    java.lang.String e -> e
+    java.lang.String f -> f
+    java.lang.String g -> g
+    boolean h -> h
+    int i -> i
+    boolean j -> j
+    long k -> k
+    java.lang.String l -> l
+    java.lang.String m -> m
+    int n -> n
+    int o -> o
+    int p -> p
+    java.lang.String q -> q
+    java.lang.String r -> r
+    long s -> s
+    long t -> t
+    boolean u -> u
+    com.aps.ac v -> v
+    com.aps.af w -> w
+    com.aps.ag x -> x
+    android.telephony.CellLocation y -> y
+    com.aps.ai z -> z
+    java.util.List A -> A
+    java.util.Timer B -> B
+    com.aps.ah C -> C
+    java.lang.Thread D -> D
+    java.lang.Thread E -> E
+    android.os.Looper F -> F
+    int G -> G
+    com.aps.ac a(android.content.Context) -> a
+    void a(com.aps.ah) -> a
+    void a() -> a
+    boolean b() -> b
+    boolean c() -> c
+    boolean d() -> d
+    java.lang.String e() -> e
+    java.lang.String f() -> f
+    java.lang.String g() -> g
+    boolean h() -> h
+    java.util.List i() -> i
+    java.util.List j() -> j
+    byte k() -> k
+    java.util.List l() -> l
+    java.util.List m() -> m
+    java.lang.String n() -> n
+    int o() -> o
+    int p() -> p
+    int q() -> q
+    java.lang.String r() -> r
+    byte s() -> s
+    int t() -> t
+    short u() -> u
+    java.util.List v() -> v
+    java.util.List w() -> w
+    java.util.List x() -> x
+    java.util.List y() -> y
+    void B() -> B
+    void a(android.content.BroadcastReceiver) -> a
+    void b(android.content.BroadcastReceiver) -> b
+    boolean b(android.content.Context) -> b
+    android.os.Looper a(com.aps.ac,android.os.Looper) -> a
+    java.util.Timer a(com.aps.ac,java.util.Timer) -> a
+    com.aps.af a(com.aps.ac,com.aps.af) -> a
+    com.aps.af a(com.aps.ac) -> a
+    void a(com.aps.ac,android.telephony.PhoneStateListener) -> a
+    java.lang.Thread b(com.aps.ac) -> b
+    boolean a(com.aps.ac,boolean) -> a
+    java.lang.Thread a(com.aps.ac,java.lang.Thread) -> a
+    com.aps.ag a(com.aps.ac,com.aps.ag) -> a
+    com.aps.ag c(com.aps.ac) -> c
+    void a(com.aps.ac,android.location.GpsStatus$NmeaListener,long,float) -> a
+    com.aps.ai a(com.aps.ac,com.aps.ai) -> a
+    com.aps.ai d(com.aps.ac) -> d
+    void a(com.aps.ac,android.content.BroadcastReceiver) -> a
+    void e(com.aps.ac) -> e
+    android.net.wifi.WifiManager f(com.aps.ac) -> f
+    java.util.Timer g(com.aps.ac) -> g
+    java.util.List h(com.aps.ac) -> h
+    void a(com.aps.ac,java.util.List) -> a
+    long a(com.aps.ac,long) -> a
+    int z() -> z
+    boolean b(com.aps.ac,boolean) -> b
+    android.telephony.TelephonyManager i(com.aps.ac) -> i
+    int a(com.aps.ac,int) -> a
+    int b(com.aps.ac,int) -> b
+    long b(com.aps.ac,long) -> b
+    android.telephony.CellLocation a(com.aps.ac,android.telephony.CellLocation) -> a
+    boolean j(com.aps.ac) -> j
+    int c(com.aps.ac,int) -> c
+    int k(com.aps.ac) -> k
+    java.lang.String a(com.aps.ac,java.lang.String) -> a
+    long c(com.aps.ac,long) -> c
+    java.lang.String b(com.aps.ac,java.lang.String) -> b
+    com.aps.ah A() -> A
+    boolean l(com.aps.ac) -> l
+com.aps.ad -> t:
+    com.aps.ac a -> a
+    void run() -> run
+com.aps.ae -> u:
+    com.aps.ac a -> a
+    void run() -> run
+com.aps.af -> v:
+    com.aps.ac a -> a
+    void onServiceStateChanged(android.telephony.ServiceState) -> onServiceStateChanged
+    void onCellLocationChanged(android.telephony.CellLocation) -> onCellLocationChanged
+    void onSignalStrengthsChanged(android.telephony.SignalStrength) -> onSignalStrengthsChanged
+com.aps.ag -> w:
+    com.aps.ac a -> a
+    void onNmeaReceived(long,java.lang.String) -> onNmeaReceived
+com.aps.ah -> x:
+com.aps.ai -> y:
+    com.aps.ac a -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.aps.aj -> z:
+    com.aps.ai a -> a
+    void run() -> run
+com.aps.ak -> A:
+    com.aps.s a -> a
+    void run() -> run
+com.aps.al -> B:
+    com.aps.s a -> a
+    void onLocationChanged(android.location.Location) -> onLocationChanged
+    void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
+    void onProviderEnabled(java.lang.String) -> onProviderEnabled
+    void onProviderDisabled(java.lang.String) -> onProviderDisabled
+    boolean a(android.location.Location) -> a
+com.aps.am -> C:
+    com.aps.s a -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.aps.an -> D:
+    com.aps.s a -> a
+    void run() -> run
+com.aps.ao -> E:
+    com.aps.s a -> a
+    void a() -> a
+com.aps.ap -> F:
+    android.content.Context a -> a
+    boolean b -> b
+    int c -> c
+    int d -> d
+    int e -> e
+    int f -> f
+    int g -> g
+    int h -> h
+    int i -> i
+    long j -> j
+    com.aps.ao k -> k
+    boolean a() -> a
+    int b() -> b
+    int c() -> c
+    int d() -> d
+    int e() -> e
+    void a(int) -> a
+    int f() -> f
+    void b(int) -> b
+    void a(com.aps.ao) -> a
+    com.aps.ap a(android.content.Context) -> a
+    boolean a(java.lang.String) -> a
+    java.lang.String b(android.content.Context) -> b
+    byte[] c(int) -> c
+    byte[] a(long) -> a
+    int a(byte[],int) -> a
+    long b(byte[],int) -> b
+    void g() -> g
+com.aps.aq -> G:
+    int c -> c
+    int d -> d
+    int e -> e
+    com.aps.ac f -> f
+    com.aps.au a -> a
+    com.aps.ar b -> b
+    void a(int,int) -> a
+    boolean a(android.location.Location) -> a
+    boolean b(android.location.Location) -> b
+com.aps.ar -> H:
+    com.aps.as a -> a
+    android.location.Location b -> b
+com.aps.as -> I:
+    int a -> a
+    int b -> b
+    int c -> c
+    int d -> d
+    int e -> e
+com.aps.at -> J:
+com.aps.au -> K:
+    java.util.List a -> a
+    android.location.Location b -> b
+com.aps.av -> L:
+    java.lang.String[] a -> a
+    boolean a(java.lang.String[],java.lang.String) -> a
+com.aps.aw -> M:
+    java.io.RandomAccessFile a -> a
+    com.aps.z b -> b
+    java.io.File c -> c
+    com.aps.y a(int) -> a
+    java.util.BitSet a() -> a
+    java.util.ArrayList a(int,int) -> a
+    int a(java.util.BitSet) -> a
+    int a(int,int,int) -> a
+    void a(com.aps.y) -> a
+    void a(java.lang.String) -> a
+com.aps.ax -> N:
+    java.io.RandomAccessFile a -> a
+    com.aps.z b -> b
+    java.lang.String c -> c
+    java.io.File d -> d
+    void a(long,byte[]) -> a
+    void a(java.lang.String) -> a
+com.aps.ay -> O:
+    byte a -> a
+    short b -> b
+    java.lang.Boolean a(java.io.DataOutputStream) -> a
+com.aps.b -> P:
+    java.lang.String a -> a
+    javax.crypto.Cipher b -> b
+    javax.crypto.Cipher c -> c
+    70:83:void a(java.lang.StringBuilder,java.lang.String) -> a
+    94:105:java.lang.String a(java.lang.String,java.lang.String) -> a
+    115:124:java.lang.String a(byte[]) -> a
+    134:154:byte[] a(java.lang.String) -> a
+    164:172:java.lang.String b(byte[]) -> b
+com.aps.c -> Q:
+    java.lang.String a -> a
+    double b -> b
+    double c -> c
+    float d -> d
+    float e -> e
+    float f -> f
+    long g -> g
+    java.lang.String h -> h
+    java.lang.String i -> i
+    java.lang.String j -> j
+    java.lang.String k -> k
+    java.lang.String l -> l
+    java.lang.String m -> m
+    java.lang.String n -> n
+    java.lang.String o -> o
+    java.lang.String p -> p
+    java.lang.String q -> q
+    java.lang.String r -> r
+    org.json.JSONObject s -> s
+    74:75:void a(java.lang.String) -> a
+    78:78:double a() -> a
+    82:83:void a(double) -> a
+    86:86:double b() -> b
+    90:91:void b(double) -> b
+    94:94:float c() -> c
+    98:99:void a(float) -> a
+    118:118:long d() -> d
+    122:123:void a(long) -> a
+    126:126:java.lang.String e() -> e
+    130:131:void b(java.lang.String) -> b
+    134:134:java.lang.String f() -> f
+    138:139:void c(java.lang.String) -> c
+    142:142:java.lang.String g() -> g
+    146:147:void d(java.lang.String) -> d
+    150:150:java.lang.String h() -> h
+    154:155:void e(java.lang.String) -> e
+    158:158:java.lang.String i() -> i
+    162:163:void f(java.lang.String) -> f
+    170:171:void g(java.lang.String) -> g
+    178:179:void h(java.lang.String) -> h
+    186:187:void i(java.lang.String) -> i
+    194:195:void j(java.lang.String) -> j
+    202:203:void k(java.lang.String) -> k
+    210:211:void l(java.lang.String) -> l
+    214:214:org.json.JSONObject j() -> j
+    218:219:void a(org.json.JSONObject) -> a
+com.aps.d -> R:
+    com.aps.d a -> a
+    java.util.Hashtable b -> b
+    long c -> c
+    32:35:com.aps.d a() -> a
+    54:104:void a(java.lang.String,com.aps.c,java.lang.StringBuilder,android.content.Context) -> a
+    115:167:com.aps.c a(java.lang.String,java.lang.StringBuilder,java.lang.String) -> a
+    177:186:boolean b() -> b
+    197:206:boolean a(java.lang.String,com.aps.c) -> a
+    216:221:void c() -> c
+    233:347:com.aps.d$a a(java.lang.String,java.lang.StringBuilder,java.lang.String,java.lang.String) -> a
+    358:367:boolean a(java.lang.String,java.lang.StringBuilder) -> a
+    378:386:void a(java.lang.String,java.util.Hashtable) -> a
+    396:404:double a(double[],double[]) -> a
+com.aps.d$a -> S:
+    com.aps.c b -> b
+    java.lang.String c -> c
+    com.aps.d a -> a
+    440:440:com.aps.c a() -> a
+    444:445:void a(com.aps.c) -> a
+    448:448:java.lang.String b() -> b
+    452:453:void a(java.lang.String) -> a
+com.aps.e -> T:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    int c -> c
+    int d -> d
+    int e -> e
+    int f -> f
+    int g -> g
+    int h -> h
+    int i -> i
+    int j -> j
+com.aps.f -> U:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    java.lang.String d -> d
+    java.lang.String e -> e
+    java.lang.String f -> f
+    boolean g -> g
+    boolean h -> h
+    long i -> i
+    long j -> j
+    boolean k -> k
+    android.util.SparseArray l -> l
+    java.lang.String[] m -> m
+com.aps.g -> V:
+    com.aps.i a -> a
+    19:20:com.aps.i a() -> a
+com.aps.h -> W:
+    double a -> a
+    double b -> b
+    float c -> c
+    long d -> d
+    12:12:long a() -> a
+    24:26:java.lang.String b() -> b
+com.aps.i -> X:
+    void a(android.content.Context) -> a
+    void a(java.lang.String) -> a
+    void a(org.json.JSONObject) -> a
+    com.aps.c b() -> b
+    void c() -> c
+com.aps.j -> Y:
+    com.aps.j a -> a
+    58:61:com.aps.j a() -> a
+    73:222:java.lang.String a(android.content.Context,java.lang.String,byte[]) -> a
+    381:578:java.lang.String a(java.lang.String,android.content.Context,org.json.JSONObject) -> a
+    592:697:org.apache.http.client.HttpClient a(android.content.Context,android.net.NetworkInfo) -> a
+    708:708:boolean a(java.lang.String,int) -> a
+    718:728:int a(android.net.NetworkInfo) -> a
+    738:742:java.lang.String a(android.telephony.TelephonyManager) -> a
+    752:756:boolean a(org.apache.http.HttpResponse) -> a
+    831:866:java.lang.String[] a(org.json.JSONObject) -> a
+    876:889:java.lang.String b() -> b
+com.aps.k -> Z:
+    26:54:java.lang.String a(java.lang.String) -> a
+    92:121:com.aps.c b(java.lang.String) -> b
+com.aps.k$1 -> aa:
+com.aps.k$a -> ab:
+    com.aps.c a -> a
+    java.lang.String c -> c
+    com.aps.k b -> b
+    133:134:void characters(char[],int,int) -> characters
+    139:140:void startElement(java.lang.String,java.lang.String,java.lang.String,org.xml.sax.Attributes) -> startElement
+    145:220:void endElement(java.lang.String,java.lang.String,java.lang.String) -> endElement
+com.aps.k$b -> ac:
+    java.lang.String a -> a
+    boolean c -> c
+    com.aps.k b -> b
+    66:69:void characters(char[],int,int) -> characters
+    74:77:void startElement(java.lang.String,java.lang.String,java.lang.String,org.xml.sax.Attributes) -> startElement
+    82:85:void endElement(java.lang.String,java.lang.String,java.lang.String) -> endElement
+com.aps.l -> ad:
+    21:24:java.lang.Object a(java.lang.String,java.lang.String) -> a
+    37:38:int b(java.lang.String,java.lang.String) -> b
+    94:100:int a(java.lang.Object,java.lang.String,java.lang.Object[]) -> a
+    116:118:java.lang.Object a(java.lang.String,java.lang.String,java.lang.Object[],java.lang.Class[]) -> a
+com.aps.m -> ae:
+    com.aps.m a -> a
+    java.text.DecimalFormat b -> b
+    java.text.SimpleDateFormat c -> c
+    125:130:java.lang.String a(java.lang.Object,java.lang.String) -> a
+com.aps.n -> af:
+    34:34:void a(java.lang.Object[]) -> a
+    66:107:void a(android.content.Context,java.lang.String) -> a
+    111:111:void a(java.lang.Throwable) -> a
+    174:189:boolean a(com.aps.c) -> a
+    199:199:int a(int) -> a
+    209:220:java.lang.String[] a(android.telephony.TelephonyManager) -> a
+    230:244:int a(android.telephony.CellLocation,android.content.Context) -> a
+    270:270:long a() -> a
+    314:355:boolean a(android.content.Context) -> a
+    365:373:float a(double[]) -> a
+    384:387:java.lang.Object b(android.content.Context,java.lang.String) -> b
+    413:419:void a(org.apache.http.params.HttpParams,int) -> a
+    428:443:int b() -> b
+    456:472:byte[] a(byte[]) -> a
+    537:564:android.net.NetworkInfo b(android.content.Context) -> b
+com.aps.o -> ag:
+    double[][] a -> a
+    double[] a(double,double) -> a
+    double a(double,double,double) -> a
+com.aps.p -> ah:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    boolean a(android.content.Context) -> a
+    boolean a() -> a
+    boolean b() -> b
+    void a(java.lang.String,java.lang.String) -> a
+com.aps.q -> ai:
+    byte f -> f
+    short a -> a
+    int b -> b
+    byte c -> c
+    byte d -> d
+    java.util.ArrayList e -> e
+    java.lang.Boolean a(java.io.DataOutputStream) -> a
+com.aps.r -> aj:
+    short a -> a
+    int b -> b
+    com.aps.t c -> c
+    com.aps.q d -> d
+    com.aps.aa e -> e
+    com.aps.w f -> f
+com.aps.s -> ak:
+    boolean a -> a
+    android.content.Context b -> b
+    android.location.LocationManager c -> c
+    int d -> d
+    int e -> e
+    com.aps.ac f -> f
+    com.aps.aq g -> g
+    com.aps.ax h -> h
+    com.aps.z i -> i
+    com.aps.aw j -> j
+    com.aps.ap k -> k
+    boolean l -> l
+    com.aps.v m -> m
+    java.lang.Thread n -> n
+    android.os.Looper o -> o
+    com.aps.an p -> p
+    boolean q -> q
+    int r -> r
+    com.aps.ao s -> s
+    boolean t -> t
+    java.lang.Object u -> u
+    com.aps.s v -> v
+    android.location.LocationListener w -> w
+    android.content.BroadcastReceiver x -> x
+    com.aps.s a(android.content.Context) -> a
+    void a(int) -> a
+    void f() -> f
+    void a() -> a
+    void b() -> b
+    void c() -> c
+    com.aps.y d() -> d
+    void a(com.aps.y,java.lang.String) -> a
+    boolean e() -> e
+    void a(com.aps.s) -> a
+    android.os.Looper a(com.aps.s,android.os.Looper) -> a
+    android.location.LocationListener b(com.aps.s) -> b
+    android.location.LocationManager c(com.aps.s) -> c
+    com.aps.ap d(com.aps.s) -> d
+    long a(com.aps.s,long) -> a
+    android.location.Location a(com.aps.s,android.location.Location) -> a
+    boolean e(com.aps.s) -> e
+    void b(com.aps.s,android.location.Location) -> b
+    void a(com.aps.s,java.lang.String) -> a
+    com.aps.ax f(com.aps.s) -> f
+    com.aps.aw g(com.aps.s) -> g
+    int h(com.aps.s) -> h
+com.aps.t -> al:
+    byte l -> l
+    int a -> a
+    int b -> b
+    int c -> c
+    int d -> d
+    int e -> e
+    short f -> f
+    byte g -> g
+    int h -> h
+    short i -> i
+    byte j -> j
+    java.util.ArrayList k -> k
+    java.lang.Boolean a(java.io.DataOutputStream) -> a
+com.aps.u -> am:
+    byte l -> l
+    short a -> a
+    byte[] b -> b
+    byte[] c -> c
+    byte[] d -> d
+    short e -> e
+    short f -> f
+    byte g -> g
+    byte[] h -> h
+    byte[] i -> i
+    short j -> j
+    java.util.ArrayList k -> k
+    java.lang.Boolean a(java.io.DataOutputStream) -> a
+    byte[] a() -> a
+com.aps.v -> an:
+    com.aps.u a(android.location.Location,com.aps.ac,int) -> a
+com.aps.w -> ao:
+    byte c -> c
+    byte a -> a
+    java.util.ArrayList b -> b
+    java.lang.Boolean a(java.io.DataOutputStream) -> a
+com.aps.x -> ap:
+    byte[] a -> a
+    short b -> b
+    byte[] c -> c
+com.aps.y -> aq:
+    java.io.File a -> a
+    java.util.ArrayList c -> c
+    int[] b -> b
+    boolean d -> d
+    byte[] a() -> a
+    void a(boolean) -> a
+    boolean b() -> b
+com.aps.z -> ar:
+    android.content.Context a -> a
+    int b -> b
+    int c -> c
+    int d -> d
+    byte[] a(byte[],int) -> a
+    void a(int) -> a
+    int a() -> a
+    java.io.File a(long) -> a
+    java.io.File b() -> b
+    java.io.File b(long) -> b
+    java.io.File c(long) -> c
+    byte[] a(byte[]) -> a
+    com.aps.u a(android.location.Location,com.aps.ac,int) -> a
+    int a(int,int) -> a
+    byte[] a(java.util.BitSet) -> a
+    java.util.BitSet b(byte[]) -> b
+    boolean c() -> c
+    java.io.File a(android.content.Context) -> a
+com.chuanonly.livewallpaper.ChooseCityActivity -> com.chuanonly.livewallpaper.ChooseCityActivity:
+    android.widget.EditText mSearchEdit -> a
+    android.widget.ListView mList -> b
+    com.chuanonly.livewallpaper.ChooseCityActivity$QueryCityItemAdapter mAdapter -> c
+    android.view.inputmethod.InputMethodManager mimm -> d
+    com.chuanonly.livewallpaper.util.QueryCityHandler queryHandler -> e
+    com.chuanonly.livewallpaper.data.City mCity -> f
+    android.widget.TextView mEmptyTV -> g
+    android.text.TextWatcher textWatcher -> h
+    41:53:void onCreate(android.os.Bundle) -> onCreate
+    58:68:void onResume() -> onResume
+    72:113:void initView() -> a
+    115:118:com.chuanonly.livewallpaper.data.City setChecked(android.view.View,int) -> a
+    144:161:void initListView() -> b
+    165:198:void updateQueryCityList() -> c
+    202:203:java.lang.String getLocaleLanguage() -> d
+    276:281:void onClick(android.view.View) -> onClick
+    286:288:void finish() -> finish
+    163:163:void access$0(com.chuanonly.livewallpaper.ChooseCityActivity) -> a
+    114:114:com.chuanonly.livewallpaper.data.City access$1(com.chuanonly.livewallpaper.ChooseCityActivity,android.view.View,int) -> a
+    36:36:void access$2(com.chuanonly.livewallpaper.ChooseCityActivity,com.chuanonly.livewallpaper.data.City) -> a
+    31:31:android.widget.EditText access$3(com.chuanonly.livewallpaper.ChooseCityActivity) -> b
+    121:121:android.text.TextWatcher access$4(com.chuanonly.livewallpaper.ChooseCityActivity) -> c
+    36:36:com.chuanonly.livewallpaper.data.City access$5(com.chuanonly.livewallpaper.ChooseCityActivity) -> d
+com.chuanonly.livewallpaper.ChooseCityActivity$1 -> as:
+    com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
+    126:127:void afterTextChanged(android.text.Editable) -> afterTextChanged
+    133:133:void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    139:139:void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+com.chuanonly.livewallpaper.ChooseCityActivity$2 -> at:
+    com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
+    50:51:void onClick(android.view.View) -> onClick
+com.chuanonly.livewallpaper.ChooseCityActivity$3 -> au:
+    com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
+    87:109:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.chuanonly.livewallpaper.ChooseCityActivity$QueryCityItemAdapter -> av:
+    int resource -> b
+    android.view.LayoutInflater mInflater -> c
+    com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
+    222:230:void resetItems(java.util.Collection) -> a
+    235:264:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+com.chuanonly.livewallpaper.ChooseCityActivity$QueryCityListViewHolder -> aw:
+    android.widget.TextView nameView -> a
+    android.widget.TextView parentView -> b
+    android.widget.TextView splitView -> c
+com.chuanonly.livewallpaper.MainHomeActivity -> com.chuanonly.livewallpaper.MainHomeActivity:
+    java.util.HashMap sIconMap -> b
+    java.lang.Integer[] imgages -> c
+    int[][] imgType -> a
+    com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView mWallpaperView -> d
+    com.chuanonly.livewallpaper.view.GalleryScrollView mScrollView -> e
+    java.util.LinkedList mViewList -> f
+    android.view.LayoutInflater mInflater -> g
+    int mItemWidth -> h
+    int mItemHeight -> i
+    com.chuanonly.livewallpaper.task.LocateHandler mlLocateAsyncTask -> j
+    android.os.Handler mHandler -> k
+    android.widget.LinearLayout mContentLayout -> l
+    android.widget.LinearLayout mSettingLayout -> m
+    com.google.ads.AdView mAdView -> n
+    android.widget.LinearLayout mADLayout -> o
+    android.widget.ImageView mArrowIV -> p
+    android.widget.TextView mWeatherInfo -> q
+    android.view.View$OnClickListener clickListener -> r
+    java.lang.Runnable mResumeRunnable -> s
+    long lastPressback -> t
+    android.content.IntentFilter mFilter -> u
+    android.content.BroadcastReceiver mReceiver -> v
+    83:126:void onCreate(android.os.Bundle) -> onCreate
+    131:142:void checkCanShowAd() -> a
+    148:193:void initScrollView() -> b
+    244:248:void changeWallPaper(int) -> a
+    251:259:android.graphics.drawable.Drawable getIconDrawable(int) -> b
+    265:270:void onResume() -> onResume
+    289:304:void checkTitleBar() -> c
+    309:313:void onPause() -> onPause
+    317:329:void onDestroy() -> onDestroy
+    335:344:void onBackPressed() -> onBackPressed
+    354:383:void startIntentWallpaperChooser() -> d
+    387:398:void registerReceiver() -> e
+    403:407:void unregisterReceiver() -> f
+    427:441:void checkifNeedTolacate() -> g
+    353:353:void access$0(com.chuanonly.livewallpaper.MainHomeActivity) -> a
+    65:65:com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView access$1(com.chuanonly.livewallpaper.MainHomeActivity) -> b
+    74:74:android.widget.LinearLayout access$2(com.chuanonly.livewallpaper.MainHomeActivity) -> c
+    78:78:android.widget.ImageView access$3(com.chuanonly.livewallpaper.MainHomeActivity) -> d
+    242:242:void access$4(com.chuanonly.livewallpaper.MainHomeActivity,int) -> a
+    75:75:android.widget.LinearLayout access$5(com.chuanonly.livewallpaper.MainHomeActivity) -> e
+    287:287:void access$6(com.chuanonly.livewallpaper.MainHomeActivity) -> f
+com.chuanonly.livewallpaper.MainHomeActivity$1 -> ax:
+    com.chuanonly.livewallpaper.MainHomeActivity this$0 -> a
+    200:238:void onClick(android.view.View) -> onClick
+com.chuanonly.livewallpaper.MainHomeActivity$2 -> ay:
+    com.chuanonly.livewallpaper.MainHomeActivity this$0 -> a
+    277:284:void run() -> run
+com.chuanonly.livewallpaper.MainHomeActivity$3 -> az:
+    com.chuanonly.livewallpaper.MainHomeActivity this$0 -> a
+    412:422:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.chuanonly.livewallpaper.MainHomeActivity$ViewHolder -> aA:
+    android.widget.ImageView icon -> a
+    int index -> b
+com.chuanonly.livewallpaper.MyApplication -> com.chuanonly.livewallpaper.MyApplication:
+    android.content.Context mContext -> e
+    com.chuanonly.livewallpaper.MyApplication mApplication -> f
+    int width -> a
+    int height -> b
+    float density -> c
+    boolean isSupportsEs2 -> g
+    int language -> d
+    24:47:void onCreate() -> onCreate
+    51:51:android.content.Context getContext() -> a
+com.chuanonly.livewallpaper.SettingActivity -> com.chuanonly.livewallpaper.SettingActivity:
+    android.widget.CheckBox[] checkBoxs -> a
+    android.view.View[] layouts -> b
+    android.widget.TextView weatherInfoTV -> c
+    android.widget.TextView mCurWallpaerTV -> d
+    android.view.View$OnClickListener click -> e
+    android.content.IntentFilter mFilter -> f
+    android.content.BroadcastReceiver mReceiver -> g
+    33:51:void onCreate(android.os.Bundle) -> onCreate
+    55:72:void showWeatherInfo() -> a
+    77:113:void onResume() -> onResume
+    118:120:void onPause() -> onPause
+    185:196:void registerReceiver() -> b
+    201:205:void unregisterReceiver() -> c
+    220:222:void finish() -> finish
+    26:26:android.widget.CheckBox[] access$0(com.chuanonly.livewallpaper.SettingActivity) -> a
+    53:53:void access$1(com.chuanonly.livewallpaper.SettingActivity) -> b
+com.chuanonly.livewallpaper.SettingActivity$1 -> aB:
+    com.chuanonly.livewallpaper.SettingActivity this$0 -> a
+    128:179:void onClick(android.view.View) -> onClick
+com.chuanonly.livewallpaper.SettingActivity$2 -> aC:
+    com.chuanonly.livewallpaper.SettingActivity this$0 -> a
+    210:215:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.chuanonly.livewallpaper.data.City -> aD:
+    java.lang.String code -> a
+    java.lang.String name -> b
+    java.lang.String parentName -> c
+    java.lang.String enName -> d
+    java.lang.String enProvice -> e
+    21:21:java.lang.String toString() -> toString
+com.chuanonly.livewallpaper.data.Constant -> aE:
+    boolean DEBUG -> a
+    int DATABASE_VERSION -> b
+com.chuanonly.livewallpaper.data.WallpaperInfo -> aF:
+    java.lang.String city -> a
+    java.lang.String info -> b
+    java.lang.String img -> c
+    java.lang.String temperature -> d
+    java.lang.String high -> e
+    java.lang.String low -> f
+    java.lang.String time -> g
+    23:68:void parseWallpaperInfo(java.lang.String) -> a
+com.chuanonly.livewallpaper.model.GLFireBalloon -> aG:
+    int degrees -> t
+    float mRadius -> u
+    android.graphics.Matrix matrix -> v
+    float[] originalXY -> w
+    float[] destXY -> x
+    float[] zeros -> y
+    20:25:void setXY(float,float) -> a
+    30:41:void move(float) -> a
+com.chuanonly.livewallpaper.model.GLSnowFall -> aH:
+    int trackAngle -> t
+    8:9:void setTrackAngle(int) -> a
+    11:11:int getTrackAngle() -> a
+    16:34:void move(float) -> a
+com.chuanonly.livewallpaper.model.ParticalSunShine -> aI:
+    8:14:void move(float) -> a
+com.chuanonly.livewallpaper.model.Particle -> aJ:
+    int textureId -> t
+    int type -> u
+    float x -> a
+    float y -> b
+    float scaleX -> c
+    float scaleY -> d
+    float speed -> e
+    int angle -> f
+    long drawTime -> g
+    float width -> h
+    float height -> i
+    int alpha -> j
+    int alphaSpeed -> k
+    float initX -> l
+    float initY -> m
+    boolean relateWith -> n
+    boolean relateHeight -> o
+    int mScreenWidth -> p
+    int mScreenHeight -> q
+    int moveDirectionAngle -> r
+    int live -> s
+    39:43:void setInitDiffXY(float,float,boolean,boolean) -> a
+    51:53:void setInitDiffXY(boolean,boolean) -> a
+    56:67:void caculateRealXY(float,float) -> b
+    71:71:int getAlphaSpeed() -> b
+    75:76:void setAlphaSpeed(int) -> b
+    79:79:int getAlpha() -> c
+    83:84:void setAlpha(int) -> c
+    87:87:int getTextureId() -> d
+    91:91:float getX() -> e
+    95:95:float getY() -> f
+    99:99:float getScaleX() -> g
+    103:103:float getScaleY() -> h
+    107:107:float getSpeed() -> i
+    111:111:int getAngle() -> j
+    115:116:void setTextureId(int) -> d
+    119:120:void setX(float) -> b
+    123:125:void setXY(float,float) -> a
+    128:129:void setY(float) -> c
+    132:133:void setScaleX(float) -> d
+    136:138:void setScale(float) -> e
+    141:142:void setScaleY(float) -> f
+    145:146:void setSpeed(float) -> g
+    149:150:void setAngle(int) -> e
+    154:154:float getWidth() -> k
+    158:158:float getHeight() -> l
+    162:163:void setWidth(int) -> f
+    166:167:void setHeight(int) -> g
+    170:175:void setBmParams(float,float,boolean) -> a
+    179:179:long getDrawTime() -> m
+    183:184:void setDrawTime(long) -> a
+    187:188:void setType(int) -> h
+    191:191:int getType() -> n
+    196:196:int getMoveDirectionAngle() -> o
+    200:201:void setMoveDirectionAngle(int) -> i
+    204:204:int getLive() -> p
+    208:209:void setLive(int) -> j
+    213:213:void move(float) -> a
+com.chuanonly.livewallpaper.model.ParticleDrop -> aK:
+    8:26:void move(float) -> a
+com.chuanonly.livewallpaper.model.ParticleMetor -> aL:
+    10:27:void move(float) -> a
+com.chuanonly.livewallpaper.model.ParticleRect -> aM:
+    10:39:void move(float) -> a
+    43:48:void moveLeft(float) -> h
+com.chuanonly.livewallpaper.model.ParticleStar -> aN:
+    8:14:void move(float) -> a
+com.chuanonly.livewallpaper.model.ParticleThunderLight -> aO:
+    10:20:void move(float) -> a
+com.chuanonly.livewallpaper.model.ParticleWhiteBg -> aP:
+    8:12:void move(float) -> a
+com.chuanonly.livewallpaper.model.TextureInfo -> aQ:
+    int drawableId -> a
+    int textureId -> b
+    float width -> c
+    float height -> d
+    float scaleX -> e
+    float scaleY -> f
+    int angle -> g
+com.chuanonly.livewallpaper.scenes.Background -> aR:
+    float GLOBE_ALPHA -> a
+    int mProgram -> b
+    int muMVPMatrixHandle -> c
+    int maPositionHandle -> d
+    int maTexCoorHandle -> e
+    int mAlphaHandle -> f
+    int mScreenWidth -> g
+    int mScreenHeight -> h
+    float mDensity -> i
+    float[] itemVertices -> j
+    java.nio.FloatBuffer mVertexBuffer -> k
+    java.nio.FloatBuffer mTexCoorBuffer -> l
+    java.nio.ShortBuffer mIndicesBuffer -> m
+    int vCount -> n
+    int textureBgId -> p
+    int resId -> o
+    java.lang.String mBgStr -> q
+    boolean mIsCanUseCustomBg -> r
+    boolean isLoadBitmap -> s
+    boolean isNeedCache -> t
+    float[] vertices -> u
+    float[] texture -> v
+    short[] indices -> w
+    80:89:void initBg(java.lang.String) -> a
+    91:97:void initShader() -> a
+    102:125:void draw(javax.microedition.khronos.opengles.GL10) -> a
+    128:165:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> b
+    181:198:void initVertexData() -> b
+    202:204:void release() -> c
+    215:217:void setCaChe(boolean) -> a
+    225:229:void destroy() -> d
+com.chuanonly.livewallpaper.scenes.BaseScene -> aS:
+    java.util.ArrayList textureInfos -> a
+    float GLOBE_ALPHA -> b
+    int mProgram -> c
+    int muMVPMatrixHandle -> d
+    int maPositionHandle -> e
+    int maTexCoorHandle -> f
+    int mAlphaHandle -> g
+    int mScreenWidth -> h
+    int mScreenHeight -> i
+    float mDensity -> j
+    boolean mIsCanUseCustomBg -> k
+    boolean isFirst -> l
+    boolean isLoadBitmap -> m
+    boolean isNeedCaChe -> n
+    boolean isStatic -> o
+    java.nio.FloatBuffer mVertexBuffer -> p
+    java.nio.FloatBuffer mTexCoorBuffer -> q
+    java.nio.ShortBuffer mIndicesBuffer -> r
+    float UNIT -> s
+    int vCount -> t
+    float[] itemVertices -> u
+    float[] texture -> v
+    short[] indices -> w
+    int category -> x
+    int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    void draw(javax.microedition.khronos.opengles.GL10) -> b
+    69:76:void initShader() -> a
+    80:105:void initVertexData() -> f
+    java.lang.String getBackground() -> b
+    112:113:void release() -> c
+    119:119:int getCategory() -> d
+    123:124:void setCategory(int) -> a
+    130:131:void setCaChe(boolean) -> a
+    134:136:void destroy() -> e
+com.chuanonly.livewallpaper.scenes.GLCloud -> aT:
+    java.util.ArrayList particleList -> x
+    long lastTime -> y
+    33:126:void init() -> f
+    129:161:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    166:211:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    215:215:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLCloudNight -> aU:
+    java.util.ArrayList particleList -> x
+    29:90:void init() -> f
+    93:124:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    129:177:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    181:181:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLFog -> aV:
+    java.util.ArrayList particleList -> x
+    31:70:void init() -> f
+    75:105:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    111:153:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    157:157:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLHalistoneScene -> aW:
+    java.util.ArrayList heightList -> x
+    java.util.ArrayList widthList -> y
+    java.util.ArrayList particleList -> z
+    32:170:void init() -> g
+    175:207:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    212:262:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    267:289:int[] getRandXY(int,int,int,int) -> a
+    293:315:int[] getRandXY() -> f
+    320:320:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLHazeScene -> aX:
+    float mBreathInterval -> x
+    float mOnInterval -> y
+    float mOffInterval -> z
+    float mLastFrameTime -> A
+    int mCurrentAlpha -> B
+    float mFrameStep -> C
+    boolean mLightOn -> D
+    boolean mDrawNotify -> E
+    java.util.ArrayList particleList -> F
+    38:65:void calc() -> f
+    68:133:void init() -> g
+    139:167:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    172:209:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    213:213:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLOvercast -> aY:
+    java.util.ArrayList particleList -> x
+    long lastTime -> y
+    32:80:void init() -> f
+    84:116:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    121:167:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    176:176:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLRain -> aZ:
+    java.util.ArrayList heightList -> x
+    java.util.ArrayList widthList -> y
+    java.util.ArrayList particleList -> z
+    34:287:void init(int) -> b
+    291:313:int[] getRandXY() -> f
+    318:347:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    351:399:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    412:412:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLShowerRain -> ba:
+    java.util.ArrayList heightList -> x
+    java.util.ArrayList widthList -> y
+    java.util.ArrayList particleList -> z
+    int ON_FRAME -> A
+    int OFF_FRAME -> B
+    int frameCnt -> C
+    int[] tmp -> D
+    boolean isON -> E
+    int LINE -> F
+    int leftNum -> G
+    java.util.Random random -> H
+    40:167:void init() -> g
+    172:193:int[] getRandXY() -> f
+    199:228:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    233:314:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    319:323:void resetLiveOfPartilce(int) -> b
+    334:339:int getRandomInt(int) -> c
+    343:343:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLShowerSnow -> bb:
+    java.util.ArrayList heightList -> x
+    java.util.ArrayList widthList -> y
+    java.util.ArrayList angleList -> z
+    java.util.ArrayList particleList -> A
+    33:201:void init() -> h
+    205:227:int[] getRandXY() -> f
+    231:241:int getRandAngle() -> g
+    248:277:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    281:329:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    342:342:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLSnowScene -> bc:
+    java.util.ArrayList snowFlakeAngleArray -> z
+    java.util.ArrayList snowPosxArray -> A
+    java.util.ArrayList snowPosyArray -> B
+    java.util.ArrayList GLSnowFallList -> C
+    int SNOW_LIGHT -> x
+    int myMode -> y
+    36:368:void init(int) -> b
+    372:380:int getRandomAngle() -> f
+    385:393:int getRandomPosX() -> g
+    398:406:int getRandomPosY() -> h
+    412:441:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    445:493:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    506:506:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLSunny -> bd:
+    java.util.ArrayList particleList -> x
+    34:117:void init() -> f
+    122:153:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    157:191:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    216:216:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLSunnyNight -> be:
+    java.util.ArrayList starList -> x
+    java.util.ArrayList metorList -> y
+    36:174:void init() -> f
+    178:216:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    220:290:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    297:297:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.scenes.GLThunder -> bf:
+    com.chuanonly.livewallpaper.scenes.GLRain rainScen -> x
+    java.util.ArrayList particleList -> y
+    float whiteBgAlpha -> z
+    com.chuanonly.livewallpaper.model.Particle whiteBg -> A
+    41:92:void init() -> f
+    96:128:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
+    133:180:void draw(javax.microedition.khronos.opengles.GL10) -> b
+    184:184:java.lang.String getBackground() -> b
+com.chuanonly.livewallpaper.service.GLWallpaperService -> com.chuanonly.livewallpaper.service.GLWallpaperService:
+    boolean isCanLog -> a
+com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine -> bg:
+    int mRenderMode -> b
+    boolean mVisble -> c
+    com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine$WallpaperGLSurfaceView glSurfaceView -> d
+    boolean rendererHasBeenSet -> e
+    com.chuanonly.livewallpaper.service.GLWallpaperService this$0 -> a
+    88:91:void onCreate(android.view.SurfaceHolder) -> onCreate
+    97:107:void onVisibilityChanged(boolean) -> onVisibilityChanged
+    113:117:void onDestroy() -> onDestroy
+    123:125:void setRenderer(android.opengl.GLSurfaceView$Renderer) -> a
+    131:133:void setEGLContextClientVersion(int) -> a
+    136:138:void setRenderMode(int) -> b
+    141:141:int getRenderMode() -> a
+    145:146:void requestRender() -> b
+com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine$WallpaperGLSurfaceView -> bh:
+    com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine this$1 -> a
+    48:48:android.view.SurfaceHolder getHolder() -> getHolder
+    55:56:void onDestroy() -> a
+    61:62:void surfaceCreated(android.view.SurfaceHolder) -> surfaceCreated
+    67:68:void surfaceChanged(android.view.SurfaceHolder,int,int,int) -> surfaceChanged
+    73:74:void surfaceDestroyed(android.view.SurfaceHolder) -> surfaceDestroyed
+com.chuanonly.livewallpaper.service.WallPaperRender -> bi:
+    com.chuanonly.livewallpaper.scenes.Background bg -> b
+    com.chuanonly.livewallpaper.scenes.BaseScene scene -> c
+    com.chuanonly.livewallpaper.scenes.Background nextBg -> d
+    com.chuanonly.livewallpaper.scenes.BaseScene nextScene -> e
+    boolean isDirty -> f
+    int sceneCategory -> g
+    boolean mHasinit -> a
+    62:111:void onSurfaceCreated(javax.microedition.khronos.opengles.GL10,javax.microedition.khronos.egl.EGLConfig) -> onSurfaceCreated
+    116:139:void onDrawFrame(javax.microedition.khronos.opengles.GL10) -> onDrawFrame
+    142:183:void switchScene() -> c
+    186:198:void setDirtyScene(int) -> a
+    205:280:com.chuanonly.livewallpaper.scenes.BaseScene createScene() -> d
+    285:291:void onSurfaceChanged(javax.microedition.khronos.opengles.GL10,int,int) -> onSurfaceChanged
+    302:314:void release() -> a
+    317:318:void gc() -> b
+com.chuanonly.livewallpaper.service.WallpaperService -> com.chuanonly.livewallpaper.service.WallpaperService:
+    int rate -> b
+    com.chuanonly.livewallpaper.service.WallPaperRender renderer -> c
+    android.os.Handler mHandler -> d
+    java.util.ArrayList mEngines -> e
+    android.content.IntentFilter mFilter -> f
+    android.content.BroadcastReceiver mReceiver -> g
+    50:52:void onCreate() -> onCreate
+    58:66:void onDestroy() -> onDestroy
+    72:74:android.service.wallpaper.WallpaperService$Engine onCreateEngine() -> onCreateEngine
+    216:237:void init(com.chuanonly.livewallpaper.service.WallpaperService$GLEngine) -> a
+    243:254:void registerReceiver() -> a
+    260:264:void unregisterReceiver() -> b
+    35:35:com.chuanonly.livewallpaper.service.WallPaperRender access$0(com.chuanonly.livewallpaper.service.WallpaperService) -> a
+    40:40:java.util.ArrayList access$1(com.chuanonly.livewallpaper.service.WallpaperService) -> b
+    256:256:void access$2(com.chuanonly.livewallpaper.service.WallpaperService) -> c
+    241:241:void access$3(com.chuanonly.livewallpaper.service.WallpaperService) -> d
+    38:38:android.os.Handler access$4(com.chuanonly.livewallpaper.service.WallpaperService) -> e
+    33:33:int access$5(com.chuanonly.livewallpaper.service.WallpaperService) -> f
+com.chuanonly.livewallpaper.service.WallpaperService$1 -> bj:
+    com.chuanonly.livewallpaper.service.WallpaperService this$0 -> a
+    270:294:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.chuanonly.livewallpaper.service.WallpaperService$GLEngine -> bk:
+    java.util.concurrent.ScheduledExecutorService mTimer -> c
+    java.lang.Runnable changeRunnable -> d
+    java.lang.Runnable rendeRunnable -> e
+    com.chuanonly.livewallpaper.service.WallpaperService this$0 -> b
+    84:86:void onCreate(android.view.SurfaceHolder) -> onCreate
+    92:110:void onVisibilityChanged(boolean) -> onVisibilityChanged
+    115:143:void checkIFChangeWallpaer() -> c
+    146:148:void stopChangeWallPaperRunable() -> d
+    171:178:void onDestroy() -> onDestroy
+    182:189:void startRendering() -> e
+    193:199:boolean stopRendering() -> f
+    191:191:boolean access$0(com.chuanonly.livewallpaper.service.WallpaperService$GLEngine) -> a
+com.chuanonly.livewallpaper.service.WallpaperService$GLEngine$1 -> bl:
+    com.chuanonly.livewallpaper.service.WallpaperService$GLEngine this$1 -> a
+    155:164:void run() -> run
+com.chuanonly.livewallpaper.service.WallpaperService$GLEngine$2 -> bm:
+    com.chuanonly.livewallpaper.service.WallpaperService$GLEngine this$1 -> a
+    207:208:void run() -> run
+com.chuanonly.livewallpaper.service.WallpaperSettings -> com.chuanonly.livewallpaper.service.WallpaperSettings:
+    14:18:void onCreate(android.os.Bundle) -> onCreate
+    22:24:void onDestroy() -> onDestroy
+    27:27:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
+com.chuanonly.livewallpaper.task.HTTPTask -> bn:
+    31:81:java.lang.String doInBackground(java.lang.Void[]) -> a
+    87:97:void onPostExecute(java.lang.String) -> a
+    1:1:void onPostExecute(java.lang.Object) -> onPostExecute
+    1:1:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+com.chuanonly.livewallpaper.task.LocateHandler -> bo:
+    com.amap.api.location.LocationManagerProxy mAMapLocManager -> a
+    android.os.Handler mHandler -> b
+    java.util.ArrayList MDN_CITY_CODES -> c
+    com.chuanonly.livewallpaper.util.QueryCityHandler suggestionSource -> d
+    android.content.Context context -> e
+    boolean isSucess -> f
+    com.amap.api.location.AMapLocationListener locationListener -> g
+    java.lang.Runnable cancelRuanble -> h
+    46:54:void tryToLacate() -> a
+    116:128:com.chuanonly.livewallpaper.data.City getCityByName(com.chuanonly.livewallpaper.util.QueryCityHandler,java.lang.String,java.lang.String) -> a
+    133:138:void release() -> b
+    142:228:void parseCitycode(com.amap.api.location.AMapLocation) -> a
+    30:30:boolean access$0(com.chuanonly.livewallpaper.task.LocateHandler) -> a
+    140:140:void access$1(com.chuanonly.livewallpaper.task.LocateHandler,com.amap.api.location.AMapLocation) -> a
+com.chuanonly.livewallpaper.task.LocateHandler$1 -> bp:
+    com.chuanonly.livewallpaper.task.LocateHandler this$0 -> a
+    62:62:void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
+    69:69:void onProviderEnabled(java.lang.String) -> onProviderEnabled
+    76:76:void onProviderDisabled(java.lang.String) -> onProviderDisabled
+    83:83:void onLocationChanged(android.location.Location) -> onLocationChanged
+    88:100:void onLocationChanged(com.amap.api.location.AMapLocation) -> a
+    56:56:com.chuanonly.livewallpaper.task.LocateHandler access$0(com.chuanonly.livewallpaper.task.LocateHandler$1) -> a
+com.chuanonly.livewallpaper.task.LocateHandler$1$1 -> bq:
+    com.chuanonly.livewallpaper.task.LocateHandler$1 this$1 -> a
+    com.amap.api.location.AMapLocation val$location -> b
+    96:97:void run() -> run
+com.chuanonly.livewallpaper.task.LocateHandler$2 -> br:
+    com.chuanonly.livewallpaper.task.LocateHandler this$0 -> a
+    110:111:void run() -> run
+com.chuanonly.livewallpaper.util.CacheTextrue -> bs:
+    java.util.HashMap map -> a
+    14:20:int get(int,float,float,int) -> a
+    27:33:int getWidth(int,float,float,int) -> b
+    38:44:int getHeight(int,float,float,int) -> c
+    83:91:void put(int,float,float,int,int,int,int) -> a
+    113:114:void put(int,int) -> a
+    118:118:int get(int) -> a
+    122:123:void clear() -> a
+com.chuanonly.livewallpaper.util.CacheTextrue$Param -> bt:
+    int id -> a
+    int width -> b
+    int height -> c
+com.chuanonly.livewallpaper.util.Http -> bu:
+    java.lang.String USER_AGENT -> a
+    37:39:org.apache.http.HttpResponse getResponse(android.content.Context,java.lang.String) -> a
+    45:56:java.io.InputStream getResponseStream(org.apache.http.HttpResponse) -> a
+    62:79:java.lang.String parseIputStreamToString(java.io.InputStream) -> a
+    85:91:org.apache.http.client.HttpClient createHttpClient() -> a
+    98:137:java.lang.Object createHttpRequest(android.content.Context,java.lang.String,boolean,boolean) -> a
+com.chuanonly.livewallpaper.util.MatrixState -> bv:
+    float[] mProjMatrix -> a
+    float[] mVMatrix -> b
+    float[] mMVPMatrix -> c
+    float[] mMMatrix -> d
+    float[] point -> e
+    float[][] mStack -> f
+    int stackTop -> g
+    java.lang.Object lock -> h
+    17:19:void setInitStack() -> a
+    22:23:void initStack() -> b
+    28:40:void pushMatrix() -> c
+    44:55:void popMatrix() -> d
+    59:60:void translate(float,float,float) -> a
+    68:69:void scale(float,float,float) -> b
+    86:98:void setCamera(float,float,float,float,float,float,float,float,float) -> a
+    122:123:void setorthoM(float,float,float,float,float,float) -> a
+    127:129:float[] getFinalMatrix() -> e
+    134:136:float[] convertUVToGLpoint(float,float,int,int) -> a
+com.chuanonly.livewallpaper.util.OpenGLUtils -> bw:
+    28:62:int loadTexture(android.graphics.Bitmap) -> a
+    73:120:android.graphics.Bitmap decodeResource(int,float,float,int) -> a
+    140:140:android.graphics.Bitmap decodeResource(int) -> a
+    159:169:void deleteTexture(java.util.ArrayList) -> a
+com.chuanonly.livewallpaper.util.QueryCityHandler -> bx:
+    android.content.Context mContext -> a
+    java.lang.String mDBPackageName -> b
+    51:114:java.util.ArrayList queryCities(java.lang.String,java.lang.String) -> a
+    118:164:java.util.List queryHotcities() -> a
+    173:209:android.database.sqlite.SQLiteDatabase fetchDbInstance() -> b
+    217:241:void copyInputStreamToFile(java.io.InputStream,java.io.File) -> a
+    246:270:java.io.FileOutputStream openOutputStream(java.io.File) -> a
+    277:285:void closeQuietly(java.io.Closeable) -> a
+    290:295:int copy(java.io.InputStream,java.io.OutputStream) -> a
+    301:309:long copyLarge(java.io.InputStream,java.io.OutputStream) -> b
+com.chuanonly.livewallpaper.util.ShaderManager -> by:
+    com.chuanonly.livewallpaper.util.ShaderManager instance -> a
+    int mProgram -> b
+    int muMVPMatrixHandle -> c
+    int maPositionHandle -> d
+    int maTexCoorHandle -> e
+    int mAlphaHandle -> f
+    java.lang.String mVertexShader -> g
+    java.lang.String mFragmentShader -> h
+    int screenWidth -> i
+    int screenHeight -> j
+    float density -> k
+    boolean isLowVersion -> l
+    30:35:com.chuanonly.livewallpaper.util.ShaderManager getInstance() -> a
+    40:44:void init() -> k
+    47:61:void initShader() -> l
+    66:77:java.lang.String getFragmentShaderStr() -> m
+    83:92:java.lang.String getVertexShaderStr() -> n
+    96:96:int getProgram() -> b
+    101:101:int getMatrixHandle() -> c
+    106:106:int getPositionHandle() -> d
+    111:111:int getTexCoorHandle() -> e
+    116:116:int getAlphaHandle() -> f
+    131:131:int getScreenWidth() -> g
+    136:136:int getScreenHeight() -> h
+    140:140:float getDensity() -> i
+    150:152:void clear() -> j
+com.chuanonly.livewallpaper.util.ShaderUtil -> bz:
+    17:30:int loadShader(int,java.lang.String) -> a
+    35:65:int createProgram(java.lang.String,java.lang.String) -> a
+    71:75:void checkGlError(java.lang.String) -> a
+com.chuanonly.livewallpaper.util.URLUtil -> bA:
+    byte[] _STANDARD_ALPHABET -> b
+    byte[] _STANDARD_DECODABET -> c
+    byte[] _URL_SAFE_ALPHABET -> d
+    byte[] _URL_SAFE_DECODABET -> e
+    byte[] _ORDERED_ALPHABET -> f
+    byte[] _ORDERED_DECODABET -> g
+    boolean $assertionsDisabled -> a
+    418:423:byte[] getAlphabet(int) -> b
+    436:441:byte[] getDecodabet(int) -> c
+    472:473:byte[] encode3to4(byte[],byte[],int,int) -> b
+    504:545:byte[] encode3to4(byte[],int,int,byte[],int,int) -> a
+    863:869:byte[] encodeBytesToBytes(byte[]) -> a
+    893:993:byte[] encodeBytesToBytes(byte[],int,int,int) -> a
+    1040:1102:int decode4to3(byte[],int,byte[],int,int) -> b
+    1125:1131:byte[] decode(byte[]) -> b
+    1157:1213:byte[] decode(byte[],int,int,int) -> b
+    2118:2160:java.lang.String decodeURL(java.lang.String) -> a
+    435:435:byte[] access$0(int) -> a
+    1035:1035:int access$2(byte[],int,byte[],int,int) -> a
+    471:471:byte[] access$3(byte[],byte[],int,int) -> a
+com.chuanonly.livewallpaper.util.URLUtil$OutputStream -> bB:
+    boolean encode -> a
+    int position -> b
+    byte[] buffer -> c
+    int bufferLength -> d
+    int lineLength -> e
+    boolean breakLines -> f
+    byte[] b4 -> g
+    boolean suspendEncoding -> h
+    int options -> i
+    byte[] decodabet -> j
+    1933:1971:void write(int) -> write
+    1988:1997:void write(byte[],int,int) -> write
+    2007:2017:void flushBase64() -> a
+    2028:2036:void close() -> close
+com.chuanonly.livewallpaper.util.Util -> bC:
+    int[] dayfine -> a
+    int[] daycloud -> b
+    int[] dayovercast -> c
+    int[] dayRain -> d
+    int[] daySnow -> e
+    int[] dayFog -> f
+    int[][] weatherTypes -> g
+    android.widget.Toast toast -> h
+    74:87:java.lang.String getWeatherInfoOfWallpaper() -> a
+    91:104:java.lang.String getWeatherInfoOfReal() -> b
+    108:229:int normalDayOrNight(int) -> a
+    366:367:void showToast(java.lang.String) -> a
+    369:380:void showToast(java.lang.String,int) -> a
+    388:392:void setStringToSharedPref(java.lang.String,java.lang.String) -> a
+    397:401:void setIntToSharedPref(java.lang.String,int) -> b
+    404:408:void setLongToSharedPref(java.lang.String,long) -> a
+    412:413:java.lang.String getStringFromSharedPref(java.lang.String,java.lang.String) -> b
+    417:418:int getIntFromSharedPref(java.lang.String,int) -> c
+    423:428:java.lang.String getCityName() -> c
+    448:449:long getLongFromSharedPref(java.lang.String,long) -> b
+    454:493:java.lang.String getToken() -> d
+    498:513:boolean isNetworkAvailable(android.content.Context) -> a
+    521:534:void checkIfNeedToUpdateWeather() -> e
+com.chuanonly.livewallpaper.view.GalleryScrollView -> com.chuanonly.livewallpaper.view.GalleryScrollView:
+    android.widget.Scroller mScrollerHelper -> a
+    android.view.VelocityTracker mVelocityTracker -> b
+    boolean mIsBeingDragged -> c
+    int mActivePointerId -> d
+    float mLastMotionX -> e
+    int[] mXy -> f
+    boolean mIsUp -> g
+    int mTouchSlop -> h
+    int mMinimumVelocity -> i
+    int mMaximumVelocity -> j
+    com.chuanonly.livewallpaper.view.GalleryScrollView$OnBannerStopScroll mBannerOnStopScroll -> k
+    63:64:void onDraw(android.graphics.Canvas) -> onDraw
+    69:137:boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
+    142:245:boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    249:261:void onSecondaryPointerUp(android.view.MotionEvent) -> a
+    274:274:void requestViewPagerDisallowInterceptTouchEvent() -> a
+    277:283:int getScrollRange() -> b
+    287:290:void initVelocityTrackerIfNotExists() -> c
+    293:298:void initOrResetVelocityTracker() -> d
+    301:305:void recycleVelocityTracker() -> e
+    310:317:void computeScroll() -> computeScroll
+    322:340:boolean overScrollBy(int,int,int,int,int,int,int,int,boolean) -> overScrollBy
+    345:355:void onOverScrolled(int,int,boolean,boolean) -> onOverScrolled
+    358:372:void revertBannerLayout() -> f
+    375:387:void revertBannerLayout(int) -> b
+    390:398:void startScrolTo(int,int) -> a
+    402:414:void fling(int) -> a
+    417:418:void setBannerOnStopScrollListener(com.chuanonly.livewallpaper.view.GalleryScrollView$OnBannerStopScroll) -> setBannerOnStopScrollListener
+com.chuanonly.livewallpaper.view.GalleryScrollView$OnBannerStopScroll -> bD:
+    void onStopScroll(int) -> a
+com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView -> com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView:
+    int RATE -> a
+    com.chuanonly.livewallpaper.service.WallPaperRender mRender -> b
+    java.util.concurrent.ScheduledExecutorService mTimer -> c
+    java.lang.Runnable renderTask -> d
+    26:32:void init(android.content.Context) -> a
+    36:38:void onResume() -> onResume
+    42:49:void onPause() -> onPause
+    54:58:void startRendering() -> a
+    62:67:void stopRendering() -> b
+    80:81:void setDirty(int) -> setDirty
+com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView$1 -> bE:
+    com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView this$0 -> a
+    74:76:void run() -> run
+com.google.ads.Ad -> bF:
+com.google.ads.AdActivity -> com.google.ads.AdActivity:
+    com.google.ads.internal.a a -> a
+    java.lang.Object b -> b
+    com.google.ads.AdActivity c -> c
+    com.google.ads.internal.d d -> d
+    com.google.ads.AdActivity e -> e
+    com.google.ads.AdActivity f -> f
+    com.google.ads.AdActivity$StaticMethodWrapper g -> g
+    com.google.ads.internal.AdWebView h -> h
+    android.widget.FrameLayout i -> i
+    int j -> j
+    android.view.ViewGroup k -> k
+    boolean l -> l
+    long m -> m
+    android.widget.RelativeLayout n -> n
+    com.google.ads.AdActivity o -> o
+    boolean p -> p
+    boolean q -> q
+    boolean r -> r
+    boolean s -> s
+    com.google.ads.internal.AdVideoView t -> t
+    262:274:android.view.View a(int,boolean) -> a
+    283:285:void a(java.lang.String) -> a
+    294:296:void a(java.lang.String,java.lang.Throwable) -> a
+    303:303:com.google.ads.internal.AdVideoView getAdVideoView() -> a
+    342:342:boolean isShowing() -> b
+    349:349:boolean leftApplication() -> c
+    359:360:void launchAdActivity(com.google.ads.internal.d,com.google.ads.internal.e) -> a
+    371:488:void a(java.util.HashMap,com.google.ads.internal.d) -> a
+    492:506:void a(com.google.ads.internal.d) -> a
+    509:509:com.google.ads.internal.AdVideoView a(android.app.Activity) -> a
+    517:521:void moveAdVideoView(int,int,int,int) -> a
+    528:547:void newAdVideoView(int,int,int,int) -> b
+    554:560:android.widget.RelativeLayout$LayoutParams a(int,int,int,int) -> c
+    571:572:void onClick(android.view.View) -> onClick
+    581:752:void onCreate(android.os.Bundle) -> onCreate
+    769:844:void a(com.google.ads.internal.AdWebView,boolean,int,boolean,boolean) -> a
+    860:875:void onDestroy() -> onDestroy
+    885:890:void onPause() -> onPause
+    898:976:void e() -> h
+    986:995:void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+    1003:1020:void setCustomClose(boolean) -> a
+    52:52:java.lang.Object a() -> d
+    52:52:com.google.ads.AdActivity b() -> e
+    52:52:com.google.ads.AdActivity c() -> f
+    52:52:com.google.ads.internal.d d() -> g
+    52:52:com.google.ads.internal.d b(com.google.ads.internal.d) -> b
+com.google.ads.AdActivity$StaticMethodWrapper -> bG:
+    141:143:boolean isShowing() -> a
+    150:152:boolean leftApplication() -> b
+    163:190:void launchAdActivity(com.google.ads.internal.d,com.google.ads.internal.e) -> a
+com.google.ads.AdListener -> bH:
+    void onReceiveAd(com.google.ads.Ad) -> a
+    void onFailedToReceiveAd(com.google.ads.Ad,com.google.ads.AdRequest$ErrorCode) -> a
+    void onPresentScreen(com.google.ads.Ad) -> b
+    void onDismissScreen(com.google.ads.Ad) -> c
+    void onLeaveApplication(com.google.ads.Ad) -> d
+com.google.ads.AdRequest -> bI:
+    java.text.SimpleDateFormat a -> b
+    java.lang.reflect.Method b -> c
+    java.lang.reflect.Method c -> d
+    com.google.ads.AdRequest$Gender d -> e
+    java.util.Date e -> f
+    java.util.Set f -> g
+    java.util.Map g -> h
+    java.util.Map h -> i
+    android.location.Location i -> j
+    boolean j -> k
+    boolean k -> l
+    java.lang.String TEST_EMULATOR -> a
+    java.util.Set l -> m
+    346:347:com.google.ads.AdRequest setKeywords(java.util.Set) -> a
+    465:468:com.google.ads.AdRequest setNetworkExtras(com.google.ads.mediation.NetworkExtras) -> a
+    489:489:java.lang.Object getNetworkExtras(java.lang.Class) -> a
+    569:652:java.util.Map getRequestMap(android.content.Context) -> a
+    691:692:com.google.ads.AdRequest setTestDevices(java.util.Set) -> b
+    707:719:boolean isTestDevice(android.content.Context) -> b
+com.google.ads.AdRequest$ErrorCode -> bJ:
+    com.google.ads.AdRequest$ErrorCode INVALID_REQUEST -> a
+    com.google.ads.AdRequest$ErrorCode NO_FILL -> b
+    com.google.ads.AdRequest$ErrorCode NETWORK_ERROR -> c
+    com.google.ads.AdRequest$ErrorCode INTERNAL_ERROR -> d
+    java.lang.String a -> e
+    com.google.ads.AdRequest$ErrorCode[] b -> f
+    55:55:com.google.ads.AdRequest$ErrorCode[] values() -> values
+    55:55:com.google.ads.AdRequest$ErrorCode valueOf(java.lang.String) -> valueOf
+    98:98:java.lang.String toString() -> toString
+com.google.ads.AdRequest$Gender -> bK:
+    com.google.ads.AdRequest$Gender UNKNOWN -> a
+    com.google.ads.AdRequest$Gender MALE -> b
+    com.google.ads.AdRequest$Gender FEMALE -> c
+    com.google.ads.AdRequest$Gender[] a -> d
+    105:105:com.google.ads.AdRequest$Gender[] values() -> values
+    105:105:com.google.ads.AdRequest$Gender valueOf(java.lang.String) -> valueOf
+com.google.ads.AdSize -> bL:
+    com.google.ads.AdSize SMART_BANNER -> a
+    com.google.ads.AdSize BANNER -> b
+    com.google.ads.AdSize IAB_MRECT -> c
+    com.google.ads.AdSize IAB_BANNER -> d
+    com.google.ads.AdSize IAB_LEADERBOARD -> e
+    com.google.ads.AdSize IAB_WIDE_SKYSCRAPER -> f
+    int a -> g
+    int b -> h
+    boolean c -> i
+    boolean d -> j
+    boolean e -> k
+    java.lang.String f -> l
+    181:195:com.google.ads.AdSize createAdSize(com.google.ads.AdSize,android.content.Context) -> a
+    203:209:boolean equals(java.lang.Object) -> equals
+    217:217:int hashCode() -> hashCode
+    225:229:int getWidth() -> a
+    236:240:int getHeight() -> b
+    249:249:boolean a() -> f
+    258:258:boolean isFullWidth() -> c
+    267:267:boolean isAutoHeight() -> d
+    276:276:boolean isCustomAdSize() -> e
+    284:284:java.lang.String toString() -> toString
+    370:371:int a(android.content.Context) -> a
+    382:389:int b(android.content.Context) -> b
+com.google.ads.AdView -> com.google.ads.AdView:
+    com.google.ads.internal.d a -> a
+    com.google.ads.internal.a b -> b
+    157:192:void a(android.content.Context,java.lang.String,int,com.google.ads.AdSize,android.util.AttributeSet) -> a
+    208:217:boolean a(android.content.Context,com.google.ads.AdSize,android.util.AttributeSet) -> a
+    235:244:boolean b(android.content.Context,com.google.ads.AdSize,android.util.AttributeSet) -> b
+    252:253:void destroy() -> a
+    270:274:void a(android.content.Context,java.lang.String,com.google.ads.AdSize,android.util.AttributeSet) -> a
+    280:317:com.google.ads.AdSize[] a(java.lang.String) -> a
+    329:405:void a(android.content.Context,android.util.AttributeSet) -> a
+    409:436:boolean a(java.lang.String,android.content.Context,android.util.AttributeSet,boolean) -> a
+    441:470:java.lang.String b(java.lang.String,android.content.Context,android.util.AttributeSet,boolean) -> b
+    476:488:java.util.Set c(java.lang.String,android.content.Context,android.util.AttributeSet,boolean) -> c
+    492:492:boolean a(java.lang.String,android.util.AttributeSet) -> a
+    504:533:void a(android.app.Activity,com.google.ads.AdSize,java.lang.String) -> a
+    555:559:boolean isRefreshing() -> b
+    569:577:void loadAd(com.google.ads.AdRequest) -> a
+    586:587:void setAdListener(com.google.ads.AdListener) -> setAdListener
+    593:594:void setAppEventListener(com.google.ads.AppEventListener) -> setAppEventListener
+    600:601:void setSwipeableEventListener(com.google.ads.SwipeableAdListener) -> setSwipeableEventListener
+    607:615:void setSupportedAdSizes(com.google.ads.AdSize[]) -> setSupportedAdSizes
+    622:627:void a(com.google.ads.AdSize[]) -> a
+    635:642:void onMeasure(int,int) -> onMeasure
+    663:681:void onWindowVisibilityChanged(int) -> onWindowVisibilityChanged
+com.google.ads.AppEventListener -> bM:
+    void onAppEvent(com.google.ads.Ad,java.lang.String,java.lang.String) -> a
+com.google.ads.InterstitialAd -> bN:
+com.google.ads.SwipeableAdListener -> bO:
+    void onAdActivated(com.google.ads.Ad) -> a
+    void onAdDeactivated(com.google.ads.Ad) -> b
+com.google.ads.a -> bP:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.util.List c -> c
+    java.util.List d -> d
+    java.util.HashMap e -> e
+    52:52:java.lang.String a() -> a
+    56:56:java.lang.String b() -> b
+    60:60:java.util.List c() -> c
+    64:64:java.util.List d() -> d
+    68:68:java.util.HashMap e() -> e
+com.google.ads.aa -> bQ:
+    25:57:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.ab -> bR:
+    28:50:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.ac -> bS:
+    com.google.ads.internal.a a -> a
+    50:61:int a(java.util.HashMap,java.lang.String,int,android.util.DisplayMetrics) -> a
+    72:170:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.ae -> bT:
+    android.content.Context a -> a
+    java.lang.String b -> b
+    41:41:java.net.HttpURLConnection a(java.net.URL) -> a
+    53:76:void run() -> run
+com.google.ads.af -> bU:
+    java.lang.ref.WeakReference a -> a
+    44:50:void run() -> run
+com.google.ads.ag -> bV:
+    int a -> a
+    int b -> b
+    int c -> c
+    int d -> d
+    int e -> e
+    int f -> f
+    int g -> g
+    int h -> h
+    int i -> i
+    int j -> j
+    int k -> k
+    int l -> l
+    int m -> m
+    int n -> n
+    int o -> o
+    int p -> p
+    int q -> q
+    int r -> r
+    int s -> s
+    int t -> t
+    int u -> u
+    int v -> v
+    int w -> w
+    int x -> x
+    int y -> y
+    int z -> z
+    int A -> A
+    int B -> B
+    int C -> C
+    int D -> D
+    int E -> E
+    int F -> F
+    int G -> G
+    int H -> H
+    int I -> I
+    int J -> J
+    int K -> K
+    int L -> L
+    int M -> M
+    int N -> N
+    int O -> O
+    int P -> P
+    int Q -> Q
+    int R -> R
+    int S -> S
+    int T -> T
+    int U -> U
+    int V -> V
+    int W -> W
+    int X -> X
+    int Y -> Y
+    int Z -> Z
+    int aa -> aa
+    int ab -> ab
+    int ac -> ac
+    int ad -> ad
+    int ae -> ae
+    int af -> af
+    int ag -> ag
+    int ah -> ah
+    int ai -> ai
+    int aj -> aj
+    int ak -> ak
+    int al -> al
+    int am -> am
+    int an -> an
+    int ao -> ao
+    int ap -> ap
+    int aq -> aq
+    int ar -> ar
+    int as -> as
+    int at -> at
+    int au -> au
+    int av -> av
+    int aw -> aw
+    int ax -> ax
+    int ay -> ay
+    int az -> az
+    int aA -> aA
+    int aB -> aB
+    int aC -> aC
+    int aD -> aD
+    int aE -> aE
+    int aF -> aF
+    int aG -> aG
+    int aH -> aH
+    int aI -> aI
+    int aJ -> aJ
+    int aK -> aK
+    int aL -> aL
+    int aM -> aM
+    int aN -> aN
+    int aO -> aO
+    int aP -> aP
+    int aQ -> aQ
+    int aR -> aR
+    int aS -> aS
+    int aT -> aT
+    int aU -> aU
+    int aV -> aV
+    int aW -> aW
+    int aX -> aX
+    int aY -> aY
+    int aZ -> aZ
+    int ba -> ba
+    int bb -> bb
+    int bc -> bc
+    int bd -> bd
+    int be -> be
+    int bf -> bf
+    int bg -> bg
+    int bh -> bh
+    int bi -> bi
+    int bj -> bj
+    int bk -> bk
+    int bl -> bl
+    int bm -> bm
+    int bn -> bn
+    int bo -> bo
+    int bp -> bp
+    int bq -> bq
+    int br -> br
+    int bs -> bs
+    int bt -> bt
+    int bu -> bu
+    int bv -> bv
+    int bw -> bw
+    int bx -> bx
+    int by -> by
+    int bz -> bz
+    int bA -> bA
+    int bB -> bB
+    int bC -> bC
+    int bD -> bD
+    int bE -> bE
+    int bF -> bF
+    int bG -> bG
+    int bH -> bH
+    int bI -> bI
+    int bJ -> bJ
+    int bK -> bK
+    int bL -> bL
+    int bM -> bM
+    int bN -> bN
+    int bO -> bO
+    int bP -> bP
+    int bQ -> bQ
+    int bR -> bR
+    int bS -> bS
+    int bT -> bT
+    int bU -> bU
+    int bV -> bV
+    int bW -> bW
+    int bX -> bX
+    int bY -> bY
+    int bZ -> bZ
+    int ca -> ca
+    int cb -> cb
+    int cc -> cc
+    int cd -> cd
+    int ce -> ce
+    int cf -> cf
+    int cg -> cg
+    int ch -> ch
+    int ci -> ci
+    int cj -> cj
+    int ck -> ck
+    int cl -> cl
+    int cm -> cm
+    int cn -> cn
+    int co -> co
+    int cp -> cp
+    int cq -> cq
+    int cr -> cr
+    int cs -> cs
+    int ct -> ct
+    int cu -> cu
+    int cv -> cv
+    int cw -> cw
+    int cx -> cx
+    int cy -> cy
+    int cz -> cz
+    int cA -> cA
+    int cB -> cB
+    int cC -> cC
+    int cD -> cD
+    int cE -> cE
+    int cF -> cF
+    int cG -> cG
+    int cH -> cH
+    int cI -> cI
+    int cJ -> cJ
+    int cK -> cK
+    int cL -> cL
+    int cM -> cM
+    com.google.ads.ag$a[] cN -> cN
+    11434:11435:void a(byte[],byte[]) -> a
+com.google.ads.ag$1 -> bW:
+com.google.ads.ag$a -> bX:
+    void a(byte[],byte[]) -> a
+com.google.ads.ag$b -> bY:
+    com.google.ads.ag a -> a
+    36:1036:void a(byte[],byte[]) -> a
+com.google.ads.ag$c -> bZ:
+    com.google.ads.ag a -> a
+    1041:2041:void a(byte[],byte[]) -> a
+com.google.ads.ag$d -> ca:
+    com.google.ads.ag a -> a
+    10086:11086:void a(byte[],byte[]) -> a
+com.google.ads.ag$e -> cb:
+    com.google.ads.ag a -> a
+    11091:11415:void a(byte[],byte[]) -> a
+com.google.ads.ag$f -> cc:
+    com.google.ads.ag a -> a
+    2046:3046:void a(byte[],byte[]) -> a
+com.google.ads.ag$g -> cd:
+    com.google.ads.ag a -> a
+    3051:4051:void a(byte[],byte[]) -> a
+com.google.ads.ag$h -> ce:
+    com.google.ads.ag a -> a
+    4056:5056:void a(byte[],byte[]) -> a
+com.google.ads.ag$i -> cf:
+    com.google.ads.ag a -> a
+    5061:6061:void a(byte[],byte[]) -> a
+com.google.ads.ag$j -> cg:
+    com.google.ads.ag a -> a
+    6066:7066:void a(byte[],byte[]) -> a
+com.google.ads.ag$k -> ch:
+    com.google.ads.ag a -> a
+    7071:8071:void a(byte[],byte[]) -> a
+com.google.ads.ag$l -> ci:
+    com.google.ads.ag a -> a
+    8076:9076:void a(byte[],byte[]) -> a
+com.google.ads.ag$m -> cj:
+    com.google.ads.ag a -> a
+    9081:10081:void a(byte[],byte[]) -> a
+com.google.ads.ah -> ck:
+    java.lang.String[] a -> a
+com.google.ads.ai -> cl:
+    java.lang.String a(android.content.Context) -> a
+    java.lang.String a(android.content.Context,java.lang.String) -> a
+com.google.ads.aj -> cm:
+    com.google.ads.au c -> c
+    java.io.ByteArrayOutputStream d -> d
+    android.view.MotionEvent a -> a
+    android.util.DisplayMetrics b -> b
+    void b(android.content.Context) -> b
+    void c(android.content.Context) -> c
+    162:162:java.lang.String a(android.content.Context) -> a
+    167:167:java.lang.String a(android.content.Context,java.lang.String) -> a
+    173:181:void a(android.view.MotionEvent) -> a
+    185:202:void a(int,int,int) -> a
+    218:242:java.lang.String a(android.content.Context,java.lang.String,boolean) -> a
+    253:254:void a(int,long) -> a
+    264:265:void a(int,java.lang.String) -> a
+    271:273:void a() -> a
+    282:283:byte[] b() -> b
+    313:360:java.lang.String a(byte[],java.lang.String) -> a
+    365:371:void a(java.lang.String,byte[]) -> a
+com.google.ads.ak -> cn:
+    java.lang.reflect.Method d -> d
+    java.lang.reflect.Method e -> e
+    java.lang.reflect.Method f -> f
+    java.lang.reflect.Method g -> g
+    java.lang.reflect.Method h -> h
+    java.lang.String i -> i
+    long j -> j
+    boolean c -> c
+    73:75:com.google.ads.ak a(java.lang.String,android.content.Context) -> a
+    92:110:void b(java.lang.String,android.content.Context) -> b
+    125:150:void b(android.content.Context) -> b
+    156:199:void c(android.content.Context) -> c
+    203:207:java.lang.String a() -> a
+    211:220:java.lang.Long b() -> b
+    226:240:java.lang.String d(android.content.Context) -> d
+    245:254:java.lang.String c() -> c
+    260:273:java.util.ArrayList a(android.view.MotionEvent,android.util.DisplayMetrics) -> a
+    279:296:java.lang.String e(android.content.Context) -> e
+    303:311:java.lang.String b(byte[],java.lang.String) -> b
+    329:408:void f(android.content.Context) -> f
+com.google.ads.ak$a -> co:
+com.google.ads.al -> cp:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String[] c -> c
+    com.google.ads.ai d -> d
+    com.google.ads.ah e -> e
+    106:118:boolean a(android.net.Uri) -> a
+    128:129:void a(java.lang.String) -> a
+    191:194:android.net.Uri a(android.net.Uri,android.content.Context) -> a
+    208:231:android.net.Uri a(android.net.Uri,java.lang.String,java.lang.String) -> a
+    250:265:android.net.Uri a(android.net.Uri,android.content.Context,java.lang.String,boolean) -> a
+com.google.ads.am -> cq:
+com.google.ads.an -> cr:
+    67:70:void a(byte[]) -> a
+    127:141:byte[] a(java.lang.String) -> a
+    205:242:byte[] a(byte[],java.lang.String) -> a
+com.google.ads.an$a -> cs:
+com.google.ads.ao -> ct:
+    12:12:java.lang.String a() -> a
+    16:16:java.lang.String b() -> b
+    22:22:java.lang.String c() -> c
+    26:26:java.lang.String d() -> d
+    32:32:java.lang.String e() -> e
+    36:36:java.lang.String f() -> f
+    42:42:java.lang.String g() -> g
+    46:46:java.lang.String h() -> h
+    52:52:java.lang.String i() -> i
+    56:56:java.lang.String j() -> j
+    62:62:java.lang.String k() -> k
+    66:66:java.lang.String l() -> l
+com.google.ads.ap -> cu:
+com.google.ads.aq -> cv:
+    char[] a -> a
+    char[] b -> b
+    byte[] c -> c
+    byte[] d -> d
+    218:243:char[] a(byte[],int,int,char[],int,char[]) -> a
+    266:266:java.lang.String a(byte[],boolean) -> a
+    281:293:java.lang.String a(byte[],int,int,char[],boolean) -> a
+    308:352:char[] a(byte[],int,int,char[],int) -> a
+    384:412:int a(char[],int,byte[],int,byte[]) -> a
+    424:425:byte[] a(java.lang.String) -> a
+    475:475:byte[] a(char[],int,int) -> a
+    505:577:byte[] a(char[],int,int,byte[]) -> a
+com.google.ads.ar -> cw:
+    byte[] a -> a
+    int b -> b
+    int c -> c
+    28:42:void a(byte[]) -> a
+com.google.ads.as -> cx:
+    android.net.Uri a -> a
+    java.lang.String[] b -> b
+com.google.ads.at -> cy:
+    com.google.ads.internal.a a -> a
+    119:134:boolean a(android.content.Context,long) -> a
+    140:146:boolean a(android.content.Context,long,android.content.SharedPreferences) -> a
+    159:160:void a(android.app.Activity) -> a
+com.google.ads.at$1 -> cz:
+    android.content.Context a -> a
+    127:132:void run() -> run
+com.google.ads.at$a -> cA:
+    java.lang.ref.WeakReference a -> a
+    android.content.SharedPreferences$Editor b -> b
+    54:58:android.content.SharedPreferences$Editor a(android.content.Context) -> a
+    66:102:void run() -> run
+com.google.ads.au -> cB:
+    byte[] a -> a
+    int b -> b
+    int c -> c
+    int d -> d
+    java.io.OutputStream e -> e
+    69:69:com.google.ads.au a(java.io.OutputStream) -> a
+    78:78:com.google.ads.au a(java.io.OutputStream,int) -> a
+    131:133:void a(int,long) -> a
+    166:168:void a(int,java.lang.String) -> a
+    324:325:void a(long) -> a
+    357:360:void a(java.lang.String) -> a
+    870:879:void b() -> b
+    886:889:void a() -> a
+    944:950:void a(byte) -> a
+    954:955:void a(int) -> a
+    964:965:void a(byte[]) -> a
+    970:999:void a(byte[],int,int) -> a
+    1055:1056:void a(int,int) -> a
+    1069:1074:void b(int) -> b
+    1095:1100:void b(long) -> b
+com.google.ads.au$a -> cC:
+com.google.ads.av -> cD:
+    int a -> a
+    int b -> b
+    int c -> c
+    int d -> d
+    42:42:int a(int,int) -> a
+com.google.ads.b -> cE:
+    java.math.BigInteger a -> a
+    java.math.BigInteger b -> b
+    com.google.ads.b c -> c
+    48:51:com.google.ads.b a() -> a
+    58:58:java.math.BigInteger b() -> b
+    66:68:java.math.BigInteger c() -> c
+    96:109:java.math.BigInteger d() -> d
+    117:117:byte[] a(long) -> a
+com.google.ads.c -> cF:
+    java.util.Map a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    java.util.List d -> d
+    java.lang.Integer e -> e
+    java.lang.Integer f -> f
+    java.util.List g -> g
+    java.util.List h -> h
+    java.util.List i -> i
+    97:127:com.google.ads.c a(java.lang.String) -> a
+    132:132:boolean a() -> a
+    136:136:int b() -> b
+    140:140:java.lang.String c() -> c
+    149:149:boolean d() -> d
+    153:153:int e() -> e
+    157:157:java.util.List f() -> f
+    162:162:java.util.List g() -> g
+    167:167:java.util.List h() -> h
+    172:172:java.util.List i() -> i
+    180:205:com.google.ads.a a(org.json.JSONObject) -> a
+    214:229:com.google.ads.internal.h j() -> j
+    237:246:java.util.List a(org.json.JSONObject,java.lang.String) -> a
+com.google.ads.c$1 -> cG:
+com.google.ads.d -> cH:
+    com.google.ads.c a -> a
+    long b -> b
+    47:47:boolean a() -> a
+    57:62:void a(com.google.ads.c,int) -> a
+    69:69:com.google.ads.c b() -> b
+com.google.ads.doubleclick.DfpAdView -> com.google.ads.doubleclick.DfpAdView:
+    67:68:void setAppEventListener(com.google.ads.AppEventListener) -> setAppEventListener
+    76:77:void setSupportedAdSizes(com.google.ads.AdSize[]) -> setSupportedAdSizes
+com.google.ads.doubleclick.DfpExtras -> cI:
+    java.lang.String a -> a
+    37:37:java.lang.String getPublisherProvidedId() -> a
+    73:74:com.google.ads.doubleclick.DfpExtras clearExtras() -> b
+    12:12:com.google.ads.mediation.admob.AdMobAdapterExtras clearExtras() -> c
+com.google.ads.doubleclick.SwipeableDfpAdView -> com.google.ads.doubleclick.SwipeableDfpAdView:
+    46:47:void setSwipeableEventListener(com.google.ads.SwipeableAdListener) -> setSwipeableEventListener
+com.google.ads.e -> cJ:
+    com.google.ads.internal.d a -> a
+    com.google.ads.h b -> b
+    java.lang.Object c -> c
+    java.lang.Thread d -> d
+    java.lang.Object e -> e
+    boolean f -> f
+    java.lang.Object g -> g
+    107:109:boolean a() -> a
+    113:123:void b() -> b
+    127:161:void a(com.google.ads.c,com.google.ads.AdRequest) -> a
+    172:201:boolean a(com.google.ads.c,com.google.ads.internal.d) -> a
+    327:329:boolean d() -> c
+    336:389:void b(com.google.ads.c,com.google.ads.AdRequest) -> b
+    399:459:boolean a(java.lang.String,android.app.Activity,com.google.ads.AdRequest,com.google.ads.f,java.util.HashMap,long) -> a
+    478:485:boolean e(com.google.ads.h) -> b
+    495:504:void d(com.google.ads.h) -> a
+    52:52:void a(com.google.ads.e,com.google.ads.c,com.google.ads.AdRequest) -> a
+    52:52:java.lang.Object a(com.google.ads.e) -> a
+    52:52:java.lang.Thread a(com.google.ads.e,java.lang.Thread) -> a
+    52:52:com.google.ads.internal.d b(com.google.ads.e) -> b
+    52:52:boolean a(com.google.ads.e,com.google.ads.h) -> a
+com.google.ads.e$1 -> cK:
+    com.google.ads.c a -> a
+    com.google.ads.AdRequest b -> b
+    com.google.ads.e c -> c
+    153:157:void run() -> run
+com.google.ads.e$7 -> cL:
+    com.google.ads.c a -> a
+    com.google.ads.e b -> b
+    385:387:void run() -> run
+com.google.ads.e$8 -> cM:
+    com.google.ads.h a -> a
+    android.view.View b -> b
+    com.google.ads.f c -> c
+    com.google.ads.e d -> d
+    438:447:void run() -> run
+com.google.ads.f -> cN:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    java.util.List d -> d
+    java.util.List e -> e
+    java.util.List f -> f
+    61:61:java.lang.String a() -> a
+    65:65:java.lang.String b() -> b
+    69:69:java.lang.String c() -> c
+    74:74:java.util.List d() -> d
+com.google.ads.g -> cO:
+    76:105:java.lang.String a(java.lang.String,java.lang.String,java.lang.Boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    133:144:java.lang.Object a(java.lang.String,java.lang.Class) -> a
+com.google.ads.g$a -> cP:
+    com.google.ads.g$a a -> a
+    com.google.ads.g$a b -> b
+    com.google.ads.g$a c -> c
+    com.google.ads.g$a d -> d
+    com.google.ads.g$a e -> e
+    com.google.ads.g$a f -> f
+    com.google.ads.g$a[] g -> g
+    17:17:com.google.ads.g$a[] values() -> values
+    17:17:com.google.ads.g$a valueOf(java.lang.String) -> valueOf
+com.google.ads.h -> cQ:
+    com.google.ads.internal.h a -> a
+    com.google.ads.f b -> b
+    boolean c -> c
+    boolean d -> d
+    com.google.ads.g$a e -> e
+    com.google.ads.e f -> f
+    com.google.ads.mediation.MediationAdapter g -> g
+    boolean h -> h
+    boolean i -> i
+    android.view.View j -> j
+    java.lang.String k -> k
+    com.google.ads.AdRequest l -> l
+    java.util.HashMap m -> m
+    130:138:void a(android.app.Activity) -> a
+    141:171:void b() -> a
+    178:178:boolean c() -> b
+    187:189:boolean d() -> c
+    196:200:com.google.ads.g$a e() -> d
+    205:207:android.view.View f() -> e
+    247:247:java.lang.String h() -> f
+    253:257:void a(boolean,com.google.ads.g$a) -> a
+    261:262:void a(com.google.ads.mediation.MediationAdapter) -> a
+    280:281:void k() -> g
+    284:284:boolean l() -> h
+    42:42:com.google.ads.mediation.MediationAdapter a(com.google.ads.h) -> a
+com.google.ads.h$1 -> cR:
+    com.google.ads.h a -> a
+    154:169:void run() -> run
+com.google.ads.i -> cS:
+    com.google.ads.h a -> a
+    java.lang.String b -> b
+    com.google.ads.AdRequest c -> c
+    java.util.HashMap d -> d
+    boolean e -> e
+    java.lang.ref.WeakReference f -> f
+    67:79:boolean a(java.util.Map) -> a
+    113:132:void run() -> run
+    136:138:void a(java.lang.String,java.lang.Throwable,com.google.ads.g$a) -> a
+    146:207:void a(com.google.ads.mediation.MediationAdapter) -> a
+com.google.ads.i$a -> cT:
+com.google.ads.internal.ActivationOverlay -> com.google.ads.internal.ActivationOverlay:
+    boolean b -> b
+    boolean c -> c
+    int d -> d
+    int e -> e
+    com.google.ads.internal.i f -> f
+    58:68:void setOverlayEnabled(boolean) -> setOverlayEnabled
+    71:72:void setOverlayActivated(boolean) -> setOverlayActivated
+    75:75:boolean a() -> a
+    79:79:boolean b() -> b
+    86:86:int c() -> c
+    93:94:void setYPosition(int) -> setYPosition
+    100:100:int d() -> d
+    107:108:void setXPosition(int) -> setXPosition
+    111:111:com.google.ads.internal.i e() -> e
+    116:116:boolean canScrollHorizontally(int) -> canScrollHorizontally
+    121:121:boolean canScrollVertically(int) -> canScrollVertically
+com.google.ads.internal.ActivationOverlay$1 -> cU:
+    com.google.ads.internal.ActivationOverlay a -> a
+    com.google.ads.internal.ActivationOverlay b -> b
+    63:64:void run() -> run
+com.google.ads.internal.AdVideoView -> com.google.ads.internal.AdVideoView:
+    com.google.ads.internal.a b -> b
+    java.lang.ref.WeakReference c -> c
+    com.google.ads.internal.AdWebView d -> d
+    android.widget.MediaController a -> a
+    long e -> e
+    android.widget.VideoView f -> f
+    java.lang.String g -> g
+    125:127:void a() -> a
+    143:149:void b() -> b
+    155:172:void setMediaControllerEnabled(boolean) -> setMediaControllerEnabled
+    178:179:void setSrc(java.lang.String) -> setSrc
+    186:187:void onCompletion(android.media.MediaPlayer) -> onCompletion
+    194:197:boolean onError(android.media.MediaPlayer,int,int) -> onError
+    205:209:void onPrepared(android.media.MediaPlayer) -> onPrepared
+    215:216:void c() -> c
+    222:223:void d() -> d
+    230:231:void a(int) -> a
+    237:238:void a(android.view.MotionEvent) -> a
+    244:245:void e() -> e
+    251:259:void f() -> f
+com.google.ads.internal.AdVideoView$a -> cV:
+    java.lang.ref.WeakReference a -> a
+    54:61:void run() -> run
+    64:65:void a() -> a
+com.google.ads.internal.AdWebView -> com.google.ads.internal.AdWebView:
+    java.lang.ref.WeakReference b -> b
+    com.google.ads.AdSize c -> c
+    boolean d -> d
+    boolean e -> e
+    boolean f -> f
+    com.google.ads.n a -> a
+    154:158:void f() -> f
+    165:170:void g() -> g
+    178:183:void h() -> h
+    191:191:com.google.ads.AdActivity i() -> i
+    198:198:boolean j() -> j
+    205:205:boolean k() -> k
+    214:215:void setAdActivity(com.google.ads.AdActivity) -> setAdActivity
+    229:233:void loadDataWithBaseURL(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> loadDataWithBaseURL
+    242:246:void loadUrl(java.lang.String) -> loadUrl
+    255:259:void stopLoading() -> stopLoading
+    269:282:void destroy() -> destroy
+    288:290:void setAdSize(com.google.ads.AdSize) -> setAdSize
+    300:345:void onMeasure(int,int) -> onMeasure
+    352:356:boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    365:372:void setCustomClose(boolean) -> setCustomClose
+    379:380:void setIsExpandedMraid(boolean) -> setIsExpandedMraid
+    387:397:void a(boolean) -> a
+com.google.ads.internal.AdWebView$1 -> cW:
+    com.google.ads.internal.AdWebView a -> a
+    115:126:void onDownloadStart(java.lang.String,java.lang.String,java.lang.String,java.lang.String,long) -> onDownloadStart
+com.google.ads.internal.AdWebView$2 -> cX:
+    com.google.ads.internal.AdWebView a -> a
+    391:391:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.google.ads.internal.a -> cY:
+    com.google.ads.internal.a e -> e
+    com.google.ads.util.f a -> a
+    java.util.Map b -> b
+    java.util.Map c -> c
+    java.util.Map d -> d
+    145:171:java.lang.String a(android.net.Uri,java.util.HashMap) -> a
+    188:210:void a(com.google.ads.internal.d,java.util.Map,android.net.Uri,android.webkit.WebView) -> a
+    221:225:boolean a(android.net.Uri) -> a
+    237:248:boolean b(android.net.Uri) -> b
+    260:265:boolean c(android.net.Uri) -> c
+    276:282:void a(android.webkit.WebView,java.lang.String,java.lang.String) -> a
+    291:293:void a(android.webkit.WebView,java.lang.String) -> a
+    303:305:void a(android.webkit.WebView,java.util.Map) -> a
+    313:316:void a(android.webkit.WebView) -> a
+    324:325:void b(android.webkit.WebView) -> b
+    41:41:com.google.ads.internal.a a() -> a
+com.google.ads.internal.a$1 -> cZ:
+com.google.ads.internal.a$2 -> da:
+    72:72:com.google.ads.internal.a a() -> a
+    69:69:java.lang.Object b() -> b
+com.google.ads.internal.a$3 -> db:
+com.google.ads.internal.a$4 -> dc:
+com.google.ads.internal.b -> dd:
+    boolean a -> a
+    42:44:void a(java.lang.String) -> a
+    47:47:void b(java.lang.String) -> b
+    56:59:java.lang.String c(java.lang.String) -> c
+com.google.ads.internal.c -> de:
+    java.lang.String b -> b
+    java.lang.String c -> c
+    java.lang.String d -> d
+    java.lang.String e -> e
+    boolean f -> f
+    com.google.ads.internal.f g -> g
+    com.google.ads.AdRequest h -> h
+    android.webkit.WebView i -> i
+    com.google.ads.l j -> j
+    java.lang.String k -> k
+    java.lang.String l -> l
+    java.util.LinkedList m -> m
+    java.lang.String n -> n
+    com.google.ads.AdSize o -> o
+    boolean p -> p
+    boolean q -> q
+    boolean r -> r
+    com.google.ads.AdRequest$ErrorCode s -> s
+    boolean t -> t
+    int u -> u
+    java.lang.Thread v -> v
+    boolean w -> w
+    com.google.ads.internal.c$d x -> x
+    boolean a -> a
+    515:516:void a(boolean) -> a
+    637:638:void a(java.lang.String) -> a
+    644:664:void a() -> a
+    672:676:void a(com.google.ads.AdRequest) -> a
+    684:978:void run() -> run
+    983:1019:void b() -> b
+    1030:1062:void a(java.lang.String,com.google.ads.c,com.google.ads.d) -> a
+    1077:1366:java.lang.String a(java.util.Map,android.app.Activity) -> a
+    1376:1379:java.lang.String d() -> d
+    1390:1393:java.lang.String e() -> e
+    1403:1406:java.lang.String f() -> f
+    1418:1421:java.lang.String g() -> g
+    1432:1435:java.lang.String h() -> h
+    1451:1457:void a(com.google.ads.AdRequest$ErrorCode,boolean) -> a
+    1468:1470:void b(java.lang.String,java.lang.String) -> b
+    1477:1484:void i() -> i
+    1490:1498:void j() -> j
+    1501:1502:void b(boolean) -> b
+    1505:1506:void b(java.lang.String) -> b
+    1519:1522:void a(java.lang.String,java.lang.String) -> a
+    1530:1531:void c(java.lang.String) -> c
+    1542:1544:void d(java.lang.String) -> d
+    1552:1553:void e(java.lang.String) -> e
+    1559:1560:void f(java.lang.String) -> f
+    1566:1567:void a(com.google.ads.AdSize) -> a
+    1577:1579:void a(com.google.ads.AdRequest$ErrorCode) -> a
+    1588:1590:void c() -> c
+    1596:1597:void c(boolean) -> c
+    1606:1607:void a(int) -> a
+    1616:1617:void d(boolean) -> d
+    1627:1628:void a(com.google.ads.internal.c$d) -> a
+    1637:1638:void e(boolean) -> e
+    48:48:boolean a(com.google.ads.internal.c) -> a
+    48:48:com.google.ads.l b(com.google.ads.internal.c) -> b
+    48:48:java.lang.String c(com.google.ads.internal.c) -> c
+    48:48:android.webkit.WebView d(com.google.ads.internal.c) -> d
+    48:48:java.lang.String e(com.google.ads.internal.c) -> e
+    48:48:com.google.ads.AdSize f(com.google.ads.internal.c) -> f
+com.google.ads.internal.c$1 -> df:
+    com.google.ads.internal.c a -> a
+    851:852:void run() -> run
+com.google.ads.internal.c$2 -> dg:
+    com.google.ads.c a -> a
+    com.google.ads.internal.c b -> b
+    1004:1013:void run() -> run
+com.google.ads.internal.c$3 -> dh:
+    int[] a -> a
+com.google.ads.internal.c$a -> di:
+    com.google.ads.internal.d a -> a
+    android.webkit.WebView b -> b
+    com.google.ads.internal.f c -> c
+    com.google.ads.AdRequest$ErrorCode d -> d
+    boolean e -> e
+    117:138:void run() -> run
+com.google.ads.internal.c$b -> dj:
+    com.google.ads.internal.c a -> a
+com.google.ads.internal.c$c -> dk:
+    java.lang.String b -> b
+    java.lang.String c -> c
+    android.webkit.WebView d -> d
+    com.google.ads.internal.c a -> a
+    157:168:void run() -> run
+com.google.ads.internal.c$d -> dl:
+    com.google.ads.internal.c$d a -> a
+    com.google.ads.internal.c$d b -> b
+    com.google.ads.internal.c$d c -> c
+    com.google.ads.internal.c$d d -> d
+    java.lang.String e -> e
+    com.google.ads.internal.c$d[] f -> f
+    222:222:com.google.ads.internal.c$d[] values() -> values
+    222:222:com.google.ads.internal.c$d valueOf(java.lang.String) -> valueOf
+com.google.ads.internal.c$e -> dm:
+    com.google.ads.internal.d b -> b
+    android.webkit.WebView c -> c
+    java.util.LinkedList d -> d
+    int e -> e
+    boolean f -> f
+    java.lang.String g -> g
+    com.google.ads.AdSize h -> h
+    com.google.ads.internal.c a -> a
+    202:215:void run() -> run
+com.google.ads.internal.d -> dn:
+    java.lang.Object a -> a
+    com.google.ads.n b -> b
+    com.google.ads.internal.c c -> c
+    com.google.ads.AdRequest d -> d
+    com.google.ads.internal.g e -> e
+    com.google.ads.internal.AdWebView f -> f
+    com.google.ads.internal.i g -> g
+    boolean h -> h
+    long i -> i
+    boolean j -> j
+    boolean k -> k
+    boolean l -> l
+    boolean m -> m
+    boolean n -> n
+    android.content.SharedPreferences o -> o
+    long p -> p
+    com.google.ads.af q -> q
+    boolean r -> r
+    java.util.LinkedList s -> s
+    java.util.LinkedList t -> t
+    java.util.LinkedList u -> u
+    int v -> v
+    java.lang.Boolean w -> w
+    com.google.ads.d x -> x
+    com.google.ads.e y -> y
+    com.google.ads.f z -> z
+    java.lang.String A -> A
+    java.lang.String B -> B
+    318:336:void a() -> a
+    343:354:void b() -> b
+    365:384:void a(java.lang.String) -> a
+    390:390:java.lang.String c() -> c
+    397:397:java.lang.String d() -> d
+    404:406:void e() -> e
+    413:421:void f() -> f
+    428:447:void g() -> g
+    453:455:void h() -> h
+    468:468:com.google.ads.n i() -> i
+    475:475:com.google.ads.d j() -> j
+    482:482:com.google.ads.internal.c k() -> k
+    489:489:com.google.ads.internal.AdWebView l() -> l
+    496:496:com.google.ads.internal.i m() -> m
+    503:503:com.google.ads.internal.g n() -> n
+    512:513:void a(int) -> a
+    519:519:int o() -> o
+    526:526:long p() -> p
+    535:535:boolean q() -> q
+    542:542:boolean r() -> r
+    556:556:boolean t() -> s
+    566:623:void a(com.google.ads.AdRequest) -> a
+    633:661:void a(com.google.ads.AdRequest$ErrorCode) -> a
+    670:674:void a(com.google.ads.c) -> a
+    687:708:void a(android.view.View,com.google.ads.h,com.google.ads.f,boolean) -> a
+    730:740:void b(com.google.ads.c) -> b
+    749:758:void u() -> t
+    766:772:void v() -> u
+    780:786:void w() -> v
+    792:796:void a(java.lang.String,java.lang.String) -> a
+    802:804:void x() -> w
+    816:833:void a(com.google.ads.f,java.lang.Boolean) -> a
+    872:884:void a(java.util.List,java.lang.String) -> a
+    891:916:void a(java.util.List,java.lang.String,java.lang.String,java.lang.String,java.lang.Boolean,java.lang.String,java.lang.String) -> a
+    923:935:void y() -> x
+    960:991:void A() -> y
+    1000:1009:void a(long) -> a
+    1015:1016:void a(boolean) -> a
+    1022:1039:void a(android.view.View) -> a
+    1049:1056:void a(float) -> a
+    1064:1067:void b(long) -> b
+    1107:1116:void C() -> z
+    1133:1145:void D() -> A
+    1153:1185:void E() -> B
+    1193:1195:void b(java.lang.String) -> b
+    1203:1205:void c(java.lang.String) -> c
+    1214:1218:void a(java.util.LinkedList) -> a
+    1233:1234:void b(boolean) -> b
+    1253:1264:void a(com.google.ads.l,boolean,int,int,int,int) -> a
+    1276:1308:void a(int,int,int,int) -> a
+    1311:1311:java.util.LinkedList F() -> C
+com.google.ads.internal.e -> do:
+    java.lang.String a -> a
+    java.util.HashMap b -> b
+    97:100:java.util.HashMap a(java.io.Serializable) -> a
+    113:117:android.os.Bundle a() -> a
+    128:128:java.lang.String b() -> b
+    139:139:java.util.HashMap c() -> c
+com.google.ads.internal.f -> dp:
+    com.google.ads.l a -> a
+    com.google.ads.internal.f$a b -> b
+    boolean c -> c
+    boolean d -> d
+    java.lang.String e -> e
+    java.lang.Thread f -> f
+    158:159:void a() -> a
+    166:179:void a(java.net.HttpURLConnection) -> a
+    185:189:void b(java.net.HttpURLConnection) -> b
+    196:200:void c(java.net.HttpURLConnection) -> c
+    208:212:void d(java.net.HttpURLConnection) -> d
+    218:228:void e(java.net.HttpURLConnection) -> e
+    235:242:void f(java.net.HttpURLConnection) -> f
+    249:256:void g(java.net.HttpURLConnection) -> g
+    262:269:void h(java.net.HttpURLConnection) -> h
+    277:297:void i(java.net.HttpURLConnection) -> i
+    304:312:void j(java.net.HttpURLConnection) -> j
+    319:330:void k(java.net.HttpURLConnection) -> k
+    339:340:void a(boolean) -> a
+    347:353:void l(java.net.HttpURLConnection) -> l
+    359:377:void m(java.net.HttpURLConnection) -> m
+    384:389:void n(java.net.HttpURLConnection) -> n
+    396:402:void a(java.lang.String) -> a
+    413:454:void a(java.net.HttpURLConnection,int) -> a
+    460:474:void run() -> run
+    481:496:void b() -> b
+    504:516:void a(android.content.Context,java.net.HttpURLConnection) -> a
+com.google.ads.internal.f$1 -> dq:
+    135:135:java.net.HttpURLConnection a(java.net.URL) -> a
+com.google.ads.internal.f$a -> dr:
+    java.net.HttpURLConnection a(java.net.URL) -> a
+com.google.ads.internal.g -> ds:
+    java.util.LinkedList a -> a
+    long b -> b
+    long c -> c
+    long d -> d
+    java.util.LinkedList e -> e
+    long f -> f
+    long g -> g
+    long h -> h
+    long i -> i
+    long j -> j
+    boolean k -> k
+    boolean l -> l
+    java.lang.String m -> m
+    long n -> n
+    java.util.LinkedList o -> o
+    java.util.LinkedList p -> p
+    157:167:void a() -> a
+    174:176:void b() -> b
+    183:184:void c() -> c
+    192:194:void a(com.google.ads.g$a) -> a
+    201:209:java.lang.String d() -> d
+    217:225:java.lang.String e() -> e
+    232:234:void f() -> f
+    240:242:void g() -> g
+    248:250:void h() -> h
+    256:259:void i() -> i
+    267:270:long j() -> j
+    283:297:java.lang.String k() -> k
+    309:322:java.lang.String l() -> l
+    333:333:long m() -> m
+    337:337:long n() -> n
+    341:341:long o() -> o
+    345:345:long p() -> p
+    349:351:void q() -> q
+    354:355:void r() -> r
+    358:358:long s() -> s
+    362:363:void t() -> t
+    366:367:void u() -> u
+    370:370:long v() -> v
+    374:375:void w() -> w
+    378:379:void x() -> x
+    382:382:boolean y() -> y
+    386:388:void z() -> z
+    391:391:boolean A() -> A
+    395:397:void B() -> B
+    403:405:void C() -> C
+    408:408:java.lang.String D() -> D
+    412:414:void a(java.lang.String) -> a
+    422:427:long E() -> E
+com.google.ads.internal.h -> dt:
+    com.google.ads.AdSize b -> b
+    boolean c -> c
+    boolean d -> d
+    com.google.ads.internal.h a -> a
+    43:43:com.google.ads.internal.h a(com.google.ads.AdSize,android.content.Context) -> a
+    56:56:com.google.ads.internal.h a(com.google.ads.AdSize) -> a
+    60:60:boolean a() -> a
+    64:64:boolean b() -> b
+    72:72:com.google.ads.AdSize c() -> c
+    79:82:void b(com.google.ads.AdSize) -> b
+    85:86:void a(boolean) -> a
+com.google.ads.internal.i -> du:
+    com.google.ads.internal.a c -> c
+    com.google.ads.internal.d a -> a
+    java.util.Map d -> d
+    boolean b -> b
+    boolean e -> e
+    boolean f -> f
+    boolean g -> g
+    boolean h -> h
+    boolean i -> i
+    101:105:com.google.ads.internal.i a(com.google.ads.internal.d,java.util.Map,boolean,boolean) -> a
+    118:168:boolean shouldOverrideUrlLoading(android.webkit.WebView,java.lang.String) -> shouldOverrideUrlLoading
+    178:179:void onPageStarted(android.webkit.WebView,java.lang.String,android.graphics.Bitmap) -> onPageStarted
+    188:206:void onPageFinished(android.webkit.WebView,java.lang.String) -> onPageFinished
+    215:220:void onReceivedError(android.webkit.WebView,int,java.lang.String,java.lang.String) -> onReceivedError
+    226:227:void a(boolean) -> a
+    234:235:void b(boolean) -> b
+    245:246:void c(boolean) -> c
+    254:255:void d(boolean) -> d
+    258:258:boolean a() -> a
+com.google.ads.internal.j -> dv:
+    java.lang.String a -> a
+    android.content.Context b -> b
+    48:54:java.net.HttpURLConnection a(java.net.URL) -> a
+    66:66:java.io.BufferedOutputStream a(java.net.HttpURLConnection) -> a
+    74:98:void run() -> run
+com.google.ads.internal.j$a -> dw:
+    java.lang.String a -> a
+    122:129:org.json.JSONObject a() -> a
+com.google.ads.internal.k -> dx:
+    byte[] a -> a
+    41:55:android.view.ViewGroup a(android.app.Activity,com.google.ads.internal.d) -> a
+com.google.ads.internal.k$a -> dy:
+    android.gesture.GestureStore a -> a
+    android.app.Activity b -> b
+    com.google.ads.internal.d c -> c
+    75:124:void onGesturePerformed(android.gesture.GestureOverlayView,android.gesture.Gesture) -> onGesturePerformed
+    62:62:com.google.ads.internal.d a(com.google.ads.internal.k$a) -> a
+    62:62:android.app.Activity b(com.google.ads.internal.k$a) -> b
+com.google.ads.internal.k$a$1 -> dz:
+    com.google.ads.internal.k$a a -> a
+    118:118:void onClick(android.content.DialogInterface,int) -> onClick
+com.google.ads.internal.k$a$2 -> dA:
+    com.google.ads.internal.k$a a -> a
+    107:112:void onClick(android.content.DialogInterface,int) -> onClick
+com.google.ads.internal.k$a$3 -> dB:
+    java.lang.String a -> a
+    com.google.ads.internal.k$a b -> b
+    95:101:void onClick(android.content.DialogInterface,int) -> onClick
+com.google.ads.j -> dC:
+    com.google.ads.h a -> a
+com.google.ads.k -> dD:
+    com.google.ads.h a -> a
+com.google.ads.l -> dE:
+    com.google.ads.util.i$b a -> a
+    com.google.ads.util.i$c b -> b
+    com.google.ads.util.i$c c -> c
+com.google.ads.m -> dF:
+    com.google.ads.m d -> d
+    com.google.ads.util.i$c a -> a
+    com.google.ads.util.i$b b -> b
+    com.google.ads.util.i$b c -> c
+    99:99:com.google.ads.m a() -> a
+com.google.ads.m$a -> dG:
+    com.google.ads.util.i$c a -> a
+    com.google.ads.util.i$c b -> b
+    com.google.ads.util.i$c c -> c
+    com.google.ads.util.i$c d -> d
+    com.google.ads.util.i$c e -> e
+    com.google.ads.util.i$c f -> f
+    com.google.ads.util.i$c g -> g
+    com.google.ads.util.i$c h -> h
+    com.google.ads.util.i$c i -> i
+    com.google.ads.util.i$c j -> j
+    com.google.ads.util.i$c k -> k
+    com.google.ads.util.i$c l -> l
+    com.google.ads.util.i$c m -> m
+    com.google.ads.util.i$c n -> n
+    com.google.ads.util.i$c o -> o
+com.google.ads.mediation.MediationAdRequest -> dH:
+    com.google.ads.AdRequest a -> a
+    boolean b -> b
+    boolean c -> c
+com.google.ads.mediation.MediationAdapter -> dI:
+    void destroy() -> a
+    java.lang.Class getAdditionalParametersType() -> b
+    java.lang.Class getServerParametersType() -> c
+com.google.ads.mediation.MediationBannerAdapter -> dJ:
+    void requestBannerAd(com.google.ads.mediation.MediationBannerListener,android.app.Activity,com.google.ads.mediation.MediationServerParameters,com.google.ads.AdSize,com.google.ads.mediation.MediationAdRequest,com.google.ads.mediation.NetworkExtras) -> a
+com.google.ads.mediation.MediationBannerListener -> dK:
+com.google.ads.mediation.MediationInterstitialAdapter -> dL:
+    void requestInterstitialAd(com.google.ads.mediation.MediationInterstitialListener,android.app.Activity,com.google.ads.mediation.MediationServerParameters,com.google.ads.mediation.MediationAdRequest,com.google.ads.mediation.NetworkExtras) -> a
+com.google.ads.mediation.MediationInterstitialListener -> dM:
+com.google.ads.mediation.MediationServerParameters -> dN:
+    61:106:void load(java.util.Map) -> a
+    112:112:void a() -> a
+com.google.ads.mediation.MediationServerParameters$MappingException -> dO:
+com.google.ads.mediation.MediationServerParameters$Parameter -> dP:
+    java.lang.String name() -> a
+    boolean required() -> b
+com.google.ads.mediation.NetworkExtras -> dQ:
+com.google.ads.mediation.admob.AdMobAdapterExtras -> dR:
+    boolean a -> a
+    java.util.Map b -> b
+    91:91:java.util.Map getExtras() -> d
+    115:116:com.google.ads.mediation.admob.AdMobAdapterExtras clearExtras() -> c
+com.google.ads.n -> dS:
+    com.google.ads.util.i$b a -> a
+    com.google.ads.util.i$b b -> b
+    com.google.ads.util.i$d c -> c
+    com.google.ads.util.i$b d -> d
+    com.google.ads.util.i$b e -> e
+    com.google.ads.util.i$b f -> f
+    com.google.ads.util.i$b g -> g
+    com.google.ads.util.i$b h -> h
+    com.google.ads.util.i$b i -> i
+    com.google.ads.util.i$b j -> j
+    com.google.ads.util.i$b k -> k
+    com.google.ads.util.i$c l -> l
+    com.google.ads.util.i$c m -> m
+    com.google.ads.util.i$c n -> n
+    com.google.ads.util.i$c o -> o
+    com.google.ads.util.i$c p -> p
+    com.google.ads.util.i$c q -> q
+    com.google.ads.util.i$c r -> r
+    com.google.ads.util.i$c s -> s
+    com.google.ads.util.i$c t -> t
+    122:122:boolean a() -> a
+    126:126:boolean b() -> b
+com.google.ads.o -> dT:
+    void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.p -> dU:
+    25:32:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.q -> dV:
+    com.google.ads.internal.a a -> a
+    37:65:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.r -> dW:
+    34:79:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.s -> dX:
+    28:34:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.searchads.SearchAdRequest -> dY:
+    java.lang.String a -> b
+    int b -> c
+    int c -> d
+    int d -> e
+    int e -> f
+    int f -> g
+    int g -> h
+    java.lang.String h -> i
+    int i -> j
+    int j -> k
+    com.google.ads.searchads.SearchAdRequest$BorderType k -> l
+    int l -> m
+    java.lang.String m -> n
+    220:274:java.util.Map getRequestMap(android.content.Context) -> a
+    284:284:java.lang.String a(int) -> a
+com.google.ads.searchads.SearchAdRequest$BorderType -> dZ:
+    com.google.ads.searchads.SearchAdRequest$BorderType NONE -> a
+    com.google.ads.searchads.SearchAdRequest$BorderType DASHED -> b
+    com.google.ads.searchads.SearchAdRequest$BorderType DOTTED -> c
+    com.google.ads.searchads.SearchAdRequest$BorderType SOLID -> d
+    java.lang.String a -> e
+    com.google.ads.searchads.SearchAdRequest$BorderType[] b -> f
+    22:22:com.google.ads.searchads.SearchAdRequest$BorderType[] values() -> values
+    22:22:com.google.ads.searchads.SearchAdRequest$BorderType valueOf(java.lang.String) -> valueOf
+    52:52:java.lang.String toString() -> toString
+com.google.ads.t -> ea:
+    27:33:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.u -> eb:
+    29:39:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.util.AdUtil -> com.google.ads.util.AdUtil:
+    int a -> a
+    java.lang.Boolean b -> b
+    java.lang.String c -> c
+    java.lang.String d -> d
+    java.lang.String e -> e
+    android.media.AudioManager f -> f
+    boolean g -> g
+    boolean h -> h
+    java.lang.String i -> i
+    139:141:boolean a(android.content.Intent,android.content.Context) -> a
+    151:158:java.lang.String a(java.lang.Readable) -> a
+    167:174:int a(java.lang.String) -> a
+    185:203:java.lang.String a(android.content.Context) -> a
+    214:217:int a() -> a
+    229:232:int b() -> b
+    245:248:int a(android.content.Context,android.util.DisplayMetrics) -> a
+    261:264:int b(android.content.Context,android.util.DisplayMetrics) -> b
+    277:289:boolean b(android.content.Context) -> b
+    303:309:boolean a(int,int,java.lang.String) -> a
+    323:390:boolean c(android.content.Context) -> c
+    399:399:boolean c() -> c
+    408:411:boolean a(com.google.ads.util.d) -> a
+    423:427:boolean a(android.net.Uri) -> a
+    439:451:java.lang.String b(java.lang.String) -> b
+    463:483:java.lang.String d(android.content.Context) -> d
+    495:520:java.lang.String e(android.content.Context) -> e
+    528:535:boolean a(android.content.Context,java.lang.String) -> a
+    547:577:java.lang.String f(android.content.Context) -> f
+    589:614:com.google.ads.util.AdUtil$a g(android.content.Context) -> g
+    624:630:android.util.DisplayMetrics a(android.app.Activity) -> a
+    634:644:java.util.HashMap a(android.location.Location) -> a
+    659:678:java.util.HashMap b(android.net.Uri) -> b
+    685:685:boolean d() -> d
+    692:693:void a(boolean) -> a
+    702:714:void h(android.content.Context) -> h
+    751:788:java.lang.String i(android.content.Context) -> i
+    796:799:void a(android.webkit.WebView) -> a
+    807:808:void a(java.net.HttpURLConnection,android.content.Context) -> a
+    811:820:java.lang.String a(java.util.Map) -> a
+    825:858:org.json.JSONObject b(java.util.Map) -> b
+    863:895:org.json.JSONArray a(java.util.Set) -> a
+    912:912:int a(android.content.Context,int) -> a
+com.google.ads.util.AdUtil$UserActivityReceiver -> com.google.ads.util.AdUtil$UserActivityReceiver:
+    722:727:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.google.ads.util.AdUtil$a -> ec:
+    com.google.ads.util.AdUtil$a a -> a
+    com.google.ads.util.AdUtil$a b -> b
+    com.google.ads.util.AdUtil$a c -> c
+    com.google.ads.util.AdUtil$a d -> d
+    com.google.ads.util.AdUtil$a e -> e
+    com.google.ads.util.AdUtil$a f -> f
+    com.google.ads.util.AdUtil$a[] g -> g
+    107:107:com.google.ads.util.AdUtil$a[] values() -> values
+    107:107:com.google.ads.util.AdUtil$a valueOf(java.lang.String) -> valueOf
+com.google.ads.util.IcsUtil -> com.google.ads.util.IcsUtil:
+com.google.ads.util.IcsUtil$IcsAdWebView -> com.google.ads.util.IcsUtil$IcsAdWebView:
+    59:62:boolean canScrollHorizontally(int) -> canScrollHorizontally
+    69:72:boolean canScrollVertically(int) -> canScrollVertically
+com.google.ads.util.IcsUtil$a -> ed:
+    44:45:void onShowCustomView(android.view.View,int,android.webkit.WebChromeClient$CustomViewCallback) -> onShowCustomView
+com.google.ads.util.a -> ee:
+    boolean a -> a
+    41:42:void a(boolean,java.lang.String) -> a
+    45:46:void b(boolean) -> a
+    49:50:void b(boolean,java.lang.String) -> b
+    62:64:void b(java.lang.Object) -> a
+    71:74:void a(java.lang.Object,java.lang.Object) -> a
+    91:93:void a(java.lang.String) -> a
+    107:116:void c(boolean,java.lang.String) -> c
+com.google.ads.util.a$a -> ef:
+com.google.ads.util.b -> eg:
+    com.google.ads.util.b$b a -> a
+    int b -> b
+    65:66:void a(com.google.ads.util.b$a,java.lang.String) -> a
+    69:72:void a(com.google.ads.util.b$a,java.lang.String,java.lang.Throwable) -> a
+    81:86:void a(java.lang.String) -> a
+    97:102:void a(java.lang.String,java.lang.Throwable) -> a
+    112:117:void b(java.lang.String) -> b
+    128:134:void b(java.lang.String,java.lang.Throwable) -> b
+    144:149:void c(java.lang.String) -> c
+    161:166:void c(java.lang.String,java.lang.Throwable) -> c
+    176:181:void d(java.lang.String) -> d
+    207:212:void e(java.lang.String) -> e
+    238:244:void d(java.lang.String,java.lang.Throwable) -> d
+    258:258:boolean a(java.lang.String,int) -> a
+    272:272:boolean a(int) -> a
+com.google.ads.util.b$a -> eh:
+    com.google.ads.util.b$a a -> a
+    com.google.ads.util.b$a b -> b
+    com.google.ads.util.b$a c -> c
+    com.google.ads.util.b$a d -> d
+    com.google.ads.util.b$a e -> e
+    int f -> f
+    com.google.ads.util.b$a[] g -> g
+    39:39:com.google.ads.util.b$a[] values() -> values
+    39:39:com.google.ads.util.b$a valueOf(java.lang.String) -> valueOf
+com.google.ads.util.b$b -> ei:
+    void a(com.google.ads.util.b$a,java.lang.String,java.lang.Throwable) -> a
+com.google.ads.util.c -> ej:
+    boolean a -> a
+    118:118:byte[] a(java.lang.String) -> a
+    161:161:byte[] a(byte[],int) -> a
+    188:203:byte[] a(byte[],int,int,int) -> a
+com.google.ads.util.c$a -> ek:
+    byte[] a -> a
+    int b -> b
+com.google.ads.util.c$b -> el:
+    int[] c -> c
+    int[] d -> d
+    int e -> e
+    int f -> f
+    int[] g -> g
+    290:466:boolean a(byte[],int,int,boolean) -> a
+com.google.ads.util.d -> em:
+    java.lang.String a -> a
+    java.lang.String b -> b
+    java.lang.String c -> c
+    com.google.ads.util.d d -> d
+    com.google.ads.util.d e -> e
+    com.google.ads.util.d f -> f
+    74:78:boolean equals(java.lang.Object) -> equals
+    88:91:boolean a(java.lang.String,java.lang.String) -> a
+    100:110:int hashCode() -> hashCode
+com.google.ads.util.e -> en:
+    44:44:int a(android.content.Context,android.util.DisplayMetrics) -> a
+    58:58:int b(android.content.Context,android.util.DisplayMetrics) -> b
+    72:76:int a(android.content.Context,float,int) -> a
+    84:85:void a(android.content.Intent,java.lang.String) -> a
+com.google.ads.util.f -> eo:
+    java.lang.Object b() -> b
+com.google.ads.util.g -> ep:
+    432:452:void a(android.webkit.WebSettings,com.google.ads.n) -> a
+    458:459:void a(android.view.View) -> a
+    465:466:void b(android.view.View) -> b
+    472:474:void a(android.view.Window) -> a
+com.google.ads.util.g$1 -> eq:
+    int[] a -> a
+com.google.ads.util.g$a -> er:
+    com.google.ads.n a -> a
+    168:172:void onCloseWindow(android.webkit.WebView) -> onCloseWindow
+    176:194:boolean onConsoleMessage(android.webkit.ConsoleMessage) -> onConsoleMessage
+    215:263:void onExceededDatabaseQuota(java.lang.String,java.lang.String,long,long,long,android.webkit.WebStorage$QuotaUpdater) -> onExceededDatabaseQuota
+    267:267:boolean onJsAlert(android.webkit.WebView,java.lang.String,java.lang.String,android.webkit.JsResult) -> onJsAlert
+    272:272:boolean onJsBeforeUnload(android.webkit.WebView,java.lang.String,java.lang.String,android.webkit.JsResult) -> onJsBeforeUnload
+    277:277:boolean onJsConfirm(android.webkit.WebView,java.lang.String,java.lang.String,android.webkit.JsResult) -> onJsConfirm
+    283:283:boolean onJsPrompt(android.webkit.WebView,java.lang.String,java.lang.String,java.lang.String,android.webkit.JsPromptResult) -> onJsPrompt
+    301:314:void onReachedMaxAppCacheSize(long,long,android.webkit.WebStorage$QuotaUpdater) -> onReachedMaxAppCacheSize
+    322:323:void onShowCustomView(android.view.View,android.webkit.WebChromeClient$CustomViewCallback) -> onShowCustomView
+    339:355:boolean a(android.webkit.WebView,java.lang.String,java.lang.String,java.lang.String,android.webkit.JsResult,android.webkit.JsPromptResult,boolean) -> a
+    364:385:void a(android.app.AlertDialog$Builder,java.lang.String,android.webkit.JsResult) -> a
+    394:425:void a(android.app.AlertDialog$Builder,android.content.Context,java.lang.String,java.lang.String,android.webkit.JsPromptResult) -> a
+com.google.ads.util.g$a$1 -> es:
+    android.webkit.JsResult a -> a
+    380:381:void onCancel(android.content.DialogInterface) -> onCancel
+com.google.ads.util.g$a$2 -> et:
+    android.webkit.JsResult a -> a
+    374:375:void onClick(android.content.DialogInterface,int) -> onClick
+com.google.ads.util.g$a$3 -> eu:
+    android.webkit.JsResult a -> a
+    368:369:void onClick(android.content.DialogInterface,int) -> onClick
+com.google.ads.util.g$a$4 -> ev:
+    android.webkit.JsPromptResult a -> a
+    420:421:void onCancel(android.content.DialogInterface) -> onCancel
+com.google.ads.util.g$a$5 -> ew:
+    android.webkit.JsPromptResult a -> a
+    414:415:void onClick(android.content.DialogInterface,int) -> onClick
+com.google.ads.util.g$a$6 -> ex:
+    android.webkit.JsPromptResult a -> a
+    android.widget.EditText b -> b
+    408:409:void onClick(android.content.DialogInterface,int) -> onClick
+com.google.ads.util.g$b -> ey:
+    79:129:android.webkit.WebResourceResponse shouldInterceptRequest(android.webkit.WebView,java.lang.String) -> shouldInterceptRequest
+    137:150:android.webkit.WebResourceResponse a(java.lang.String,android.content.Context) -> a
+com.google.ads.util.h -> ez:
+    28:32:void a(android.webkit.WebSettings,com.google.ads.n) -> a
+com.google.ads.util.i -> eA:
+    java.lang.Object a -> a
+    int b -> b
+    java.util.HashMap c -> c
+    int u -> u
+    java.util.ArrayList d -> d
+    49:53:void finalize() -> finalize
+    57:57:java.lang.String toString() -> toString
+    61:62:void a(com.google.ads.util.i$a) -> a
+    24:24:void a(com.google.ads.util.i,com.google.ads.util.i$a) -> a
+com.google.ads.util.i$1 -> eB:
+com.google.ads.util.i$a -> eC:
+    java.lang.Object a -> a
+    java.lang.String b -> b
+    com.google.ads.util.i c -> c
+    103:103:java.lang.String toString() -> toString
+com.google.ads.util.i$b -> eD:
+    com.google.ads.util.i d -> d
+    151:151:java.lang.Object a() -> a
+    157:157:java.lang.String toString() -> toString
+com.google.ads.util.i$c -> eE:
+    boolean e -> e
+    com.google.ads.util.i d -> d
+    125:125:java.lang.Object a() -> a
+    129:134:void a(java.lang.Object) -> a
+    139:139:java.lang.String toString() -> toString
+com.google.ads.util.i$d -> eF:
+    com.google.ads.util.i d -> d
+    173:173:java.lang.Object a() -> a
+    179:179:java.lang.String toString() -> toString
+com.google.ads.v -> eG:
+    30:41:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.w -> eH:
+    33:90:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.x -> eI:
+    34:104:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+    110:117:void a(java.util.HashMap,java.lang.String,com.google.ads.util.i$c) -> a
+    123:130:void b(java.util.HashMap,java.lang.String,com.google.ads.util.i$c) -> b
+    135:139:void c(java.util.HashMap,java.lang.String,com.google.ads.util.i$c) -> c
+com.google.ads.y -> eJ:
+    27:32:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a
+com.google.ads.z -> eK:
+    com.google.ads.AdActivity$StaticMethodWrapper a -> a
+    48:67:void a(com.google.ads.internal.d,java.util.HashMap,android.webkit.WebView) -> a

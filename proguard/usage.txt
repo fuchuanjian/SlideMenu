@@ -1,0 +1,442 @@
+android.annotation.SuppressLint
+android.annotation.TargetApi
+com.amap.api.location.LocationManagerProxy:
+    public static final java.lang.String GPS_PROVIDER
+    public static final java.lang.String NETWORK_PROVIDER
+    public static final java.lang.String KEY_LOCATION_CHANGED
+    public static final java.lang.String KEY_PROVIDER_ENABLED
+    public static final java.lang.String KEY_PROXIMITY_ENTERING
+    public static final java.lang.String KEY_STATUS_CHANGED
+    private com.amap.api.location.e e
+    private com.amap.api.location.LocationManagerProxy$a f
+    56:59:private LocationManagerProxy(android.app.Activity)
+    62:65:public static synchronized com.amap.api.location.LocationManagerProxy getInstance(android.app.Activity)
+    93:111:public void addProximityAlert(double,double,float,long,android.app.PendingIntent)
+    115:146:public void removeProximityAlert(android.app.PendingIntent)
+    149:160:public com.amap.api.location.AMapLocation getLastKnownLocation(java.lang.String)
+    205:220:public void requestLocationUpdates(java.lang.String,long,float,android.app.PendingIntent)
+    223:229:public void removeUpdates(android.app.PendingIntent)
+    233:243:public java.util.List getAllProviders()
+    248:255:public java.util.List getProviders(boolean)
+    260:273:public java.util.List getProviders(android.location.Criteria,boolean)
+    278:293:public java.lang.String getBestProvider(android.location.Criteria,boolean)
+    298:301:public boolean isProviderEnabled(java.lang.String)
+    306:317:public com.amap.api.location.LocationProviderProxy getProvider(java.lang.String)
+    322:325:public android.location.GpsStatus getGpsStatus(android.location.GpsStatus)
+    330:333:public void removeGpsStatusListener(android.location.GpsStatus$Listener)
+    337:340:public boolean addGpsStatusListener(android.location.GpsStatus$Listener)
+    349:355:public void addTestProvider(java.lang.String,boolean,boolean,boolean,boolean,boolean,boolean,boolean,int,int)
+    359:362:public void clearTestProviderEnabled(java.lang.String)
+    366:369:public void clearTestProviderLocation(java.lang.String)
+    373:376:public void clearTestProviderStatus(java.lang.String)
+    21:21:static synthetic java.util.ArrayList a(com.amap.api.location.LocationManagerProxy)
+    21:21:static synthetic android.content.Context b(com.amap.api.location.LocationManagerProxy)
+com.amap.api.location.LocationManagerProxy$a
+com.amap.api.location.LocationProviderProxy
+com.amap.api.location.a:
+    42:48:void a(double,double,float,long,android.app.PendingIntent)
+    51:52:void a(android.app.PendingIntent)
+    63:66:com.amap.api.location.AMapLocation a()
+    160:163:int c()
+com.amap.api.location.b:
+    222:223:void a(com.aps.h,android.app.PendingIntent)
+    231:232:void a(android.app.PendingIntent)
+    242:245:int b()
+com.amap.api.location.core.CoordinateConvert
+com.amap.api.location.core.GeoPoint
+com.amap.api.location.core.a:
+    8:8:public a()
+com.amap.api.location.core.c:
+    10:10:public c()
+    161:178:public static boolean a(android.content.Context)
+    183:199:public static com.amap.api.location.AMapLocation b(android.content.Context)
+com.amap.api.location.core.d:
+    22:22:public d()
+com.amap.api.location.core.e
+com.amap.api.location.e
+com.aps.a:
+    500:526:public void a(com.aps.h,android.app.PendingIntent)
+    535:542:public void a(android.app.PendingIntent)
+    2576:2579:public int e()
+com.aps.f:
+    9:11:private f()
+com.aps.g:
+    8:10:private g()
+com.aps.h:
+    16:21:public void a(long)
+com.aps.i:
+    public abstract void a(com.aps.h,android.app.PendingIntent)
+    public abstract void a(android.app.PendingIntent)
+    public abstract int e()
+com.aps.l:
+    10:10:public l()
+com.aps.m:
+    20:22:private m()
+com.aps.n:
+    28:30:private n()
+com.aps.o:
+    public o()
+com.chuanonly.livewallpaper.BuildConfig
+com.chuanonly.livewallpaper.MainHomeActivity:
+    private static final java.lang.String ID
+    private static final java.lang.String ADID
+com.chuanonly.livewallpaper.MainHomeActivity$ViewHolder:
+    public android.widget.TextView desc
+com.chuanonly.livewallpaper.MyApplication:
+    56:56:public static com.chuanonly.livewallpaper.MyApplication getInstance()
+com.chuanonly.livewallpaper.R
+com.chuanonly.livewallpaper.R$anim
+com.chuanonly.livewallpaper.R$array
+com.chuanonly.livewallpaper.R$attr
+com.chuanonly.livewallpaper.R$color
+com.chuanonly.livewallpaper.R$dimen
+com.chuanonly.livewallpaper.R$drawable
+com.chuanonly.livewallpaper.R$id
+com.chuanonly.livewallpaper.R$layout
+com.chuanonly.livewallpaper.R$raw
+com.chuanonly.livewallpaper.R$string
+com.chuanonly.livewallpaper.R$style
+com.chuanonly.livewallpaper.R$xml
+com.chuanonly.livewallpaper.data.Constant:
+    3:3:public Constant()
+com.chuanonly.livewallpaper.data.WallpaperInfo:
+    12:12:public WallpaperInfo()
+    71:71:public static java.lang.String toStr()
+com.chuanonly.livewallpaper.model.GLFireBalloon:
+    private static final int DEGREES_MAX
+    15:16:public void setRotateRadius(int)
+    45:45:public float[] getDestXY()
+com.chuanonly.livewallpaper.model.Particle:
+    public static final float UNIT
+    46:48:public void setInitDiffXY(float,float)
+com.chuanonly.livewallpaper.model.WeatherType
+com.chuanonly.livewallpaper.scenes.Background:
+    public java.lang.String mVertexShader
+    public java.lang.String mFragmentShader
+    72:76:public Background(java.lang.String,boolean)
+    169:176:public void setDirty(java.lang.String)
+    208:210:public java.lang.String getBgStr()
+    220:221:public void setCurrentSceneDefaultBackground()
+com.chuanonly.livewallpaper.scenes.BaseScene:
+    public java.lang.String mVertexShader
+    public java.lang.String mFragmentShader
+    139:140:public void setCanUseCostom(boolean)
+    143:145:public void setIsStatic(boolean)
+com.chuanonly.livewallpaper.scenes.GLNAScene
+com.chuanonly.livewallpaper.scenes.GLRain:
+    404:408:public varargs void setFloatValue(float[],float[])
+com.chuanonly.livewallpaper.scenes.GLSandstormScene
+com.chuanonly.livewallpaper.scenes.GLShowerRain:
+    326:330:public varargs void setFloatValue(float[],float[])
+com.chuanonly.livewallpaper.scenes.GLShowerSnow:
+    334:338:public varargs void setFloatValue(float[],float[])
+com.chuanonly.livewallpaper.scenes.GLSnowScene:
+    498:502:public varargs void setFloatValue(float[],float[])
+com.chuanonly.livewallpaper.scenes.GLSunny:
+    196:212:public int initTexture(int,int)
+com.chuanonly.livewallpaper.service.GLWallpaperService:
+    private static final java.lang.String TAG
+com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine:
+    public static final int RENDERMODE_WHEN_DIRTY
+    public static final int RENDERMODE_CONTINUOUSLY
+    private static final java.lang.String TAG
+com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine$WallpaperGLSurfaceView:
+    private static final java.lang.String TAG
+com.chuanonly.livewallpaper.service.GLWallpaperService$OpenGLEngine
+com.chuanonly.livewallpaper.service.WallPaperRender:
+    private android.opengl.GLSurfaceView mSurfaceView
+    201:201:public com.chuanonly.livewallpaper.scenes.Background getbBackground()
+    294:294:public android.opengl.GLSurfaceView getSurfaceView()
+    298:299:public void setSurfaceView(android.opengl.GLSurfaceView)
+com.chuanonly.livewallpaper.service.WallpaperService:
+    public static final java.lang.String ACTION_CHANGE_BROCAST
+    public static final java.lang.String ACTION_PAUSE_BROCAST
+com.chuanonly.livewallpaper.util.CacheTextrue:
+    8:8:public CacheTextrue()
+    50:56:public static int get(java.lang.String)
+    61:67:public static int getWidth(java.lang.String)
+    72:78:public static int getHeight(java.lang.String)
+    94:102:public static void put(java.lang.String,int,int,int)
+    106:107:public static void put(int,float,float,int,int)
+com.chuanonly.livewallpaper.util.Http:
+    30:30:public Http()
+com.chuanonly.livewallpaper.util.MatrixState:
+    3:3:public MatrixState()
+    64:65:public static void rotate(float,float,float,float)
+    110:111:public static void setProject(float,float,float,float,float,float)
+com.chuanonly.livewallpaper.util.OpenGLUtils:
+    25:25:public OpenGLUtils()
+    68:68:public static android.graphics.Bitmap decodeResource(int,float)
+    145:153:public static android.graphics.Bitmap decodeFile(java.lang.String)
+com.chuanonly.livewallpaper.util.QueryCityHandler:
+    public static final java.lang.String CHINA
+    168:168:public java.util.List getAllCityNames(java.lang.String)
+com.chuanonly.livewallpaper.util.ShaderManager:
+    121:121:public java.lang.String getVertexShader()
+    126:126:public java.lang.String getFragmentShader()
+    145:145:public boolean isLowVersion()
+com.chuanonly.livewallpaper.util.ShaderUtil:
+    9:9:public ShaderUtil()
+    79:99:public static java.lang.String loadFromAssetsFile(java.lang.String,android.content.res.Resources)
+    103:105:public static int change2Pow(int)
+com.chuanonly.livewallpaper.util.URLUtil:
+    public static final int NO_OPTIONS
+    public static final int ENCODE
+    public static final int DECODE
+    public static final int GZIP
+    public static final int DONT_GUNZIP
+    public static final int DO_BREAK_LINES
+    public static final int URL_SAFE
+    public static final int ORDERED
+    private static final int MAX_LINE_LENGTH
+    private static final byte EQUALS_SIGN
+    private static final byte NEW_LINE
+    private static final java.lang.String PREFERRED_ENCODING
+    private static final byte WHITE_SPACE_ENC
+    private static final byte EQUALS_SIGN_ENC
+    563:572:public static void encode(java.nio.ByteBuffer,java.nio.ByteBuffer)
+    587:598:public static void encode(java.nio.ByteBuffer,java.nio.CharBuffer)
+    623:623:public static java.lang.String encodeObject(java.io.Serializable)
+    660:703:public static java.lang.String encodeObject(java.io.Serializable,int)
+    723:730:public static java.lang.String encodeBytes(byte[])
+    765:765:public static java.lang.String encodeBytes(byte[],int)
+    791:798:public static java.lang.String encodeBytes(byte[],int,int)
+    836:843:public static java.lang.String encodeBytes(byte[],int,int,int)
+    1229:1229:public static byte[] decode(java.lang.String)
+    1247:1302:public static byte[] decode(java.lang.String,int)
+    1321:1321:public static java.lang.Object decodeToObject(java.lang.String)
+    1346:1390:public static java.lang.Object decodeToObject(java.lang.String,int,java.lang.ClassLoader)
+    1412:1429:public static void encodeToFile(byte[],java.lang.String)
+    1448:1461:public static void decodeToFile(java.lang.String,java.lang.String)
+    1483:1522:public static byte[] decodeFromFile(java.lang.String)
+    1544:1575:public static java.lang.String encodeFromFile(java.lang.String)
+    1589:1603:public static void encodeFileToFile(java.lang.String,java.lang.String)
+    1617:1631:public static void decodeFileToFile(java.lang.String,java.lang.String)
+    2070:2113:public static java.lang.String encodeURL(java.lang.String)
+    500:500:static synthetic byte[] access$1(byte[],int,int,byte[],int,int)
+com.chuanonly.livewallpaper.util.URLUtil$1
+com.chuanonly.livewallpaper.util.URLUtil$InputStream
+com.chuanonly.livewallpaper.util.URLUtil$OutputStream:
+    1879:1880:public URLUtil$OutputStream(java.io.OutputStream)
+    2049:2051:public void suspendEncoding()
+    2062:2063:public void resumeEncoding()
+com.chuanonly.livewallpaper.util.Util:
+    public static final java.lang.String TYPE
+    public static final java.lang.String REAL_TYPE
+    public static final java.lang.String SCENE_INFO
+    public static final java.lang.String SCENE_TEMPERATUR
+    public static final java.lang.String SUN_RISE
+    public static final java.lang.String SUN_SET
+    public static final java.lang.String CODE
+    public static final java.lang.String NAME
+    public static final java.lang.String EN_NAME
+    public static final java.lang.String MODE
+    public static final java.lang.String LAST_PICK_TIME
+    public static final java.lang.String LOG_INT_CNT
+    public static final long HOUR_2
+    public static final long HOUR_HALF
+    public static final java.lang.String LAST_UPDATETIME
+    public static final java.lang.String SPF_SETTING
+    24:24:public Util()
+    235:314:public static int normalDayOrNight(int,boolean)
+    383:384:public static void release()
+    538:553:public static int getMode()
+com.chuanonly.livewallpaper.view.GalleryScrollView:
+    private static final int INVALID_POINTER
+com.google.ads.Ad:
+    public abstract boolean isReady()
+    public abstract void loadAd(com.google.ads.AdRequest)
+    public abstract void setAdListener(com.google.ads.AdListener)
+    public abstract void stopLoading()
+com.google.ads.AdActivity:
+    public static final java.lang.String BASE_URL_PARAM
+    public static final java.lang.String HTML_PARAM
+    public static final java.lang.String URL_PARAM
+    public static final java.lang.String CUSTOM_CLOSE_PARAM
+    public static final java.lang.String INTENT_ACTION_PARAM
+    public static final java.lang.String TYPE_PARAM
+    public static final java.lang.String COMPONENT_NAME_PARAM
+    public static final java.lang.String PACKAGE_NAME_PARAM
+    public static final java.lang.String INTENT_FLAGS_PARAM
+    public static final java.lang.String INTENT_EXTRAS_PARAM
+    public static final java.lang.String ORIENTATION_PARAM
+    313:335:public com.google.ads.internal.AdWebView getOpeningAdWebView()
+com.google.ads.AdRequest:
+    public static final java.lang.String VERSION
+    public static final java.lang.String LOGTAG
+    221:222:public com.google.ads.AdRequest setGender(com.google.ads.AdRequest$Gender)
+    230:230:public com.google.ads.AdRequest$Gender getGender()
+    243:255:public com.google.ads.AdRequest setBirthday(java.lang.String)
+    264:270:public com.google.ads.AdRequest setBirthday(java.util.Date)
+    280:286:public com.google.ads.AdRequest setBirthday(java.util.Calendar)
+    294:294:public java.util.Date getBirthday()
+    302:303:public com.google.ads.AdRequest clearBirthday()
+    320:321:public com.google.ads.AdRequest setPlusOneOptOut(boolean)
+    334:334:public boolean getPlusOneOptOut()
+    360:365:public com.google.ads.AdRequest addKeyword(java.lang.String)
+    378:383:public com.google.ads.AdRequest addKeywords(java.util.Set)
+    394:398:public java.util.Set getKeywords()
+    408:412:private synchronized com.google.ads.mediation.admob.AdMobAdapterExtras a()
+    427:428:public com.google.ads.AdRequest setExtras(java.util.Map)
+    445:451:public com.google.ads.AdRequest addExtra(java.lang.String,java.lang.Object)
+    478:479:public com.google.ads.AdRequest removeNetworkExtras(java.lang.Class)
+    502:503:public com.google.ads.AdRequest setMediationExtras(java.util.Map)
+    517:522:public com.google.ads.AdRequest addMediationExtra(java.lang.String,java.lang.Object)
+    533:534:public com.google.ads.AdRequest setLocation(android.location.Location)
+    542:542:public android.location.Location getLocation()
+    557:558:public com.google.ads.AdRequest setTesting(boolean)
+    673:678:public com.google.ads.AdRequest addTestDevice(java.lang.String)
+com.google.ads.AdSize:
+    public static final int FULL_WIDTH
+    public static final int AUTO_HEIGHT
+    public static final int LANDSCAPE_AD_HEIGHT
+    public static final int PORTRAIT_AD_HEIGHT
+    public static final int LARGE_AD_HEIGHT
+    291:291:public int getWidthInPixels(android.content.Context)
+    301:301:public int getHeightInPixels(android.content.Context)
+    317:317:public boolean isSizeAppropriate(int,int)
+    339:359:public varargs com.google.ads.AdSize findBestSize(com.google.ads.AdSize[])
+com.google.ads.AdView:
+    110:112:protected AdView(android.app.Activity,com.google.ads.AdSize[],java.lang.String)
+    542:546:public boolean isReady()
+    651:654:public void stopLoading()
+com.google.ads.InterstitialAd:
+    private com.google.ads.internal.d a
+    82:83:public InterstitialAd(android.app.Activity,java.lang.String)
+    97:99:public InterstitialAd(android.app.Activity,java.lang.String,boolean)
+    108:108:public boolean isReady()
+    120:121:public void loadAd(com.google.ads.AdRequest)
+    130:131:public void show()
+    142:143:public void setAdListener(com.google.ads.AdListener)
+    151:152:protected void setAppEventListener(com.google.ads.AppEventListener)
+    161:162:public void stopLoading()
+com.google.ads.doubleclick.DfpAdView:
+    27:28:public DfpAdView(android.app.Activity,com.google.ads.AdSize,java.lang.String)
+    38:39:public DfpAdView(android.app.Activity,com.google.ads.AdSize[],java.lang.String)
+    85:86:public void enableManualImpressions(boolean)
+    92:93:public void recordImpression()
+    101:103:public void resize(com.google.ads.AdSize)
+com.google.ads.doubleclick.DfpExtras:
+    25:30:public DfpExtras(com.google.ads.doubleclick.DfpExtras)
+    46:47:public com.google.ads.doubleclick.DfpExtras setPublisherProvidedId(java.lang.String)
+    55:56:public com.google.ads.doubleclick.DfpExtras setPlusOneOptOut(boolean)
+    61:62:public com.google.ads.doubleclick.DfpExtras setUseExactAdSize(boolean)
+    67:68:public com.google.ads.doubleclick.DfpExtras setExtras(java.util.Map)
+    79:80:public com.google.ads.doubleclick.DfpExtras addExtra(java.lang.String,java.lang.Object)
+    12:12:public bridge synthetic com.google.ads.mediation.admob.AdMobAdapterExtras addExtra(java.lang.String,java.lang.Object)
+    12:12:public bridge synthetic com.google.ads.mediation.admob.AdMobAdapterExtras setExtras(java.util.Map)
+    12:12:public bridge synthetic com.google.ads.mediation.admob.AdMobAdapterExtras setUseExactAdSize(boolean)
+    12:12:public bridge synthetic com.google.ads.mediation.admob.AdMobAdapterExtras setPlusOneOptOut(boolean)
+com.google.ads.doubleclick.DfpInterstitialAd
+com.google.ads.doubleclick.SwipeableDfpAdView:
+    22:23:public SwipeableDfpAdView(android.app.Activity,com.google.ads.AdSize,java.lang.String)
+    56:62:public void resize(com.google.ads.AdSize)
+com.google.ads.e:
+    213:219:private boolean a(com.google.ads.h,java.lang.String)
+    225:235:public void a(com.google.ads.h,boolean)
+    240:256:public void a(com.google.ads.h,android.view.View)
+    260:269:public void a(com.google.ads.h)
+    273:282:public void b(com.google.ads.h)
+    286:295:public void c(com.google.ads.h)
+    306:315:public boolean c()
+    489:491:private com.google.ads.h e()
+    52:52:static synthetic com.google.ads.h c(com.google.ads.e)
+com.google.ads.e$2
+com.google.ads.e$3
+com.google.ads.e$4
+com.google.ads.e$5
+com.google.ads.e$6
+com.google.ads.f:
+    79:79:public java.util.List e()
+com.google.ads.h:
+    116:116:public com.google.ads.f a()
+    211:237:public synchronized void g()
+    265:265:synchronized com.google.ads.mediation.MediationAdapter i()
+    272:272:com.google.ads.e j()
+    276:277:synchronized void a(android.view.View)
+com.google.ads.h$2
+com.google.ads.internal.d:
+    549:549:public synchronized boolean s()
+    718:721:public synchronized void a(com.google.ads.f,boolean)
+    845:862:private void b(com.google.ads.f,java.lang.Boolean)
+    942:954:public synchronized void z()
+    1073:1100:public synchronized void B()
+com.google.ads.j:
+    private boolean b
+    34:66:public void onReceivedAd(com.google.ads.mediation.MediationBannerAdapter)
+    72:87:public void onFailedToReceiveAd(com.google.ads.mediation.MediationBannerAdapter,com.google.ads.AdRequest$ErrorCode)
+    92:95:public void onPresentScreen(com.google.ads.mediation.MediationBannerAdapter)
+    99:102:public void onDismissScreen(com.google.ads.mediation.MediationBannerAdapter)
+    106:109:public void onLeaveApplication(com.google.ads.mediation.MediationBannerAdapter)
+    113:117:public void onClick(com.google.ads.mediation.MediationBannerAdapter)
+com.google.ads.k:
+    29:40:public void onReceivedAd(com.google.ads.mediation.MediationInterstitialAdapter)
+    45:61:public void onFailedToReceiveAd(com.google.ads.mediation.MediationInterstitialAdapter,com.google.ads.AdRequest$ErrorCode)
+    66:69:public void onPresentScreen(com.google.ads.mediation.MediationInterstitialAdapter)
+    74:77:public void onDismissScreen(com.google.ads.mediation.MediationInterstitialAdapter)
+    81:84:public void onLeaveApplication(com.google.ads.mediation.MediationInterstitialAdapter)
+com.google.ads.mediation.EmptyNetworkExtras
+com.google.ads.mediation.MediationAdRequest:
+    50:50:public com.google.ads.AdRequest$Gender getGender()
+    57:57:public java.util.Date getBirthday()
+    67:81:public java.lang.Integer getAgeInYears()
+    88:92:public java.util.Set getKeywords()
+    100:104:public android.location.Location getLocation()
+    114:114:public boolean isTesting()
+com.google.ads.mediation.MediationBannerAdapter:
+    public abstract android.view.View getBannerView()
+com.google.ads.mediation.MediationBannerListener:
+    public abstract void onReceivedAd(com.google.ads.mediation.MediationBannerAdapter)
+    public abstract void onFailedToReceiveAd(com.google.ads.mediation.MediationBannerAdapter,com.google.ads.AdRequest$ErrorCode)
+    public abstract void onPresentScreen(com.google.ads.mediation.MediationBannerAdapter)
+    public abstract void onDismissScreen(com.google.ads.mediation.MediationBannerAdapter)
+    public abstract void onLeaveApplication(com.google.ads.mediation.MediationBannerAdapter)
+    public abstract void onClick(com.google.ads.mediation.MediationBannerAdapter)
+com.google.ads.mediation.MediationInterstitialAdapter:
+    public abstract void showInterstitial()
+com.google.ads.mediation.MediationInterstitialListener:
+    public abstract void onReceivedAd(com.google.ads.mediation.MediationInterstitialAdapter)
+    public abstract void onFailedToReceiveAd(com.google.ads.mediation.MediationInterstitialAdapter,com.google.ads.AdRequest$ErrorCode)
+    public abstract void onPresentScreen(com.google.ads.mediation.MediationInterstitialAdapter)
+    public abstract void onDismissScreen(com.google.ads.mediation.MediationInterstitialAdapter)
+    public abstract void onLeaveApplication(com.google.ads.mediation.MediationInterstitialAdapter)
+com.google.ads.mediation.admob.AdMobAdapter
+com.google.ads.mediation.admob.AdMobAdapter$1
+com.google.ads.mediation.admob.AdMobAdapter$a
+com.google.ads.mediation.admob.AdMobAdapter$b
+com.google.ads.mediation.admob.AdMobAdapterExtras:
+    31:37:public AdMobAdapterExtras(com.google.ads.mediation.admob.AdMobAdapterExtras)
+    44:44:public com.google.ads.mediation.admob.AdMobAdapterExtras setPlusOneOptOut(boolean)
+    52:52:public boolean getPlusOneOptOut()
+    69:70:public com.google.ads.mediation.admob.AdMobAdapterExtras setUseExactAdSize(boolean)
+    79:79:public boolean getUseExactAdSize()
+    102:106:public com.google.ads.mediation.admob.AdMobAdapterExtras setExtras(java.util.Map)
+    128:129:public com.google.ads.mediation.admob.AdMobAdapterExtras addExtra(java.lang.String,java.lang.Object)
+com.google.ads.mediation.admob.AdMobAdapterServerParameters
+com.google.ads.mediation.customevent.CustomEvent
+com.google.ads.mediation.customevent.CustomEventAdapter
+com.google.ads.mediation.customevent.CustomEventAdapter$a
+com.google.ads.mediation.customevent.CustomEventAdapter$b
+com.google.ads.mediation.customevent.CustomEventBanner
+com.google.ads.mediation.customevent.CustomEventBannerListener
+com.google.ads.mediation.customevent.CustomEventExtras
+com.google.ads.mediation.customevent.CustomEventInterstitial
+com.google.ads.mediation.customevent.CustomEventInterstitialListener
+com.google.ads.mediation.customevent.CustomEventListener
+com.google.ads.mediation.customevent.CustomEventServerParameters
+com.google.ads.searchads.SearchAdRequest:
+    91:92:public void setQuery(java.lang.String)
+    101:108:public void setBackgroundColor(int)
+    120:127:public void setBackgroundGradient(int,int)
+    137:138:public void setHeaderTextColor(int)
+    148:149:public void setDescriptionTextColor(int)
+    159:160:public void setAnchorTextColor(int)
+    168:169:public void setFontFace(java.lang.String)
+    178:179:public void setHeaderTextSize(int)
+    189:190:public void setBorderColor(int)
+    197:198:public void setBorderType(com.google.ads.searchads.SearchAdRequest$BorderType)
+    207:208:public void setBorderThickness(int)
+    215:216:public void setCustomChannels(java.lang.String)
+com.google.ads.util.a:
+    37:38:public static void a(boolean)
+    53:55:public static void a(java.lang.Object)

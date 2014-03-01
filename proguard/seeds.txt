@@ -1,0 +1,217 @@
+com.amap.api.location.core.GeoPoint: android.os.Parcelable$Creator CREATOR
+com.chuanonly.livewallpaper.ChooseCityActivity
+com.chuanonly.livewallpaper.ChooseCityActivity: ChooseCityActivity()
+com.chuanonly.livewallpaper.MainHomeActivity
+com.chuanonly.livewallpaper.MainHomeActivity: MainHomeActivity()
+com.chuanonly.livewallpaper.MyApplication
+com.chuanonly.livewallpaper.MyApplication: MyApplication()
+com.chuanonly.livewallpaper.R$anim: int anim_defalut
+com.chuanonly.livewallpaper.R$anim: int anim_right_enter
+com.chuanonly.livewallpaper.R$anim: int anim_right_exit
+com.chuanonly.livewallpaper.R$array: int weather_array
+com.chuanonly.livewallpaper.R$color: int black_alpha
+com.chuanonly.livewallpaper.R$color: int blue_alpha
+com.chuanonly.livewallpaper.R$color: int blue_half
+com.chuanonly.livewallpaper.R$color: int gray
+com.chuanonly.livewallpaper.R$color: int setting_bg_color
+com.chuanonly.livewallpaper.R$color: int setting_sum_text
+com.chuanonly.livewallpaper.R$color: int title_bg_color
+com.chuanonly.livewallpaper.R$color: int transparent
+com.chuanonly.livewallpaper.R$color: int white
+com.chuanonly.livewallpaper.R$dimen: int title_bar_title_text_size
+com.chuanonly.livewallpaper.R$drawable: int arrow_down
+com.chuanonly.livewallpaper.R$drawable: int arrow_left
+com.chuanonly.livewallpaper.R$drawable: int arrow_right
+com.chuanonly.livewallpaper.R$drawable: int arrow_up
+com.chuanonly.livewallpaper.R$drawable: int bg_cloudy_day
+com.chuanonly.livewallpaper.R$drawable: int bg_cloudy_night
+com.chuanonly.livewallpaper.R$drawable: int bg_fine_day
+com.chuanonly.livewallpaper.R$drawable: int bg_fog
+com.chuanonly.livewallpaper.R$drawable: int bg_haze
+com.chuanonly.livewallpaper.R$drawable: int bg_overcast
+com.chuanonly.livewallpaper.R$drawable: int bg_rain
+com.chuanonly.livewallpaper.R$drawable: int bg_snow
+com.chuanonly.livewallpaper.R$drawable: int bg_thunder_storm
+com.chuanonly.livewallpaper.R$drawable: int black_alpha_shape
+com.chuanonly.livewallpaper.R$drawable: int btn_bg_pressed
+com.chuanonly.livewallpaper.R$drawable: int btn_check_off
+com.chuanonly.livewallpaper.R$drawable: int btn_check_on
+com.chuanonly.livewallpaper.R$drawable: int btn_pressed_blue
+com.chuanonly.livewallpaper.R$drawable: int btn_selector
+com.chuanonly.livewallpaper.R$drawable: int checkbox_selector
+com.chuanonly.livewallpaper.R$drawable: int cloudy_day_1
+com.chuanonly.livewallpaper.R$drawable: int cloudy_day_2
+com.chuanonly.livewallpaper.R$drawable: int cloudy_day_3
+com.chuanonly.livewallpaper.R$drawable: int cloudy_day_4
+com.chuanonly.livewallpaper.R$drawable: int cloudy_night1
+com.chuanonly.livewallpaper.R$drawable: int cloudy_night2
+com.chuanonly.livewallpaper.R$drawable: int divider
+com.chuanonly.livewallpaper.R$drawable: int dustcloud
+com.chuanonly.livewallpaper.R$drawable: int fine_big_star
+com.chuanonly.livewallpaper.R$drawable: int fine_middle_star
+com.chuanonly.livewallpaper.R$drawable: int fine_min_star
+com.chuanonly.livewallpaper.R$drawable: int fine_small_star
+com.chuanonly.livewallpaper.R$drawable: int fire_balloon
+com.chuanonly.livewallpaper.R$drawable: int fog_cloud_1
+com.chuanonly.livewallpaper.R$drawable: int fog_cloud_2
+com.chuanonly.livewallpaper.R$drawable: int hali_1
+com.chuanonly.livewallpaper.R$drawable: int hali_2
+com.chuanonly.livewallpaper.R$drawable: int hali_3
+com.chuanonly.livewallpaper.R$drawable: int hali_4
+com.chuanonly.livewallpaper.R$drawable: int hali_5
+com.chuanonly.livewallpaper.R$drawable: int haze_bln_big
+com.chuanonly.livewallpaper.R$drawable: int haze_bln_day
+com.chuanonly.livewallpaper.R$drawable: int haze_bln_small
+com.chuanonly.livewallpaper.R$drawable: int ic_launcher
+com.chuanonly.livewallpaper.R$drawable: int lightning_1
+com.chuanonly.livewallpaper.R$drawable: int lightning_2
+com.chuanonly.livewallpaper.R$drawable: int list_pressed
+com.chuanonly.livewallpaper.R$drawable: int list_selector
+com.chuanonly.livewallpaper.R$drawable: int meteor
+com.chuanonly.livewallpaper.R$drawable: int overcast_cloud
+com.chuanonly.livewallpaper.R$drawable: int overcast_cloud_mask
+com.chuanonly.livewallpaper.R$drawable: int raindrop
+com.chuanonly.livewallpaper.R$drawable: int raindrop_l
+com.chuanonly.livewallpaper.R$drawable: int raindrop_m
+com.chuanonly.livewallpaper.R$drawable: int raindrop_s
+com.chuanonly.livewallpaper.R$drawable: int raindrop_xl
+com.chuanonly.livewallpaper.R$drawable: int sand_l
+com.chuanonly.livewallpaper.R$drawable: int sand_m
+com.chuanonly.livewallpaper.R$drawable: int search_input_bg
+com.chuanonly.livewallpaper.R$drawable: int search_input_left
+com.chuanonly.livewallpaper.R$drawable: int selectcity_pressed_selector
+com.chuanonly.livewallpaper.R$drawable: int setting_btn_selector
+com.chuanonly.livewallpaper.R$drawable: int snowflake_l
+com.chuanonly.livewallpaper.R$drawable: int snowflake_m
+com.chuanonly.livewallpaper.R$drawable: int snowflake_s
+com.chuanonly.livewallpaper.R$drawable: int snowflake_tiny
+com.chuanonly.livewallpaper.R$drawable: int snowflake_xl
+com.chuanonly.livewallpaper.R$drawable: int snowflake_xxl
+com.chuanonly.livewallpaper.R$drawable: int star_flicker
+com.chuanonly.livewallpaper.R$drawable: int sunshine_1
+com.chuanonly.livewallpaper.R$drawable: int sunshine_2
+com.chuanonly.livewallpaper.R$drawable: int sunshine_3
+com.chuanonly.livewallpaper.R$drawable: int titlebar
+com.chuanonly.livewallpaper.R$id: int checkbox_1
+com.chuanonly.livewallpaper.R$id: int checkbox_2
+com.chuanonly.livewallpaper.R$id: int checkbox_3
+com.chuanonly.livewallpaper.R$id: int cityList
+com.chuanonly.livewallpaper.R$id: int city_info
+com.chuanonly.livewallpaper.R$id: int contacts_listitem_texts
+com.chuanonly.livewallpaper.R$id: int current_wallpaper
+com.chuanonly.livewallpaper.R$id: int desc
+com.chuanonly.livewallpaper.R$id: int empty_city
+com.chuanonly.livewallpaper.R$id: int icon
+com.chuanonly.livewallpaper.R$id: int layout_1
+com.chuanonly.livewallpaper.R$id: int layout_2
+com.chuanonly.livewallpaper.R$id: int layout_3
+com.chuanonly.livewallpaper.R$id: int layout_ad
+com.chuanonly.livewallpaper.R$id: int layout_content
+com.chuanonly.livewallpaper.R$id: int queryCityText
+com.chuanonly.livewallpaper.R$id: int radioText1
+com.chuanonly.livewallpaper.R$id: int radioText2
+com.chuanonly.livewallpaper.R$id: int radioText3
+com.chuanonly.livewallpaper.R$id: int return_btn
+com.chuanonly.livewallpaper.R$id: int set_city
+com.chuanonly.livewallpaper.R$id: int setting_arrow
+com.chuanonly.livewallpaper.R$id: int setting_menu
+com.chuanonly.livewallpaper.R$id: int setting_panel_layout
+com.chuanonly.livewallpaper.R$id: int setting_wallpaper
+com.chuanonly.livewallpaper.R$id: int title
+com.chuanonly.livewallpaper.R$id: int wallpaper
+com.chuanonly.livewallpaper.R$id: int weather_info_txt
+com.chuanonly.livewallpaper.R$layout: int chose_city
+com.chuanonly.livewallpaper.R$layout: int item_scrollview
+com.chuanonly.livewallpaper.R$layout: int main_home
+com.chuanonly.livewallpaper.R$layout: int setting
+com.chuanonly.livewallpaper.R$layout: int text_list_item
+com.chuanonly.livewallpaper.R$raw: int cities
+com.chuanonly.livewallpaper.R$string: int about
+com.chuanonly.livewallpaper.R$string: int app_name
+com.chuanonly.livewallpaper.R$string: int china
+com.chuanonly.livewallpaper.R$string: int chose_city
+com.chuanonly.livewallpaper.R$string: int dislpay_setting
+com.chuanonly.livewallpaper.R$string: int display_base_city
+com.chuanonly.livewallpaper.R$string: int empty
+com.chuanonly.livewallpaper.R$string: int error
+com.chuanonly.livewallpaper.R$string: int input_city_name
+com.chuanonly.livewallpaper.R$string: int no_change
+com.chuanonly.livewallpaper.R$string: int no_change_desc
+com.chuanonly.livewallpaper.R$string: int no_change_desc_default
+com.chuanonly.livewallpaper.R$string: int not_find_city
+com.chuanonly.livewallpaper.R$string: int random_change
+com.chuanonly.livewallpaper.R$string: int random_change_two_hour
+com.chuanonly.livewallpaper.R$string: int set_wallpaper
+com.chuanonly.livewallpaper.R$string: int setting
+com.chuanonly.livewallpaper.R$string: int temp_unit
+com.chuanonly.livewallpaper.R$string: int thank
+com.chuanonly.livewallpaper.R$string: int toast_exit
+com.chuanonly.livewallpaper.R$string: int wallpaper_name
+com.chuanonly.livewallpaper.R$string: int weather_city
+com.chuanonly.livewallpaper.R$string: int weather_info
+com.chuanonly.livewallpaper.R$style: int AppTheme
+com.chuanonly.livewallpaper.R$style: int setting_item_checkbox
+com.chuanonly.livewallpaper.R$style: int setting_item_desc_text
+com.chuanonly.livewallpaper.R$style: int setting_item_layout
+com.chuanonly.livewallpaper.R$style: int setting_item_main_text
+com.chuanonly.livewallpaper.R$style: int setting_item_sum_text
+com.chuanonly.livewallpaper.R$xml: int dynamic_wallpaper_settings
+com.chuanonly.livewallpaper.R$xml: int wallpaper_icon
+com.chuanonly.livewallpaper.SettingActivity
+com.chuanonly.livewallpaper.SettingActivity: SettingActivity()
+com.chuanonly.livewallpaper.service.GLWallpaperService
+com.chuanonly.livewallpaper.service.GLWallpaperService: GLWallpaperService()
+com.chuanonly.livewallpaper.service.WallpaperService
+com.chuanonly.livewallpaper.service.WallpaperService: WallpaperService()
+com.chuanonly.livewallpaper.service.WallpaperSettings
+com.chuanonly.livewallpaper.view.GalleryScrollView
+com.chuanonly.livewallpaper.view.GalleryScrollView: GalleryScrollView(android.content.Context)
+com.chuanonly.livewallpaper.view.GalleryScrollView: GalleryScrollView(android.content.Context,android.util.AttributeSet)
+com.chuanonly.livewallpaper.view.GalleryScrollView: void setBannerOnStopScrollListener(com.chuanonly.livewallpaper.view.GalleryScrollView$OnBannerStopScroll)
+com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView
+com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView: WallPaperGLsurfaceView(android.content.Context)
+com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView: void setDirty(int)
+com.google.ads.AdActivity
+com.google.ads.AdActivity: AdActivity()
+com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode[] values()
+com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode valueOf(java.lang.String)
+com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender[] values()
+com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender valueOf(java.lang.String)
+com.google.ads.AdView
+com.google.ads.AdView: AdView(android.content.Context,android.util.AttributeSet)
+com.google.ads.AdView: AdView(android.content.Context,android.util.AttributeSet,int)
+com.google.ads.AdView: void setAdListener(com.google.ads.AdListener)
+com.google.ads.doubleclick.DfpAdView
+com.google.ads.doubleclick.DfpAdView: DfpAdView(android.content.Context,android.util.AttributeSet)
+com.google.ads.doubleclick.DfpAdView: DfpAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.ads.doubleclick.DfpAdView: void setAppEventListener(com.google.ads.AppEventListener)
+com.google.ads.doubleclick.DfpAdView: void setSupportedAdSizes(com.google.ads.AdSize[])
+com.google.ads.doubleclick.SwipeableDfpAdView
+com.google.ads.doubleclick.SwipeableDfpAdView: SwipeableDfpAdView(android.content.Context,android.util.AttributeSet)
+com.google.ads.doubleclick.SwipeableDfpAdView: SwipeableDfpAdView(android.content.Context,android.util.AttributeSet,int)
+com.google.ads.doubleclick.SwipeableDfpAdView: void setSwipeableEventListener(com.google.ads.SwipeableAdListener)
+com.google.ads.g$a: com.google.ads.g$a[] values()
+com.google.ads.g$a: com.google.ads.g$a valueOf(java.lang.String)
+com.google.ads.internal.ActivationOverlay
+com.google.ads.internal.ActivationOverlay: void setOverlayEnabled(boolean)
+com.google.ads.internal.ActivationOverlay: void setOverlayActivated(boolean)
+com.google.ads.internal.ActivationOverlay: void setYPosition(int)
+com.google.ads.internal.ActivationOverlay: void setXPosition(int)
+com.google.ads.internal.AdVideoView
+com.google.ads.internal.AdVideoView: void setMediaControllerEnabled(boolean)
+com.google.ads.internal.AdVideoView: void setSrc(java.lang.String)
+com.google.ads.internal.AdWebView
+com.google.ads.internal.AdWebView: void setAdActivity(com.google.ads.AdActivity)
+com.google.ads.internal.AdWebView: void setAdSize(com.google.ads.AdSize)
+com.google.ads.internal.AdWebView: void setCustomClose(boolean)
+com.google.ads.internal.AdWebView: void setIsExpandedMraid(boolean)
+com.google.ads.internal.c$d: com.google.ads.internal.c$d[] values()
+com.google.ads.internal.c$d: com.google.ads.internal.c$d valueOf(java.lang.String)
+com.google.ads.searchads.SearchAdRequest$BorderType: com.google.ads.searchads.SearchAdRequest$BorderType[] values()
+com.google.ads.searchads.SearchAdRequest$BorderType: com.google.ads.searchads.SearchAdRequest$BorderType valueOf(java.lang.String)
+com.google.ads.util.AdUtil$UserActivityReceiver
+com.google.ads.util.AdUtil$a: com.google.ads.util.AdUtil$a[] values()
+com.google.ads.util.AdUtil$a: com.google.ads.util.AdUtil$a valueOf(java.lang.String)
+com.google.ads.util.IcsUtil$IcsAdWebView
+com.google.ads.util.b$a: com.google.ads.util.b$a[] values()
+com.google.ads.util.b$a: com.google.ads.util.b$a valueOf(java.lang.String)

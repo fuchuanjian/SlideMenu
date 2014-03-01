@@ -24,7 +24,7 @@ public class GLNAScene extends BaseScene {
 
 	@Override
 	public String getBackground() {
-		return "bg_na";
+		return "bg_fine_day";
 	}
 
 }
