@@ -16,9 +16,7 @@ import com.amap.api.location.LocationProviderProxy;
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.R;
 import com.chuanonly.livewallpaper.data.City;
-import com.chuanonly.livewallpaper.util.Http;
 import com.chuanonly.livewallpaper.util.QueryCityHandler;
-import com.chuanonly.livewallpaper.util.Trace;
 import com.chuanonly.livewallpaper.util.Util;
 
 public class LocateHandler
@@ -47,7 +45,6 @@ public class LocateHandler
 	{
 		if (suggestionSource == null)
 		{
-			Trace.i("fu","定位");
 			suggestionSource = new QueryCityHandler(MyApplication.getContext());
 			LocationManagerProxy mAMapLocManager = LocationManagerProxy.getInstance(context);
 			mAMapLocManager.setGpsEnable(false);
@@ -90,7 +87,6 @@ public class LocateHandler
 		{
 			if (location == null || isSucess ) return;
 			
-			Trace.i("fu","定位返回结果");
 			new Thread(new Runnable()
 			{
 				
@@ -226,7 +222,6 @@ public class LocateHandler
             	Util.setIntToSharedPref(Util.MODE, 2);
             	
             	new HTTPTask().execute();
-            	Trace.i("fu",retCity.toString());
             }
 		}
 		

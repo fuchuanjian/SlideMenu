@@ -44,6 +44,7 @@ import com.google.ads.AdView;
 public class MainHomeActivity extends Activity
 {
 	private static final String ID = "kFVFFTT6V0dPR0Z08ERrFjWHZVa=";
+	private static final String ADID ="a15310888895deb";
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
 	{ 
@@ -131,6 +132,7 @@ public class MainHomeActivity extends Activity
 		if (loginCnt >5 && Util.isNetworkAvailable(getApplicationContext()))
 		{			
 			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
+//			mAdView = new AdView(this, AdSize.BANNER, ADID);
 			mADLayout.addView(mAdView);
 			mAdView.loadAd(new AdRequest());
 			

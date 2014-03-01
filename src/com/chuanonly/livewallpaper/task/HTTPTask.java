@@ -89,7 +89,6 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 		{
 			WallpaperInfo.parseWallpaperInfo(result);
 			MyApplication.getContext().sendBroadcast(new Intent(WallpaperService.ACTION_CHANGE_BROCAST));				
-			Util.showToast(WallpaperInfo.toStr());
 			
 		} catch (Exception e)
 		{
