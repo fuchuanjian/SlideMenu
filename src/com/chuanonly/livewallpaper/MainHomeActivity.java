@@ -48,16 +48,18 @@ public class MainHomeActivity extends Activity
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
 	{ 
-			R.drawable.bg_rain, 
-			R.drawable.bg_cloudy_day, 
+
 			R.drawable.bg_fine_day,
-			R.drawable.bg_fog, 
-			R.drawable.bg_haze, 
+			R.drawable.bg_cloudy_day, 
 			R.drawable.bg_snow,
-			R.drawable.bg_overcast, 
+			R.drawable.bg_rain, 
+			R.drawable.bg_thunder_storm,
 			R.drawable.bg_cloudy_night,
-//			R.drawable.bg_sand_storm,
-			R.drawable.bg_thunder_storm};
+			R.drawable.bg_fine_night,
+			R.drawable.bg_fog, 
+			R.drawable.bg_haze,
+			R.drawable.bg_overcast
+	};
 		int[][] imgType = new int[10][];
 		
 	//R.drawable.bg_rain, 
@@ -100,29 +102,34 @@ public class MainHomeActivity extends Activity
 		findViewById(R.id.setting_wallpaper).setOnClickListener(clickListener);
 		mArrowIV = (ImageView) findViewById(R.id.setting_arrow);
 		mArrowIV.setOnClickListener(clickListener);
-		//bg_rain
-		imgType[0] = new int[]{7,8,9,10,3};
+		
+		
+		//bg_fine_day
+		imgType[0] = new int[]{0};
 		//bg_cloudy_day
 		imgType[1] = new int[]{1};
-		//bg_fine_day
-		imgType[2] = new int[]{0};
-		//bg_fog
-		imgType[3] = new int[]{18,20,29};
-		//bg_haze
-		imgType[4] = new int[]{33};
 		//bg_snow
-		imgType[5] = new int[]{5,14,15,16,17,13};
-		//bg_overcast
-		imgType[6] = new int[]{2};
+		imgType[2] = new int[]{5,14,15,16,17,13};
+		//bg_rain
+		imgType[3] = new int[]{7,8,9,10,3};
+		//bg_na
+		imgType[4] = new int[]{4};
 		//bg_fine_night
-		imgType[7] = new int[]{100,101};
+		imgType[5] = new int[]{100};
+		//bg_cloud_night
+		imgType[6] = new int[]{101};
+		//bg_fog
+		imgType[7] = new int[]{18,20,29};
+		//bg_haze
+		imgType[8] = new int[]{33};
+		//bg_overcast
+		imgType[9] = new int[]{2};
 		//bg_sand_storm
 //		imgType[8] = new int[]{20,29};
-		//bg_na
-		imgType[8] = new int[]{4};
 		checkifNeedTolacate();
 		checkCanShowAd();
 //		String enString = URLUtil.encodeURL("a15310888895deb");
+
 	}
 
 
