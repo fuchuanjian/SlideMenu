@@ -20,6 +20,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -37,9 +38,12 @@ import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
 import com.chuanonly.livewallpaper.view.GalleryScrollView;
 import com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView;
+import com.google.ads.Ad;
+import com.google.ads.AdListener;
 import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
+import com.google.ads.AdRequest.ErrorCode;
 
 public class MainHomeActivity extends Activity
 {
@@ -115,9 +119,9 @@ public class MainHomeActivity extends Activity
 		//bg_na
 		imgType[4] = new int[]{4};
 		//bg_fine_night
-		imgType[5] = new int[]{100};
+		imgType[5] = new int[]{101};
 		//bg_cloud_night
-		imgType[6] = new int[]{101};
+		imgType[6] = new int[]{100};
 		//bg_fog
 		imgType[7] = new int[]{18,20,29};
 		//bg_haze
@@ -136,12 +140,37 @@ public class MainHomeActivity extends Activity
 	private void checkCanShowAd()
 	{
 		int loginCnt = Util.getIntFromSharedPref(Util.LOG_INT_CNT, 0);
-		if (loginCnt >5 && Util.isNetworkAvailable(getApplicationContext()))
+		if (loginCnt >= 3 && Util.isNetworkAvailable(getApplicationContext()))
 		{			
 			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
 //			mAdView = new AdView(this, AdSize.BANNER, ADID);
 			mADLayout.addView(mAdView);
 			mAdView.loadAd(new AdRequest());
+			mAdView.setAdListener(new AdListener()
+			{
+				@Override
+				public void onReceiveAd(Ad arg0)
+				{
+				}
+				@Override
+				public void onPresentScreen(Ad arg0)
+				{
+				}
+				@Override
+				public void onLeaveApplication(Ad arg0)
+				{
+				}
+				@Override
+				public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1)
+				{
+				}
+				@Override
+				public void onDismissScreen(Ad arg0)
+				{
+					Util.setIntToSharedPref(Util.LOG_INT_CNT, 0);
+					mAdView.setVisibility(View.GONE);
+				}
+			});
 			
 		}
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);

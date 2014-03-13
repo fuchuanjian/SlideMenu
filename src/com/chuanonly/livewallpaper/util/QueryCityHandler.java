@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import android.content.Context;
@@ -15,7 +16,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.text.TextUtils;
 
+import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.R;
+import com.chuanonly.livewallpaper.R.array;
 import com.chuanonly.livewallpaper.data.City;
 import com.chuanonly.livewallpaper.data.Constant;
 
@@ -111,13 +114,18 @@ public class QueryCityHandler
 				db.close();
 			}
 		}
+		if (MyApplication.language == 2 && retCities.size() > 0) 
+		{
+			retCities = sortCities(retCities);
+		}
+		
 		return retCities;
 
 	}
-	 public List<City> queryHotcities() {
+	 public ArrayList<City> queryHotcities() {
 	        SQLiteDatabase db = null;
 	        Cursor c = null;
-	        List<City> retCities = new ArrayList<City>();
+	        ArrayList<City> retCities = new ArrayList<City>();
 
 	        try {
 	            db = fetchDbInstance();
@@ -161,6 +169,10 @@ public class QueryCityHandler
 	                db.close();
 	            }
 	        }
+			if (MyApplication.language == 2 && retCities.size() > 0) 
+			{
+				retCities = sortCities(retCities);
+			}
 	        return retCities;
 	    }
 	public List<City> getAllCityNames(String locale)
@@ -307,5 +319,23 @@ public class QueryCityHandler
 			count += n;
 		}
 		return count;
+	}
+	
+	private ArrayList<City> sortCities(ArrayList<City> list)
+	{
+		ArrayList<City> sortList = new ArrayList<City>();
+		Iterator<City> iterator = list.iterator();
+		while (iterator.hasNext())
+		{
+			City city = iterator.next();
+			if (!city.enProvice.equals("China"))
+			{
+				sortList.add(city);
+				iterator.remove();
+			}
+		}
+		sortList.addAll(list);
+		return sortList;
+		
 	}
 }

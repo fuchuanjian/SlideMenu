@@ -1,4 +1,80 @@
+com.amap.api.location.AMapLocation
+com.amap.api.location.AMapLocationListener
+com.amap.api.location.LocationManagerProxy
+com.amap.api.location.LocationManagerProxy$a
+com.amap.api.location.LocationProviderProxy
+com.amap.api.location.a
+com.amap.api.location.a$a
+com.amap.api.location.b
+com.amap.api.location.c
+com.amap.api.location.core.CoordinateConvert
+com.amap.api.location.core.GeoPoint
 com.amap.api.location.core.GeoPoint: android.os.Parcelable$Creator CREATOR
+com.amap.api.location.core.a
+com.amap.api.location.core.b
+com.amap.api.location.core.c
+com.amap.api.location.core.d
+com.amap.api.location.core.e
+com.amap.api.location.d
+com.amap.api.location.e
+com.amap.api.location.f
+com.aps.a
+com.aps.a$1
+com.aps.a$a
+com.aps.aa
+com.aps.ab
+com.aps.ac
+com.aps.ad
+com.aps.ae
+com.aps.af
+com.aps.ag
+com.aps.ah
+com.aps.ai
+com.aps.aj
+com.aps.ak
+com.aps.al
+com.aps.am
+com.aps.an
+com.aps.ao
+com.aps.ap
+com.aps.aq
+com.aps.ar
+com.aps.as
+com.aps.at
+com.aps.au
+com.aps.av
+com.aps.aw
+com.aps.ax
+com.aps.ay
+com.aps.b
+com.aps.c
+com.aps.d
+com.aps.d$a
+com.aps.e
+com.aps.f
+com.aps.g
+com.aps.h
+com.aps.i
+com.aps.j
+com.aps.k
+com.aps.k$1
+com.aps.k$a
+com.aps.k$b
+com.aps.l
+com.aps.m
+com.aps.n
+com.aps.o
+com.aps.p
+com.aps.q
+com.aps.r
+com.aps.s
+com.aps.t
+com.aps.u
+com.aps.v
+com.aps.w
+com.aps.x
+com.aps.y
+com.aps.z
 com.chuanonly.livewallpaper.ChooseCityActivity
 com.chuanonly.livewallpaper.ChooseCityActivity: ChooseCityActivity()
 com.chuanonly.livewallpaper.MainHomeActivity
@@ -26,6 +102,7 @@ com.chuanonly.livewallpaper.R$drawable: int arrow_up
 com.chuanonly.livewallpaper.R$drawable: int bg_cloudy_day
 com.chuanonly.livewallpaper.R$drawable: int bg_cloudy_night
 com.chuanonly.livewallpaper.R$drawable: int bg_fine_day
+com.chuanonly.livewallpaper.R$drawable: int bg_fine_night
 com.chuanonly.livewallpaper.R$drawable: int bg_fog
 com.chuanonly.livewallpaper.R$drawable: int bg_haze
 com.chuanonly.livewallpaper.R$drawable: int bg_overcast
@@ -171,47 +248,235 @@ com.chuanonly.livewallpaper.view.GalleryScrollView: void setBannerOnStopScrollLi
 com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView
 com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView: WallPaperGLsurfaceView(android.content.Context)
 com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView: void setDirty(int)
+com.google.ads.Ad
 com.google.ads.AdActivity
 com.google.ads.AdActivity: AdActivity()
+com.google.ads.AdActivity$StaticMethodWrapper
+com.google.ads.AdListener
+com.google.ads.AdRequest
+com.google.ads.AdRequest$ErrorCode
 com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode[] values()
 com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode valueOf(java.lang.String)
+com.google.ads.AdRequest$Gender
 com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender[] values()
 com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender valueOf(java.lang.String)
+com.google.ads.AdSize
 com.google.ads.AdView
 com.google.ads.AdView: AdView(android.content.Context,android.util.AttributeSet)
 com.google.ads.AdView: AdView(android.content.Context,android.util.AttributeSet,int)
 com.google.ads.AdView: void setAdListener(com.google.ads.AdListener)
+com.google.ads.AppEventListener
+com.google.ads.InterstitialAd
+com.google.ads.SwipeableAdListener
+com.google.ads.a
+com.google.ads.aa
+com.google.ads.ab
+com.google.ads.ac
+com.google.ads.ae
+com.google.ads.af
+com.google.ads.ag
+com.google.ads.ag$1
+com.google.ads.ag$a
+com.google.ads.ag$b
+com.google.ads.ag$c
+com.google.ads.ag$d
+com.google.ads.ag$e
+com.google.ads.ag$f
+com.google.ads.ag$g
+com.google.ads.ag$h
+com.google.ads.ag$i
+com.google.ads.ag$j
+com.google.ads.ag$k
+com.google.ads.ag$l
+com.google.ads.ag$m
+com.google.ads.ah
+com.google.ads.ai
+com.google.ads.aj
+com.google.ads.ak
+com.google.ads.ak$a
+com.google.ads.al
+com.google.ads.am
+com.google.ads.an
+com.google.ads.an$a
+com.google.ads.ao
+com.google.ads.ap
+com.google.ads.aq
+com.google.ads.ar
+com.google.ads.as
+com.google.ads.at
+com.google.ads.at$1
+com.google.ads.at$a
+com.google.ads.au
+com.google.ads.au$a
+com.google.ads.av
+com.google.ads.b
+com.google.ads.c
+com.google.ads.c$1
+com.google.ads.d
 com.google.ads.doubleclick.DfpAdView
 com.google.ads.doubleclick.DfpAdView: DfpAdView(android.content.Context,android.util.AttributeSet)
 com.google.ads.doubleclick.DfpAdView: DfpAdView(android.content.Context,android.util.AttributeSet,int)
 com.google.ads.doubleclick.DfpAdView: void setAppEventListener(com.google.ads.AppEventListener)
 com.google.ads.doubleclick.DfpAdView: void setSupportedAdSizes(com.google.ads.AdSize[])
+com.google.ads.doubleclick.DfpExtras
+com.google.ads.doubleclick.DfpInterstitialAd
 com.google.ads.doubleclick.SwipeableDfpAdView
 com.google.ads.doubleclick.SwipeableDfpAdView: SwipeableDfpAdView(android.content.Context,android.util.AttributeSet)
 com.google.ads.doubleclick.SwipeableDfpAdView: SwipeableDfpAdView(android.content.Context,android.util.AttributeSet,int)
 com.google.ads.doubleclick.SwipeableDfpAdView: void setSwipeableEventListener(com.google.ads.SwipeableAdListener)
+com.google.ads.e
+com.google.ads.e$1
+com.google.ads.e$2
+com.google.ads.e$3
+com.google.ads.e$4
+com.google.ads.e$5
+com.google.ads.e$6
+com.google.ads.e$7
+com.google.ads.e$8
+com.google.ads.f
+com.google.ads.g
+com.google.ads.g$a
 com.google.ads.g$a: com.google.ads.g$a[] values()
 com.google.ads.g$a: com.google.ads.g$a valueOf(java.lang.String)
+com.google.ads.h
+com.google.ads.h$1
+com.google.ads.h$2
+com.google.ads.i
+com.google.ads.i$a
 com.google.ads.internal.ActivationOverlay
 com.google.ads.internal.ActivationOverlay: void setOverlayEnabled(boolean)
 com.google.ads.internal.ActivationOverlay: void setOverlayActivated(boolean)
 com.google.ads.internal.ActivationOverlay: void setYPosition(int)
 com.google.ads.internal.ActivationOverlay: void setXPosition(int)
+com.google.ads.internal.ActivationOverlay$1
 com.google.ads.internal.AdVideoView
 com.google.ads.internal.AdVideoView: void setMediaControllerEnabled(boolean)
 com.google.ads.internal.AdVideoView: void setSrc(java.lang.String)
+com.google.ads.internal.AdVideoView$a
 com.google.ads.internal.AdWebView
 com.google.ads.internal.AdWebView: void setAdActivity(com.google.ads.AdActivity)
 com.google.ads.internal.AdWebView: void setAdSize(com.google.ads.AdSize)
 com.google.ads.internal.AdWebView: void setCustomClose(boolean)
 com.google.ads.internal.AdWebView: void setIsExpandedMraid(boolean)
+com.google.ads.internal.AdWebView$1
+com.google.ads.internal.AdWebView$2
+com.google.ads.internal.a
+com.google.ads.internal.a$1
+com.google.ads.internal.a$2
+com.google.ads.internal.a$3
+com.google.ads.internal.a$4
+com.google.ads.internal.b
+com.google.ads.internal.c
+com.google.ads.internal.c$1
+com.google.ads.internal.c$2
+com.google.ads.internal.c$3
+com.google.ads.internal.c$a
+com.google.ads.internal.c$b
+com.google.ads.internal.c$c
+com.google.ads.internal.c$d
 com.google.ads.internal.c$d: com.google.ads.internal.c$d[] values()
 com.google.ads.internal.c$d: com.google.ads.internal.c$d valueOf(java.lang.String)
+com.google.ads.internal.c$e
+com.google.ads.internal.d
+com.google.ads.internal.e
+com.google.ads.internal.f
+com.google.ads.internal.f$1
+com.google.ads.internal.f$a
+com.google.ads.internal.g
+com.google.ads.internal.h
+com.google.ads.internal.i
+com.google.ads.internal.j
+com.google.ads.internal.j$a
+com.google.ads.internal.k
+com.google.ads.internal.k$a
+com.google.ads.internal.k$a$1
+com.google.ads.internal.k$a$2
+com.google.ads.internal.k$a$3
+com.google.ads.j
+com.google.ads.k
+com.google.ads.l
+com.google.ads.m
+com.google.ads.m$a
+com.google.ads.mediation.EmptyNetworkExtras
+com.google.ads.mediation.MediationAdRequest
+com.google.ads.mediation.MediationAdapter
+com.google.ads.mediation.MediationBannerAdapter
+com.google.ads.mediation.MediationBannerListener
+com.google.ads.mediation.MediationInterstitialAdapter
+com.google.ads.mediation.MediationInterstitialListener
+com.google.ads.mediation.MediationServerParameters
+com.google.ads.mediation.MediationServerParameters$MappingException
+com.google.ads.mediation.MediationServerParameters$Parameter
+com.google.ads.mediation.NetworkExtras
+com.google.ads.mediation.admob.AdMobAdapter
+com.google.ads.mediation.admob.AdMobAdapter$1
+com.google.ads.mediation.admob.AdMobAdapter$a
+com.google.ads.mediation.admob.AdMobAdapter$b
+com.google.ads.mediation.admob.AdMobAdapterExtras
+com.google.ads.mediation.admob.AdMobAdapterServerParameters
+com.google.ads.mediation.customevent.CustomEvent
+com.google.ads.mediation.customevent.CustomEventAdapter
+com.google.ads.mediation.customevent.CustomEventAdapter$a
+com.google.ads.mediation.customevent.CustomEventAdapter$b
+com.google.ads.mediation.customevent.CustomEventBanner
+com.google.ads.mediation.customevent.CustomEventBannerListener
+com.google.ads.mediation.customevent.CustomEventExtras
+com.google.ads.mediation.customevent.CustomEventInterstitial
+com.google.ads.mediation.customevent.CustomEventInterstitialListener
+com.google.ads.mediation.customevent.CustomEventListener
+com.google.ads.mediation.customevent.CustomEventServerParameters
+com.google.ads.n
+com.google.ads.o
+com.google.ads.p
+com.google.ads.q
+com.google.ads.r
+com.google.ads.s
+com.google.ads.searchads.SearchAdRequest
+com.google.ads.searchads.SearchAdRequest$BorderType
 com.google.ads.searchads.SearchAdRequest$BorderType: com.google.ads.searchads.SearchAdRequest$BorderType[] values()
 com.google.ads.searchads.SearchAdRequest$BorderType: com.google.ads.searchads.SearchAdRequest$BorderType valueOf(java.lang.String)
+com.google.ads.t
+com.google.ads.u
+com.google.ads.util.AdUtil
 com.google.ads.util.AdUtil$UserActivityReceiver
+com.google.ads.util.AdUtil$a
 com.google.ads.util.AdUtil$a: com.google.ads.util.AdUtil$a[] values()
 com.google.ads.util.AdUtil$a: com.google.ads.util.AdUtil$a valueOf(java.lang.String)
+com.google.ads.util.IcsUtil
 com.google.ads.util.IcsUtil$IcsAdWebView
+com.google.ads.util.IcsUtil$a
+com.google.ads.util.a
+com.google.ads.util.a$a
+com.google.ads.util.b
+com.google.ads.util.b$a
 com.google.ads.util.b$a: com.google.ads.util.b$a[] values()
 com.google.ads.util.b$a: com.google.ads.util.b$a valueOf(java.lang.String)
+com.google.ads.util.b$b
+com.google.ads.util.c
+com.google.ads.util.c$a
+com.google.ads.util.c$b
+com.google.ads.util.d
+com.google.ads.util.e
+com.google.ads.util.f
+com.google.ads.util.g
+com.google.ads.util.g$1
+com.google.ads.util.g$a
+com.google.ads.util.g$a$1
+com.google.ads.util.g$a$2
+com.google.ads.util.g$a$3
+com.google.ads.util.g$a$4
+com.google.ads.util.g$a$5
+com.google.ads.util.g$a$6
+com.google.ads.util.g$b
+com.google.ads.util.h
+com.google.ads.util.i
+com.google.ads.util.i$1
+com.google.ads.util.i$a
+com.google.ads.util.i$b
+com.google.ads.util.i$c
+com.google.ads.util.i$d
+com.google.ads.v
+com.google.ads.w
+com.google.ads.x
+com.google.ads.y
+com.google.ads.z

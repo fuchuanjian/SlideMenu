@@ -93,7 +93,13 @@ public class LocateHandler
 				@Override
 				public void run()
 				{
-					parseCitycode(location);
+					try
+					{						
+						parseCitycode(location);
+					}catch (Exception e)
+					{
+						Util.setIntToSharedPref(Util.MODE, 1);
+					}
 				}
 			}).start();
 			release();
