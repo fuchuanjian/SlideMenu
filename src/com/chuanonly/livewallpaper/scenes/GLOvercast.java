@@ -50,7 +50,7 @@ public class GLOvercast extends BaseScene
  	 	    cloudymaskscale = 2.0f;
 		}
 	 		Particle cloud1 = new ParticleRect();
-	 		cloud1.setXY(0.0f, 0.0f);
+	 		cloud1.setXY(0.0f, -20.0f);
 	 		cloud1.setScale(cloudyscale);
 	 		cloud1.setSpeed(80);
 	 		cloud1.setType(0);
