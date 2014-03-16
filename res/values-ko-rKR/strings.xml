@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="wallpaper_name">날씨 라이브 배경 화면</string>
+    <string name="app_name">날씨 라이브 배경 화면</string>
+    <string name="toast_exit">다시 종료를 눌러 반환 키</string>
+    <string name="temp_unit">°C</string>
+    
+     <string name="setting">설정</string>
+     <string name="dislpay_setting">배경 화면 설정</string>
+     <string name="set_wallpaper">바탕 화면으로 설정</string>
+     <string name="error">라이브 배경 화면 선택을 시작할 수 없습니다</string>
+     <string name="china">china</string>
+     <string name="weather_city">도시:\t</string>
+     <string name="weather_info">\t%1$s \t %2$s \t %3$s</string>
+     <string name="empty">도시:\tnull</string>
+     
+     <!-- setting -->
+    <string name="no_change">전환하지 마십시오</string>
+    <string name="no_change_desc_default">현재 : </string>
+    <string name="no_change_desc">현재 : %s</string>
+    <string name="random_change">임의 전환</string> 
+    <string name="random_change_two_hour">바탕 화면마다 2 시간 스위치</string>
+    <string name="display_base_city">시 위치에 배경 화면을 설정</string>
+    <string name="chose_city">도시 전체 선택</string>
+    <string name="about">약</string>
+    <string name="input_city_name">Please Enter City Name by English</string>
+    <string name="not_find_city">The city can not be found, try by English </string>
+    <string name="thank">친애하는 사용자는이 라이브 벽지 응용 프로그램을 사용하여 주셔서 감사합니다. 당신은 문제가있는 경우에, 나는 시간을 향상시킬 수 있습니다.</string> 
+ 	<string name="feedback">의견과 평가</string>  
+<!--   
+ <string-array name="weather_array" >
+        <item>晴</item>
+        <item>多云</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>雾霾</item>
+    </string-array>  -->
+    
+    <string-array name="weather_array" >
+        <item>명란 한</item>
+        <item>흐린</item>
+        <item>음</item>
+        <item>비</item>
+        <item>눈</item>
+        <item>안개</item>
+    </string-array> 
+    
+<!--     <string-array name="weather_array" >
+        <item>Light Rain</item>
+        <item>Rain</item>
+        <item>Heavy Rain</item>
+        <item>Rainstorm</item>
+        <item>Shower Rain</item>
+        <item>Thunders</item>
+        <item>Cloudy</item>
+        <item>Sunny</item>
+        <item>Fog</item>
+        <item>Haze</item>
+        <item>Light Dust</item>
+        <item>Dust</item>
+        <item>Hail</item>
+        <item>Shower Snow</item>
+        <item>Light Snow</item>
+        <item>Snow</item>
+        <item>Heavy Snow</item>
+        <item>Snowstorm</item>
+        <item>Overcast</item>
+        <item>Sunny Night</item>
+        <item>Cloudy Night</item>
+    </string-array> -->
+
+</resources>

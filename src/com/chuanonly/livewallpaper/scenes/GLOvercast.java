@@ -50,17 +50,17 @@ public class GLOvercast extends BaseScene
  	 	    cloudymaskscale = 2.0f;
 		}
 	 		Particle cloud1 = new ParticleRect();
-	 		cloud1.setXY(0.0f, -20.0f);
+	 		cloud1.setXY(0.0f, 0.0f);
 	 		cloud1.setScale(cloudyscale);
 	 		cloud1.setSpeed(80);
 	 		cloud1.setType(0);
 	 		particleList.add(cloud1);
 	 		
 	 		Particle cloud2 = new ParticleRect();
-	 		cloud2.setXY(-200.0f, 0.0f);
+	 		cloud2.setXY(-300.0f, 0.0f);
 	 		cloud2.setSpeed(50);
 	 		cloud2.setType(1);
-	 		cloud2.setScale(0.3f);
+	 		cloud2.setScale(1.8f);
 	 		particleList.add(cloud2);
 	 		
 
@@ -75,7 +75,7 @@ public class GLOvercast extends BaseScene
 	 		
 	 		textureInfos.clear();
 	 		textureInfos.add(new TextureInfo(R.drawable.overcast_cloud,cloudyscale));
-	 		textureInfos.add(new TextureInfo(R.drawable.overcast_cloud, 0.3f));
+	 		textureInfos.add(new TextureInfo(R.drawable.overcast_cloud, 1.8f));
 	 		textureInfos.add(new TextureInfo(R.drawable.overcast_cloud_mask,cloudscale2));
 	}
 	/**  载入纹理  */

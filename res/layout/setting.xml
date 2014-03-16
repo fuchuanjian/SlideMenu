@@ -196,6 +196,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@drawable/divider" />
+          <LinearLayout
+                android:id="@+id/rate_layout"
+                style="@style/setting_item_layout"
+                android:background="@drawable/list_selector" >
+                    <TextView
+                        style="@style/setting_item_main_text"
+                        android:text="@string/feedback" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/last_divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider" />
         </LinearLayout>
     </ScrollView>
 

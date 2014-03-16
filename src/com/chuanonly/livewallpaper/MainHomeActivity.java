@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
 
+import android.R.integer;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.WallpaperManager;
@@ -64,7 +65,28 @@ public class MainHomeActivity extends Activity
 			R.drawable.bg_haze,
 			R.drawable.bg_overcast
 	};
-		int[][] imgType = new int[10][];
+	public static int[][] imgType =
+	{
+			// bg_fine_day
+			{ 0 },
+			// bg_cloudy_day
+			{ 1 },
+			// bg_snow
+			{ 5, 14, 15, 16, 17, 13 },
+			// bg_rain
+			{ 7, 8, 9, 10, 3 },
+			// bg_na
+			{ 4 },
+			// bg_fine_night
+			{ 101 },
+			// bg_cloud_night
+			{ 100 },
+			// bg_fog
+			{ 18, 20, 29 },
+			// bg_haze
+			{ 33 },
+			// bg_overcast
+			{ 2 } };
 		
 	//R.drawable.bg_rain, 
 	//R.drawable.bg_cloudy_day, 
@@ -108,28 +130,28 @@ public class MainHomeActivity extends Activity
 		mArrowIV.setOnClickListener(clickListener);
 		
 		
-		//bg_fine_day
-		imgType[0] = new int[]{0};
-		//bg_cloudy_day
-		imgType[1] = new int[]{1};
-		//bg_snow
-		imgType[2] = new int[]{5,14,15,16,17,13};
-		//bg_rain
-		imgType[3] = new int[]{7,8,9,10,3};
-		//bg_na
-		imgType[4] = new int[]{4};
-		//bg_fine_night
-		imgType[5] = new int[]{101};
-		//bg_cloud_night
-		imgType[6] = new int[]{100};
-		//bg_fog
-		imgType[7] = new int[]{18,20,29};
-		//bg_haze
-		imgType[8] = new int[]{33};
-		//bg_overcast
-		imgType[9] = new int[]{2};
-		//bg_sand_storm
-//		imgType[8] = new int[]{20,29};
+//		//bg_fine_day
+//		imgType[0] = new int[]{0};
+//		//bg_cloudy_day
+//		imgType[1] = new int[]{1};
+//		//bg_snow
+//		imgType[2] = new int[]{5,14,15,16,17,13};
+//		//bg_rain
+//		imgType[3] = new int[]{7,8,9,10,3};
+//		//bg_na
+//		imgType[4] = new int[]{4};
+//		//bg_fine_night
+//		imgType[5] = new int[]{101};
+//		//bg_cloud_night
+//		imgType[6] = new int[]{100};
+//		//bg_fog
+//		imgType[7] = new int[]{18,20,29};
+//		//bg_haze
+//		imgType[8] = new int[]{33};
+//		//bg_overcast
+//		imgType[9] = new int[]{2};
+//		//bg_sand_storm
+////		imgType[8] = new int[]{20,29};
 		checkifNeedTolacate();
 		checkCanShowAd();
 //		String enString = URLUtil.encodeURL("a15310888895deb");
@@ -140,7 +162,8 @@ public class MainHomeActivity extends Activity
 	private void checkCanShowAd()
 	{
 		int loginCnt = Util.getIntFromSharedPref(Util.LOG_INT_CNT, 0);
-		if (loginCnt >= 3 && Util.isNetworkAvailable(getApplicationContext()))
+		int enterCnt = MyApplication.language == 1 ? 3 : 2;
+		if (loginCnt >= enterCnt && Util.isNetworkAvailable(getApplicationContext()))
 		{			
 			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
 //			mAdView = new AdView(this, AdSize.BANNER, ADID);
@@ -167,7 +190,7 @@ public class MainHomeActivity extends Activity
 				@Override
 				public void onDismissScreen(Ad arg0)
 				{
-					Util.setIntToSharedPref(Util.LOG_INT_CNT, 0);
+					Util.setIntToSharedPref(Util.LOG_INT_CNT, -1);
 					mAdView.setVisibility(View.GONE);
 				}
 			});
@@ -265,8 +288,9 @@ public class MainHomeActivity extends Activity
 					mContentLayout.setVisibility(View.VISIBLE);
 					mArrowIV.setImageResource(R.drawable.arrow_down);
 				}
-			}else
+			}else if (lastClickTime + 300 < System.currentTimeMillis())
 			{				
+				lastClickTime = System.currentTimeMillis();
 				int index = ((ViewHolder)view.getTag()).index;
 				Util.setLongToSharedPref(Util.LAST_PICK_TIME, System.currentTimeMillis());
 				changeWallPaper(index);
@@ -274,7 +298,7 @@ public class MainHomeActivity extends Activity
 		}
 
 	};
-	
+	private long lastClickTime = 0;
 	private void changeWallPaper(int index)
 	{
 		int category = imgType[index][new Random().nextInt(imgType[index].length)];

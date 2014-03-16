@@ -14,7 +14,35 @@ public final class R {
         public static final int anim_right_exit=0x7f040002;
     }
     public static final class array {
-        /**     <string-array name="weather_array" >
+        /**    
+ <string-array name="weather_array" >
+        <item>晴</item>
+        <item>多云</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>雾霾</item>
+    </string-array>  
+   
+ <string-array name="weather_array" >
+        <item>晴</item>
+        <item>多云</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>雾霾</item>
+    </string-array>  
+   
+ <string-array name="weather_array" >
+        <item>晴</item>
+        <item>多云</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>雾霾</item>
+    </string-array>  
+   
+ <string-array name="weather_array" >
         <item>晴</item>
         <item>多云</item>
         <item>阴</item>
@@ -94,29 +122,30 @@ public final class R {
         public static final int list_selector=0x7f020031;
         public static final int meteor=0x7f020032;
         public static final int overcast_cloud=0x7f020033;
-        public static final int overcast_cloud_mask=0x7f020034;
-        public static final int raindrop=0x7f020035;
-        public static final int raindrop_l=0x7f020036;
-        public static final int raindrop_m=0x7f020037;
-        public static final int raindrop_s=0x7f020038;
-        public static final int raindrop_xl=0x7f020039;
-        public static final int sand_l=0x7f02003a;
-        public static final int sand_m=0x7f02003b;
-        public static final int search_input_bg=0x7f02003c;
-        public static final int search_input_left=0x7f02003d;
-        public static final int selectcity_pressed_selector=0x7f02003e;
-        public static final int setting_btn_selector=0x7f02003f;
-        public static final int snowflake_l=0x7f020040;
-        public static final int snowflake_m=0x7f020041;
-        public static final int snowflake_s=0x7f020042;
-        public static final int snowflake_tiny=0x7f020043;
-        public static final int snowflake_xl=0x7f020044;
-        public static final int snowflake_xxl=0x7f020045;
-        public static final int star_flicker=0x7f020046;
-        public static final int sunshine_1=0x7f020047;
-        public static final int sunshine_2=0x7f020048;
-        public static final int sunshine_3=0x7f020049;
-        public static final int titlebar=0x7f02004a;
+        public static final int overcast_cloud1=0x7f020034;
+        public static final int overcast_cloud_mask=0x7f020035;
+        public static final int raindrop=0x7f020036;
+        public static final int raindrop_l=0x7f020037;
+        public static final int raindrop_m=0x7f020038;
+        public static final int raindrop_s=0x7f020039;
+        public static final int raindrop_xl=0x7f02003a;
+        public static final int sand_l=0x7f02003b;
+        public static final int sand_m=0x7f02003c;
+        public static final int search_input_bg=0x7f02003d;
+        public static final int search_input_left=0x7f02003e;
+        public static final int selectcity_pressed_selector=0x7f02003f;
+        public static final int setting_btn_selector=0x7f020040;
+        public static final int snowflake_l=0x7f020041;
+        public static final int snowflake_m=0x7f020042;
+        public static final int snowflake_s=0x7f020043;
+        public static final int snowflake_tiny=0x7f020044;
+        public static final int snowflake_xl=0x7f020045;
+        public static final int snowflake_xxl=0x7f020046;
+        public static final int star_flicker=0x7f020047;
+        public static final int sunshine_1=0x7f020048;
+        public static final int sunshine_2=0x7f020049;
+        public static final int sunshine_3=0x7f02004a;
+        public static final int titlebar=0x7f02004b;
     }
     public static final class id {
         public static final int checkbox_1=0x7f0c0010;
@@ -124,20 +153,22 @@ public final class R {
         public static final int checkbox_3=0x7f0c0015;
         public static final int cityList=0x7f0c0003;
         public static final int city_info=0x7f0c000e;
-        public static final int contacts_listitem_texts=0x7f0c0018;
+        public static final int contacts_listitem_texts=0x7f0c001a;
         public static final int current_wallpaper=0x7f0c0011;
         public static final int desc=0x7f0c0006;
         public static final int empty_city=0x7f0c0004;
         public static final int icon=0x7f0c0005;
+        public static final int last_divider=0x7f0c0019;
         public static final int layout_1=0x7f0c000f;
         public static final int layout_2=0x7f0c0012;
         public static final int layout_3=0x7f0c0014;
         public static final int layout_ad=0x7f0c000d;
         public static final int layout_content=0x7f0c000c;
         public static final int queryCityText=0x7f0c0002;
-        public static final int radioText1=0x7f0c0019;
-        public static final int radioText2=0x7f0c001a;
-        public static final int radioText3=0x7f0c001b;
+        public static final int radioText1=0x7f0c001b;
+        public static final int radioText2=0x7f0c001c;
+        public static final int radioText3=0x7f0c001d;
+        public static final int rate_layout=0x7f0c0018;
         public static final int return_btn=0x7f0c0000;
         public static final int set_city=0x7f0c0017;
         public static final int setting_arrow=0x7f0c000b;
@@ -167,8 +198,13 @@ public final class R {
         public static final int display_base_city=0x7f090011;
         public static final int empty=0x7f09000b;
         public static final int error=0x7f090007;
+        public static final int feedback=0x7f090017;
         public static final int input_city_name=0x7f090014;
         /**  setting 
+ setting 
+ setting 
+ setting 
+ setting 
  setting 
  setting 
          */

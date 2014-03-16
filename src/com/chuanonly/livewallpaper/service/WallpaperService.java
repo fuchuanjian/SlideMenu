@@ -2,7 +2,6 @@ package com.chuanonly.livewallpaper.service;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -14,11 +13,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ConfigurationInfo;
 import android.opengl.GLSurfaceView;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.view.SurfaceHolder;
 
-import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.util.Util;
@@ -34,9 +31,6 @@ public class WallpaperService extends GLWallpaperService
 
 	private WallPaperRender renderer;
 
-
-	private Handler mHandler = new Handler();
-	
 	private ArrayList<WeakReference<GLEngine>> mEngines = new ArrayList<WeakReference<GLEngine>>();
 
 	public WallpaperService()
@@ -91,7 +85,6 @@ public class WallpaperService extends GLWallpaperService
 
 			if (!visible && getRenderMode() == 0)
 			{
-				stopChangeWallPaperRunable();
 				unregisterReceiver();
 				stopRendering();
 				super.onVisibilityChanged(visible);
@@ -102,10 +95,10 @@ public class WallpaperService extends GLWallpaperService
 				System.gc();
 			} else
 			{
-				super.onVisibilityChanged(visible);
 				registerReceiver();
-				startRendering();
 				checkIFChangeWallpaer();
+				super.onVisibilityChanged(visible);
+				startRendering();
 			}
 		}
 
@@ -117,13 +110,6 @@ public class WallpaperService extends GLWallpaperService
 			{
 				//not change
 			}else if (mode == 1){
-				//3hour
-				long curTime = System.currentTimeMillis();
-				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
-				if (lasttime + Util.HOUR_2 < curTime)
-				{
-					mHandler.postDelayed(changeRunnable, 200);
-				}
 				
 			}else if (mode == 2)
 			{
@@ -141,28 +127,6 @@ public class WallpaperService extends GLWallpaperService
 			}
 			
 		}
-		private void stopChangeWallPaperRunable()
-		{
-			mHandler.removeCallbacks(changeRunnable);
-			
-		}
-		private Runnable changeRunnable = new Runnable()
-		{
-			
-			@Override
-			public void run()
-			{
-				int category = 0;
-				if (new Random().nextInt(3) != 0)
-				{					
-					category = new Random().nextInt(44);
-				}
-				category = Util.normalDayOrNight(category);
-				Util.setLongToSharedPref(Util.LAST_UPDATETIME, System.currentTimeMillis());
-				Util.setIntToSharedPref(Util.TYPE, category);
-				MyApplication.getContext().sendBroadcast(new Intent(WallpaperService.ACTION_CHANGE_BROCAST));
-			}
-		};
 
 		@Override
 		public void onDestroy()

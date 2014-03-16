@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -48,6 +49,29 @@ public class SettingActivity extends Activity
 		findViewById(R.id.set_city).setOnClickListener(click);
 		findViewById(R.id.return_btn).setOnClickListener(click);
 		mCurWallpaerTV = (TextView) findViewById(R.id.current_wallpaper);
+		View rateView = findViewById(R.id.rate_layout);
+		if (MyApplication.language == 2)
+		{
+			rateView.setVisibility(View.GONE);
+			findViewById(R.id.last_divider).setVisibility(View.GONE);
+		}else {			
+			rateView.setOnClickListener(new OnClickListener()
+			{
+				@Override
+				public void onClick(View v)
+				{
+					try
+					{
+						Intent intent = new Intent(Intent.ACTION_VIEW);
+						intent.setData(Uri.parse("market://details?id=" + getPackageName()));
+						startActivity(intent);					
+					}catch (Exception e)
+					{
+						
+					}
+				}
+			});
+		}
 	}
 
 	private void showWeatherInfo()

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="wallpaper_name">Погода Live Wallpaper</string>
+    <string name="app_name">Погода Live Wallpaper</string>
+    <string name="toast_exit">Пресс возвращение кнопку еще раз, чтобы выйти из</string>
+    <string name="temp_unit">°C</string>
+    
+     <string name="setting">настройки</string>
+     <string name="dislpay_setting">Live Wallpaper Настройки</string>
+     <string name="set_wallpaper">Установить обои</string>
+     <string name="error">Не удается запустить Live Wallpaper Chooser</string>
+     <string name="china">china</string>
+     <string name="weather_city">Сити:\t</string>
+     <string name="weather_info">\t%1$s \t %2$s \t %3$s</string>
+     <string name="empty">Сити:\tnull</string>
+     
+     <!-- setting -->
+    <string name="no_change">никогда не включайте</string>
+    <string name="no_change_desc_default">ток : </string>
+    <string name="no_change_desc">ток : %s</string>
+    <string name="random_change">Случайное переключение</string> 
+    <string name="random_change_two_hour">Переключатель обои каждые 2 часа</string>
+    <string name="display_base_city">Дисплей обои на City Местоположение</string>
+    <string name="chose_city">Выбрать город</string>
+    <string name="about">о</string>
+    <string name="input_city_name">Please Enter City Name by English</string>
+    <string name="not_find_city">The city can not be found, try by English </string>
+    <string name="thank">Уважаемый пользователь, Спасибо за использование этого жить обои app.Feedback Если у вас возникли проблемы, я улучшит его вовремя.</string> 
+ 	<string name="feedback">Обратной связи и скорость</string>  
+<!--   
+ <string-array name="weather_array" >
+        <item>晴</item>
+        <item>多云</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>雾霾</item>
+    </string-array>  -->
+    
+    <string-array name="weather_array" >
+        <item>солнечный</item>
+        <item>облачный</item>
+        <item>облачность</item>
+        <item>дождь</item>
+        <item>снег</item>
+        <item>туман</item>
+    </string-array> 
+    
+<!--     <string-array name="weather_array" >
+        <item>Light Rain</item>
+        <item>Rain</item>
+        <item>Heavy Rain</item>
+        <item>Rainstorm</item>
+        <item>Shower Rain</item>
+        <item>Thunders</item>
+        <item>Cloudy</item>
+        <item>Sunny</item>
+        <item>Fog</item>
+        <item>Haze</item>
+        <item>Light Dust</item>
+        <item>Dust</item>
+        <item>Hail</item>
+        <item>Shower Snow</item>
+        <item>Light Snow</item>
+        <item>Snow</item>
+        <item>Heavy Snow</item>
+        <item>Snowstorm</item>
+        <item>Overcast</item>
+        <item>Sunny Night</item>
+        <item>Cloudy Night</item>
+    </string-array> -->
+
+</resources>

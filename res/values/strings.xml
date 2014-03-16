@@ -27,7 +27,9 @@
     <string name="input_city_name">Please Enter City Name</string>
     <string name="not_find_city">The city can not be found</string>
     <string name="thank">Dear user , Thank you for using this live wallpaper app.Feedback If you have trouble,I will improve it in time.</string> 
-<!--    <string-array name="weather_array" >
+ 	<string name="feedback">Feedback And Rate</string>  
+<!--   
+ <string-array name="weather_array" >
         <item>晴</item>
         <item>多云</item>
         <item>阴</item>

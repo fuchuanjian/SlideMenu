@@ -1,14 +1,16 @@
 
 package com.chuanonly.livewallpaper.service;
 
+import java.util.Random;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import android.R.integer;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.text.TextUtils;
 
+import com.chuanonly.livewallpaper.MainHomeActivity;
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.scenes.Background;
@@ -20,7 +22,6 @@ import com.chuanonly.livewallpaper.scenes.GLHalistoneScene;
 import com.chuanonly.livewallpaper.scenes.GLHazeScene;
 import com.chuanonly.livewallpaper.scenes.GLOvercast;
 import com.chuanonly.livewallpaper.scenes.GLRain;
-import com.chuanonly.livewallpaper.scenes.GLSandstormScene;
 import com.chuanonly.livewallpaper.scenes.GLShowerRain;
 import com.chuanonly.livewallpaper.scenes.GLShowerSnow;
 import com.chuanonly.livewallpaper.scenes.GLSnowScene;
@@ -60,19 +61,40 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     	int category = Util.getIntFromSharedPref(Util.TYPE, WeatherType.FINE);
-    	boolean needAdjust = true;
     	int mode = Util.getIntFromSharedPref(Util.MODE, 1);
     	long lastPickTime = Util.getLongFromSharedPref(Util.LAST_PICK_TIME, 0);
-    	if ( mode != 2  && lastPickTime + Util.HOUR_HALF > System.currentTimeMillis())
+    	
+    	if (mode == 0)
     	{
-    		needAdjust = false;
-    	}
-    	if (mode == 2 && !TextUtils.isEmpty(Util.getStringFromSharedPref(Util.SCENE_INFO, "")) )
-    	{
-    		category = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
-    	}
-    	if (needAdjust)
+    	}else if (mode == 1){	
+    		
+			long curTime = System.currentTimeMillis();
+			long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
+			if (lasttime + Util.HOUR_2 < curTime)
+			{
+				int index = new Random().nextInt(12);
+				if(index == 10) index = 2; //雪
+				if(index == 11) index = 3; //雨
+				category =  MainHomeActivity.imgType[index][new Random().nextInt(MainHomeActivity.imgType[index].length)];
+			}
+			
+			if (lastPickTime + Util.HOUR_HALF > System.currentTimeMillis())
+			{
+			}else {
+				category = Util.normalDayOrNight(category);
+			}
+			Util.setLongToSharedPref(Util.LAST_UPDATETIME, System.currentTimeMillis());
+			Util.setIntToSharedPref(Util.TYPE, category);
+    		
+    	}else if (mode == 2) {			
+    		if (TextUtils.isEmpty(Util.getStringFromSharedPref(Util.SCENE_INFO, "")) )
+    		{
+    			category = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
+    		}
     		category = Util.normalDayOrNight(category);
+		}
+    	
+  
         boolean reload = category != sceneCategory ? true : false;
         sceneCategory = category;
 

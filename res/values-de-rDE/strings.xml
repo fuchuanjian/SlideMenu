@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+ <string name="wallpaper_name">Wetter Live Wallpaper</string>
+    <string name="app_name">Wetter Live Wallpaper</string>
+    <string name="toast_exit">Return-Taste drücken, um zu beenden</string>
+    <string name="temp_unit">°C</string>
+    
+     <string name="setting">Einstellungen</string>
+     <string name="dislpay_setting">Anzeige-Einstellungen</string>
+     <string name="set_wallpaper">Als Hintergrundbild</string>
+     <string name="error">Nicht starten, Live Wallpaper-Auswahl</string>
+     <string name="china">Porzellan</string>
+     <string name="weather_city">City:\t</string>
+     <string name="weather_info">\t%1$s \t %2$s \t %3$s</string>
+     <string name="empty">City:\tnull</string>
+     
+     <!-- setting -->
+    <string name="no_change">Schalten Sie niemals Wall</string>
+    <string name="no_change_desc_default">Strom : </string>
+    <string name="no_change_desc">Strom : %s</string>
+    <string name="random_change">Zufallsschalt</string> 
+    <string name="random_change_two_hour">Schalten Wallpaper Alle 2 Stunden</string>
+    <string name="display_base_city">Anzeige Wallpaper von City Lage</string>
+    <string name="chose_city">Stadt auswählen</string>
+    <string name="about">über</string>
+       <string name="input_city_name">Please Enter City Name by English</string>
+    <string name="not_find_city">The city can not be found, try by English </string>
+    <string name="thank">Sehr geehrter Nutzer, vielen Dank, dass Sie sich für diese Live Wallpaper app.Feedback Wenn Sie Probleme haben, werde ich es in der Zeit zu verbessern.</string>
+    <string name="feedback">Feed-back und bewerten</string>  
+    <string-array name="weather_array" >
+        <item>Sonnig</item>
+        <item>Bewölkt</item>
+        <item>Bedeckt</item>
+        <item>Regen</item>
+        <item>Schnee</item>
+        <item>Nebel</item>
+    </string-array>
+</resources>

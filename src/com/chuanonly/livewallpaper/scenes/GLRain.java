@@ -14,6 +14,7 @@ import com.chuanonly.livewallpaper.util.CacheTextrue;
 import com.chuanonly.livewallpaper.util.MatrixState;
 import com.chuanonly.livewallpaper.util.OpenGLUtils;
 
+import android.R.integer;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.opengl.GLES20;
@@ -24,8 +25,10 @@ public class GLRain extends BaseScene
 	private ArrayList<Integer> heightList;
 	private ArrayList<Integer> widthList;
 	private ArrayList<Particle> particleList = new ArrayList<Particle>();
+	private int type = WeatherType.RAINY_LIGHT;
 	public GLRain(int type)
 	{
+		this.type = type;
 		setCategory(type);
 		init(type);
 	}
@@ -409,6 +412,10 @@ public class GLRain extends BaseScene
 
 	@Override
 	public String getBackground() {
+		if (type == WeatherType.RAINY_LIGHT)
+		{
+			return "bg_rain1";
+		} 
 		return "bg_rain";
 	}
 }

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="wallpaper_name">天気ライブ壁紙</string>
+    <string name="app_name">天気ライブ壁紙</string>
+    <string name="toast_exit">再び終了し、Returnキーを押しますキー</string>
+    <string name="temp_unit">°C</string>
+    
+     <string name="setting">設定</string>
+     <string name="dislpay_setting">壁紙の設定</string>
+     <string name="set_wallpaper">壁紙の設定</string>
+     <string name="error">ライブ壁紙の選択]を起動できない</string>
+     <string name="china">china</string>
+     <string name="weather_city">都市:\t</string>
+     <string name="weather_info">\t%1$s \t %2$s \t %3$s</string>
+     <string name="empty">都市:\tnull</string>
+     
+     <!-- setting -->
+    <string name="no_change">スイッチではありません</string>
+    <string name="no_change_desc_default">現在の : </string>
+    <string name="no_change_desc">現在の : %s</string>
+    <string name="random_change">ランダムスイッチング</string> 
+    <string name="random_change_two_hour">壁紙を2時間ごとに切り替え</string>
+    <string name="display_base_city">都市所で壁紙を表示する</string>
+    <string name="chose_city">都市を選択</string>
+    <string name="about">約</string>
+    <string name="input_city_name">Please Enter City Name by English</string>
+    <string name="not_find_city">The city can not be found, try by English </string>
+    <string name="thank">親愛なるユーザーは、あなたは問題がある場合は、私は時間でそれが改善され、このライブ壁紙app.Feedbackをご利用いただきありがとうございます。</string> 
+ 	<string name="feedback">フィードバックとレート</string>  
+
+    
+    <string-array name="weather_array" >
+        <item>晴れた</item>
+        <item>曇った</item>
+        <item>どんよりした</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>霧</item>
+    </string-array> 
+    
+<!--     <string-array name="weather_array" >
+        <item>Light Rain</item>
+        <item>Rain</item>
+        <item>Heavy Rain</item>
+        <item>Rainstorm</item>
+        <item>Shower Rain</item>
+        <item>Thunders</item>
+        <item>Cloudy</item>
+        <item>Sunny</item>
+        <item>Fog</item>
+        <item>Haze</item>
+        <item>Light Dust</item>
+        <item>Dust</item>
+        <item>Hail</item>
+        <item>Shower Snow</item>
+        <item>Light Snow</item>
+        <item>Snow</item>
+        <item>Heavy Snow</item>
+        <item>Snowstorm</item>
+        <item>Overcast</item>
+        <item>Sunny Night</item>
+        <item>Cloudy Night</item>
+    </string-array> -->
+
+</resources>

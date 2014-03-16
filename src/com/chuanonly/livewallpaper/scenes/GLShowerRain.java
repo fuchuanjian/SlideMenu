@@ -340,6 +340,6 @@ public class GLShowerRain extends BaseScene
 	}
 	@Override
 	public String getBackground() {
-		return "bg_rain";
+		return "bg_rain1";
 	}
 }

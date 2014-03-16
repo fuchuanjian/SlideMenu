@@ -47,7 +47,7 @@ public class Util
 
 	public static final String LOG_INT_CNT = "login";
 	
-	public static final long HOUR_2 = 2*60*60*1000;
+	public static final long HOUR_2 = 90 *60*1000; //90分钟
 	
 	public static final long HOUR_HALF = 30*60*1000;
 	

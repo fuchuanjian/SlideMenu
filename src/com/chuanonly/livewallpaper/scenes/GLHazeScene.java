@@ -95,33 +95,53 @@ public class GLHazeScene extends BaseScene {
 		float bigHalfHeight = textureInfos.get(0).height / 2.0f;
 		
 		Particle lightBig1 = new Particle();
-		lightBig1.setXY(0.6792f * mScreenWidth - bigHalfWidth, 0.3475f * mScreenHeight - bigHalfHeight);
+		lightBig1.setXY(0.671f * mScreenWidth - bigHalfWidth, 0.4f * mScreenHeight - bigHalfHeight);
 		lightBig1.setAlpha(255);
 		lightBig1.setScale(scaleBig);
 		lightBig1.setType(0);
 		particleList.add(lightBig1);
 		
 		Particle lightBig2 = new Particle();
-		lightBig2.setXY(0.608f * mScreenWidth - bigHalfWidth, 0.456f * mScreenHeight - bigHalfHeight);
+		lightBig2.setXY(0.653f * mScreenWidth - bigHalfWidth, 0.45f * mScreenHeight - bigHalfHeight);
 		lightBig2.setAlpha(255);
 		lightBig2.setScale(scaleBig);
 		lightBig2.setType(0);
 		particleList.add(lightBig2);
 		
 		Particle lightBig3 = new Particle();
-		lightBig3.setXY(0.6792f * mScreenWidth - bigHalfWidth, 0.456f * mScreenHeight - bigHalfHeight);
+		lightBig3.setXY(0.852f * mScreenWidth - bigHalfWidth, 0.45f * mScreenHeight - bigHalfHeight);
 		lightBig3.setAlpha(255);
 		lightBig3.setScale(scaleBig);
 		lightBig3.setType(0);
 		particleList.add(lightBig3);
 		
 		Particle lightBig4 = new Particle();
-		lightBig4.setXY(0.7583f * mScreenWidth - bigHalfWidth, 0.456f * mScreenHeight - bigHalfHeight);
+		lightBig4.setXY(0.752f * mScreenWidth - bigHalfWidth, 0.136f * mScreenHeight - bigHalfHeight);
 		lightBig4.setAlpha(255);
 		lightBig4.setScale(scaleBig);
 		lightBig4.setType(0);
 		particleList.add(lightBig4);
 		
+		Particle lightBig5 = new Particle();
+		lightBig5.setXY(0.825f * mScreenWidth - bigHalfWidth, 0.4f * mScreenHeight - bigHalfHeight);
+		lightBig5.setAlpha(255);
+		lightBig5.setScale(scaleBig);
+		lightBig5.setType(0);
+		particleList.add(lightBig5);
+		
+		Particle lightBig6 = new Particle();
+		lightBig6.setXY(0.639f * mScreenWidth - bigHalfWidth, 0.527f * mScreenHeight - bigHalfHeight);
+		lightBig6.setAlpha(255);
+		lightBig6.setScale(scaleBig);
+		lightBig6.setType(0);
+		particleList.add(lightBig6);
+		
+		Particle lightBig7 = new Particle();
+		lightBig7.setXY(0.859f * mScreenWidth - bigHalfWidth, 0.527f * mScreenHeight - bigHalfHeight);
+		lightBig7.setAlpha(255);
+		lightBig7.setScale(scaleBig);
+		lightBig7.setType(0);
+		particleList.add(lightBig7);
 		
 		for (Particle p : particleList)
 		{			
