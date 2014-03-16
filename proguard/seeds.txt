@@ -107,6 +107,7 @@ com.chuanonly.livewallpaper.R$drawable: int bg_fog
 com.chuanonly.livewallpaper.R$drawable: int bg_haze
 com.chuanonly.livewallpaper.R$drawable: int bg_overcast
 com.chuanonly.livewallpaper.R$drawable: int bg_rain
+com.chuanonly.livewallpaper.R$drawable: int bg_rain1
 com.chuanonly.livewallpaper.R$drawable: int bg_snow
 com.chuanonly.livewallpaper.R$drawable: int bg_thunder_storm
 com.chuanonly.livewallpaper.R$drawable: int black_alpha_shape
@@ -123,7 +124,6 @@ com.chuanonly.livewallpaper.R$drawable: int cloudy_day_4
 com.chuanonly.livewallpaper.R$drawable: int cloudy_night1
 com.chuanonly.livewallpaper.R$drawable: int cloudy_night2
 com.chuanonly.livewallpaper.R$drawable: int divider
-com.chuanonly.livewallpaper.R$drawable: int dustcloud
 com.chuanonly.livewallpaper.R$drawable: int fine_big_star
 com.chuanonly.livewallpaper.R$drawable: int fine_middle_star
 com.chuanonly.livewallpaper.R$drawable: int fine_min_star
@@ -146,6 +146,7 @@ com.chuanonly.livewallpaper.R$drawable: int list_pressed
 com.chuanonly.livewallpaper.R$drawable: int list_selector
 com.chuanonly.livewallpaper.R$drawable: int meteor
 com.chuanonly.livewallpaper.R$drawable: int overcast_cloud
+com.chuanonly.livewallpaper.R$drawable: int overcast_cloud1
 com.chuanonly.livewallpaper.R$drawable: int overcast_cloud_mask
 com.chuanonly.livewallpaper.R$drawable: int raindrop
 com.chuanonly.livewallpaper.R$drawable: int raindrop_l
@@ -179,6 +180,7 @@ com.chuanonly.livewallpaper.R$id: int current_wallpaper
 com.chuanonly.livewallpaper.R$id: int desc
 com.chuanonly.livewallpaper.R$id: int empty_city
 com.chuanonly.livewallpaper.R$id: int icon
+com.chuanonly.livewallpaper.R$id: int last_divider
 com.chuanonly.livewallpaper.R$id: int layout_1
 com.chuanonly.livewallpaper.R$id: int layout_2
 com.chuanonly.livewallpaper.R$id: int layout_3
@@ -188,6 +190,7 @@ com.chuanonly.livewallpaper.R$id: int queryCityText
 com.chuanonly.livewallpaper.R$id: int radioText1
 com.chuanonly.livewallpaper.R$id: int radioText2
 com.chuanonly.livewallpaper.R$id: int radioText3
+com.chuanonly.livewallpaper.R$id: int rate_layout
 com.chuanonly.livewallpaper.R$id: int return_btn
 com.chuanonly.livewallpaper.R$id: int set_city
 com.chuanonly.livewallpaper.R$id: int setting_arrow
@@ -211,6 +214,7 @@ com.chuanonly.livewallpaper.R$string: int dislpay_setting
 com.chuanonly.livewallpaper.R$string: int display_base_city
 com.chuanonly.livewallpaper.R$string: int empty
 com.chuanonly.livewallpaper.R$string: int error
+com.chuanonly.livewallpaper.R$string: int feedback
 com.chuanonly.livewallpaper.R$string: int input_city_name
 com.chuanonly.livewallpaper.R$string: int no_change
 com.chuanonly.livewallpaper.R$string: int no_change_desc

@@ -50,7 +50,8 @@ public class SettingActivity extends Activity
 		findViewById(R.id.return_btn).setOnClickListener(click);
 		mCurWallpaerTV = (TextView) findViewById(R.id.current_wallpaper);
 		View rateView = findViewById(R.id.rate_layout);
-		if (MyApplication.language == 2)
+		int loginCnt = Util.getIntFromSharedPref(Util.LOG_INT_CNT, 0);
+		if (MyApplication.language == 2 || loginCnt <= 2)
 		{
 			rateView.setVisibility(View.GONE);
 			findViewById(R.id.last_divider).setVisibility(View.GONE);

@@ -162,8 +162,7 @@ public class MainHomeActivity extends Activity
 	private void checkCanShowAd()
 	{
 		int loginCnt = Util.getIntFromSharedPref(Util.LOG_INT_CNT, 0);
-		int enterCnt = MyApplication.language == 1 ? 3 : 2;
-		if (loginCnt >= enterCnt && Util.isNetworkAvailable(getApplicationContext()))
+		if (loginCnt >= 2 && Util.isNetworkAvailable(getApplicationContext()))
 		{			
 			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
 //			mAdView = new AdView(this, AdSize.BANNER, ADID);

@@ -164,7 +164,7 @@ public class GLSandstormScene extends BaseScene {
  		textureInfos.add(new TextureInfo(R.drawable.sand_l,largeSandScale));
  		textureInfos.add(new TextureInfo(R.drawable.sand_m,mediumSandScale)); 
  		textureInfos.add(new TextureInfo(R.drawable.sand_m,tinySandScale)); 
- 		textureInfos.add(new TextureInfo(R.drawable.dustcloud)); 
+// 		textureInfos.add(new TextureInfo(R.drawable.dustcloud)); 
  		
 	}
 	@Override

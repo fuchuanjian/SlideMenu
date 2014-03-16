@@ -41,15 +41,6 @@ public final class R {
         <item>雪</item>
         <item>雾霾</item>
     </string-array>  
-   
- <string-array name="weather_array" >
-        <item>晴</item>
-        <item>多云</item>
-        <item>阴</item>
-        <item>雨</item>
-        <item>雪</item>
-        <item>雾霾</item>
-    </string-array>  
          */
         public static final int weather_array=0x7f0a0000;
     }
@@ -99,53 +90,52 @@ public final class R {
         public static final int cloudy_night1=0x7f02001a;
         public static final int cloudy_night2=0x7f02001b;
         public static final int divider=0x7f02001c;
-        public static final int dustcloud=0x7f02001d;
-        public static final int fine_big_star=0x7f02001e;
-        public static final int fine_middle_star=0x7f02001f;
-        public static final int fine_min_star=0x7f020020;
-        public static final int fine_small_star=0x7f020021;
-        public static final int fire_balloon=0x7f020022;
-        public static final int fog_cloud_1=0x7f020023;
-        public static final int fog_cloud_2=0x7f020024;
-        public static final int hali_1=0x7f020025;
-        public static final int hali_2=0x7f020026;
-        public static final int hali_3=0x7f020027;
-        public static final int hali_4=0x7f020028;
-        public static final int hali_5=0x7f020029;
-        public static final int haze_bln_big=0x7f02002a;
-        public static final int haze_bln_day=0x7f02002b;
-        public static final int haze_bln_small=0x7f02002c;
-        public static final int ic_launcher=0x7f02002d;
-        public static final int lightning_1=0x7f02002e;
-        public static final int lightning_2=0x7f02002f;
-        public static final int list_pressed=0x7f020030;
-        public static final int list_selector=0x7f020031;
-        public static final int meteor=0x7f020032;
-        public static final int overcast_cloud=0x7f020033;
-        public static final int overcast_cloud1=0x7f020034;
-        public static final int overcast_cloud_mask=0x7f020035;
-        public static final int raindrop=0x7f020036;
-        public static final int raindrop_l=0x7f020037;
-        public static final int raindrop_m=0x7f020038;
-        public static final int raindrop_s=0x7f020039;
-        public static final int raindrop_xl=0x7f02003a;
-        public static final int sand_l=0x7f02003b;
-        public static final int sand_m=0x7f02003c;
-        public static final int search_input_bg=0x7f02003d;
-        public static final int search_input_left=0x7f02003e;
-        public static final int selectcity_pressed_selector=0x7f02003f;
-        public static final int setting_btn_selector=0x7f020040;
-        public static final int snowflake_l=0x7f020041;
-        public static final int snowflake_m=0x7f020042;
-        public static final int snowflake_s=0x7f020043;
-        public static final int snowflake_tiny=0x7f020044;
-        public static final int snowflake_xl=0x7f020045;
-        public static final int snowflake_xxl=0x7f020046;
-        public static final int star_flicker=0x7f020047;
-        public static final int sunshine_1=0x7f020048;
-        public static final int sunshine_2=0x7f020049;
-        public static final int sunshine_3=0x7f02004a;
-        public static final int titlebar=0x7f02004b;
+        public static final int fine_big_star=0x7f02001d;
+        public static final int fine_middle_star=0x7f02001e;
+        public static final int fine_min_star=0x7f02001f;
+        public static final int fine_small_star=0x7f020020;
+        public static final int fire_balloon=0x7f020021;
+        public static final int fog_cloud_1=0x7f020022;
+        public static final int fog_cloud_2=0x7f020023;
+        public static final int hali_1=0x7f020024;
+        public static final int hali_2=0x7f020025;
+        public static final int hali_3=0x7f020026;
+        public static final int hali_4=0x7f020027;
+        public static final int hali_5=0x7f020028;
+        public static final int haze_bln_big=0x7f020029;
+        public static final int haze_bln_day=0x7f02002a;
+        public static final int haze_bln_small=0x7f02002b;
+        public static final int ic_launcher=0x7f02002c;
+        public static final int lightning_1=0x7f02002d;
+        public static final int lightning_2=0x7f02002e;
+        public static final int list_pressed=0x7f02002f;
+        public static final int list_selector=0x7f020030;
+        public static final int meteor=0x7f020031;
+        public static final int overcast_cloud=0x7f020032;
+        public static final int overcast_cloud1=0x7f020033;
+        public static final int overcast_cloud_mask=0x7f020034;
+        public static final int raindrop=0x7f020035;
+        public static final int raindrop_l=0x7f020036;
+        public static final int raindrop_m=0x7f020037;
+        public static final int raindrop_s=0x7f020038;
+        public static final int raindrop_xl=0x7f020039;
+        public static final int sand_l=0x7f02003a;
+        public static final int sand_m=0x7f02003b;
+        public static final int search_input_bg=0x7f02003c;
+        public static final int search_input_left=0x7f02003d;
+        public static final int selectcity_pressed_selector=0x7f02003e;
+        public static final int setting_btn_selector=0x7f02003f;
+        public static final int snowflake_l=0x7f020040;
+        public static final int snowflake_m=0x7f020041;
+        public static final int snowflake_s=0x7f020042;
+        public static final int snowflake_tiny=0x7f020043;
+        public static final int snowflake_xl=0x7f020044;
+        public static final int snowflake_xxl=0x7f020045;
+        public static final int star_flicker=0x7f020046;
+        public static final int sunshine_1=0x7f020047;
+        public static final int sunshine_2=0x7f020048;
+        public static final int sunshine_3=0x7f020049;
+        public static final int titlebar=0x7f02004a;
     }
     public static final class id {
         public static final int checkbox_1=0x7f0c0010;

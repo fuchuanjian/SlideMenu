@@ -136,7 +136,7 @@ com.chuanonly.livewallpaper.scenes.BaseScene:
     143:145:public void setIsStatic(boolean)
 com.chuanonly.livewallpaper.scenes.GLNAScene
 com.chuanonly.livewallpaper.scenes.GLRain:
-    404:408:public varargs void setFloatValue(float[],float[])
+    407:411:public varargs void setFloatValue(float[],float[])
 com.chuanonly.livewallpaper.scenes.GLSandstormScene
 com.chuanonly.livewallpaper.scenes.GLShowerRain:
     326:330:public varargs void setFloatValue(float[],float[])
@@ -157,9 +157,9 @@ com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine$Wallp
 com.chuanonly.livewallpaper.service.GLWallpaperService$OpenGLEngine
 com.chuanonly.livewallpaper.service.WallPaperRender:
     private android.opengl.GLSurfaceView mSurfaceView
-    201:201:public com.chuanonly.livewallpaper.scenes.Background getbBackground()
-    294:294:public android.opengl.GLSurfaceView getSurfaceView()
-    298:299:public void setSurfaceView(android.opengl.GLSurfaceView)
+    223:223:public com.chuanonly.livewallpaper.scenes.Background getbBackground()
+    316:316:public android.opengl.GLSurfaceView getSurfaceView()
+    320:321:public void setSurfaceView(android.opengl.GLSurfaceView)
 com.chuanonly.livewallpaper.service.WallpaperService:
     public static final java.lang.String ACTION_CHANGE_BROCAST
     public static final java.lang.String ACTION_PAUSE_BROCAST
@@ -182,7 +182,7 @@ com.chuanonly.livewallpaper.util.OpenGLUtils:
     145:153:public static android.graphics.Bitmap decodeFile(java.lang.String)
 com.chuanonly.livewallpaper.util.QueryCityHandler:
     public static final java.lang.String CHINA
-    168:168:public java.util.List getAllCityNames(java.lang.String)
+    180:180:public java.util.List getAllCityNames(java.lang.String)
 com.chuanonly.livewallpaper.util.ShaderManager:
     121:121:public java.lang.String getVertexShader()
     126:126:public java.lang.String getFragmentShader()
