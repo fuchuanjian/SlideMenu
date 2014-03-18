@@ -44,6 +44,7 @@ public class MyApplication extends Application
 		{
 			language = 2;
 		}
+		  APPUncaughtExceptionHandler.getInstance().handle(mContext);
 	}
 
 	public static Context getContext()
