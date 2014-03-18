@@ -482,7 +482,14 @@ public class Util
     	 {
     		 imei = String.valueOf(System.currentTimeMillis());
     	 }
-    	 String sn = SystemProperties.get("ro.serialno");
+    	 String sn = null;
+		 try
+		{			
+			 sn = SystemProperties.get("ro.serialno");
+		} catch (Exception e)
+		{
+			// TODO: handle exception
+		}
          String data = imei+"_"+sn;
          try
          {
