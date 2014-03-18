@@ -157,9 +157,9 @@ com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine$Wallp
 com.chuanonly.livewallpaper.service.GLWallpaperService$OpenGLEngine
 com.chuanonly.livewallpaper.service.WallPaperRender:
     private android.opengl.GLSurfaceView mSurfaceView
-    223:223:public com.chuanonly.livewallpaper.scenes.Background getbBackground()
-    316:316:public android.opengl.GLSurfaceView getSurfaceView()
-    320:321:public void setSurfaceView(android.opengl.GLSurfaceView)
+    227:227:public com.chuanonly.livewallpaper.scenes.Background getbBackground()
+    320:320:public android.opengl.GLSurfaceView getSurfaceView()
+    324:325:public void setSurfaceView(android.opengl.GLSurfaceView)
 com.chuanonly.livewallpaper.service.WallpaperService:
     public static final java.lang.String ACTION_CHANGE_BROCAST
     public static final java.lang.String ACTION_PAUSE_BROCAST
@@ -252,7 +252,7 @@ com.chuanonly.livewallpaper.util.Util:
     24:24:public Util()
     235:314:public static int normalDayOrNight(int,boolean)
     383:384:public static void release()
-    538:553:public static int getMode()
+    539:554:public static int getMode()
 com.chuanonly.livewallpaper.view.GalleryScrollView:
     private static final int INVALID_POINTER
 com.google.ads.Ad:

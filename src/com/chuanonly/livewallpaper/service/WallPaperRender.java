@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import android.R.integer;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.text.TextUtils;
@@ -86,11 +87,14 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
 			Util.setLongToSharedPref(Util.LAST_UPDATETIME, System.currentTimeMillis());
 			Util.setIntToSharedPref(Util.TYPE, category);
     		
-    	}else if (mode == 2) {			
-    		if (TextUtils.isEmpty(Util.getStringFromSharedPref(Util.SCENE_INFO, "")) )
+    	}else if (mode == 2) {	
+    		int type = Util.getIntFromSharedPref(Util.REAL_TYPE, -1);
+    		if (type == -1)
     		{
+    			category = Util.getIntFromSharedPref(Util.TYPE, WeatherType.FINE);
+    		}else {				
     			category = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
-    		}
+			}
     		category = Util.normalDayOrNight(category);
 		}
     	

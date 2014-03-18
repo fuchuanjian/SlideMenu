@@ -838,30 +838,29 @@ com.chuanonly.livewallpaper.ChooseCityActivity -> com.chuanonly.livewallpaper.Ch
     android.text.TextWatcher textWatcher -> h
     41:53:void onCreate(android.os.Bundle) -> onCreate
     58:68:void onResume() -> onResume
-    72:113:void initView() -> a
-    115:118:com.chuanonly.livewallpaper.data.City setChecked(android.view.View,int) -> a
-    144:161:void initListView() -> b
-    165:198:void updateQueryCityList() -> c
-    202:203:java.lang.String getLocaleLanguage() -> d
-    276:281:void onClick(android.view.View) -> onClick
-    286:288:void finish() -> finish
-    163:163:void access$0(com.chuanonly.livewallpaper.ChooseCityActivity) -> a
-    114:114:com.chuanonly.livewallpaper.data.City access$1(com.chuanonly.livewallpaper.ChooseCityActivity,android.view.View,int) -> a
+    72:119:void initView() -> a
+    121:124:com.chuanonly.livewallpaper.data.City setChecked(android.view.View,int) -> a
+    150:167:void initListView() -> b
+    171:203:void updateQueryCityList() -> c
+    278:287:void onClick(android.view.View) -> onClick
+    292:294:void finish() -> finish
+    169:169:void access$0(com.chuanonly.livewallpaper.ChooseCityActivity) -> a
+    120:120:com.chuanonly.livewallpaper.data.City access$1(com.chuanonly.livewallpaper.ChooseCityActivity,android.view.View,int) -> a
     36:36:void access$2(com.chuanonly.livewallpaper.ChooseCityActivity,com.chuanonly.livewallpaper.data.City) -> a
     31:31:android.widget.EditText access$3(com.chuanonly.livewallpaper.ChooseCityActivity) -> b
-    121:121:android.text.TextWatcher access$4(com.chuanonly.livewallpaper.ChooseCityActivity) -> c
+    127:127:android.text.TextWatcher access$4(com.chuanonly.livewallpaper.ChooseCityActivity) -> c
     36:36:com.chuanonly.livewallpaper.data.City access$5(com.chuanonly.livewallpaper.ChooseCityActivity) -> d
 com.chuanonly.livewallpaper.ChooseCityActivity$1 -> a:
     com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
-    126:127:void afterTextChanged(android.text.Editable) -> afterTextChanged
-    133:133:void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
-    139:139:void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    132:133:void afterTextChanged(android.text.Editable) -> afterTextChanged
+    139:139:void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    145:145:void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
 com.chuanonly.livewallpaper.ChooseCityActivity$2 -> b:
     com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
     50:51:void onClick(android.view.View) -> onClick
 com.chuanonly.livewallpaper.ChooseCityActivity$3 -> c:
     com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
-    87:109:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    93:115:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
 com.chuanonly.livewallpaper.ChooseCityActivity$QueryCityItemAdapter -> d:
     int resource -> b
     android.view.LayoutInflater mInflater -> c
@@ -1315,14 +1314,14 @@ com.chuanonly.livewallpaper.service.WallPaperRender -> S:
     boolean isDirty -> f
     int sceneCategory -> g
     boolean mHasinit -> a
-    63:133:void onSurfaceCreated(javax.microedition.khronos.opengles.GL10,javax.microedition.khronos.egl.EGLConfig) -> onSurfaceCreated
-    138:161:void onDrawFrame(javax.microedition.khronos.opengles.GL10) -> onDrawFrame
-    164:205:void switchScene() -> c
-    208:220:void setDirtyScene(int) -> a
-    227:302:com.chuanonly.livewallpaper.scenes.BaseScene createScene() -> d
-    307:313:void onSurfaceChanged(javax.microedition.khronos.opengles.GL10,int,int) -> onSurfaceChanged
-    324:336:void release() -> a
-    339:340:void gc() -> b
+    64:137:void onSurfaceCreated(javax.microedition.khronos.opengles.GL10,javax.microedition.khronos.egl.EGLConfig) -> onSurfaceCreated
+    142:165:void onDrawFrame(javax.microedition.khronos.opengles.GL10) -> onDrawFrame
+    168:209:void switchScene() -> c
+    212:224:void setDirtyScene(int) -> a
+    231:306:com.chuanonly.livewallpaper.scenes.BaseScene createScene() -> d
+    311:317:void onSurfaceChanged(javax.microedition.khronos.opengles.GL10,int,int) -> onSurfaceChanged
+    328:340:void release() -> a
+    343:344:void gc() -> b
 com.chuanonly.livewallpaper.service.WallpaperService -> com.chuanonly.livewallpaper.service.WallpaperService:
     int rate -> b
     com.chuanonly.livewallpaper.service.WallPaperRender renderer -> c
@@ -1362,8 +1361,8 @@ com.chuanonly.livewallpaper.service.WallpaperSettings -> com.chuanonly.livewallp
     22:24:void onDestroy() -> onDestroy
     27:27:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
 com.chuanonly.livewallpaper.task.HTTPTask -> W:
-    31:81:java.lang.String doInBackground(java.lang.Void[]) -> a
-    87:97:void onPostExecute(java.lang.String) -> a
+    36:91:java.lang.String doInBackground(java.lang.Void[]) -> a
+    97:109:void onPostExecute(java.lang.String) -> a
     1:1:void onPostExecute(java.lang.Object) -> onPostExecute
     1:1:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
 com.chuanonly.livewallpaper.task.LocateHandler -> X:
@@ -1443,7 +1442,7 @@ com.chuanonly.livewallpaper.util.OpenGLUtils -> af:
 com.chuanonly.livewallpaper.util.QueryCityHandler -> ag:
     android.content.Context mContext -> a
     java.lang.String mDBPackageName -> b
-    54:122:java.util.ArrayList queryCities(java.lang.String,java.lang.String) -> a
+    54:122:java.util.ArrayList queryCities(java.lang.String) -> a
     126:176:java.util.ArrayList queryHotcities() -> a
     185:221:android.database.sqlite.SQLiteDatabase fetchDbInstance() -> b
     229:253:void copyInputStreamToFile(java.io.InputStream,java.io.File) -> a
@@ -1542,7 +1541,7 @@ com.chuanonly.livewallpaper.util.Util -> al:
     448:449:long getLongFromSharedPref(java.lang.String,long) -> b
     454:493:java.lang.String getToken() -> d
     498:513:boolean isNetworkAvailable(android.content.Context) -> a
-    521:534:void checkIfNeedToUpdateWeather() -> e
+    521:535:void checkIfNeedToUpdateWeather() -> e
 com.chuanonly.livewallpaper.view.GalleryScrollView -> com.chuanonly.livewallpaper.view.GalleryScrollView:
     android.widget.Scroller mScrollerHelper -> a
     android.view.VelocityTracker mVelocityTracker -> b

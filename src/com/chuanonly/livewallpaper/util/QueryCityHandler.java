@@ -49,7 +49,7 @@ public class QueryCityHandler
 		}
 	}
 
-	public ArrayList<City> queryCities(String key, String locale)
+	public ArrayList<City> queryCities(String key)
 	{
 		SQLiteDatabase db = null;
 		Cursor c = null;
@@ -177,7 +177,7 @@ public class QueryCityHandler
 	    }
 	public List<City> getAllCityNames(String locale)
 	{
-		return queryCities(null, locale);
+		return queryCities(null);
 	}
 
 	private SQLiteDatabase fetchDbInstance() throws IOException

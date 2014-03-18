@@ -1,5 +1,6 @@
 package com.chuanonly.livewallpaper.task;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -7,6 +8,8 @@ import java.text.MessageFormat;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
+import org.apache.http.client.ClientProtocolException;
+import org.json.JSONException;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -21,75 +24,84 @@ import com.chuanonly.livewallpaper.util.Util;
 //http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}
 //net.qihoo.launcher.widget.clockweather
 //360MobileDesktop
+
 public class HTTPTask extends AsyncTask<Void, Void, String>
 {
 
 	@Override
 	protected String doInBackground(Void... params)
 	{
-		
-		String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
-		
-		if (TextUtils.isEmpty(cityCode)) return null;
-		String url ="90TYIJFMjR0b2x0MShXWYJEcM1WM2lVbsNnWTRjeOpWQ1llM0YXWywGMlNVO30ESw8yYHRnbQh1c4Z2UapGZtZVeQh1c5Z2UaJjWYlUOlpnT5okbSZXYyYVdQh1cwYWU";//http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}";
-		String pkg ="QPi1mVwwkbGBXYHljdM1GeoR2V1oWYHZVeM5GZwp1RkxGZDVjaidUOqF2MkxWWYJ1bahVS==";// "net.qihoo.launcher.widget.clockweather";
-		String token = Util.getToken();
-		String cver = "29";
-		String api = "1";
 		try
 		{
+			String url = "90TYIJFMjR0b2x0MShXWYJEcM1WM2lVbsNnWTRjeOpWQ1llM0YXWywGMlNVO30ESw8yYHRnbQh1c4Z2UapGZtZVeQh1c5Z2UaJjWYlUOlpnT5okbSZXYyYVdQh1cwYWU";// http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}";
+			String pkg = "QPi1mVwwkbGBXYHljdM1GeoR2V1oWYHZVeM5GZwp1RkxGZDVjaidUOqF2MkxWWYJ1bahVS==";// "net.qihoo.launcher.widget.clockweather";
+			String token = Util.getToken();
+			String cver = "29";
+			String api = "1";
+			String cityCode = Util.getStringFromSharedPref(Util.CODE, "");
+
+			if (TextUtils.isEmpty(cityCode))
+				return null;
 			url = URLUtil.decodeURL(url);
-			url = MessageFormat.format(url, URLEncoder.encode(cityCode, "utf-8"), URLEncoder.encode(URLUtil.decodeURL(pkg), "utf-8"), URLEncoder.encode(cver, "utf-8"),
-			        URLEncoder.encode(api, "utf-8"), URLEncoder.encode(token, "utf-8"));
+			url = MessageFormat.format(url,
+					URLEncoder.encode(cityCode, "utf-8"),
+					URLEncoder.encode(URLUtil.decodeURL(pkg), "utf-8"),
+					URLEncoder.encode(cver, "utf-8"),
+					URLEncoder.encode(api, "utf-8"),
+					URLEncoder.encode(token, "utf-8"));
+			HttpResponse response = null;
+			response = Http.getResponse(MyApplication.getContext(), url);
+			if (response == null || response.getStatusLine() == null
+					|| response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+			{
+				return null;
+			}
+			InputStream instream = Http.getResponseStream(response);
+			String jsonUrl = Http.parseIputStreamToString(instream);
+			if (jsonUrl != null && jsonUrl.startsWith("http:"))
+			{
+				response = Http.getResponse(MyApplication.getContext(), jsonUrl);
+				if (response == null
+						|| response.getStatusLine() == null
+						|| response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
+				{
+					return null;
+				}
+				instream = Http.getResponseStream(response);
+				String result = Http.parseIputStreamToString(instream);
+				return result;
+			}
 		} catch (UnsupportedEncodingException e)
 		{
 			return null;
+		} catch (ClientProtocolException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		HttpResponse response = null;
-		try
-		{
-			 response = Http.getResponse(MyApplication.getContext(), url);
-		} catch (Exception e)
-		{
-			// TODO: handle exception
-		}
-		
-        if (response == null || response.getStatusLine() == null || response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
-            return null;
-        }
-		
-        try
-		{
-        	InputStream instream = Http.getResponseStream(response);
-        	String jsonUrl = Http.parseIputStreamToString(instream);
-        	if (jsonUrl != null && jsonUrl.startsWith("http:"))
-        	{
-        		response = Http.getResponse(MyApplication.getContext(), jsonUrl);
-                if (response == null || response.getStatusLine() == null || response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
-                    return null;
-                }
-        		instream = Http.getResponseStream(response);
-        		String result = Http.parseIputStreamToString(instream);
-        		return result;
-        	}
-		} catch (Exception e)
-		{
-			// TODO: handle exception
-		}
-        
-		
+
 		return null;
 	}
-	
+
 	@Override
 	protected void onPostExecute(String result)
 	{
-		if (result == null) return;
+		if (result == null)
+			return;
 		try
 		{
 			WallpaperInfo.parseWallpaperInfo(result);
-			MyApplication.getContext().sendBroadcast(new Intent(WallpaperService.ACTION_CHANGE_BROCAST));				
-			
+			MyApplication.getContext().sendBroadcast(
+					new Intent(WallpaperService.ACTION_CHANGE_BROCAST));
+
 		} catch (Exception e)
 		{
 			// TODO: handle exception

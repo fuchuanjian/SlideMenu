@@ -71,9 +71,15 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 	{
 		mSearchEdit = (EditText) findViewById(R.id.queryCityText);
 		mList = (ListView) findViewById(R.id.cityList);
-		mimm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-		mimm.hideSoftInputFromWindow(mSearchEdit.getWindowToken(),
-				InputMethodManager.HIDE_NOT_ALWAYS);
+		try
+		{
+			mimm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+			mimm.hideSoftInputFromWindow(mSearchEdit.getWindowToken(),
+					InputMethodManager.HIDE_NOT_ALWAYS);			
+		} catch (Exception e)
+		{
+			// TODO: handle exception
+		}
 
 		mSearchEdit.addTextChangedListener(textWatcher);
 		mSearchEdit.clearFocus();
@@ -179,8 +185,7 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 			return;
 		} else
 		{
-			queryResult = queryHandler.queryCities(query,
-					getLocaleLanguage());
+			queryResult = queryHandler.queryCities(query);
 		}
 		mAdapter.resetItems(queryResult);
 		mList.setAdapter(mAdapter);
@@ -197,11 +202,6 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		}
 	}
 
-	private String getLocaleLanguage()
-	{
-		Locale l = Locale.getDefault();
-		return String.format("%s-%s", l.getLanguage(), l.getCountry());
-	}
 
 	private class QueryCityItemAdapter extends ArrayAdapter<City>
 	{
@@ -273,9 +273,15 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 	@Override
 	public void onClick(View v)
 	{
-		if (v == mSearchEdit)
+		try
+		{			
+			if (v == mSearchEdit)
+			{
+				mimm.showSoftInput(mSearchEdit, InputMethodManager.SHOW_IMPLICIT);
+			}
+		} catch (Exception e)
 		{
-			mimm.showSoftInput(mSearchEdit, InputMethodManager.SHOW_IMPLICIT);
+			// TODO: handle exception
 		}
 
 	}

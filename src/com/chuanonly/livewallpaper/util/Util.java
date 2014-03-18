@@ -457,8 +457,19 @@ public class Util
     		return token;
     	}
     	boolean success = true;
-    	 String imei  = ((TelephonyManager)MyApplication.getContext().getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
-         boolean isZero = true;
+    	String imei = null;
+    	try
+		{
+    		imei  = ((TelephonyManager)MyApplication.getContext().getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+		} catch (Exception e)
+		{
+			// TODO: handle exception
+		}
+        if (imei == null)
+        {
+        	 imei = String.valueOf(System.currentTimeMillis());
+        }
+    	 boolean isZero = true;
     	 for (int i=0; i< imei.length(); i++)
          {
         	 if (imei.charAt(i) != '0')
@@ -527,6 +538,7 @@ public class Util
 						&& ( TextUtils.isEmpty(Util.getStringFromSharedPref(Util.SCENE_INFO, ""))
 								||Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0)+ HOUR_HALF <System.currentTimeMillis() ))
 				{
+					
 					new HTTPTask().execute();
 				}
 			}

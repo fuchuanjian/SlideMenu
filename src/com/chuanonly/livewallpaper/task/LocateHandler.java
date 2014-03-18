@@ -119,7 +119,7 @@ public class LocateHandler
 	
 	
 	 private City getCityByName(QueryCityHandler suggestionSource, String cityName, String provinceName) {
-	        List<City> cities = suggestionSource.queryCities(cityName, "");
+	        List<City> cities = suggestionSource.queryCities(cityName);
 	        City tempCity = null;
 	        if (cities != null) {
 	            for (City city : cities) {

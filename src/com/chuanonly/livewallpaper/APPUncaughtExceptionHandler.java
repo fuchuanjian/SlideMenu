@@ -72,7 +72,7 @@ public class APPUncaughtExceptionHandler implements UncaughtExceptionHandler {
             // ignore
             if (throwable.toString().contains("eglSwapBuffers"))
                 return;
-            saveCrashInfo2File(throwable);
+//            saveCrashInfo2File(throwable);
             if (false) {
                 finishSelf();
             } else {
