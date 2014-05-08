@@ -162,7 +162,7 @@ public class MainHomeActivity extends Activity
 	private void checkCanShowAd()
 	{
 		int loginCnt = Util.getIntFromSharedPref(Util.LOG_INT_CNT, 0);
-		if (loginCnt >= 2 && Util.isNetworkAvailable(getApplicationContext()))
+		if (loginCnt >= 0 && Util.isNetworkAvailable(getApplicationContext()))
 		{			
 			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
 //			mAdView = new AdView(this, AdSize.BANNER, ADID);
@@ -189,7 +189,7 @@ public class MainHomeActivity extends Activity
 				@Override
 				public void onDismissScreen(Ad arg0)
 				{
-					Util.setIntToSharedPref(Util.LOG_INT_CNT, -1);
+					Util.setIntToSharedPref(Util.LOG_INT_CNT, -2);
 					mAdView.setVisibility(View.GONE);
 				}
 			});
