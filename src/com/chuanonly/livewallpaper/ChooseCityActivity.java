@@ -1,14 +1,33 @@
 package com.chuanonly.livewallpaper;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Locale;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,6 +41,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.chuanonly.livewallpaper.data.City;
+import com.chuanonly.livewallpaper.model.WOEIDInfo;
+import com.chuanonly.livewallpaper.model.WOEIDUtils;
+import com.chuanonly.livewallpaper.model.WeatherInfo;
 import com.chuanonly.livewallpaper.util.QueryCityHandler;
 import com.chuanonly.livewallpaper.util.Util;
 
@@ -34,13 +56,17 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 	private InputMethodManager mimm = null;
 	private QueryCityHandler queryHandler = null;
     private City mCity;
-    private TextView mEmptyTV;
+    private View mEmptyLayout;
+    private TextView mEmptyText;
+    private TextView mSeachBtn;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chose_city);
-		mEmptyTV = (TextView) findViewById(R.id.empty_city);
+		mEmptyLayout =  findViewById(R.id.empty_city);
+		mEmptyText = (TextView) findViewById(R.id.empty_text);
+		mSeachBtn = (TextView) findViewById(R.id.search_btn); 
 		initView();
 		findViewById(R.id.return_btn).setOnClickListener(new OnClickListener()
 		{
@@ -97,6 +123,7 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				mSearchEdit.addTextChangedListener(textWatcher);
 				
 				Util.setIntToSharedPref(Util.MODE, 2);
+				Util.setIntToSharedPref(Util.ISYAHOO, 0);
 				String lasCityCode = Util.getStringFromSharedPref(Util.CODE, "");
 				if (mCity.code .equals(lasCityCode))
 				{
@@ -115,7 +142,14 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 			}
 		});
 		mList.setScrollbarFadingEnabled(true);
-
+		
+		mSeachBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				String cityStr = mSearchEdit.getText().toString();
+				new WeatherQueryByPlaceTask().execute(new String[]{cityStr});
+			}
+		});
 	}
     private City setChecked(View view, int pos) {
         TextView nameView = (TextView) view.findViewById(R.id.radioText1);
@@ -154,11 +188,11 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		Collection<City> queryResult = queryHandler.queryHotcities();
 		if (queryResult == null || queryResult.isEmpty())
 		{
-			mEmptyTV.setVisibility(View.VISIBLE);
+			mEmptyLayout.setVisibility(View.VISIBLE);
 			mList.setVisibility(View.GONE);
 		} else
 		{
-			mEmptyTV.setVisibility(View.GONE);
+			mEmptyLayout.setVisibility(View.GONE);
 			mAdapter.resetItems(queryResult);
 			mList.setAdapter(mAdapter);
 			mList.setVisibility(View.VISIBLE);
@@ -181,7 +215,7 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		if (query == null || query.length() == 0)
 		{
 			mList.setVisibility(View.GONE);
-			mEmptyTV.setVisibility(View.VISIBLE);
+			mEmptyLayout.setVisibility(View.VISIBLE);
 			return;
 		} else
 		{
@@ -190,14 +224,14 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		mAdapter.resetItems(queryResult);
 		mList.setAdapter(mAdapter);
 		mList.setVisibility(View.VISIBLE);
-		mEmptyTV.setVisibility(View.GONE);
+		mEmptyLayout.setVisibility(View.GONE);
 		if (queryResult == null || queryResult.isEmpty())
 		{
 			mList.setVisibility(View.GONE);
-			mEmptyTV.setVisibility(View.VISIBLE);
+			mEmptyLayout.setVisibility(View.VISIBLE);
 		} else
 		{
-			mEmptyTV.setVisibility(View.GONE);
+			mEmptyLayout.setVisibility(View.GONE);
 			mList.setVisibility(View.VISIBLE);
 		}
 	}
@@ -291,5 +325,34 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 	{
 		super.finish();
 		overridePendingTransition(R.anim.anim_defalut, R.anim.anim_right_exit);
+	}
+	
+	
+	private class WeatherQueryByPlaceTask extends AsyncTask<String, Void, WeatherInfo> {
+		@Override
+		protected WeatherInfo doInBackground(String... cityName) {
+			WOEIDUtils woeidUtils = WOEIDUtils.getInstance();
+			String mWoeidNumber = woeidUtils.getWOEID(MyApplication.getContext(), cityName[0]);
+			if(!mWoeidNumber.equals(WOEIDUtils.WOEID_NOT_FOUND)) {
+				String weatherString = Util.getWeatherString(MyApplication.getContext(), mWoeidNumber);
+				Document weatherDoc = Util.convertStringToDocument(MyApplication.getContext(), weatherString);
+				WeatherInfo weatherInfo = Util.parseWeatherInfo(MyApplication.getContext(), weatherDoc, woeidUtils.getWoeidInfo());
+				weatherInfo.WoeidNumber = mWoeidNumber;
+				return weatherInfo;
+			} else {
+				return null;
+			}
+		}
+
+		@Override
+		protected void onPostExecute(WeatherInfo result) {
+			super.onPostExecute(result);
+			if (result!= null)
+			{				
+				Log.e("fu", result.WoeidNumber+"------ "+result.mWOEIDCountry+" "+result.getCurrentTempC()+"  "+result.getLocationCity()+"  code="+result.getCurrentCode()+" "+result.getCurrentText());
+			}else {
+				Log.e("fu","result==null");
+			}
+		}
 	}
 }

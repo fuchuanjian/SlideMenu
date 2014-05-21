@@ -1,10 +1,28 @@
 package com.chuanonly.livewallpaper.util;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,6 +36,8 @@ import android.widget.Toast;
 
 import com.chuanonly.livewallpaper.MyApplication;
 import com.chuanonly.livewallpaper.R;
+import com.chuanonly.livewallpaper.model.WOEIDInfo;
+import com.chuanonly.livewallpaper.model.WeatherInfo;
 import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.task.HTTPTask;
 
@@ -383,6 +403,8 @@ public class Util
         toast = null;
     }
 	public static final String SPF_SETTING = "setting";
+	public static final String ISYAHOO = "isYahoo";
+	public static final String YAHOO_CITY_CODE = "yahoo_city_code";
     public static void setStringToSharedPref(String key, String value)
     {
     	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
@@ -570,6 +592,126 @@ public class Util
 			}
 		}
 		return mode;
+	}
+	
+	public static String getWeatherString(Context context, String woeidNumber) {
+
+		String qResult = "";
+		String queryUrl = "http://weather.yahooapis.com/forecastrss?w=" + woeidNumber;
+		
+		
+		HttpParams params = new BasicHttpParams();
+		HttpConnectionParams.setConnectionTimeout(params, 20 * 1000);
+		HttpConnectionParams.setSoTimeout(params, 20 * 1000);
+		HttpClient httpClient = new DefaultHttpClient(params);
+
+		HttpGet httpGet = new HttpGet(queryUrl);
+
+		try {
+			HttpEntity httpEntity = httpClient.execute(httpGet).getEntity();
+			
+			if (httpEntity != null) {
+				InputStream inputStream = httpEntity.getContent();
+				Reader in = new InputStreamReader(inputStream);
+				BufferedReader bufferedreader = new BufferedReader(in);
+				StringBuilder stringBuilder = new StringBuilder();
+
+				String readLine = null;
+
+				while ((readLine = bufferedreader.readLine()) != null) {
+					stringBuilder.append(readLine + "\n");
+				}
+
+				qResult = stringBuilder.toString();
+			}
+
+		} catch (Exception e) {
+		} finally {
+			httpClient.getConnectionManager().shutdown();
+		}
+
+		return qResult;
+	}
+	public static Document convertStringToDocument(Context context, String src) {
+		Document dest = null;
+
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder parser;
+
+		try {
+			parser = dbFactory.newDocumentBuilder();
+			dest = parser.parse(new ByteArrayInputStream(src.getBytes()));
+		} catch (Exception e) {}
+		return dest;
+	}
+	public static final int FORECAST_INFO_MAX_SIZE = 5;
+	public static final String YAHOO_WEATHER_ERROR = "Yahoo! Weather - Error";
+	public static WeatherInfo parseWeatherInfo(Context context, Document doc, WOEIDInfo woeidInfo) {
+		WeatherInfo weatherInfo = new WeatherInfo();
+		try {
+			
+			Node titleNode = doc.getElementsByTagName("title").item(0);
+			
+			if(titleNode.getTextContent().equals(YAHOO_WEATHER_ERROR)) {
+				return null;
+			}
+			
+			weatherInfo.setTitle(titleNode.getTextContent());
+			weatherInfo.setDescription(doc.getElementsByTagName("description").item(0).getTextContent());
+			weatherInfo.setLanguage(doc.getElementsByTagName("language").item(0).getTextContent());
+			weatherInfo.setLastBuildDate(doc.getElementsByTagName("lastBuildDate").item(0).getTextContent());
+			
+			Node locationNode = doc.getElementsByTagName("yweather:location").item(0);
+			weatherInfo.setLocationCity(locationNode.getAttributes().getNamedItem("city").getNodeValue());
+			weatherInfo.setLocationRegion(locationNode.getAttributes().getNamedItem("region").getNodeValue());
+			weatherInfo.setLocationCountry(locationNode.getAttributes().getNamedItem("country").getNodeValue());
+			
+			Node windNode = doc.getElementsByTagName("yweather:wind").item(0);
+			weatherInfo.setWindChill(windNode.getAttributes().getNamedItem("chill").getNodeValue());
+			weatherInfo.setWindDirection(windNode.getAttributes().getNamedItem("direction").getNodeValue());
+			weatherInfo.setWindSpeed(windNode.getAttributes().getNamedItem("speed").getNodeValue());
+			
+			Node atmosphereNode = doc.getElementsByTagName("yweather:atmosphere").item(0);
+			weatherInfo.setAtmosphereHumidity(atmosphereNode.getAttributes().getNamedItem("humidity").getNodeValue());
+			weatherInfo.setAtmosphereVisibility(atmosphereNode.getAttributes().getNamedItem("visibility").getNodeValue());
+			weatherInfo.setAtmospherePressure(atmosphereNode.getAttributes().getNamedItem("pressure").getNodeValue());
+			weatherInfo.setAtmosphereRising(atmosphereNode.getAttributes().getNamedItem("rising").getNodeValue());
+			
+			Node astronomyNode = doc.getElementsByTagName("yweather:astronomy").item(0);
+			weatherInfo.setAstronomySunrise(astronomyNode.getAttributes().getNamedItem("sunrise").getNodeValue());
+			weatherInfo.setAstronomySunset(astronomyNode.getAttributes().getNamedItem("sunset").getNodeValue());
+			
+			weatherInfo.setConditionTitle(doc.getElementsByTagName("title").item(2).getTextContent());
+			weatherInfo.setConditionLat(doc.getElementsByTagName("geo:lat").item(0).getTextContent());
+			weatherInfo.setConditionLon(doc.getElementsByTagName("geo:long").item(0).getTextContent());
+			
+			Node currentConditionNode = doc.getElementsByTagName("yweather:condition").item(0);
+			weatherInfo.setCurrentCode(
+					Integer.parseInt(
+							currentConditionNode.getAttributes().getNamedItem("code").getNodeValue()
+							));
+			weatherInfo.setCurrentText(
+					currentConditionNode.getAttributes().getNamedItem("text").getNodeValue());
+			weatherInfo.setCurrentTempF(
+					Integer.parseInt(
+							currentConditionNode.getAttributes().getNamedItem("temp").getNodeValue()
+							));
+			weatherInfo.setCurrentConditionDate(
+					currentConditionNode.getAttributes().getNamedItem("date").getNodeValue());
+			
+			/*
+			 * pass some woied info
+			 */
+			weatherInfo.mWOEIDneighborhood = woeidInfo.mNeighborhood;
+			weatherInfo.mWOEIDCounty = woeidInfo.mCounty;
+			weatherInfo.mWOEIDState = woeidInfo.mState;
+			weatherInfo.mWOEIDCountry = woeidInfo.mCountry;
+
+		} catch (Exception e) {
+			weatherInfo = null;
+		}
+		
+		return weatherInfo;
 	}
     
 }
