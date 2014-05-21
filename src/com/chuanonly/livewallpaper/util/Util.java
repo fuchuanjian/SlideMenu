@@ -90,6 +90,7 @@ public class Util
 	public static final int[] daySnow = {13,14,15,16,17,26,27,28,40,41,42,43};
 	public static final int[] dayFog = {18,20,29,30,31,32,33,34};
 	public static final int[][] weatherTypes = {dayfine, daycloud, dayovercast, dayRain, daySnow , dayFog};
+	public static final String YAHOO_DESC = "yahoo_desc";
     public static String getWeatherInfoOfWallpaper() {
     	int img = Util.getIntFromSharedPref(Util.TYPE, 0);
     	int index = 0;
@@ -121,7 +122,12 @@ public class Util
 			}
     	}
     	String weatherInfos[]  = MyApplication.getContext().getResources().getStringArray(R.array.weather_array);
-    	return weatherInfos[index];
+    	String result = weatherInfos[index];
+    	if (Util.getIntFromSharedPref(Util.ISYAHOO, 0) == 1)
+    	{
+    		return Util.getStringFromSharedPref(Util.YAHOO_DESC, "Sunny");
+    	}
+    	return result;
     }
     
 	 public static int normalDayOrNight(int weatherType) {
@@ -404,7 +410,6 @@ public class Util
     }
 	public static final String SPF_SETTING = "setting";
 	public static final String ISYAHOO = "isYahoo";
-	public static final String YAHOO_CITY_CODE = "yahoo_city_code";
     public static void setStringToSharedPref(String key, String value)
     {
     	SharedPreferences sp = MyApplication.getContext().getSharedPreferences(SPF_SETTING, Context.MODE_MULTI_PROCESS );
@@ -712,6 +717,34 @@ public class Util
 		}
 		
 		return weatherInfo;
+	}
+	public static int[][] type =
+		{
+				// bg_fine_day
+				{ 24,25,31,32,36 },
+				// bg_cloudy_day
+				{ 26,27,28,29,30 ,44},
+				// bg_overcast
+				{  33,34,3200},
+				// bg_rain
+				{ 0,1,2,3,4,6,7,8,9,10,11,12,35,37,38,39,40,45,47},
+				// bg_snow
+				{ 5, 13,14,15,16,41,42,43,46},
+				// bg_fog
+				{  17,18,19,20,21,22,23}};
+//	 {dayfine, daycloud, dayovercast, dayRain, daySnow , dayFog};
+	public static int WType[] ={WeatherType.FINE, WeatherType.CLOUDY,WeatherType.OVERCAST, WeatherType.RAINY_HEAVY,WeatherType.SNOW_HEAVY,WeatherType.FOG};
+	public static int changeYahooType(int yahooCode) {
+		for (int i = 0; i< type.length; i++)
+		{
+			for (int j = 0; j < type[i].length; j++) {
+				if (type[i][j] == yahooCode)
+				{
+					return WType[i];
+				}
+			}
+		}
+		return WType[0];
 	}
     
 }

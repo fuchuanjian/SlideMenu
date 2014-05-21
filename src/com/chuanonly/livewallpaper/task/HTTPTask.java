@@ -79,7 +79,7 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 				}
 			}else {
 				//yahoo == 1;
-				String yahooCityCode = Util.getStringFromSharedPref(Util.YAHOO_CITY_CODE, "");
+				String yahooCityCode = Util.getStringFromSharedPref(Util.CODE, "");
 				String weatherString = Util.getWeatherString(MyApplication.getContext(), yahooCityCode);
 				WOEIDUtils woeidUtils = WOEIDUtils.getInstance();
 				Document weatherDoc = Util.convertStringToDocument(MyApplication.getContext(), weatherString);
@@ -102,11 +102,15 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 		try
 		{
 			WallpaperInfo.parseWallpaperInfo(result);
-			MyApplication.getContext().sendBroadcast(
-					new Intent(WallpaperService.ACTION_CHANGE_BROCAST));
 
 		} catch (Exception e)
 		{
+			// TODO: handle exception
+		}
+		try {			
+			MyApplication.getContext().sendBroadcast(
+					new Intent(WallpaperService.ACTION_CHANGE_BROCAST));
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}

@@ -26,6 +26,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,15 +59,27 @@ public class ChooseCityActivity extends Activity implements OnClickListener
     private City mCity;
     private View mEmptyLayout;
     private TextView mEmptyText;
-    private TextView mSeachBtn;
+    private View mSearchBg;
+    private TextView mOK;
+    private TextView mCancel;
+    private TextView mSearchResult;
+    private WeatherInfo mWeatherInfoTmp;
+    private View mBtnLayout;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chose_city);
+		mimm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		mEmptyLayout =  findViewById(R.id.empty_city);
+		mBtnLayout = findViewById(R.id.btn_layout);
 		mEmptyText = (TextView) findViewById(R.id.empty_text);
-		mSeachBtn = (TextView) findViewById(R.id.search_btn); 
+		mSearchBg = findViewById(R.id.search_layout);
+		mSearchResult = (TextView) findViewById(R.id.search_result);
+		mOK = (TextView) findViewById(R.id.ok);
+		mCancel = (TextView) findViewById(R.id.no);
+		mOK.setOnClickListener(mClick);
+		mCancel.setOnClickListener(mClick);
 		initView();
 		findViewById(R.id.return_btn).setOnClickListener(new OnClickListener()
 		{
@@ -93,13 +106,54 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		
 	}
 
+private OnClickListener mClick = new OnClickListener() {
+	
+	@Override
+	public void onClick(View v) {
+		if (v.getId()== R.id.ok)
+		{
+			if (mWeatherInfoTmp == null) return;
+			Util.setIntToSharedPref(Util.ISYAHOO, 1);
+			Util.setStringToSharedPref(Util.CODE, mWeatherInfoTmp.WoeidNumber);
+			Util.setStringToSharedPref(Util.NAME, mWeatherInfoTmp.getLocationCity());
+			Util.setStringToSharedPref(Util.EN_NAME, mWeatherInfoTmp.getLocationCity());
+			Util.setStringToSharedPref(Util.SCENE_INFO, mWeatherInfoTmp.getCurrentText());
+			Util.setIntToSharedPref(Util.REAL_TYPE, Util.changeYahooType(mWeatherInfoTmp.getCurrentCode()));
+			Util.setStringToSharedPref(Util.YAHOO_DESC, mWeatherInfoTmp.getCurrentText());
+			Util.setStringToSharedPref(Util.SCENE_TEMPERATUR, String.valueOf(mWeatherInfoTmp.getCurrentTempC()));
+			Util.setLongToSharedPref(Util.LAST_UPDATETIME, 0);
+			Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
+			Util.checkIfNeedToUpdateWeather();
+			finish();
+		}else if (v.getId() == R.id.no)
+		{
+			mSearchBg.setVisibility(View.INVISIBLE);
+		}else if (v.getId() == R.id.empty_text)
+		{
+			mWeatherInfoTmp = null;
+			String cityStr = mSearchEdit.getText().toString();
+			if (TextUtils.isEmpty(cityStr)) return;
+			try
+			{
+				 mimm.hideSoftInputFromWindow(v.getWindowToken(), 0);		
+			} catch (Exception e)
+			{
+				// TODO: handle exception
+			}
+			mSearchBg.setVisibility(View.VISIBLE);
+			mSearchResult.setText("Search...");
+			mBtnLayout.setVisibility(View.INVISIBLE);
+			new WeatherQueryByPlaceTask().execute(new String[]{cityStr});
+		}
+		
+	}
+};
 	private void initView()
 	{
 		mSearchEdit = (EditText) findViewById(R.id.queryCityText);
 		mList = (ListView) findViewById(R.id.cityList);
 		try
 		{
-			mimm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			mimm.hideSoftInputFromWindow(mSearchEdit.getWindowToken(),
 					InputMethodManager.HIDE_NOT_ALWAYS);			
 		} catch (Exception e)
@@ -143,13 +197,7 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		});
 		mList.setScrollbarFadingEnabled(true);
 		
-		mSeachBtn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				String cityStr = mSearchEdit.getText().toString();
-				new WeatherQueryByPlaceTask().execute(new String[]{cityStr});
-			}
-		});
+		mEmptyText.setOnClickListener(mClick);
 	}
     private City setChecked(View view, int pos) {
         TextView nameView = (TextView) view.findViewById(R.id.radioText1);
@@ -337,7 +385,10 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 				String weatherString = Util.getWeatherString(MyApplication.getContext(), mWoeidNumber);
 				Document weatherDoc = Util.convertStringToDocument(MyApplication.getContext(), weatherString);
 				WeatherInfo weatherInfo = Util.parseWeatherInfo(MyApplication.getContext(), weatherDoc, woeidUtils.getWoeidInfo());
-				weatherInfo.WoeidNumber = mWoeidNumber;
+				if (weatherInfo != null)
+				{					
+					weatherInfo.WoeidNumber = mWoeidNumber;
+				}
 				return weatherInfo;
 			} else {
 				return null;
@@ -347,11 +398,15 @@ public class ChooseCityActivity extends Activity implements OnClickListener
 		@Override
 		protected void onPostExecute(WeatherInfo result) {
 			super.onPostExecute(result);
+			mBtnLayout.setVisibility(View.VISIBLE);
 			if (result!= null)
-			{				
-				Log.e("fu", result.WoeidNumber+"------ "+result.mWOEIDCountry+" "+result.getCurrentTempC()+"  "+result.getLocationCity()+"  code="+result.getCurrentCode()+" "+result.getCurrentText());
+			{			
+				mWeatherInfoTmp = result;
+				String desc = result.mWOEIDCountry+" "+ result.getLocationCity()+"\n"
+						+ result.getCurrentText()+"  "+ result.getCurrentTempC()+" "+MyApplication.getContext().getString(R.string.temp_unit);
+				mSearchResult.setText(desc);
 			}else {
-				Log.e("fu","result==null");
+				mSearchResult.setText(MyApplication.getContext().getString(R.string.not_find_city));
 			}
 		}
 	}
