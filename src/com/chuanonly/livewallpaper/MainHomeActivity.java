@@ -326,6 +326,7 @@ public class MainHomeActivity extends Activity
 		Util.checkIfNeedToUpdateWeather();
 		mWallpaperView.onResume();
 		mHandler.postDelayed(mResumeRunnable, 200);
+		
 	}
 	
 	private Runnable mResumeRunnable = new Runnable()
@@ -340,6 +341,13 @@ public class MainHomeActivity extends Activity
 			}
 			mSettingLayout.setVisibility(View.VISIBLE);
 			checkTitleBar();
+			int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+			if (mWallpaperView != null && mode == 2)
+			{				
+				int category  = Util.getIntFromSharedPref(Util.REAL_TYPE, WeatherType.FINE);
+				category = Util.normalDayOrNight(category);
+				mWallpaperView.setDirty(category);
+			}
 		}
 	};
 

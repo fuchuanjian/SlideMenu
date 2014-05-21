@@ -23,6 +23,7 @@ import org.w3c.dom.Node;
 
 import android.app.Activity;
 import android.content.Context;
+import android.opengl.Visibility;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -130,6 +131,11 @@ private OnClickListener mClick = new OnClickListener() {
 			mSearchBg.setVisibility(View.INVISIBLE);
 		}else if (v.getId() == R.id.empty_text)
 		{
+			if (!Util.isNetworkAvailable(getApplicationContext()))
+			{
+				Util.showToast("Can't Search from Internet");
+				return;
+			}
 			mWeatherInfoTmp = null;
 			String cityStr = mSearchEdit.getText().toString();
 			if (TextUtils.isEmpty(cityStr)) return;
@@ -398,9 +404,9 @@ private OnClickListener mClick = new OnClickListener() {
 		@Override
 		protected void onPostExecute(WeatherInfo result) {
 			super.onPostExecute(result);
-			mBtnLayout.setVisibility(View.VISIBLE);
 			if (result!= null)
 			{			
+				mBtnLayout.setVisibility(View.VISIBLE);
 				mWeatherInfoTmp = result;
 				String desc = result.mWOEIDCountry+" "+ result.getLocationCity()+"\n"
 						+ result.getCurrentText()+"  "+ result.getCurrentTempC()+" "+MyApplication.getContext().getString(R.string.temp_unit);
@@ -408,6 +414,15 @@ private OnClickListener mClick = new OnClickListener() {
 			}else {
 				mSearchResult.setText(MyApplication.getContext().getString(R.string.not_find_city));
 			}
+		}
+	}
+	@Override
+	public void onBackPressed() {
+		if (mSearchBg.getVisibility() == View.VISIBLE)
+		{
+			mSearchBg.setVisibility(View.INVISIBLE);
+		}else {			
+			super.onBackPressed();
 		}
 	}
 }
