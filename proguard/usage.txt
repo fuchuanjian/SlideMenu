@@ -114,6 +114,26 @@ com.chuanonly.livewallpaper.R$raw
 com.chuanonly.livewallpaper.R$string
 com.chuanonly.livewallpaper.R$style
 com.chuanonly.livewallpaper.R$xml
+com.chuanonly.livewallpaper.YahooWeatherConsts:
+    public static final java.lang.String XML_TAG_WOEID_QUALITY
+    public static final java.lang.String XML_TAG_WOEID_LATITUDE
+    public static final java.lang.String XML_TAG_WOEID_LONGITUDE
+    public static final java.lang.String XML_TAG_WOEID_OFFSETLATITUDE
+    public static final java.lang.String XML_TAG_WOEID_OFFSETLONGITUDE
+    public static final java.lang.String XML_TAG_WOEID_RADIUS
+    public static final java.lang.String XML_TAG_WOEID_NAME
+    public static final java.lang.String XML_TAG_WOEID_ADDITION
+    public static final java.lang.String XML_TAG_WOEID_POSTAL
+    public static final java.lang.String XML_TAG_WOEID_NEIGHBORHOOD
+    public static final java.lang.String XML_TAG_WOEID_CITY
+    public static final java.lang.String XML_TAG_WOEID_COUNTY
+    public static final java.lang.String XML_TAG_WOEID_COUNTRY
+    public static final java.lang.String XML_TAG_WOEID_COUNTRYCODE
+    public static final java.lang.String XML_TAG_WOEID_STATE
+    public static final java.lang.String XML_TAG_WOEID_STATECODE
+    public static final java.lang.String XML_TAG_WOEID_WOEID
+    20:20:public YahooWeatherConsts()
+    113:113:public static java.lang.String getConditionByCode(int)
 com.chuanonly.livewallpaper.data.Constant:
     3:3:public Constant()
 com.chuanonly.livewallpaper.data.WallpaperInfo:
@@ -126,6 +146,127 @@ com.chuanonly.livewallpaper.model.GLFireBalloon:
 com.chuanonly.livewallpaper.model.Particle:
     public static final float UNIT
     46:48:public void setInitDiffXY(float,float)
+com.chuanonly.livewallpaper.model.WOEIDInfo:
+    23:24:protected void setQuality(int)
+    27:28:protected void setLatitude(java.lang.String)
+    31:32:protected void setLongtitde(java.lang.String)
+    35:36:protected void setOffsetLatitude(java.lang.String)
+    39:40:protected void setOffsetLongitude(java.lang.String)
+    43:44:protected void setRadius(java.lang.String)
+    47:48:protected void setName(java.lang.String)
+    51:52:protected void setAddition(java.lang.String)
+    55:56:protected void setPostal(java.lang.String)
+    59:60:protected void setCity(java.lang.String)
+    63:64:protected void setCounty(java.lang.String)
+    67:68:protected void setState(java.lang.String)
+    71:72:protected void setCountry(java.lang.String)
+    75:76:protected void setCountrycode(java.lang.String)
+    79:80:protected void setStatecode(java.lang.String)
+    83:84:protected void setWOEID(java.lang.String)
+    87:87:public int getQuality()
+    91:91:public java.lang.String getLatitude()
+    95:95:public java.lang.String getLongtitde()
+    99:99:public java.lang.String getOffsetLatitude()
+    103:103:public java.lang.String getOffsetLongitude()
+    107:107:public java.lang.String getRadius()
+    111:111:public java.lang.String getName()
+    115:115:public java.lang.String getAddition()
+    119:119:public java.lang.String getNeighborhood()
+    123:123:public java.lang.String getPostal()
+    127:127:public java.lang.String getCity()
+    131:131:public java.lang.String getCounty()
+    135:135:public java.lang.String getState()
+    139:139:public java.lang.String getCountry()
+    143:143:public java.lang.String getCountrycode()
+    147:147:public java.lang.String getStatecode()
+    155:156:public void setNeighborhood(java.lang.String)
+com.chuanonly.livewallpaper.model.WOEIDUtils:
+    public static final java.lang.String WOEID_NOT_FOUND
+    public static final int QUALITY_NOT_DEFINED
+    private static final java.lang.String WOEID_QUERY_PREFIX_FIND_BY_PLACE
+    private static final java.lang.String WOEID_QUERY_SUFFIX_FORMAT
+    private static final java.lang.String WOEID_QUERY_PREFIX_FIND_BY_GPS
+    private static final java.lang.String WOEID_QUERY_CONSECTION_FIND_BY_GPS
+    private static final java.lang.String WOEID_QUERY_SUFFIX_FIND_BY_GPS
+    80:86:public java.lang.String getWOEIDlocation()
+    98:98:public java.lang.String getWOEID(android.content.Context,java.lang.String,java.lang.String)
+    124:139:private java.lang.String queryWOEIDfromYahooAPIs(android.content.Context,java.lang.String,java.lang.String)
+com.chuanonly.livewallpaper.model.WeatherInfo:
+    79:79:public java.util.List getForecastInfoList()
+    83:84:protected void setForecastInfoList(java.util.List)
+    87:87:public com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo getForecastInfo1()
+    91:92:protected void setForecastInfo1(com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo)
+    95:95:public com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo getForecastInfo2()
+    99:100:protected void setForecastInfo2(com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo)
+    103:103:public com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo getForecastInfo3()
+    107:108:protected void setForecastInfo3(com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo)
+    111:111:public com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo getForecastInfo4()
+    115:116:protected void setForecastInfo4(com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo)
+    119:119:public com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo getForecastInfo5()
+    123:124:protected void setForecastInfo5(com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo)
+    127:127:public java.lang.String getCurrentConditionDate()
+    144:144:public int getCurrentTempF()
+    157:157:public java.lang.String getTitle()
+    165:165:public java.lang.String getDescription()
+    173:173:public java.lang.String getLanguage()
+    181:181:public java.lang.String getLastBuildDate()
+    197:197:public java.lang.String getLocationRegion()
+    205:205:public java.lang.String getLocationCountry()
+    213:213:public java.lang.String getWindChill()
+    221:221:public java.lang.String getWindDirection()
+    229:229:public java.lang.String getWindSpeed()
+    237:237:public java.lang.String getAtmosphereHumidity()
+    245:245:public java.lang.String getAtmosphereVisibility()
+    253:253:public java.lang.String getAtmospherePressure()
+    261:261:public java.lang.String getAtmosphereRising()
+    269:269:public java.lang.String getAstronomySunrise()
+    277:277:public java.lang.String getAstronomySunset()
+    285:285:public java.lang.String getConditionTitle()
+    293:293:public java.lang.String getConditionLat()
+    301:301:public java.lang.String getConditionLon()
+    317:318:protected void setCurrentTempC(int)
+    321:321:public java.lang.String getCurrentConditionIconURL()
+    325:325:public android.graphics.Bitmap getCurrentConditionIcon()
+    329:330:public void setCurrentConditionIcon(android.graphics.Bitmap)
+    337:338:public void setWOEIDneighborhood(java.lang.String)
+    341:342:public void setWOEIDCounty(java.lang.String)
+    345:346:public void setWOEIDCountry(java.lang.String)
+    349:350:public void setWOEIDState(java.lang.String)
+    353:353:public java.lang.String getWOEIDneighborhood()
+    357:357:public java.lang.String getWOEIDCounty()
+    361:361:public java.lang.String getWOEIDCountry()
+    365:365:public java.lang.String getWOEIDState()
+    332:332:static synthetic int access$0(com.chuanonly.livewallpaper.model.WeatherInfo,int)
+com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo:
+    private java.lang.String mForecastDay
+    private java.lang.String mForecastDate
+    private int mForecastCode
+    private int mForecastTempHighC
+    private int mForecastTempLowC
+    private int mForecastTempHighF
+    private int mForecastTempLowF
+    private java.lang.String mForecastConditionIconURL
+    private android.graphics.Bitmap mForecastConditionIcon
+    private java.lang.String mForecastText
+    381:381:public android.graphics.Bitmap getForecastConditionIcon()
+    385:386:protected void setForecastConditionIcon(android.graphics.Bitmap)
+    389:389:public java.lang.String getForecastDay()
+    393:394:protected void setForecastDay(java.lang.String)
+    397:397:public java.lang.String getForecastDate()
+    401:402:protected void setForecastDate(java.lang.String)
+    405:405:public int getForecastCode()
+    409:411:protected void setForecastCode(int)
+    414:414:public int getForecastTempHighC()
+    418:419:protected void setForecastTempHighC(int)
+    422:422:public int getForecastTempLowC()
+    426:427:protected void setForecastTempLowC(int)
+    430:430:public int getForecastTempHighF()
+    434:436:protected void setForecastTempHighF(int)
+    439:439:public int getForecastTempLowF()
+    443:445:protected void setForecastTempLowF(int)
+    448:448:public java.lang.String getForecastConditionIconURL()
+    452:452:public java.lang.String getForecastText()
+    456:457:protected void setForecastText(java.lang.String)
 com.chuanonly.livewallpaper.model.WeatherType
 com.chuanonly.livewallpaper.scenes.Background:
     public java.lang.String mVertexShader
@@ -250,14 +391,18 @@ com.chuanonly.livewallpaper.util.Util:
     public static final java.lang.String MODE
     public static final java.lang.String LAST_PICK_TIME
     public static final java.lang.String LOG_INT_CNT
-    public static final long HOUR_2
+    public static final long HOUR_1
     public static final long HOUR_HALF
     public static final java.lang.String LAST_UPDATETIME
+    public static final java.lang.String YAHOO_DESC
     public static final java.lang.String SPF_SETTING
-    24:24:public Util()
-    235:314:public static int normalDayOrNight(int,boolean)
-    383:384:public static void release()
-    557:572:public static int getMode()
+    public static final java.lang.String ISYAHOO
+    public static final int FORECAST_INFO_MAX_SIZE
+    public static final java.lang.String YAHOO_WEATHER_ERROR
+    44:44:public Util()
+    261:340:public static int normalDayOrNight(int,boolean)
+    409:410:public static void release()
+    584:599:public static int getMode()
 com.chuanonly.livewallpaper.view.GalleryScrollView:
     private static final int INVALID_POINTER
 com.google.ads.Ad:

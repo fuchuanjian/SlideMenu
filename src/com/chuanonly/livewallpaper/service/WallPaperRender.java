@@ -71,7 +71,7 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
     		
 			long curTime = System.currentTimeMillis();
 			long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
-			if (lasttime + Util.HOUR_2 < curTime)
+			if (lasttime + Util.HOUR_1 < curTime)
 			{
 				int index = new Random().nextInt(12);
 				if(index == 10) index = 2; //雪

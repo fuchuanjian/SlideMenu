@@ -116,7 +116,7 @@ public class WallpaperService extends GLWallpaperService
 				long curTime = System.currentTimeMillis();
 				long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
 				String city = Util.getStringFromSharedPref(Util.CODE, "");
-				if (!TextUtils.isEmpty(city) && lasttime + Util.HOUR_2 <curTime )
+				if (!TextUtils.isEmpty(city) && lasttime + Util.HOUR_1 <curTime )
 				{
 					if (Util.isNetworkAvailable(getApplicationContext()))
 					{

@@ -88,6 +88,7 @@ com.chuanonly.livewallpaper.R$array: int weather_array
 com.chuanonly.livewallpaper.R$color: int black_alpha
 com.chuanonly.livewallpaper.R$color: int blue_alpha
 com.chuanonly.livewallpaper.R$color: int blue_half
+com.chuanonly.livewallpaper.R$color: int circle_rect_bg
 com.chuanonly.livewallpaper.R$color: int gray
 com.chuanonly.livewallpaper.R$color: int setting_bg_color
 com.chuanonly.livewallpaper.R$color: int setting_sum_text
@@ -157,6 +158,7 @@ com.chuanonly.livewallpaper.R$drawable: int sand_l
 com.chuanonly.livewallpaper.R$drawable: int sand_m
 com.chuanonly.livewallpaper.R$drawable: int search_input_bg
 com.chuanonly.livewallpaper.R$drawable: int search_input_left
+com.chuanonly.livewallpaper.R$drawable: int searchbackground
 com.chuanonly.livewallpaper.R$drawable: int selectcity_pressed_selector
 com.chuanonly.livewallpaper.R$drawable: int setting_btn_selector
 com.chuanonly.livewallpaper.R$drawable: int snowflake_l
@@ -170,6 +172,7 @@ com.chuanonly.livewallpaper.R$drawable: int sunshine_1
 com.chuanonly.livewallpaper.R$drawable: int sunshine_2
 com.chuanonly.livewallpaper.R$drawable: int sunshine_3
 com.chuanonly.livewallpaper.R$drawable: int titlebar
+com.chuanonly.livewallpaper.R$id: int btn_layout
 com.chuanonly.livewallpaper.R$id: int checkbox_1
 com.chuanonly.livewallpaper.R$id: int checkbox_2
 com.chuanonly.livewallpaper.R$id: int checkbox_3
@@ -179,6 +182,7 @@ com.chuanonly.livewallpaper.R$id: int contacts_listitem_texts
 com.chuanonly.livewallpaper.R$id: int current_wallpaper
 com.chuanonly.livewallpaper.R$id: int desc
 com.chuanonly.livewallpaper.R$id: int empty_city
+com.chuanonly.livewallpaper.R$id: int empty_text
 com.chuanonly.livewallpaper.R$id: int icon
 com.chuanonly.livewallpaper.R$id: int last_divider
 com.chuanonly.livewallpaper.R$id: int layout_1
@@ -186,12 +190,16 @@ com.chuanonly.livewallpaper.R$id: int layout_2
 com.chuanonly.livewallpaper.R$id: int layout_3
 com.chuanonly.livewallpaper.R$id: int layout_ad
 com.chuanonly.livewallpaper.R$id: int layout_content
+com.chuanonly.livewallpaper.R$id: int no
+com.chuanonly.livewallpaper.R$id: int ok
 com.chuanonly.livewallpaper.R$id: int queryCityText
 com.chuanonly.livewallpaper.R$id: int radioText1
 com.chuanonly.livewallpaper.R$id: int radioText2
 com.chuanonly.livewallpaper.R$id: int radioText3
 com.chuanonly.livewallpaper.R$id: int rate_layout
 com.chuanonly.livewallpaper.R$id: int return_btn
+com.chuanonly.livewallpaper.R$id: int search_layout
+com.chuanonly.livewallpaper.R$id: int search_result
 com.chuanonly.livewallpaper.R$id: int set_city
 com.chuanonly.livewallpaper.R$id: int setting_arrow
 com.chuanonly.livewallpaper.R$id: int setting_menu

@@ -84,7 +84,23 @@ public class HTTPTask extends AsyncTask<Void, Void, String>
 				WOEIDUtils woeidUtils = WOEIDUtils.getInstance();
 				Document weatherDoc = Util.convertStringToDocument(MyApplication.getContext(), weatherString);
 				WeatherInfo weatherInfo = Util.parseWeatherInfo(MyApplication.getContext(), weatherDoc, woeidUtils.getWoeidInfo());
-				weatherInfo.WoeidNumber = yahooCityCode;
+				if (weatherInfo != null)
+				{					
+					weatherInfo.WoeidNumber = yahooCityCode;
+					Util.setStringToSharedPref(Util.SCENE_INFO, weatherInfo.getCurrentText());
+					Util.setIntToSharedPref(Util.REAL_TYPE, Util.changeYahooType(weatherInfo.getCurrentCode()));
+					Util.setIntToSharedPref(Util.TYPE, Util.changeYahooType(weatherInfo.getCurrentCode()));
+					Util.setStringToSharedPref(Util.YAHOO_DESC, weatherInfo.getCurrentText());
+					Util.setStringToSharedPref(Util.SCENE_TEMPERATUR, String.valueOf(weatherInfo.getCurrentTempC()));
+					Util.setLongToSharedPref(Util.LAST_UPDATETIME, System.currentTimeMillis());
+					Util.setLongToSharedPref(Util.LAST_PICK_TIME, 0);
+					
+					int mode = Util.getIntFromSharedPref(Util.MODE, -1);
+					if (mode ==-1)
+					{
+						Util.setIntToSharedPref(Util.MODE, 2);
+					}
+				}
 			}
 			
 		} catch (Exception e)

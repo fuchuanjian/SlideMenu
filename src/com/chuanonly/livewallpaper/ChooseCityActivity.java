@@ -114,6 +114,7 @@ private OnClickListener mClick = new OnClickListener() {
 		if (v.getId()== R.id.ok)
 		{
 			if (mWeatherInfoTmp == null) return;
+			Util.setIntToSharedPref(Util.MODE, 2);
 			Util.setIntToSharedPref(Util.ISYAHOO, 1);
 			Util.setStringToSharedPref(Util.CODE, mWeatherInfoTmp.WoeidNumber);
 			Util.setStringToSharedPref(Util.NAME, mWeatherInfoTmp.getLocationCity());

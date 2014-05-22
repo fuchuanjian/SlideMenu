@@ -841,43 +841,67 @@ com.chuanonly.livewallpaper.ChooseCityActivity -> com.chuanonly.livewallpaper.Ch
     android.view.inputmethod.InputMethodManager mimm -> d
     com.chuanonly.livewallpaper.util.QueryCityHandler queryHandler -> e
     com.chuanonly.livewallpaper.data.City mCity -> f
-    android.widget.TextView mEmptyTV -> g
-    android.text.TextWatcher textWatcher -> h
-    41:53:void onCreate(android.os.Bundle) -> onCreate
-    58:68:void onResume() -> onResume
-    72:119:void initView() -> a
-    121:124:com.chuanonly.livewallpaper.data.City setChecked(android.view.View,int) -> a
-    150:167:void initListView() -> b
-    171:203:void updateQueryCityList() -> c
-    278:287:void onClick(android.view.View) -> onClick
-    292:294:void finish() -> finish
-    169:169:void access$0(com.chuanonly.livewallpaper.ChooseCityActivity) -> a
-    120:120:com.chuanonly.livewallpaper.data.City access$1(com.chuanonly.livewallpaper.ChooseCityActivity,android.view.View,int) -> a
-    36:36:void access$2(com.chuanonly.livewallpaper.ChooseCityActivity,com.chuanonly.livewallpaper.data.City) -> a
-    31:31:android.widget.EditText access$3(com.chuanonly.livewallpaper.ChooseCityActivity) -> b
-    127:127:android.text.TextWatcher access$4(com.chuanonly.livewallpaper.ChooseCityActivity) -> c
-    36:36:com.chuanonly.livewallpaper.data.City access$5(com.chuanonly.livewallpaper.ChooseCityActivity) -> d
+    android.view.View mEmptyLayout -> g
+    android.widget.TextView mEmptyText -> h
+    android.view.View mSearchBg -> i
+    android.widget.TextView mOK -> j
+    android.widget.TextView mCancel -> k
+    android.widget.TextView mSearchResult -> l
+    com.chuanonly.livewallpaper.model.WeatherInfo mWeatherInfoTmp -> m
+    android.view.View mBtnLayout -> n
+    android.view.View$OnClickListener mClick -> o
+    android.text.TextWatcher textWatcher -> p
+    72:93:void onCreate(android.os.Bundle) -> onCreate
+    98:108:void onResume() -> onResume
+    160:208:void initView() -> a
+    210:213:com.chuanonly.livewallpaper.data.City setChecked(android.view.View,int) -> a
+    239:256:void initListView() -> b
+    260:292:void updateQueryCityList() -> c
+    367:376:void onClick(android.view.View) -> onClick
+    381:383:void finish() -> finish
+    422:428:void onBackPressed() -> onBackPressed
+    67:67:com.chuanonly.livewallpaper.model.WeatherInfo access$0(com.chuanonly.livewallpaper.ChooseCityActivity) -> a
+    63:63:android.view.View access$1(com.chuanonly.livewallpaper.ChooseCityActivity) -> b
+    67:67:void access$2(com.chuanonly.livewallpaper.ChooseCityActivity,com.chuanonly.livewallpaper.model.WeatherInfo) -> a
+    55:55:android.widget.EditText access$3(com.chuanonly.livewallpaper.ChooseCityActivity) -> c
+    58:58:android.view.inputmethod.InputMethodManager access$4(com.chuanonly.livewallpaper.ChooseCityActivity) -> d
+    66:66:android.widget.TextView access$5(com.chuanonly.livewallpaper.ChooseCityActivity) -> e
+    68:68:android.view.View access$6(com.chuanonly.livewallpaper.ChooseCityActivity) -> f
+    258:258:void access$7(com.chuanonly.livewallpaper.ChooseCityActivity) -> g
+    209:209:com.chuanonly.livewallpaper.data.City access$8(com.chuanonly.livewallpaper.ChooseCityActivity,android.view.View,int) -> a
+    60:60:void access$9(com.chuanonly.livewallpaper.ChooseCityActivity,com.chuanonly.livewallpaper.data.City) -> a
+    216:216:android.text.TextWatcher access$10(com.chuanonly.livewallpaper.ChooseCityActivity) -> h
+    60:60:com.chuanonly.livewallpaper.data.City access$11(com.chuanonly.livewallpaper.ChooseCityActivity) -> i
 com.chuanonly.livewallpaper.ChooseCityActivity$1 -> b:
     com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
-    132:133:void afterTextChanged(android.text.Editable) -> afterTextChanged
-    139:139:void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
-    145:145:void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    114:156:void onClick(android.view.View) -> onClick
 com.chuanonly.livewallpaper.ChooseCityActivity$2 -> c:
     com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
-    50:51:void onClick(android.view.View) -> onClick
+    221:222:void afterTextChanged(android.text.Editable) -> afterTextChanged
+    228:228:void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    234:234:void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
 com.chuanonly.livewallpaper.ChooseCityActivity$3 -> d:
     com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
-    93:115:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-com.chuanonly.livewallpaper.ChooseCityActivity$QueryCityItemAdapter -> e:
+    90:91:void onClick(android.view.View) -> onClick
+com.chuanonly.livewallpaper.ChooseCityActivity$4 -> e:
+    com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
+    180:203:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.chuanonly.livewallpaper.ChooseCityActivity$QueryCityItemAdapter -> f:
     int resource -> b
     android.view.LayoutInflater mInflater -> c
     com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
-    222:230:void resetItems(java.util.Collection) -> a
-    235:264:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.chuanonly.livewallpaper.ChooseCityActivity$QueryCityListViewHolder -> f:
+    311:319:void resetItems(java.util.Collection) -> a
+    324:353:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+com.chuanonly.livewallpaper.ChooseCityActivity$QueryCityListViewHolder -> g:
     android.widget.TextView nameView -> a
     android.widget.TextView parentView -> b
     android.widget.TextView splitView -> c
+com.chuanonly.livewallpaper.ChooseCityActivity$WeatherQueryByPlaceTask -> h:
+    com.chuanonly.livewallpaper.ChooseCityActivity this$0 -> a
+    389:401:com.chuanonly.livewallpaper.model.WeatherInfo doInBackground(java.lang.String[]) -> a
+    407:418:void onPostExecute(com.chuanonly.livewallpaper.model.WeatherInfo) -> a
+    1:1:void onPostExecute(java.lang.Object) -> onPostExecute
+    1:1:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
 com.chuanonly.livewallpaper.MainHomeActivity -> com.chuanonly.livewallpaper.MainHomeActivity:
     java.util.HashMap sIconMap -> b
     java.lang.Integer[] imgages -> c
@@ -907,16 +931,16 @@ com.chuanonly.livewallpaper.MainHomeActivity -> com.chuanonly.livewallpaper.Main
     206:251:void initScrollView() -> b
     303:307:void changeWallPaper(int) -> a
     310:318:android.graphics.drawable.Drawable getIconDrawable(int) -> b
-    324:329:void onResume() -> onResume
-    348:363:void checkTitleBar() -> c
-    368:372:void onPause() -> onPause
-    376:388:void onDestroy() -> onDestroy
-    394:403:void onBackPressed() -> onBackPressed
-    413:442:void startIntentWallpaperChooser() -> d
-    446:457:void registerReceiver() -> e
-    462:466:void unregisterReceiver() -> f
-    486:500:void checkifNeedTolacate() -> g
-    412:412:void access$0(com.chuanonly.livewallpaper.MainHomeActivity) -> a
+    324:330:void onResume() -> onResume
+    356:371:void checkTitleBar() -> c
+    376:380:void onPause() -> onPause
+    384:396:void onDestroy() -> onDestroy
+    402:411:void onBackPressed() -> onBackPressed
+    421:450:void startIntentWallpaperChooser() -> d
+    454:465:void registerReceiver() -> e
+    470:474:void unregisterReceiver() -> f
+    494:508:void checkifNeedTolacate() -> g
+    420:420:void access$0(com.chuanonly.livewallpaper.MainHomeActivity) -> a
     93:93:com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView access$1(com.chuanonly.livewallpaper.MainHomeActivity) -> b
     102:102:android.widget.LinearLayout access$2(com.chuanonly.livewallpaper.MainHomeActivity) -> c
     106:106:android.widget.ImageView access$3(com.chuanonly.livewallpaper.MainHomeActivity) -> d
@@ -924,25 +948,25 @@ com.chuanonly.livewallpaper.MainHomeActivity -> com.chuanonly.livewallpaper.Main
     300:300:void access$5(com.chuanonly.livewallpaper.MainHomeActivity,long) -> a
     301:301:void access$6(com.chuanonly.livewallpaper.MainHomeActivity,int) -> a
     103:103:android.widget.LinearLayout access$7(com.chuanonly.livewallpaper.MainHomeActivity) -> f
-    346:346:void access$8(com.chuanonly.livewallpaper.MainHomeActivity) -> g
+    354:354:void access$8(com.chuanonly.livewallpaper.MainHomeActivity) -> g
     104:104:com.google.ads.AdView access$9(com.chuanonly.livewallpaper.MainHomeActivity) -> h
-com.chuanonly.livewallpaper.MainHomeActivity$1 -> g:
+com.chuanonly.livewallpaper.MainHomeActivity$1 -> i:
     com.chuanonly.livewallpaper.MainHomeActivity this$0 -> a
     258:297:void onClick(android.view.View) -> onClick
-com.chuanonly.livewallpaper.MainHomeActivity$2 -> h:
+com.chuanonly.livewallpaper.MainHomeActivity$2 -> j:
     com.chuanonly.livewallpaper.MainHomeActivity this$0 -> a
-    336:343:void run() -> run
-com.chuanonly.livewallpaper.MainHomeActivity$3 -> i:
+    337:351:void run() -> run
+com.chuanonly.livewallpaper.MainHomeActivity$3 -> k:
     com.chuanonly.livewallpaper.MainHomeActivity this$0 -> a
-    471:481:void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.chuanonly.livewallpaper.MainHomeActivity$4 -> j:
+    479:489:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.chuanonly.livewallpaper.MainHomeActivity$4 -> l:
     com.chuanonly.livewallpaper.MainHomeActivity this$0 -> a
     176:176:void onReceiveAd(com.google.ads.Ad) -> a
     180:180:void onPresentScreen(com.google.ads.Ad) -> b
     184:184:void onLeaveApplication(com.google.ads.Ad) -> c
     188:188:void onFailedToReceiveAd(com.google.ads.Ad,com.google.ads.AdRequest$ErrorCode) -> a
     192:194:void onDismissScreen(com.google.ads.Ad) -> d
-com.chuanonly.livewallpaper.MainHomeActivity$ViewHolder -> k:
+com.chuanonly.livewallpaper.MainHomeActivity$ViewHolder -> m:
     android.widget.ImageView icon -> a
     int index -> b
 com.chuanonly.livewallpaper.MyApplication -> com.chuanonly.livewallpaper.MyApplication:
@@ -972,26 +996,29 @@ com.chuanonly.livewallpaper.SettingActivity -> com.chuanonly.livewallpaper.Setti
     245:247:void finish() -> finish
     27:27:android.widget.CheckBox[] access$0(com.chuanonly.livewallpaper.SettingActivity) -> a
     78:78:void access$1(com.chuanonly.livewallpaper.SettingActivity) -> b
-com.chuanonly.livewallpaper.SettingActivity$1 -> l:
+com.chuanonly.livewallpaper.SettingActivity$1 -> n:
     com.chuanonly.livewallpaper.SettingActivity this$0 -> a
     153:204:void onClick(android.view.View) -> onClick
-com.chuanonly.livewallpaper.SettingActivity$2 -> m:
+com.chuanonly.livewallpaper.SettingActivity$2 -> o:
     com.chuanonly.livewallpaper.SettingActivity this$0 -> a
     235:240:void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.chuanonly.livewallpaper.SettingActivity$3 -> n:
+com.chuanonly.livewallpaper.SettingActivity$3 -> p:
     com.chuanonly.livewallpaper.SettingActivity this$0 -> a
     66:73:void onClick(android.view.View) -> onClick
-com.chuanonly.livewallpaper.data.City -> o:
+com.chuanonly.livewallpaper.YahooWeatherConsts -> q:
+    java.lang.String[] WOEID_RESULT_TAG_LSIT -> a
+    java.lang.String[] CONDITION_LIST -> b
+com.chuanonly.livewallpaper.data.City -> r:
     java.lang.String code -> a
     java.lang.String name -> b
     java.lang.String parentName -> c
     java.lang.String enName -> d
     java.lang.String enProvice -> e
     21:21:java.lang.String toString() -> toString
-com.chuanonly.livewallpaper.data.Constant -> p:
+com.chuanonly.livewallpaper.data.Constant -> s:
     boolean DEBUG -> a
     int DATABASE_VERSION -> b
-com.chuanonly.livewallpaper.data.WallpaperInfo -> q:
+com.chuanonly.livewallpaper.data.WallpaperInfo -> t:
     java.lang.String city -> a
     java.lang.String info -> b
     java.lang.String img -> c
@@ -1000,7 +1027,7 @@ com.chuanonly.livewallpaper.data.WallpaperInfo -> q:
     java.lang.String low -> f
     java.lang.String time -> g
     23:68:void parseWallpaperInfo(java.lang.String) -> a
-com.chuanonly.livewallpaper.model.GLFireBalloon -> r:
+com.chuanonly.livewallpaper.model.GLFireBalloon -> u:
     int degrees -> t
     float mRadius -> u
     android.graphics.Matrix matrix -> v
@@ -1009,14 +1036,14 @@ com.chuanonly.livewallpaper.model.GLFireBalloon -> r:
     float[] zeros -> y
     20:25:void setXY(float,float) -> a
     30:41:void move(float) -> a
-com.chuanonly.livewallpaper.model.GLSnowFall -> s:
+com.chuanonly.livewallpaper.model.GLSnowFall -> v:
     int trackAngle -> t
     8:9:void setTrackAngle(int) -> a
     11:11:int getTrackAngle() -> a
     16:34:void move(float) -> a
-com.chuanonly.livewallpaper.model.ParticalSunShine -> t:
+com.chuanonly.livewallpaper.model.ParticalSunShine -> w:
     8:14:void move(float) -> a
-com.chuanonly.livewallpaper.model.Particle -> u:
+com.chuanonly.livewallpaper.model.Particle -> x:
     int textureId -> t
     int type -> u
     float x -> a
@@ -1075,20 +1102,20 @@ com.chuanonly.livewallpaper.model.Particle -> u:
     204:204:int getLive() -> p
     208:209:void setLive(int) -> j
     213:213:void move(float) -> a
-com.chuanonly.livewallpaper.model.ParticleDrop -> v:
+com.chuanonly.livewallpaper.model.ParticleDrop -> y:
     8:26:void move(float) -> a
-com.chuanonly.livewallpaper.model.ParticleMetor -> w:
+com.chuanonly.livewallpaper.model.ParticleMetor -> z:
     10:27:void move(float) -> a
-com.chuanonly.livewallpaper.model.ParticleRect -> x:
+com.chuanonly.livewallpaper.model.ParticleRect -> A:
     10:39:void move(float) -> a
     43:48:void moveLeft(float) -> h
-com.chuanonly.livewallpaper.model.ParticleStar -> y:
+com.chuanonly.livewallpaper.model.ParticleStar -> B:
     8:14:void move(float) -> a
-com.chuanonly.livewallpaper.model.ParticleThunderLight -> z:
+com.chuanonly.livewallpaper.model.ParticleThunderLight -> C:
     10:20:void move(float) -> a
-com.chuanonly.livewallpaper.model.ParticleWhiteBg -> A:
+com.chuanonly.livewallpaper.model.ParticleWhiteBg -> D:
     8:12:void move(float) -> a
-com.chuanonly.livewallpaper.model.TextureInfo -> B:
+com.chuanonly.livewallpaper.model.TextureInfo -> E:
     int drawableId -> a
     int textureId -> b
     float width -> c
@@ -1096,7 +1123,108 @@ com.chuanonly.livewallpaper.model.TextureInfo -> B:
     float scaleX -> e
     float scaleY -> f
     int angle -> g
-com.chuanonly.livewallpaper.scenes.Background -> C:
+com.chuanonly.livewallpaper.model.WOEIDInfo -> F:
+    int mQuality -> a
+    java.lang.String mLatitude -> b
+    java.lang.String mLongtitde -> c
+    java.lang.String mOffsetLatitude -> d
+    java.lang.String mOffsetLongitude -> e
+    java.lang.String mRadius -> f
+    java.lang.String mName -> g
+    java.lang.String mAddition -> h
+    java.lang.String mPostal -> i
+    java.lang.String mNeighborhood -> j
+    java.lang.String mCity -> k
+    java.lang.String mCounty -> l
+    java.lang.String mState -> m
+    java.lang.String mCountry -> n
+    java.lang.String mCountrycode -> o
+    java.lang.String mStatecode -> p
+    java.lang.String mWOEID -> q
+    151:151:java.lang.String getWOEID() -> a
+com.chuanonly.livewallpaper.model.WOEIDUtils -> G:
+    com.chuanonly.livewallpaper.model.WOEIDUtils mInstance -> a
+    java.lang.String yahooAPIsQuery -> b
+    java.util.Map mParsedResult -> c
+    com.chuanonly.livewallpaper.model.WOEIDInfo mWoeidInfo -> d
+    75:75:com.chuanonly.livewallpaper.model.WOEIDUtils getInstance() -> a
+    90:90:com.chuanonly.livewallpaper.model.WOEIDInfo getWoeidInfo() -> b
+    94:94:java.lang.String getWOEID(android.content.Context,java.lang.String) -> a
+    103:118:java.lang.String queryWOEIDfromYahooAPIs(android.content.Context,java.lang.String) -> b
+    144:176:java.lang.String fetchWOEIDxmlString(android.content.Context,java.lang.String) -> c
+    180:190:org.w3c.dom.Document convertStringToDocument(android.content.Context,java.lang.String) -> d
+    195:242:void parseWOEID(org.w3c.dom.Document) -> a
+    245:250:java.lang.String getTextContentByTagName(org.w3c.dom.Document,java.lang.String) -> a
+    254:259:void parseLocationLines(org.w3c.dom.Document,java.lang.String) -> b
+com.chuanonly.livewallpaper.model.WeatherInfo -> H:
+    java.lang.String mTitle -> a
+    java.lang.String mDescription -> b
+    java.lang.String mLanguage -> c
+    java.lang.String mLastBuildDate -> d
+    java.lang.String mLocationCity -> e
+    java.lang.String mLocationRegion -> f
+    java.lang.String mLocationCountry -> g
+    java.lang.String mWindChill -> h
+    java.lang.String mWindDirection -> i
+    java.lang.String mWindSpeed -> j
+    java.lang.String mAtmosphereHumidity -> k
+    java.lang.String mAtmosphereVisibility -> l
+    java.lang.String mAtmospherePressure -> m
+    java.lang.String mAtmosphereRising -> n
+    java.lang.String mAstronomySunrise -> o
+    java.lang.String mAstronomySunset -> p
+    java.lang.String mConditionTitle -> q
+    java.lang.String mConditionLat -> r
+    java.lang.String mConditionLon -> s
+    int mCurrentCode -> t
+    java.lang.String mCurrentText -> u
+    int mCurrentTempC -> v
+    int mCurrentTempF -> w
+    java.lang.String mCurrentConditionIconURL -> x
+    android.graphics.Bitmap mCurrentConditionIcon -> y
+    java.lang.String mCurrentConditionDate -> z
+    com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo mForecastInfo1 -> A
+    com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo mForecastInfo2 -> B
+    com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo mForecastInfo3 -> C
+    com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo mForecastInfo4 -> D
+    com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo mForecastInfo5 -> E
+    java.util.List mForecastInfoList -> K
+    java.lang.String mWOEIDneighborhood -> F
+    java.lang.String mWOEIDCounty -> G
+    java.lang.String mWOEIDCountry -> H
+    java.lang.String mWOEIDState -> I
+    java.lang.String WoeidNumber -> J
+    131:132:void setCurrentConditionDate(java.lang.String) -> a
+    135:135:int getCurrentCode() -> a
+    139:141:void setCurrentCode(int) -> a
+    148:150:void setCurrentTempF(int) -> b
+    153:153:int getCurrentTempC() -> b
+    161:162:void setTitle(java.lang.String) -> b
+    169:170:void setDescription(java.lang.String) -> c
+    177:178:void setLanguage(java.lang.String) -> d
+    185:186:void setLastBuildDate(java.lang.String) -> e
+    189:189:java.lang.String getLocationCity() -> c
+    193:194:void setLocationCity(java.lang.String) -> f
+    201:202:void setLocationRegion(java.lang.String) -> g
+    209:210:void setLocationCountry(java.lang.String) -> h
+    217:218:void setWindChill(java.lang.String) -> i
+    225:226:void setWindDirection(java.lang.String) -> j
+    233:234:void setWindSpeed(java.lang.String) -> k
+    241:242:void setAtmosphereHumidity(java.lang.String) -> l
+    249:250:void setAtmosphereVisibility(java.lang.String) -> m
+    257:258:void setAtmospherePressure(java.lang.String) -> n
+    265:266:void setAtmosphereRising(java.lang.String) -> o
+    273:274:void setAstronomySunrise(java.lang.String) -> p
+    281:282:void setAstronomySunset(java.lang.String) -> q
+    289:290:void setConditionTitle(java.lang.String) -> r
+    297:298:void setConditionLat(java.lang.String) -> s
+    305:306:void setConditionLon(java.lang.String) -> t
+    309:309:java.lang.String getCurrentText() -> d
+    313:314:void setCurrentText(java.lang.String) -> u
+    333:333:int turnFtoC(int) -> c
+com.chuanonly.livewallpaper.model.WeatherInfo$ForecastInfo -> I:
+    com.chuanonly.livewallpaper.model.WeatherInfo this$0 -> a
+com.chuanonly.livewallpaper.scenes.Background -> J:
     float GLOBE_ALPHA -> a
     int mProgram -> b
     int muMVPMatrixHandle -> c
@@ -1128,7 +1256,7 @@ com.chuanonly.livewallpaper.scenes.Background -> C:
     202:204:void release() -> c
     215:217:void setCaChe(boolean) -> a
     225:229:void destroy() -> d
-com.chuanonly.livewallpaper.scenes.BaseScene -> D:
+com.chuanonly.livewallpaper.scenes.BaseScene -> K:
     java.util.ArrayList textureInfos -> a
     float GLOBE_ALPHA -> b
     int mProgram -> c
@@ -1163,26 +1291,26 @@ com.chuanonly.livewallpaper.scenes.BaseScene -> D:
     123:124:void setCategory(int) -> a
     130:131:void setCaChe(boolean) -> a
     134:136:void destroy() -> e
-com.chuanonly.livewallpaper.scenes.GLCloud -> E:
+com.chuanonly.livewallpaper.scenes.GLCloud -> L:
     java.util.ArrayList particleList -> x
     long lastTime -> y
     33:126:void init() -> f
     129:161:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     166:211:void draw(javax.microedition.khronos.opengles.GL10) -> b
     215:215:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLCloudNight -> F:
+com.chuanonly.livewallpaper.scenes.GLCloudNight -> M:
     java.util.ArrayList particleList -> x
     29:90:void init() -> f
     93:124:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     129:177:void draw(javax.microedition.khronos.opengles.GL10) -> b
     181:181:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLFog -> G:
+com.chuanonly.livewallpaper.scenes.GLFog -> N:
     java.util.ArrayList particleList -> x
     31:70:void init() -> f
     75:105:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     111:153:void draw(javax.microedition.khronos.opengles.GL10) -> b
     157:157:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLHalistoneScene -> H:
+com.chuanonly.livewallpaper.scenes.GLHalistoneScene -> O:
     java.util.ArrayList heightList -> x
     java.util.ArrayList widthList -> y
     java.util.ArrayList particleList -> z
@@ -1192,7 +1320,7 @@ com.chuanonly.livewallpaper.scenes.GLHalistoneScene -> H:
     267:289:int[] getRandXY(int,int,int,int) -> a
     293:315:int[] getRandXY() -> f
     320:320:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLHazeScene -> I:
+com.chuanonly.livewallpaper.scenes.GLHazeScene -> P:
     float mBreathInterval -> x
     float mOnInterval -> y
     float mOffInterval -> z
@@ -1207,14 +1335,14 @@ com.chuanonly.livewallpaper.scenes.GLHazeScene -> I:
     159:187:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     192:229:void draw(javax.microedition.khronos.opengles.GL10) -> b
     233:233:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLOvercast -> J:
+com.chuanonly.livewallpaper.scenes.GLOvercast -> Q:
     java.util.ArrayList particleList -> x
     long lastTime -> y
     32:80:void init() -> f
     84:116:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     121:167:void draw(javax.microedition.khronos.opengles.GL10) -> b
     176:176:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLRain -> K:
+com.chuanonly.livewallpaper.scenes.GLRain -> R:
     java.util.ArrayList heightList -> x
     java.util.ArrayList widthList -> y
     java.util.ArrayList particleList -> z
@@ -1224,7 +1352,7 @@ com.chuanonly.livewallpaper.scenes.GLRain -> K:
     321:350:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     354:402:void draw(javax.microedition.khronos.opengles.GL10) -> b
     415:419:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLShowerRain -> L:
+com.chuanonly.livewallpaper.scenes.GLShowerRain -> S:
     java.util.ArrayList heightList -> x
     java.util.ArrayList widthList -> y
     java.util.ArrayList particleList -> z
@@ -1243,7 +1371,7 @@ com.chuanonly.livewallpaper.scenes.GLShowerRain -> L:
     319:323:void resetLiveOfPartilce(int) -> b
     334:339:int getRandomInt(int) -> c
     343:343:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLShowerSnow -> M:
+com.chuanonly.livewallpaper.scenes.GLShowerSnow -> T:
     java.util.ArrayList heightList -> x
     java.util.ArrayList widthList -> y
     java.util.ArrayList angleList -> z
@@ -1254,7 +1382,7 @@ com.chuanonly.livewallpaper.scenes.GLShowerSnow -> M:
     248:277:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     281:329:void draw(javax.microedition.khronos.opengles.GL10) -> b
     342:342:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLSnowScene -> N:
+com.chuanonly.livewallpaper.scenes.GLSnowScene -> U:
     java.util.ArrayList snowFlakeAngleArray -> z
     java.util.ArrayList snowPosxArray -> A
     java.util.ArrayList snowPosyArray -> B
@@ -1268,20 +1396,20 @@ com.chuanonly.livewallpaper.scenes.GLSnowScene -> N:
     412:441:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     445:493:void draw(javax.microedition.khronos.opengles.GL10) -> b
     506:506:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLSunny -> O:
+com.chuanonly.livewallpaper.scenes.GLSunny -> V:
     java.util.ArrayList particleList -> x
     34:117:void init() -> f
     122:153:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     157:191:void draw(javax.microedition.khronos.opengles.GL10) -> b
     216:216:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLSunnyNight -> P:
+com.chuanonly.livewallpaper.scenes.GLSunnyNight -> W:
     java.util.ArrayList starList -> x
     java.util.ArrayList metorList -> y
     36:174:void init() -> f
     178:216:int loadGLTexture(javax.microedition.khronos.opengles.GL10) -> a
     220:290:void draw(javax.microedition.khronos.opengles.GL10) -> b
     297:297:java.lang.String getBackground() -> b
-com.chuanonly.livewallpaper.scenes.GLThunder -> Q:
+com.chuanonly.livewallpaper.scenes.GLThunder -> X:
     com.chuanonly.livewallpaper.scenes.GLRain rainScen -> x
     java.util.ArrayList particleList -> y
     float whiteBgAlpha -> z
@@ -1292,7 +1420,7 @@ com.chuanonly.livewallpaper.scenes.GLThunder -> Q:
     184:184:java.lang.String getBackground() -> b
 com.chuanonly.livewallpaper.service.GLWallpaperService -> com.chuanonly.livewallpaper.service.GLWallpaperService:
     boolean isCanLog -> a
-com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine -> R:
+com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine -> Y:
     int mRenderMode -> b
     boolean mVisble -> c
     com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine$WallpaperGLSurfaceView glSurfaceView -> d
@@ -1306,14 +1434,14 @@ com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine -> R:
     136:138:void setRenderMode(int) -> b
     141:141:int getRenderMode() -> a
     145:146:void requestRender() -> b
-com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine$WallpaperGLSurfaceView -> S:
+com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine$WallpaperGLSurfaceView -> Z:
     com.chuanonly.livewallpaper.service.GLWallpaperService$GLSurfaceViewEngine this$1 -> a
     48:48:android.view.SurfaceHolder getHolder() -> getHolder
     55:56:void onDestroy() -> a
     61:62:void surfaceCreated(android.view.SurfaceHolder) -> surfaceCreated
     67:68:void surfaceChanged(android.view.SurfaceHolder,int,int,int) -> surfaceChanged
     73:74:void surfaceDestroyed(android.view.SurfaceHolder) -> surfaceDestroyed
-com.chuanonly.livewallpaper.service.WallPaperRender -> T:
+com.chuanonly.livewallpaper.service.WallPaperRender -> aa:
     com.chuanonly.livewallpaper.scenes.Background bg -> b
     com.chuanonly.livewallpaper.scenes.BaseScene scene -> c
     com.chuanonly.livewallpaper.scenes.Background nextBg -> d
@@ -1346,10 +1474,10 @@ com.chuanonly.livewallpaper.service.WallpaperService -> com.chuanonly.livewallpa
     220:220:void access$2(com.chuanonly.livewallpaper.service.WallpaperService) -> c
     205:205:void access$3(com.chuanonly.livewallpaper.service.WallpaperService) -> d
     30:30:int access$4(com.chuanonly.livewallpaper.service.WallpaperService) -> e
-com.chuanonly.livewallpaper.service.WallpaperService$1 -> U:
+com.chuanonly.livewallpaper.service.WallpaperService$1 -> ab:
     com.chuanonly.livewallpaper.service.WallpaperService this$0 -> a
     234:258:void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.chuanonly.livewallpaper.service.WallpaperService$GLEngine -> V:
+com.chuanonly.livewallpaper.service.WallpaperService$GLEngine -> ac:
     java.util.concurrent.ScheduledExecutorService mTimer -> c
     java.lang.Runnable rendeRunnable -> d
     com.chuanonly.livewallpaper.service.WallpaperService this$0 -> b
@@ -1360,19 +1488,19 @@ com.chuanonly.livewallpaper.service.WallpaperService$GLEngine -> V:
     146:153:void startRendering() -> d
     157:163:boolean stopRendering() -> e
     155:155:boolean access$0(com.chuanonly.livewallpaper.service.WallpaperService$GLEngine) -> a
-com.chuanonly.livewallpaper.service.WallpaperService$GLEngine$1 -> W:
+com.chuanonly.livewallpaper.service.WallpaperService$GLEngine$1 -> ad:
     com.chuanonly.livewallpaper.service.WallpaperService$GLEngine this$1 -> a
     171:172:void run() -> run
 com.chuanonly.livewallpaper.service.WallpaperSettings -> com.chuanonly.livewallpaper.service.WallpaperSettings:
     14:18:void onCreate(android.os.Bundle) -> onCreate
     22:24:void onDestroy() -> onDestroy
     27:27:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
-com.chuanonly.livewallpaper.task.HTTPTask -> X:
-    36:91:java.lang.String doInBackground(java.lang.Void[]) -> a
-    97:109:void onPostExecute(java.lang.String) -> a
+com.chuanonly.livewallpaper.task.HTTPTask -> ae:
+    39:110:java.lang.String doInBackground(java.lang.Void[]) -> a
+    116:132:void onPostExecute(java.lang.String) -> a
     1:1:void onPostExecute(java.lang.Object) -> onPostExecute
     1:1:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-com.chuanonly.livewallpaper.task.LocateHandler -> Y:
+com.chuanonly.livewallpaper.task.LocateHandler -> af:
     com.amap.api.location.LocationManagerProxy mAMapLocManager -> a
     android.os.Handler mHandler -> b
     java.util.ArrayList MDN_CITY_CODES -> c
@@ -1387,7 +1515,7 @@ com.chuanonly.livewallpaper.task.LocateHandler -> Y:
     148:234:void parseCitycode(com.amap.api.location.AMapLocation) -> a
     30:30:boolean access$0(com.chuanonly.livewallpaper.task.LocateHandler) -> a
     146:146:void access$1(com.chuanonly.livewallpaper.task.LocateHandler,com.amap.api.location.AMapLocation) -> a
-com.chuanonly.livewallpaper.task.LocateHandler$1 -> Z:
+com.chuanonly.livewallpaper.task.LocateHandler$1 -> ag:
     com.chuanonly.livewallpaper.task.LocateHandler this$0 -> a
     62:62:void onStatusChanged(java.lang.String,int,android.os.Bundle) -> onStatusChanged
     69:69:void onProviderEnabled(java.lang.String) -> onProviderEnabled
@@ -1395,14 +1523,14 @@ com.chuanonly.livewallpaper.task.LocateHandler$1 -> Z:
     83:83:void onLocationChanged(android.location.Location) -> onLocationChanged
     88:106:void onLocationChanged(com.amap.api.location.AMapLocation) -> a
     56:56:com.chuanonly.livewallpaper.task.LocateHandler access$0(com.chuanonly.livewallpaper.task.LocateHandler$1) -> a
-com.chuanonly.livewallpaper.task.LocateHandler$1$1 -> aa:
+com.chuanonly.livewallpaper.task.LocateHandler$1$1 -> ah:
     com.chuanonly.livewallpaper.task.LocateHandler$1 this$1 -> a
     com.amap.api.location.AMapLocation val$location -> b
     98:103:void run() -> run
-com.chuanonly.livewallpaper.task.LocateHandler$2 -> ab:
+com.chuanonly.livewallpaper.task.LocateHandler$2 -> ai:
     com.chuanonly.livewallpaper.task.LocateHandler this$0 -> a
     116:117:void run() -> run
-com.chuanonly.livewallpaper.util.CacheTextrue -> ac:
+com.chuanonly.livewallpaper.util.CacheTextrue -> aj:
     java.util.HashMap map -> a
     14:20:int get(int,float,float,int) -> a
     27:33:int getWidth(int,float,float,int) -> b
@@ -1411,18 +1539,18 @@ com.chuanonly.livewallpaper.util.CacheTextrue -> ac:
     113:114:void put(int,int) -> a
     118:118:int get(int) -> a
     122:123:void clear() -> a
-com.chuanonly.livewallpaper.util.CacheTextrue$Param -> ad:
+com.chuanonly.livewallpaper.util.CacheTextrue$Param -> ak:
     int id -> a
     int width -> b
     int height -> c
-com.chuanonly.livewallpaper.util.Http -> ae:
+com.chuanonly.livewallpaper.util.Http -> al:
     java.lang.String USER_AGENT -> a
     37:39:org.apache.http.HttpResponse getResponse(android.content.Context,java.lang.String) -> a
     45:56:java.io.InputStream getResponseStream(org.apache.http.HttpResponse) -> a
     62:79:java.lang.String parseIputStreamToString(java.io.InputStream) -> a
     85:91:org.apache.http.client.HttpClient createHttpClient() -> a
     98:137:java.lang.Object createHttpRequest(android.content.Context,java.lang.String,boolean,boolean) -> a
-com.chuanonly.livewallpaper.util.MatrixState -> af:
+com.chuanonly.livewallpaper.util.MatrixState -> am:
     float[] mProjMatrix -> a
     float[] mVMatrix -> b
     float[] mMVPMatrix -> c
@@ -1441,12 +1569,12 @@ com.chuanonly.livewallpaper.util.MatrixState -> af:
     122:123:void setorthoM(float,float,float,float,float,float) -> a
     127:129:float[] getFinalMatrix() -> e
     134:136:float[] convertUVToGLpoint(float,float,int,int) -> a
-com.chuanonly.livewallpaper.util.OpenGLUtils -> ag:
+com.chuanonly.livewallpaper.util.OpenGLUtils -> an:
     28:62:int loadTexture(android.graphics.Bitmap) -> a
     73:120:android.graphics.Bitmap decodeResource(int,float,float,int) -> a
     140:140:android.graphics.Bitmap decodeResource(int) -> a
     159:169:void deleteTexture(java.util.ArrayList) -> a
-com.chuanonly.livewallpaper.util.QueryCityHandler -> ah:
+com.chuanonly.livewallpaper.util.QueryCityHandler -> ao:
     android.content.Context mContext -> a
     java.lang.String mDBPackageName -> b
     54:122:java.util.ArrayList queryCities(java.lang.String) -> a
@@ -1458,7 +1586,7 @@ com.chuanonly.livewallpaper.util.QueryCityHandler -> ah:
     302:307:int copy(java.io.InputStream,java.io.OutputStream) -> a
     313:321:long copyLarge(java.io.InputStream,java.io.OutputStream) -> b
     326:338:java.util.ArrayList sortCities(java.util.ArrayList) -> a
-com.chuanonly.livewallpaper.util.ShaderManager -> ai:
+com.chuanonly.livewallpaper.util.ShaderManager -> ap:
     com.chuanonly.livewallpaper.util.ShaderManager instance -> a
     int mProgram -> b
     int muMVPMatrixHandle -> c
@@ -1485,11 +1613,11 @@ com.chuanonly.livewallpaper.util.ShaderManager -> ai:
     136:136:int getScreenHeight() -> h
     140:140:float getDensity() -> i
     150:152:void clear() -> j
-com.chuanonly.livewallpaper.util.ShaderUtil -> aj:
+com.chuanonly.livewallpaper.util.ShaderUtil -> aq:
     17:30:int loadShader(int,java.lang.String) -> a
     35:65:int createProgram(java.lang.String,java.lang.String) -> a
     71:75:void checkGlError(java.lang.String) -> a
-com.chuanonly.livewallpaper.util.URLUtil -> ak:
+com.chuanonly.livewallpaper.util.URLUtil -> ar:
     byte[] _STANDARD_ALPHABET -> b
     byte[] _STANDARD_DECODABET -> c
     byte[] _URL_SAFE_ALPHABET -> d
@@ -1510,7 +1638,7 @@ com.chuanonly.livewallpaper.util.URLUtil -> ak:
     435:435:byte[] access$0(int) -> a
     1035:1035:int access$2(byte[],int,byte[],int,int) -> a
     471:471:byte[] access$3(byte[],byte[],int,int) -> a
-com.chuanonly.livewallpaper.util.URLUtil$OutputStream -> al:
+com.chuanonly.livewallpaper.util.URLUtil$OutputStream -> as:
     boolean encode -> a
     int position -> b
     byte[] buffer -> c
@@ -1525,7 +1653,7 @@ com.chuanonly.livewallpaper.util.URLUtil$OutputStream -> al:
     1988:1997:void write(byte[],int,int) -> write
     2007:2017:void flushBase64() -> a
     2028:2036:void close() -> close
-com.chuanonly.livewallpaper.util.Util -> am:
+com.chuanonly.livewallpaper.util.Util -> at:
     int[] dayfine -> a
     int[] daycloud -> b
     int[] dayovercast -> c
@@ -1533,22 +1661,28 @@ com.chuanonly.livewallpaper.util.Util -> am:
     int[] daySnow -> e
     int[] dayFog -> f
     int[][] weatherTypes -> g
-    android.widget.Toast toast -> h
-    74:87:java.lang.String getWeatherInfoOfWallpaper() -> a
-    91:104:java.lang.String getWeatherInfoOfReal() -> b
-    108:229:int normalDayOrNight(int) -> a
-    366:367:void showToast(java.lang.String) -> a
-    369:380:void showToast(java.lang.String,int) -> a
-    388:392:void setStringToSharedPref(java.lang.String,java.lang.String) -> a
-    397:401:void setIntToSharedPref(java.lang.String,int) -> b
-    404:408:void setLongToSharedPref(java.lang.String,long) -> a
-    412:413:java.lang.String getStringFromSharedPref(java.lang.String,java.lang.String) -> b
-    417:418:int getIntFromSharedPref(java.lang.String,int) -> c
-    423:428:java.lang.String getCityName() -> c
-    448:449:long getLongFromSharedPref(java.lang.String,long) -> b
-    454:511:java.lang.String getToken() -> d
-    516:531:boolean isNetworkAvailable(android.content.Context) -> a
-    539:553:void checkIfNeedToUpdateWeather() -> e
+    android.widget.Toast toast -> j
+    int[][] type -> h
+    int[] WType -> i
+    95:108:java.lang.String getWeatherInfoOfWallpaper() -> a
+    112:130:java.lang.String getWeatherInfoOfReal() -> b
+    134:255:int normalDayOrNight(int) -> a
+    392:393:void showToast(java.lang.String) -> a
+    395:406:void showToast(java.lang.String,int) -> a
+    415:419:void setStringToSharedPref(java.lang.String,java.lang.String) -> a
+    424:428:void setIntToSharedPref(java.lang.String,int) -> b
+    431:435:void setLongToSharedPref(java.lang.String,long) -> a
+    439:440:java.lang.String getStringFromSharedPref(java.lang.String,java.lang.String) -> b
+    444:445:int getIntFromSharedPref(java.lang.String,int) -> c
+    450:455:java.lang.String getCityName() -> c
+    475:476:long getLongFromSharedPref(java.lang.String,long) -> b
+    481:538:java.lang.String getToken() -> d
+    543:558:boolean isNetworkAvailable(android.content.Context) -> a
+    566:580:void checkIfNeedToUpdateWeather() -> e
+    604:638:java.lang.String getWeatherString(android.content.Context,java.lang.String) -> a
+    641:650:org.w3c.dom.Document convertStringToDocument(android.content.Context,java.lang.String) -> b
+    655:719:com.chuanonly.livewallpaper.model.WeatherInfo parseWeatherInfo(android.content.Context,org.w3c.dom.Document,com.chuanonly.livewallpaper.model.WOEIDInfo) -> a
+    740:749:int changeYahooType(int) -> b
 com.chuanonly.livewallpaper.view.GalleryScrollView -> com.chuanonly.livewallpaper.view.GalleryScrollView:
     android.widget.Scroller mScrollerHelper -> a
     android.view.VelocityTracker mVelocityTracker -> b
@@ -1578,7 +1712,7 @@ com.chuanonly.livewallpaper.view.GalleryScrollView -> com.chuanonly.livewallpape
     390:398:void startScrolTo(int,int) -> a
     402:414:void fling(int) -> a
     417:418:void setBannerOnStopScrollListener(com.chuanonly.livewallpaper.view.GalleryScrollView$OnBannerStopScroll) -> setBannerOnStopScrollListener
-com.chuanonly.livewallpaper.view.GalleryScrollView$OnBannerStopScroll -> an:
+com.chuanonly.livewallpaper.view.GalleryScrollView$OnBannerStopScroll -> au:
     void onStopScroll(int) -> a
 com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView -> com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView:
     int RATE -> a
@@ -1591,7 +1725,7 @@ com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView -> com.chuanonly.livewal
     54:58:void startRendering() -> a
     62:67:void stopRendering() -> b
     80:81:void setDirty(int) -> setDirty
-com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView$1 -> ao:
+com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView$1 -> av:
     com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView this$0 -> a
     74:76:void run() -> run
 com.google.ads.Ad -> com.google.ads.Ad:

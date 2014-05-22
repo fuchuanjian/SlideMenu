@@ -67,7 +67,7 @@ public class Util
 
 	public static final String LOG_INT_CNT = "login0";
 	
-	public static final long HOUR_2 = 90 *60*1000; //90分钟
+	public static final long HOUR_1 = 60 *60*1000; //90分钟
 	
 	public static final long HOUR_HALF = 30*60*1000;
 	
@@ -721,19 +721,21 @@ public class Util
 	public static int[][] type =
 		{
 				// bg_fine_day
-				{ 24,25,31,32,36 },
+				{ 24,25,31,32,33,34,36 },
 				// bg_cloudy_day
-				{ 26,27,28,29,30 ,44},
+				{ 26,27,28,29,30 },
 				// bg_overcast
-				{  33,34,3200},
+				{ 44 ,3200},
 				// bg_rain
-				{ 0,1,2,3,4,6,7,8,9,10,11,12,35,37,38,39,40,45,47},
+				{ 0,1,2,3,4,8,9,10,11,12,35,37,38,39,40,45,47},
 				// bg_snow
-				{ 5, 13,14,15,16,41,42,43,46},
+				{ 5,6,7, 13,14,15,16,41,42,43,46,18},
 				// bg_fog
-				{  17,18,19,20,21,22,23}};
+				{  17,19,20,22,23},
+				// bg_haze
+				{ 21 }};
 //	 {dayfine, daycloud, dayovercast, dayRain, daySnow , dayFog};
-	public static int WType[] ={WeatherType.FINE, WeatherType.CLOUDY,WeatherType.OVERCAST, WeatherType.RAINY_HEAVY,WeatherType.SNOW_HEAVY,WeatherType.FOG};
+	public static int WType[] ={WeatherType.FINE, WeatherType.CLOUDY,WeatherType.OVERCAST, WeatherType.RAINY_HEAVY,WeatherType.SNOW_HEAVY,WeatherType.FOG,WeatherType.HAZE};
 	public static int changeYahooType(int yahooCode) {
 		for (int i = 0; i< type.length; i++)
 		{
