@@ -1,15 +1,11 @@
 package com.chuanonly.livewallpaper.task;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
-import org.apache.http.client.ClientProtocolException;
-import org.json.JSONException;
 import org.w3c.dom.Document;
 
 import android.content.Intent;
@@ -24,9 +20,6 @@ import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.util.Http;
 import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
-//http://tqapi.mobile.360.cn/city/{0}?pkg={1}&cver={2}&ver={3}&token={4}
-//net.qihoo.launcher.widget.clockweather
-//360MobileDesktop
 
 public class HTTPTask extends AsyncTask<Void, Void, String>
 {

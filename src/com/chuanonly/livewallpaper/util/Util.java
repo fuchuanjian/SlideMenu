@@ -727,7 +727,9 @@ public class Util
 				// bg_overcast
 				{ 44 ,3200},
 				// bg_rain
-				{ 0,1,2,3,4,8,9,10,11,12,35,37,38,39,40,45,47},
+				{ 0,1,2,3,4,8,9,10,11,12,35,40,45,47},
+				// bg_rain_big
+				{ 37,38,39},
 				// bg_snow
 				{ 5,6,7, 13,14,15,16,41,42,43,46,18},
 				// bg_fog
@@ -735,7 +737,7 @@ public class Util
 				// bg_haze
 				{ 21 }};
 //	 {dayfine, daycloud, dayovercast, dayRain, daySnow , dayFog};
-	public static int WType[] ={WeatherType.FINE, WeatherType.CLOUDY,WeatherType.OVERCAST, WeatherType.RAINY_HEAVY,WeatherType.SNOW_HEAVY,WeatherType.FOG,WeatherType.HAZE};
+	public static int WType[] ={WeatherType.FINE, WeatherType.CLOUDY,WeatherType.OVERCAST, WeatherType.RAINY_HEAVY, WeatherType.RAINY_STORM,WeatherType.SNOW_HEAVY,WeatherType.FOG,WeatherType.HAZE};
 	public static int changeYahooType(int yahooCode) {
 		for (int i = 0; i< type.length; i++)
 		{

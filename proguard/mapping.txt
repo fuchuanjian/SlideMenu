@@ -1682,7 +1682,7 @@ com.chuanonly.livewallpaper.util.Util -> at:
     604:638:java.lang.String getWeatherString(android.content.Context,java.lang.String) -> a
     641:650:org.w3c.dom.Document convertStringToDocument(android.content.Context,java.lang.String) -> b
     655:719:com.chuanonly.livewallpaper.model.WeatherInfo parseWeatherInfo(android.content.Context,org.w3c.dom.Document,com.chuanonly.livewallpaper.model.WOEIDInfo) -> a
-    740:749:int changeYahooType(int) -> b
+    742:751:int changeYahooType(int) -> b
 com.chuanonly.livewallpaper.view.GalleryScrollView -> com.chuanonly.livewallpaper.view.GalleryScrollView:
     android.widget.Scroller mScrollerHelper -> a
     android.view.VelocityTracker mVelocityTracker -> b

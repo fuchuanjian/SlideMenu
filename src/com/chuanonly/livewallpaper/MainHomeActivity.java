@@ -115,9 +115,9 @@ public class MainHomeActivity extends Activity
 		mSettingLayout = (LinearLayout) findViewById(R.id.setting_panel_layout);
 		mADLayout = (LinearLayout) findViewById(R.id.layout_ad);
 		mWeatherInfo = (TextView) findViewById(R.id.city_info);
-		mContentLayout.setVisibility(View.INVISIBLE);
-		mSettingLayout.setVisibility(View.INVISIBLE);
-		mWeatherInfo.setVisibility(View.INVISIBLE);
+		mContentLayout.setVisibility(View.VISIBLE);
+		mSettingLayout.setVisibility(View.VISIBLE);
+		mWeatherInfo.setVisibility(View.VISIBLE);
 		mScrollView = new GalleryScrollView(this);
 		mContentLayout.addView(mScrollView);
 		initScrollView();
