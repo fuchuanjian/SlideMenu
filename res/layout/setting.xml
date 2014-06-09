@@ -183,6 +183,7 @@
                 android:background="@drawable/divider" />
 
             <LinearLayout
+                android:id="@+id/thank_layout"
                 style="@style/setting_item_layout"
                 android:background="@drawable/list_selector" >
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
- <string name="wallpaper_name">4季天气动态壁纸</string>
-    <string name="app_name">天气动态壁纸</string>
+ <string name="wallpaper_name">天气壁纸</string>
+    <string name="app_name">天气壁纸</string>
     <string name="toast_exit">再按一下返回键退出</string>
     <string name="temp_unit">°C</string>
     
@@ -25,7 +25,7 @@
     <string name="about">关于壁纸</string>
     <string name="input_city_name">请输入查询的城市名</string>
     <string name="not_find_city">找不到该城市</string>
-    <string name="thank">亲爱的用户，感谢使用此动态壁纸。本壁纸应用模仿自360天气。关于应用中插入广告，还请您见谅。如果有意见反馈麻烦请您留言，我会及时改进。</string>
+    <string name="thank">亲爱的用户，感谢使用此动态壁纸。本壁纸应用模仿自天气动态壁纸。如果有意见反馈麻烦请您留言，我会及时改进。</string>
     <string name="feedback">意见反馈与评分</string>  
     <string-array name="weather_array" >
         <item>晴</item>

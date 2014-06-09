@@ -20,6 +20,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,6 +34,7 @@ import com.chuanonly.wallpaper.model.WeatherType;
 import com.chuanonly.wallpaper.service.WallpaperService;
 import com.chuanonly.wallpaper.task.HTTPTask;
 import com.chuanonly.wallpaper.task.LocateHandler;
+import com.chuanonly.wallpaper.util.URLUtil;
 import com.chuanonly.wallpaper.util.Util;
 import com.chuanonly.wallpaper.view.GalleryScrollView;
 import com.chuanonly.wallpaper.view.WallPaperGLsurfaceView;
@@ -43,8 +45,8 @@ import com.google.android.gms.ads.AdView;
 
 public class MainHomeActivity extends Activity
 {
-	private static final String ID = "kFVFFTT6V0dPR0Z08ERrFjWHZVa=";
-	private static final String ADID ="a15310888895deb";
+	private static final String ID = "kFVFFTT6NGNOpWV00kMS1mTql0M=";
+//	private static final String ADID ="a153786583df627";
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
 	{ 
@@ -123,7 +125,6 @@ public class MainHomeActivity extends Activity
 		mArrowIV = (ImageView) findViewById(R.id.setting_arrow);
 		mArrowIV.setOnClickListener(clickListener);
 		
-		
 //		//bg_fine_day
 //		imgType[0] = new int[]{0};
 //		//bg_cloudy_day
@@ -160,12 +161,19 @@ public class MainHomeActivity extends Activity
 		{	
 			
 			mAdView = new AdView(this);
-			mAdView.setAdUnitId("a15310888895deb");
+			mAdView.setAdUnitId(URLUtil.decodeURL(ID));
+			mADLayout.addView(mAdView);
 			mAdView.setAdSize(AdSize.BANNER);
 			AdRequest adRequest = new AdRequest.Builder().build();
 			mAdView.loadAd(adRequest);
+			mADLayout.setVisibility(View.GONE);
 			mAdView.setAdListener(new AdListener()
 			{
+				@Override
+				public void onAdLoaded() {
+					mADLayout.setVisibility(View.VISIBLE);
+					super.onAdLoaded();
+				}
 				@Override
 				public void onAdClosed() {
 					super.onAdClosed();

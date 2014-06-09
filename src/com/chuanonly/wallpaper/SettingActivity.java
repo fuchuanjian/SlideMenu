@@ -72,6 +72,21 @@ public class SettingActivity extends Activity
 				}
 			});
 		}
+		findViewById(R.id.thank_layout).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				try
+				{
+					Intent intent = new Intent(Intent.ACTION_VIEW);
+					intent.setData(Uri.parse("market://details?id=com.chuanonly.livewallpaper"));
+					startActivity(intent);					
+				}catch (Exception e)
+				{
+					
+				}
+				
+			}
+		});
 	}
 
 	private void showWeatherInfo()
