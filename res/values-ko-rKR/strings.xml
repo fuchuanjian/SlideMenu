@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="wallpaper_name">날씨 바탕 화면</string>
-    <string name="app_name">날씨 바탕 화면</string>
+    <string name="wallpaper_name">3D날씨 라이브 배경 화면</string>
+    <string name="app_name">3D날씨 라이브 배경 화면</string>
     <string name="toast_exit">다시 종료를 눌러 반환 키</string>
     <string name="temp_unit">°C</string>
     
