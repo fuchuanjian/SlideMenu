@@ -39,12 +39,10 @@ import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
 import com.chuanonly.livewallpaper.view.GalleryScrollView;
 import com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView;
-import com.google.ads.Ad;
-import com.google.ads.AdListener;
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
-import com.google.ads.AdRequest.ErrorCode;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 
 public class MainHomeActivity extends Activity
 {
@@ -163,36 +161,57 @@ public class MainHomeActivity extends Activity
 	{
 		int loginCnt = Util.getIntFromSharedPref(Util.LOG_INT_CNT, 0);
 		if (loginCnt >= 0 && Util.isNetworkAvailable(getApplicationContext()))
-		{			
-			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
-//			mAdView = new AdView(this, AdSize.BANNER, ADID);
+		{		
+			mAdView = new AdView(this);
+			mAdView.setAdUnitId(URLUtil.decodeURL(ID));
 			mADLayout.addView(mAdView);
-			mAdView.loadAd(new AdRequest());
+			mAdView.setAdSize(AdSize.BANNER);
+			AdRequest adRequest = new AdRequest.Builder().build();
+			mAdView.loadAd(adRequest);
+			mADLayout.setVisibility(View.GONE);
 			mAdView.setAdListener(new AdListener()
 			{
 				@Override
-				public void onReceiveAd(Ad arg0)
-				{
+				public void onAdLoaded() {
+					mADLayout.setVisibility(View.VISIBLE);
+					super.onAdLoaded();
 				}
 				@Override
-				public void onPresentScreen(Ad arg0)
-				{
-				}
-				@Override
-				public void onLeaveApplication(Ad arg0)
-				{
-				}
-				@Override
-				public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1)
-				{
-				}
-				@Override
-				public void onDismissScreen(Ad arg0)
-				{
-					Util.setIntToSharedPref(Util.LOG_INT_CNT, -2);
+				public void onAdClosed() {
+					super.onAdClosed();
+					Util.setIntToSharedPref(Util.LOG_INT_CNT, -1);
 					mAdView.setVisibility(View.GONE);
 				}
 			});
+//			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
+////			mAdView = new AdView(this, AdSize.BANNER, ADID);
+//			mADLayout.addView(mAdView);
+//			mAdView.loadAd(new AdRequest());
+//			mAdView.setAdListener(new AdListener()
+//			{
+//				@Override
+//				public void onReceiveAd(Ad arg0)
+//				{
+//				}
+//				@Override
+//				public void onPresentScreen(Ad arg0)
+//				{
+//				}
+//				@Override
+//				public void onLeaveApplication(Ad arg0)
+//				{
+//				}
+//				@Override
+//				public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1)
+//				{
+//				}
+//				@Override
+//				public void onDismissScreen(Ad arg0)
+//				{
+//					Util.setIntToSharedPref(Util.LOG_INT_CNT, -2);
+//					mAdView.setVisibility(View.GONE);
+//				}
+//			});
 			
 		}
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
