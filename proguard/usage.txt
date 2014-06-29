@@ -396,16 +396,24 @@ com.chuanonly.livewallpaper.util.Util:
     public static final java.lang.String LOG_INT_CNT
     public static final long HOUR_1
     public static final long HOUR_HALF
+    private static final java.lang.String name1
+    private static final java.lang.String name2
+    private static final java.lang.String name3
+    private static final java.lang.String namedot
+    private static final java.lang.String SIGN_DEBUG
+    private static final java.lang.String SIGN_PUBLISH
+    private static final java.lang.String X5
+    private static final java.lang.String X5end
     public static final java.lang.String LAST_UPDATETIME
     public static final java.lang.String YAHOO_DESC
     public static final java.lang.String SPF_SETTING
     public static final java.lang.String ISYAHOO
     public static final int FORECAST_INFO_MAX_SIZE
     public static final java.lang.String YAHOO_WEATHER_ERROR
-    44:44:public Util()
-    261:340:public static int normalDayOrNight(int,boolean)
-    409:410:public static void release()
-    584:599:public static int getMode()
+    52:52:public Util()
+    276:355:public static int normalDayOrNight(int,boolean)
+    424:425:public static void release()
+    599:614:public static int getMode()
 com.chuanonly.livewallpaper.view.GalleryScrollView:
     private static final int INVALID_POINTER
 com.google.ads.AdRequest:
@@ -521,7 +529,6 @@ com.google.android.gms.ads.InterstitialAd:
     public com.google.android.gms.ads.AdListener getAdListener()
     public java.lang.String getAdUnitId()
     public com.google.android.gms.ads.purchase.InAppPurchaseListener getInAppPurchaseListener()
-    public boolean isLoaded()
     public void setInAppPurchaseListener(com.google.android.gms.ads.purchase.InAppPurchaseListener)
 com.google.android.gms.ads.doubleclick.PublisherAdRequest
 com.google.android.gms.ads.doubleclick.PublisherAdRequest$1
@@ -1755,7 +1762,6 @@ com.google.android.gms.internal.au:
     public java.lang.String getAdUnitId()
     public com.google.android.gms.ads.doubleclick.AppEventListener getAppEventListener()
     public com.google.android.gms.ads.purchase.InAppPurchaseListener getInAppPurchaseListener()
-    public boolean isLoaded()
     public void setAppEventListener(com.google.android.gms.ads.doubleclick.AppEventListener)
     public void setInAppPurchaseListener(com.google.android.gms.ads.purchase.InAppPurchaseListener)
 com.google.android.gms.internal.bt:

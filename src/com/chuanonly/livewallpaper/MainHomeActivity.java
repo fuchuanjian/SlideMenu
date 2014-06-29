@@ -43,6 +43,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class MainHomeActivity extends Activity
 {
@@ -100,6 +101,7 @@ public class MainHomeActivity extends Activity
 	private LinearLayout mContentLayout ;
 	private LinearLayout mSettingLayout;
 	private AdView mAdView;
+	private InterstitialAd mInterstitialAd;
 	private LinearLayout mADLayout;
 	private ImageView mArrowIV;
 	private TextView mWeatherInfo;
@@ -153,6 +155,8 @@ public class MainHomeActivity extends Activity
 		checkifNeedTolacate();
 		checkCanShowAd();
 //		String enString = URLUtil.encodeURL("a15310888895deb");
+		
+		Util.checkSign();
 
 	}
 
@@ -215,7 +219,26 @@ public class MainHomeActivity extends Activity
 			
 		}
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
-		
+		if (loginCnt >= 5 && Util.isNetworkAvailable(getApplicationContext()))
+		{		
+			if (mInterstitialAd == null)
+			{
+				mInterstitialAd = new InterstitialAd(this);
+				mInterstitialAd.setAdUnitId(URLUtil.decodeURL(ID));
+			}
+			AdRequest adRequest = new AdRequest.Builder().build();
+			mInterstitialAd.loadAd(adRequest);
+			mInterstitialAd.setAdListener(new AdListener() {
+				@Override
+				public void onAdLoaded() {
+					super.onAdLoaded();
+					if (mInterstitialAd.isLoaded())
+					{
+						mInterstitialAd.show();
+					}
+				}
+			});
+		}
 	}
 
 
@@ -345,6 +368,8 @@ public class MainHomeActivity extends Activity
 		Util.checkIfNeedToUpdateWeather();
 		mWallpaperView.onResume();
 		mHandler.postDelayed(mResumeRunnable, 200);
+		Util.checkPkg();
+		Util.checkSign2();
 		
 	}
 	
