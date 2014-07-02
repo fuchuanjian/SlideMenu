@@ -400,10 +400,6 @@ com.chuanonly.livewallpaper.util.Util:
     private static final java.lang.String name2
     private static final java.lang.String name3
     private static final java.lang.String namedot
-    private static final java.lang.String SIGN_DEBUG
-    private static final java.lang.String SIGN_PUBLISH
-    private static final java.lang.String X5
-    private static final java.lang.String X5end
     public static final java.lang.String LAST_UPDATETIME
     public static final java.lang.String YAHOO_DESC
     public static final java.lang.String SPF_SETTING
@@ -411,9 +407,9 @@ com.chuanonly.livewallpaper.util.Util:
     public static final int FORECAST_INFO_MAX_SIZE
     public static final java.lang.String YAHOO_WEATHER_ERROR
     52:52:public Util()
-    276:355:public static int normalDayOrNight(int,boolean)
-    424:425:public static void release()
-    599:614:public static int getMode()
+    264:343:public static int normalDayOrNight(int,boolean)
+    412:413:public static void release()
+    587:602:public static int getMode()
 com.chuanonly.livewallpaper.view.GalleryScrollView:
     private static final int INVALID_POINTER
 com.google.ads.AdRequest:

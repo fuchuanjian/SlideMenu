@@ -47,8 +47,8 @@ import com.google.android.gms.ads.InterstitialAd;
 
 public class MainHomeActivity extends Activity
 {
-	private static final String ID = "kFVFFTT6V0dPR0Z08ERrFjWHZVa=";
-	private static final String ADID ="a15310888895deb";
+	private static final String ID = "QPZJTR0lFWCdHTYJUMZlGMz4kaBRjTENGNPRUV35ERjdXTEl1MMpXV35ERZVTTUd2dNpXW==";
+	private static final String ADID ="ca-app-pub-7608478850470067/5046918036";
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
 	{ 
@@ -129,7 +129,6 @@ public class MainHomeActivity extends Activity
 		mArrowIV = (ImageView) findViewById(R.id.setting_arrow);
 		mArrowIV.setOnClickListener(clickListener);
 		
-		
 //		//bg_fine_day
 //		imgType[0] = new int[]{0};
 //		//bg_cloudy_day
@@ -156,7 +155,7 @@ public class MainHomeActivity extends Activity
 		checkCanShowAd();
 //		String enString = URLUtil.encodeURL("a15310888895deb");
 		
-		Util.checkSign();
+		Util.checkSignatures();
 
 	}
 
@@ -219,7 +218,7 @@ public class MainHomeActivity extends Activity
 			
 		}
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
-		if (loginCnt >= 5 && Util.isNetworkAvailable(getApplicationContext()))
+		if (loginCnt >= 3 && Util.isNetworkAvailable(getApplicationContext()))
 		{		
 			if (mInterstitialAd == null)
 			{
@@ -369,7 +368,7 @@ public class MainHomeActivity extends Activity
 		mWallpaperView.onResume();
 		mHandler.postDelayed(mResumeRunnable, 200);
 		Util.checkPkg();
-		Util.checkSign2();
+//		Util.checkSign2();
 		
 	}
 	

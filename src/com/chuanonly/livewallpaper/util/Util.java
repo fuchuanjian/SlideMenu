@@ -83,21 +83,9 @@ public class Util
 	private final static String name2 = "chuanonly";
 	private final static String name3 = "livewallpaper";
 	private final static String namedot = ".";
-	private final static String SIGN_DEBUG ="OpenSSLRSAPublicKey{modulus=a9884abe59d76edf8000746835fa4917d006ada2094d10f3ce7d2ec6a2a9e81690632b7d064928df72b596235b1eb30f059e0cb34c44505c90ee1fb896590d99461a8eb3f57d15a54551c66aa155c48bb3b3903b7c6a6125a721713f6bb803a0ae540680160b617fced388485a08b8d91bf4c1bdd74ce499927aaf7a48bec00a225d049827a1d6439fede9c38ccd549ef95deeb62ecbbb361340e4eef6817ea25dadece136f9dbbfe7d402aae84eb373951845fe2544d8d67b8e0258bb03916d92229e44f37b31df784ab76fa1f6598e3e743515980bcccf52f6ab2be53aabb5c9ca72b505b02651c230ef717004e4fe49845e576a866ca04fb00633a48554eb,publicExponent=10001}";
-	private final static String SIGN_PUBLISH = "OpenSSLRSAPublicKey{modulus=a5101c4a7a8cb8cdda2974ad3faf2dead7e27b08baade7269388d07be4b87c41b068866a9b2026f341ce1c9ffbad5b54f004897e6f8013c03d3df328550a23aef256ca4d465ec3f203370ad9f2bd83a5e299e338a442506ca297f44f03f51ce63e1874b915414e390a0b780d921dd5631b365a97cbd2391f70afcb227eebb9b861080ad55212c3659632a4f3ed8fbb46286036aec64cb2b0208e42933072c3bc2462511e23b59223faf5c90c165a83e01b0c435da0df58354cffb0601df0aeeebc02cd66b88d28fda157a992b298d45195e88defe31320777e1305c5ee453df852ea879840a0ab1fa5cb262beb769ff7e988ce7660e44c991c46af12ec93e325,publicExponent=10001}";
-	private final static String X5 ="X";
-	private final static String X5end = "509";
 	public static final String LAST_UPDATETIME = "lasttime";
-	
-//	   <string-array name="weather_array" >
-//       <item>晴</item>
-//       <item>多云</item>
-//       <item>阴</item>
-//       <item>雨</item>
-//       <item>雪</item>
-//       <item>雾霾</item>
-//   </string-array> 
-	
+    private static final String[] ALLOWED_SIG = { "21375b3bcf6135526c48830f37f1e594","f89d0b7eaddc23807f69f5544fb567b2"};
+
 	public static final int[] dayfine = {0, 100};
 	public static final int[] daycloud = {1, 101};
 	public static final int[] dayovercast = {2};
@@ -766,29 +754,6 @@ public class Util
 		return WType[0];
 	}
 
-	public static void checkSign() {
-		PackageManager pm = MyApplication.getContext().getPackageManager();
-		PackageInfo packageinfo;
-		boolean ok = false;
-		try {
-			packageinfo = pm.getPackageInfo(MyApplication.getContext()
-					.getPackageName(), PackageManager.GET_SIGNATURES);
-			  Signature[] signs = packageinfo.signatures;      
-		      Signature sign = signs[0];  
-		      CertificateFactory certFactory = CertificateFactory
-						.getInstance("X.509");
-				X509Certificate cert = (X509Certificate) certFactory
-						.generateCertificate(new ByteArrayInputStream(sign.toByteArray()));
-				String pubKey = cert.getPublicKey().toString();
-				String signNumber = cert.getSerialNumber().toString();   
-				if (pubKey.equals(SIGN_PUBLISH) || pubKey.equals(SIGN_DEBUG))
-				{					
-				}else {
-					System.exit(0);
-				}
-		} catch (Exception e) {
-		}
-	}
 	public static void checkPkg() {
 		PackageManager pm = MyApplication.getContext().getPackageManager();
 		PackageInfo packageinfo;
@@ -806,28 +771,60 @@ public class Util
 		}
 	}
 	
-	public static void checkSign2() {
-		PackageManager pm = MyApplication.getContext().getPackageManager();
-		PackageInfo packageinfo;
-		boolean ok = false;
-		try {
-			packageinfo = pm.getPackageInfo(MyApplication.getContext()
+    public static boolean checkSignatures() {
+        try {
+        	PackageManager pm = MyApplication.getContext().getPackageManager();
+            PackageInfo pkgInfo = pm.getPackageInfo(MyApplication.getContext()
 					.getPackageName(), PackageManager.GET_SIGNATURES);
-			  Signature[] signs = packageinfo.signatures;      
-		      Signature sign = signs[0];  
-		      CertificateFactory certFactory = CertificateFactory
-						.getInstance(X5+namedot+X5end);
-				X509Certificate cert = (X509Certificate) certFactory
-						.generateCertificate(new ByteArrayInputStream(sign.toByteArray()));
-				String pubKey = cert.getPublicKey().toString();
-				String signNumber = cert.getSerialNumber().toString();   
-				if (pubKey.equals(SIGN_PUBLISH) || pubKey.equals(SIGN_DEBUG))
-				{					
-					ok = true;   
-				}else {
-					System.exit(0);
-				}
-		} catch (Exception e) {
-		}
-	}
+            Signature[] sigs = pkgInfo.signatures;
+            if (sigs != null && sigs.length > 0) {
+            	boolean success = false;
+                for (Signature sig : sigs) {
+                    String codedSig = getMD5(sig.toByteArray());
+                    for (String allowedSig : ALLOWED_SIG) {
+                        if (allowedSig.equals(codedSig))
+                        	success = true;
+                    }
+                }
+                if (!success) System.exit(0);
+            }
+        } catch (Exception e) {
+        }
+        return false;
+    }
+    public static byte[] MD5(byte[] input)
+    {
+      MessageDigest md = null;
+      try {
+        md = MessageDigest.getInstance("MD5");
+      } catch (NoSuchAlgorithmException e) {
+        e.printStackTrace();
+      }
+      if (md != null) {
+        md.update(input);
+        return md.digest();
+      }
+      return null;
+    }
+
+    public static String getMD5(byte[] input) {
+        return bytesToHexString(MD5(input));
+    }
+    public static String bytesToHexString(byte[] bytes)
+    {
+        if (bytes == null)
+          return null;
+        String table = "0123456789abcdef";
+        StringBuilder ret = new StringBuilder(2 * bytes.length);
+
+        for (int i = 0; i < bytes.length; ++i)
+        {
+          int b = 0xF & bytes[i] >> 4;
+          ret.append(table.charAt(b));
+          b = 0xF & bytes[i];
+          ret.append(table.charAt(b));
+        }
+
+        return ret.toString();
+      }
 }
