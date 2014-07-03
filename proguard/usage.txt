@@ -395,16 +395,20 @@ com.chuanonly.wallpaper2.util.Util:
     public static final java.lang.String LOG_INT_CNT
     public static final long HOUR_1
     public static final long HOUR_HALF
+    private static final java.lang.String name1
+    private static final java.lang.String name2
+    private static final java.lang.String name3
+    private static final java.lang.String namedot
     public static final java.lang.String LAST_UPDATETIME
     public static final java.lang.String YAHOO_DESC
     public static final java.lang.String SPF_SETTING
     public static final java.lang.String ISYAHOO
     public static final int FORECAST_INFO_MAX_SIZE
     public static final java.lang.String YAHOO_WEATHER_ERROR
-    44:44:public Util()
-    261:340:public static int normalDayOrNight(int,boolean)
-    409:410:public static void release()
-    584:599:public static int getMode()
+    47:47:public Util()
+    269:348:public static int normalDayOrNight(int,boolean)
+    417:418:public static void release()
+    592:607:public static int getMode()
 com.chuanonly.wallpaper2.view.GalleryScrollView:
     private static final int INVALID_POINTER
 com.google.android.gms.R:
