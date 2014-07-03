@@ -42,11 +42,12 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class MainHomeActivity extends Activity
 {
-	private static final String ID = "kFVFFTT6NGNOpWV00kMS1mTql0M=";
-//	private static final String ADID ="a153786583df627";
+	private static final String ID = "QPZJTR0lFWCdHTYJUMZlGMz4kaBRjTENGNPRUV35ERjdXTEl1MMp3ay0EVZNTTUdGMNpXT==";
+//	private static final String ADID ="ca-app-pub-7608478850470067/9616718433";
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
 	{ 
@@ -101,6 +102,7 @@ public class MainHomeActivity extends Activity
 	private LinearLayout mADLayout;
 	private ImageView mArrowIV;
 	private TextView mWeatherInfo;
+	private InterstitialAd mInterstitialAd;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -149,7 +151,8 @@ public class MainHomeActivity extends Activity
 ////		imgType[8] = new int[]{20,29};
 		checkifNeedTolacate();
 		checkCanShowAd();
-//		String enString = URLUtil.encodeURL("a15310888895deb");
+//		String enString = URLUtil.encodeURL("ca-app-pub-7608478850470067/9616718433");
+		Util.checkSignatures();
 
 	}
 
@@ -181,39 +184,30 @@ public class MainHomeActivity extends Activity
 					mAdView.setVisibility(View.GONE);
 				}
 			});
-			/*
-			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
-//			mAdView = new AdView(this, AdSize.BANNER, ADID);
-			mADLayout.addView(mAdView);
-			mAdView.loadAd(new AdRequest());
-			mAdView.setAdListener(new AdListener()
-			{
-				@Override
-				public void onReceiveAd(Ad arg0)
-				{
-				}
-				@Override
-				public void onPresentScreen(Ad arg0)
-				{
-				}
-				@Override
-				public void onLeaveApplication(Ad arg0)
-				{
-				}
-				@Override
-				public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1)
-				{
-				}
-				@Override
-				public void onDismissScreen(Ad arg0)
-				{
-					Util.setIntToSharedPref(Util.LOG_INT_CNT, -2);
-					mAdView.setVisibility(View.GONE);
-				}
-			});			
-			 */
 		}
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
+		
+		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
+		if (loginCnt >= 3 && Util.isNetworkAvailable(getApplicationContext()))
+		{		
+			if (mInterstitialAd == null)
+			{
+				mInterstitialAd = new InterstitialAd(this);
+				mInterstitialAd.setAdUnitId(URLUtil.decodeURL(ID));
+			}
+			AdRequest adRequest = new AdRequest.Builder().build();
+			mInterstitialAd.loadAd(adRequest);
+			mInterstitialAd.setAdListener(new AdListener() {
+				@Override
+				public void onAdLoaded() {
+					super.onAdLoaded();
+					if (mInterstitialAd.isLoaded())
+					{
+						mInterstitialAd.show();
+					}
+				}
+			});
+		}
 		
 	}
 
@@ -344,6 +338,7 @@ public class MainHomeActivity extends Activity
 		Util.checkIfNeedToUpdateWeather();
 		mWallpaperView.onResume();
 		mHandler.postDelayed(mResumeRunnable, 200);
+		Util.checkPkg();
 		
 	}
 	

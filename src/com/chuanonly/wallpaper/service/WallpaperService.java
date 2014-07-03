@@ -27,7 +27,7 @@ public class WallpaperService extends GLWallpaperService
 
 	public static final String ACTION_PAUSE_BROCAST = "com.chuanonly.wallpaper.pausewallpaper";
 
-	private int rate = 50;
+	private int rate = 20;
 
 	private WallPaperRender renderer;
 
