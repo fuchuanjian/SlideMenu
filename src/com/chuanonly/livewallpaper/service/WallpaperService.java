@@ -27,7 +27,7 @@ public class WallpaperService extends GLWallpaperService
 
 	public static final String ACTION_PAUSE_BROCAST = "com.chuanonly.livewallpaper.pausewallpaper";
 
-	private int rate = 50;
+	public final static int RATE = 50;
 
 	private WallPaperRender renderer;
 
@@ -149,7 +149,7 @@ public class WallpaperService extends GLWallpaperService
 			}
 
 			mTimer = Executors.newScheduledThreadPool(1);
-			mTimer.scheduleAtFixedRate(rendeRunnable, 0, (long) (1000 / rate), TimeUnit.MILLISECONDS);
+			mTimer.scheduleAtFixedRate(rendeRunnable, 0, (long) (1000 / RATE), TimeUnit.MILLISECONDS);
 		}
 
 		private boolean stopRendering()

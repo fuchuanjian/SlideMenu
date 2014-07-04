@@ -5,6 +5,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import com.chuanonly.livewallpaper.service.WallPaperRender;
+import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.util.CacheTextrue;
 
 import android.content.Context;
@@ -12,7 +13,7 @@ import android.opengl.GLSurfaceView;
 public class WallPaperGLsurfaceView extends GLSurfaceView
 {
 	
-	private final int RATE = 60;
+	private final int RATE = WallpaperService.RATE;
 	private WallPaperRender mRender;
 	
 	public WallPaperGLsurfaceView(Context context)
