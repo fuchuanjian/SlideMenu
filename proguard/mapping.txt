@@ -1449,11 +1449,10 @@ com.chuanonly.wallpaper2.service.WallPaperRender -> ab:
     326:338:void release() -> a
     341:342:void gc() -> b
 com.chuanonly.wallpaper2.service.WallpaperService -> com.chuanonly.wallpaper2.service.WallpaperService:
-    int rate -> b
-    com.chuanonly.wallpaper2.service.WallPaperRender renderer -> c
-    java.util.ArrayList mEngines -> d
-    android.content.IntentFilter mFilter -> e
-    android.content.BroadcastReceiver mReceiver -> f
+    com.chuanonly.wallpaper2.service.WallPaperRender renderer -> b
+    java.util.ArrayList mEngines -> c
+    android.content.IntentFilter mFilter -> d
+    android.content.BroadcastReceiver mReceiver -> e
     44:46:void onCreate() -> onCreate
     52:60:void onDestroy() -> onDestroy
     66:68:android.service.wallpaper.WallpaperService$Engine onCreateEngine() -> onCreateEngine
@@ -1464,7 +1463,6 @@ com.chuanonly.wallpaper2.service.WallpaperService -> com.chuanonly.wallpaper2.se
     34:34:java.util.ArrayList access$1(com.chuanonly.wallpaper2.service.WallpaperService) -> b
     220:220:void access$2(com.chuanonly.wallpaper2.service.WallpaperService) -> c
     205:205:void access$3(com.chuanonly.wallpaper2.service.WallpaperService) -> d
-    30:30:int access$4(com.chuanonly.wallpaper2.service.WallpaperService) -> e
 com.chuanonly.wallpaper2.service.WallpaperService$1 -> ac:
     com.chuanonly.wallpaper2.service.WallpaperService this$0 -> a
     234:258:void onReceive(android.content.Context,android.content.Intent) -> onReceive
@@ -1716,15 +1714,15 @@ com.chuanonly.wallpaper2.view.WallPaperGLsurfaceView -> com.chuanonly.wallpaper2
     com.chuanonly.wallpaper2.service.WallPaperRender mRender -> b
     java.util.concurrent.ScheduledExecutorService mTimer -> c
     java.lang.Runnable renderTask -> d
-    26:32:void init(android.content.Context) -> a
-    36:38:void onResume() -> onResume
-    42:49:void onPause() -> onPause
-    54:58:void startRendering() -> a
-    62:67:void stopRendering() -> b
-    80:81:void setDirty(int) -> setDirty
+    27:33:void init(android.content.Context) -> a
+    37:39:void onResume() -> onResume
+    43:50:void onPause() -> onPause
+    55:59:void startRendering() -> a
+    63:68:void stopRendering() -> b
+    81:82:void setDirty(int) -> setDirty
 com.chuanonly.wallpaper2.view.WallPaperGLsurfaceView$1 -> aw:
     com.chuanonly.wallpaper2.view.WallPaperGLsurfaceView this$0 -> a
-    74:76:void run() -> run
+    75:77:void run() -> run
 com.google.ads.AdRequest -> com.google.ads.AdRequest:
     java.lang.String VERSION -> VERSION
     java.lang.String LOGTAG -> LOGTAG

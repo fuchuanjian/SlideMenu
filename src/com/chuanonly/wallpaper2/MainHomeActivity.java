@@ -151,7 +151,12 @@ public class MainHomeActivity extends Activity
 		checkifNeedTolacate();
 		checkCanShowAd();
 //		String enString = URLUtil.encodeURL("a15310888895deb");
-		Util.checkSignatures();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				Util.checkSignatures();
+			}
+		}).start();
 
 	}
 

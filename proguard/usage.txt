@@ -311,6 +311,7 @@ com.chuanonly.wallpaper2.service.WallPaperRender:
 com.chuanonly.wallpaper2.service.WallpaperService:
     public static final java.lang.String ACTION_CHANGE_BROCAST
     public static final java.lang.String ACTION_PAUSE_BROCAST
+    public static final int RATE
 com.chuanonly.wallpaper2.util.CacheTextrue:
     8:8:public CacheTextrue()
     50:56:public static int get(java.lang.String)
