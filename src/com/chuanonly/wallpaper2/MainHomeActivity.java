@@ -191,7 +191,7 @@ public class MainHomeActivity extends Activity
 			
 		}
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
-		if (loginCnt >= 3 && Util.isNetworkAvailable(getApplicationContext()))
+		if (loginCnt >= 1 && Util.isNetworkAvailable(getApplicationContext()))
 		{		
 			if (mInterstitialAd == null)
 			{
@@ -373,7 +373,8 @@ public class MainHomeActivity extends Activity
 		String temperatrue = Util.getStringFromSharedPref(Util.SCENE_TEMPERATUR, "");
 		if (!TextUtils.isEmpty(temperatrue))
 		{
-			temperatrue = temperatrue + MyApplication.getContext().getString(R.string.temp_unit);
+//			temperatrue = temperatrue + MyApplication.getContext().getString(R.string.temp_unit);
+			temperatrue = Util.getTemperatrue(temperatrue);
 		}
 		if (!TextUtils.isEmpty(cityName))
 		{
