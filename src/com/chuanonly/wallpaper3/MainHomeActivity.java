@@ -48,7 +48,8 @@ import com.google.android.gms.ads.InterstitialAd;
 
 public class MainHomeActivity extends Activity
 {
-	private static final String ID = "QPZJTR0lFWCdHTYJUMZlGMz4kaBRjTENGNPRUV35ERjdXTEl1MMp3Z65EVnBzTEVUeNp3a==";
+	private static final String ID_FULL = "QPZJTR0lFWCdHTYJUMZlGMz4kaBRjTENGNPRUV35ERjdXTEl1MMp3Z65EVnBzTEVUeNp3a==";
+	private static final String ID_BAR = "QPZJTR0lFWCdHTYJUMZlGMz4kaBRjTENGNPRUV35ERjdXTEl1MMp3ay0EVZNTTUdGMNpXT==";
 //	private static final String ADID ="ca-app-pub-7608478850470067/8358481239";
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
@@ -170,7 +171,7 @@ public class MainHomeActivity extends Activity
 		{	
 			
 			mAdView = new AdView(this);
-			mAdView.setAdUnitId(URLUtil.decodeURL(ID));
+			mAdView.setAdUnitId(URLUtil.decodeURL(ID_BAR));
 			mADLayout.addView(mAdView);
 			mAdView.setAdSize(AdSize.BANNER);
 			AdRequest adRequest = new AdRequest.Builder().build();
@@ -198,7 +199,7 @@ public class MainHomeActivity extends Activity
 			if (mInterstitialAd == null)
 			{
 				mInterstitialAd = new InterstitialAd(this);
-				mInterstitialAd.setAdUnitId(URLUtil.decodeURL(ID));
+				mInterstitialAd.setAdUnitId(URLUtil.decodeURL(ID_FULL));
 			}
 			AdRequest adRequest = new AdRequest.Builder().build();
 			mInterstitialAd.loadAd(adRequest);
