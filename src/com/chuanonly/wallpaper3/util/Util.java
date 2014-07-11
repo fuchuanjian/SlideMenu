@@ -845,7 +845,7 @@ public class Util
 			{				
     			double f = Double.valueOf(temp);
     			f = 32 + f * 1.8;
-    			return String.valueOf(f) + MyApplication.getContext().getString(R.string.temp_f_unit);
+    			return String.format("%.1f", f) + MyApplication.getContext().getString(R.string.temp_f_unit);
 			} catch (Exception e)
 			{
 				Util.setIntToSharedPref(Util.TEMP_TYPE, 0);
