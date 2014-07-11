@@ -376,7 +376,8 @@ public class MainHomeActivity extends Activity
 		String temperatrue = Util.getStringFromSharedPref(Util.SCENE_TEMPERATUR, "");
 		if (!TextUtils.isEmpty(temperatrue))
 		{
-			temperatrue = temperatrue + MyApplication.getContext().getString(R.string.temp_unit);
+//			temperatrue = temperatrue + MyApplication.getContext().getString(R.string.temp_unit);
+			temperatrue = Util.getTemperatrue(temperatrue);
 		}
 		if (!TextUtils.isEmpty(cityName))
 		{

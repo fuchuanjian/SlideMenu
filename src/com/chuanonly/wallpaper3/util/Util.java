@@ -831,4 +831,26 @@ public class Util
 
         return ret.toString();
       }
+    
+	public static final String TEMP_TYPE = "corf";
+    public static String getTemperatrue(String temp)
+    {
+    	if (TextUtils.isEmpty(temp)) return "";
+    	int tempType = Util.getIntFromSharedPref(Util.TEMP_TYPE, 0);
+    	if (tempType == 0)
+    	{
+    		return temp + MyApplication.getContext().getString(R.string.temp_unit);
+    	}else {
+    		try
+			{				
+    			double f = Double.valueOf(temp);
+    			f = 32 + f * 1.8;
+    			return String.valueOf(f) + MyApplication.getContext().getString(R.string.temp_f_unit);
+			} catch (Exception e)
+			{
+				Util.setIntToSharedPref(Util.TEMP_TYPE, 0);
+				return temp + MyApplication.getContext().getString(R.string.temp_unit);
+			}
+		}
+    }
 }

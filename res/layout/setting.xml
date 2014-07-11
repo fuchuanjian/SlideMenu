@@ -172,6 +172,52 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@drawable/divider" />
+            
+            <LinearLayout
+                style="@style/setting_item_layout"
+                android:background="@drawable/list_selector" 
+                android:orientation="horizontal">
+                <LinearLayout 
+                    android:id="@+id/TempCSelectlayout"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.0"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                 <CheckBox 
+                    android:clickable="false"
+                    android:minWidth="23dp"
+                    android:id="@+id/checkbox_temperC"
+                    style="@style/setting_item_checkbox" />
+                  <TextView
+                        style="@style/setting_item_main_text"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/temp_unit" />
+                </LinearLayout>
+				<LinearLayout 
+                    android:id="@+id/TempFSelectlayout"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.0"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                 <CheckBox 
+                    android:clickable="false"
+                    android:minWidth="23dp"
+                    android:id="@+id/checkbox_temperF"
+                    style="@style/setting_item_checkbox" />
+                  <TextView
+                      	android:layout_marginLeft="5dp"
+                        style="@style/setting_item_main_text"
+                        android:text="@string/temp_f_unit" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/divider" />
+            
 
             <TextView
                 style="@style/setting_item_desc_text"
