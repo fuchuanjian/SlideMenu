@@ -89,34 +89,35 @@ com.aps.i:
     public abstract void a(com.aps.h,android.app.PendingIntent)
     public abstract void a(android.app.PendingIntent)
     public abstract int e()
-com.chuanonly.wallpaper2.APPUncaughtExceptionHandler:
+com.chuanonly.wallpaper3.APPUncaughtExceptionHandler:
     private static final java.lang.String TAG
     59:65:public void release()
     95:97:private void finishSelf()
     99:127:private java.lang.String saveCrashInfo2File(java.lang.Throwable)
-com.chuanonly.wallpaper2.BuildConfig
-com.chuanonly.wallpaper2.MainHomeActivity:
-    private static final java.lang.String ID
-com.chuanonly.wallpaper2.MainHomeActivity$ViewHolder:
+com.chuanonly.wallpaper3.BuildConfig
+com.chuanonly.wallpaper3.MainHomeActivity:
+    private static final java.lang.String ID_FULL
+    private static final java.lang.String ID_BAR
+com.chuanonly.wallpaper3.MainHomeActivity$ViewHolder:
     public android.widget.TextView desc
-com.chuanonly.wallpaper2.MyApplication:
-    57:57:public static com.chuanonly.wallpaper2.MyApplication getInstance()
-com.chuanonly.wallpaper2.R
-com.chuanonly.wallpaper2.R$anim
-com.chuanonly.wallpaper2.R$array
-com.chuanonly.wallpaper2.R$attr
-com.chuanonly.wallpaper2.R$color
-com.chuanonly.wallpaper2.R$dimen
-com.chuanonly.wallpaper2.R$drawable
-com.chuanonly.wallpaper2.R$id
-com.chuanonly.wallpaper2.R$integer
-com.chuanonly.wallpaper2.R$layout
-com.chuanonly.wallpaper2.R$raw
-com.chuanonly.wallpaper2.R$string
-com.chuanonly.wallpaper2.R$style
-com.chuanonly.wallpaper2.R$styleable
-com.chuanonly.wallpaper2.R$xml
-com.chuanonly.wallpaper2.YahooWeatherConsts:
+com.chuanonly.wallpaper3.MyApplication:
+    57:57:public static com.chuanonly.wallpaper3.MyApplication getInstance()
+com.chuanonly.wallpaper3.R
+com.chuanonly.wallpaper3.R$anim
+com.chuanonly.wallpaper3.R$array
+com.chuanonly.wallpaper3.R$attr
+com.chuanonly.wallpaper3.R$color
+com.chuanonly.wallpaper3.R$dimen
+com.chuanonly.wallpaper3.R$drawable
+com.chuanonly.wallpaper3.R$id
+com.chuanonly.wallpaper3.R$integer
+com.chuanonly.wallpaper3.R$layout
+com.chuanonly.wallpaper3.R$raw
+com.chuanonly.wallpaper3.R$string
+com.chuanonly.wallpaper3.R$style
+com.chuanonly.wallpaper3.R$styleable
+com.chuanonly.wallpaper3.R$xml
+com.chuanonly.wallpaper3.YahooWeatherConsts:
     public static final java.lang.String XML_TAG_WOEID_QUALITY
     public static final java.lang.String XML_TAG_WOEID_LATITUDE
     public static final java.lang.String XML_TAG_WOEID_LONGITUDE
@@ -136,19 +137,19 @@ com.chuanonly.wallpaper2.YahooWeatherConsts:
     public static final java.lang.String XML_TAG_WOEID_WOEID
     20:20:public YahooWeatherConsts()
     113:113:public static java.lang.String getConditionByCode(int)
-com.chuanonly.wallpaper2.data.Constant:
+com.chuanonly.wallpaper3.data.Constant:
     3:3:public Constant()
-com.chuanonly.wallpaper2.data.WallpaperInfo:
+com.chuanonly.wallpaper3.data.WallpaperInfo:
     12:12:public WallpaperInfo()
     71:71:public static java.lang.String toStr()
-com.chuanonly.wallpaper2.model.GLFireBalloon:
+com.chuanonly.wallpaper3.model.GLFireBalloon:
     private static final int DEGREES_MAX
     15:16:public void setRotateRadius(int)
     45:45:public float[] getDestXY()
-com.chuanonly.wallpaper2.model.Particle:
+com.chuanonly.wallpaper3.model.Particle:
     public static final float UNIT
     46:48:public void setInitDiffXY(float,float)
-com.chuanonly.wallpaper2.model.WOEIDInfo:
+com.chuanonly.wallpaper3.model.WOEIDInfo:
     23:24:protected void setQuality(int)
     27:28:protected void setLatitude(java.lang.String)
     31:32:protected void setLongtitde(java.lang.String)
@@ -182,7 +183,7 @@ com.chuanonly.wallpaper2.model.WOEIDInfo:
     143:143:public java.lang.String getCountrycode()
     147:147:public java.lang.String getStatecode()
     155:156:public void setNeighborhood(java.lang.String)
-com.chuanonly.wallpaper2.model.WOEIDUtils:
+com.chuanonly.wallpaper3.model.WOEIDUtils:
     public static final java.lang.String WOEID_NOT_FOUND
     public static final int QUALITY_NOT_DEFINED
     private static final java.lang.String WOEID_QUERY_PREFIX_FIND_BY_PLACE
@@ -193,19 +194,19 @@ com.chuanonly.wallpaper2.model.WOEIDUtils:
     80:86:public java.lang.String getWOEIDlocation()
     98:98:public java.lang.String getWOEID(android.content.Context,java.lang.String,java.lang.String)
     124:139:private java.lang.String queryWOEIDfromYahooAPIs(android.content.Context,java.lang.String,java.lang.String)
-com.chuanonly.wallpaper2.model.WeatherInfo:
+com.chuanonly.wallpaper3.model.WeatherInfo:
     79:79:public java.util.List getForecastInfoList()
     83:84:protected void setForecastInfoList(java.util.List)
-    87:87:public com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo getForecastInfo1()
-    91:92:protected void setForecastInfo1(com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo)
-    95:95:public com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo getForecastInfo2()
-    99:100:protected void setForecastInfo2(com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo)
-    103:103:public com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo getForecastInfo3()
-    107:108:protected void setForecastInfo3(com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo)
-    111:111:public com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo getForecastInfo4()
-    115:116:protected void setForecastInfo4(com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo)
-    119:119:public com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo getForecastInfo5()
-    123:124:protected void setForecastInfo5(com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo)
+    87:87:public com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo getForecastInfo1()
+    91:92:protected void setForecastInfo1(com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo)
+    95:95:public com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo getForecastInfo2()
+    99:100:protected void setForecastInfo2(com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo)
+    103:103:public com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo getForecastInfo3()
+    107:108:protected void setForecastInfo3(com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo)
+    111:111:public com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo getForecastInfo4()
+    115:116:protected void setForecastInfo4(com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo)
+    119:119:public com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo getForecastInfo5()
+    123:124:protected void setForecastInfo5(com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo)
     127:127:public java.lang.String getCurrentConditionDate()
     144:144:public int getCurrentTempF()
     157:157:public java.lang.String getTitle()
@@ -238,8 +239,8 @@ com.chuanonly.wallpaper2.model.WeatherInfo:
     357:357:public java.lang.String getWOEIDCounty()
     361:361:public java.lang.String getWOEIDCountry()
     365:365:public java.lang.String getWOEIDState()
-    332:332:static synthetic int access$0(com.chuanonly.wallpaper2.model.WeatherInfo,int)
-com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo:
+    332:332:static synthetic int access$0(com.chuanonly.wallpaper3.model.WeatherInfo,int)
+com.chuanonly.wallpaper3.model.WeatherInfo$ForecastInfo:
     private java.lang.String mForecastDay
     private java.lang.String mForecastDate
     private int mForecastCode
@@ -269,78 +270,78 @@ com.chuanonly.wallpaper2.model.WeatherInfo$ForecastInfo:
     448:448:public java.lang.String getForecastConditionIconURL()
     452:452:public java.lang.String getForecastText()
     456:457:protected void setForecastText(java.lang.String)
-com.chuanonly.wallpaper2.model.WeatherType
-com.chuanonly.wallpaper2.scenes.Background:
+com.chuanonly.wallpaper3.model.WeatherType
+com.chuanonly.wallpaper3.scenes.Background:
     public java.lang.String mVertexShader
     public java.lang.String mFragmentShader
     72:76:public Background(java.lang.String,boolean)
     169:176:public void setDirty(java.lang.String)
     208:210:public java.lang.String getBgStr()
     220:221:public void setCurrentSceneDefaultBackground()
-com.chuanonly.wallpaper2.scenes.BaseScene:
+com.chuanonly.wallpaper3.scenes.BaseScene:
     public java.lang.String mVertexShader
     public java.lang.String mFragmentShader
     139:140:public void setCanUseCostom(boolean)
     143:145:public void setIsStatic(boolean)
-com.chuanonly.wallpaper2.scenes.GLNAScene
-com.chuanonly.wallpaper2.scenes.GLRain:
+com.chuanonly.wallpaper3.scenes.GLNAScene
+com.chuanonly.wallpaper3.scenes.GLRain:
     404:408:public varargs void setFloatValue(float[],float[])
-com.chuanonly.wallpaper2.scenes.GLSandstormScene
-com.chuanonly.wallpaper2.scenes.GLShowerRain:
+com.chuanonly.wallpaper3.scenes.GLSandstormScene
+com.chuanonly.wallpaper3.scenes.GLShowerRain:
     326:330:public varargs void setFloatValue(float[],float[])
-com.chuanonly.wallpaper2.scenes.GLShowerSnow:
+com.chuanonly.wallpaper3.scenes.GLShowerSnow:
     334:338:public varargs void setFloatValue(float[],float[])
-com.chuanonly.wallpaper2.scenes.GLSnowScene:
+com.chuanonly.wallpaper3.scenes.GLSnowScene:
     497:501:public varargs void setFloatValue(float[],float[])
-com.chuanonly.wallpaper2.scenes.GLSunny:
+com.chuanonly.wallpaper3.scenes.GLSunny:
     196:212:public int initTexture(int,int)
-com.chuanonly.wallpaper2.service.GLWallpaperService:
+com.chuanonly.wallpaper3.service.GLWallpaperService:
     private static final java.lang.String TAG
-com.chuanonly.wallpaper2.service.GLWallpaperService$GLSurfaceViewEngine:
+com.chuanonly.wallpaper3.service.GLWallpaperService$GLSurfaceViewEngine:
     public static final int RENDERMODE_WHEN_DIRTY
     public static final int RENDERMODE_CONTINUOUSLY
     private static final java.lang.String TAG
-com.chuanonly.wallpaper2.service.GLWallpaperService$GLSurfaceViewEngine$WallpaperGLSurfaceView:
+com.chuanonly.wallpaper3.service.GLWallpaperService$GLSurfaceViewEngine$WallpaperGLSurfaceView:
     private static final java.lang.String TAG
-com.chuanonly.wallpaper2.service.GLWallpaperService$OpenGLEngine
-com.chuanonly.wallpaper2.service.WallPaperRender:
+com.chuanonly.wallpaper3.service.GLWallpaperService$OpenGLEngine
+com.chuanonly.wallpaper3.service.WallPaperRender:
     private android.opengl.GLSurfaceView mSurfaceView
-    224:224:public com.chuanonly.wallpaper2.scenes.Background getbBackground()
+    224:224:public com.chuanonly.wallpaper3.scenes.Background getbBackground()
     318:318:public android.opengl.GLSurfaceView getSurfaceView()
     322:323:public void setSurfaceView(android.opengl.GLSurfaceView)
-com.chuanonly.wallpaper2.service.WallpaperService:
+com.chuanonly.wallpaper3.service.WallpaperService:
     public static final java.lang.String ACTION_CHANGE_BROCAST
     public static final java.lang.String ACTION_PAUSE_BROCAST
     public static final int RATE
-com.chuanonly.wallpaper2.util.CacheTextrue:
+com.chuanonly.wallpaper3.util.CacheTextrue:
     8:8:public CacheTextrue()
     50:56:public static int get(java.lang.String)
     61:67:public static int getWidth(java.lang.String)
     72:78:public static int getHeight(java.lang.String)
     94:102:public static void put(java.lang.String,int,int,int)
     106:107:public static void put(int,float,float,int,int)
-com.chuanonly.wallpaper2.util.Http:
+com.chuanonly.wallpaper3.util.Http:
     30:30:public Http()
-com.chuanonly.wallpaper2.util.MatrixState:
+com.chuanonly.wallpaper3.util.MatrixState:
     3:3:public MatrixState()
     64:65:public static void rotate(float,float,float,float)
     110:111:public static void setProject(float,float,float,float,float,float)
-com.chuanonly.wallpaper2.util.OpenGLUtils:
+com.chuanonly.wallpaper3.util.OpenGLUtils:
     25:25:public OpenGLUtils()
     68:68:public static android.graphics.Bitmap decodeResource(int,float)
     145:153:public static android.graphics.Bitmap decodeFile(java.lang.String)
-com.chuanonly.wallpaper2.util.QueryCityHandler:
+com.chuanonly.wallpaper3.util.QueryCityHandler:
     public static final java.lang.String CHINA
     179:179:public java.util.List getAllCityNames(java.lang.String)
-com.chuanonly.wallpaper2.util.ShaderManager:
+com.chuanonly.wallpaper3.util.ShaderManager:
     121:121:public java.lang.String getVertexShader()
     126:126:public java.lang.String getFragmentShader()
     145:145:public boolean isLowVersion()
-com.chuanonly.wallpaper2.util.ShaderUtil:
+com.chuanonly.wallpaper3.util.ShaderUtil:
     9:9:public ShaderUtil()
     79:99:public static java.lang.String loadFromAssetsFile(java.lang.String,android.content.res.Resources)
     103:105:public static int change2Pow(int)
-com.chuanonly.wallpaper2.util.URLUtil:
+com.chuanonly.wallpaper3.util.URLUtil:
     public static final int NO_OPTIONS
     public static final int ENCODE
     public static final int DECODE
@@ -375,13 +376,13 @@ com.chuanonly.wallpaper2.util.URLUtil:
     1617:1631:public static void decodeFileToFile(java.lang.String,java.lang.String)
     2070:2113:public static java.lang.String encodeURL(java.lang.String)
     500:500:static synthetic byte[] access$1(byte[],int,int,byte[],int,int)
-com.chuanonly.wallpaper2.util.URLUtil$1
-com.chuanonly.wallpaper2.util.URLUtil$InputStream
-com.chuanonly.wallpaper2.util.URLUtil$OutputStream:
+com.chuanonly.wallpaper3.util.URLUtil$1
+com.chuanonly.wallpaper3.util.URLUtil$InputStream
+com.chuanonly.wallpaper3.util.URLUtil$OutputStream:
     1879:1880:public URLUtil$OutputStream(java.io.OutputStream)
     2049:2051:public void suspendEncoding()
     2062:2063:public void resumeEncoding()
-com.chuanonly.wallpaper2.util.Util:
+com.chuanonly.wallpaper3.util.Util:
     public static final java.lang.String TYPE
     public static final java.lang.String REAL_TYPE
     public static final java.lang.String SCENE_INFO
@@ -406,11 +407,12 @@ com.chuanonly.wallpaper2.util.Util:
     public static final java.lang.String ISYAHOO
     public static final int FORECAST_INFO_MAX_SIZE
     public static final java.lang.String YAHOO_WEATHER_ERROR
+    public static final java.lang.String TEMP_TYPE
     47:47:public Util()
     269:348:public static int normalDayOrNight(int,boolean)
     417:418:public static void release()
     592:607:public static int getMode()
-com.chuanonly.wallpaper2.view.GalleryScrollView:
+com.chuanonly.wallpaper3.view.GalleryScrollView:
     private static final int INVALID_POINTER
 com.google.android.gms.R:
     9:9:public R()

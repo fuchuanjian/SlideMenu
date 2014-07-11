@@ -60,5 +60,9 @@
 				android:resource="@xml/wallpaper_icon"/>
 		</service>	
     </application>
-
+    <supports-screens android:anyDensity="true"
+                      android:smallScreens="true"
+                      android:normalScreens="true"
+                      android:largeScreens="true"
+                      android:xlargeScreens="true"/>
 </manifest>

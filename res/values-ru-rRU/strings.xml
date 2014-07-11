@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="wallpaper_name">3D Погода Live Wallpaper</string>
-    <string name="app_name">3D Погода Live Wallpaper</string>
+    <string name="wallpaper_name">Текущая погода обои</string>
+    <string name="app_name">Текущая погода обои</string>
     <string name="toast_exit">Пресс возвращение кнопку еще раз, чтобы выйти из</string>
     <string name="temp_unit">°C</string>
     

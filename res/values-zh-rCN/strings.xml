@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
- <string name="wallpaper_name">3D天气动态壁纸</string>
-    <string name="app_name">3D天气动态壁纸</string>
+ <string name="wallpaper_name">动态天气壁纸</string>
+    <string name="app_name">动态天气壁纸</string>
     <string name="toast_exit">再按一下返回键退出</string>
     <string name="temp_unit">°C</string>
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="wallpaper_name">3D天気ライブ壁紙</string>
-    <string name="app_name">3D天気の壁紙</string>
+    <string name="wallpaper_name">天気壁紙</string>
+    <string name="app_name">天気壁紙</string>
     <string name="toast_exit">再び終了し、Returnキーを押しますキー</string>
     <string name="temp_unit">°C</string>
     

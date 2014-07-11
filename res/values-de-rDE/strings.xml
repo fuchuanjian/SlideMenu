@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
- <string name="wallpaper_name">3D Wetter Live Wallpaper</string>
-    <string name="app_name">3D Wetter Live Wallpaper 3D</string>
+ <string name="wallpaper_name">Wetter-Live Wallpaper</string>
+    <string name="app_name">Wetter-Live Wallpaper</string>
     <string name="toast_exit">Return-Taste drücken, um zu beenden</string>
     <string name="temp_unit">°C</string>
     
