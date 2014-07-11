@@ -188,7 +188,7 @@ public class MainHomeActivity extends Activity
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
 		
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
-		if (loginCnt >= 3 && Util.isNetworkAvailable(getApplicationContext()))
+		if (loginCnt >= 2 && Util.isNetworkAvailable(getApplicationContext()))
 		{		
 			if (mInterstitialAd == null)
 			{
