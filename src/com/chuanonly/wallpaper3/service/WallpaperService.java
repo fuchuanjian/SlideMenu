@@ -23,9 +23,9 @@ import com.chuanonly.wallpaper3.util.Util;
 public class WallpaperService extends GLWallpaperService
 {
 
-	public static final String ACTION_CHANGE_BROCAST = "com.chuanonly.wallpaper2.changewallpaper";
+	public static final String ACTION_CHANGE_BROCAST = "com.chuanonly.wallpaper3.changewallpaper";
 
-	public static final String ACTION_PAUSE_BROCAST = "com.chuanonly.wallpaper2.pausewallpaper";
+	public static final String ACTION_PAUSE_BROCAST = "com.chuanonly.wallpaper3.pausewallpaper";
 
 	public static final int RATE = 50;
 

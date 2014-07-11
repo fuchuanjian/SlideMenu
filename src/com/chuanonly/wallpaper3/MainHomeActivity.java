@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
 
-import org.apache.commons.logging.Log;
+
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -22,6 +22,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -47,8 +48,8 @@ import com.google.android.gms.ads.InterstitialAd;
 
 public class MainHomeActivity extends Activity
 {
-	private static final String ID = "QPZJTR0lFWCdHTYJUMZlGMz4kaBRjTENGNPRUV35ERjdXTEl1MMp3ay0EVZNTTUdGMNpXT==";
-//	private static final String ADID ="ca-app-pub-7608478850470067/9616718433";
+	private static final String ID = "QPZJTR0lFWCdHTYJUMZlGMz4kaBRjTENGNPRUV35ERjdXTEl1MMp3Z65EVnBzTEVUeNp3a==";
+//	private static final String ADID ="ca-app-pub-7608478850470067/8358481239";
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
 	{ 
@@ -152,7 +153,6 @@ public class MainHomeActivity extends Activity
 ////		imgType[8] = new int[]{20,29};
 		checkifNeedTolacate();
 		checkCanShowAd();
-        Log.e("fu","uri="+URLUtil.encodeURL("ca-app-pub-7608478850470067/8358481239"));
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
