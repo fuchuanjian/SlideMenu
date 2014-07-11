@@ -73,7 +73,7 @@ public class WallPaperRender implements GLSurfaceView.Renderer {
 			long lasttime = Util.getLongFromSharedPref(Util.LAST_UPDATETIME, 0);
 			if (lasttime + Util.HOUR_1 < curTime)
 			{
-				int index = new Random().nextInt(12);
+				int index = new Random().nextInt(MainHomeActivity.imgType.length);
 				if(index == 10) index = 2; //雪
 				if(index == 11) index = 3; //雨
 				category =  MainHomeActivity.imgType[index][new Random().nextInt(MainHomeActivity.imgType[index].length)];
