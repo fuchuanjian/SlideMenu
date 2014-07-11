@@ -261,6 +261,8 @@ com.chuanonly.livewallpaper.R$drawable: int sunshine_1
 com.chuanonly.livewallpaper.R$drawable: int sunshine_2
 com.chuanonly.livewallpaper.R$drawable: int sunshine_3
 com.chuanonly.livewallpaper.R$drawable: int titlebar
+com.chuanonly.livewallpaper.R$id: int TempCSelectlayout
+com.chuanonly.livewallpaper.R$id: int TempFSelectlayout
 com.chuanonly.livewallpaper.R$id: int book_now
 com.chuanonly.livewallpaper.R$id: int btn_layout
 com.chuanonly.livewallpaper.R$id: int buyButton
@@ -269,6 +271,8 @@ com.chuanonly.livewallpaper.R$id: int buy_with_google
 com.chuanonly.livewallpaper.R$id: int checkbox_1
 com.chuanonly.livewallpaper.R$id: int checkbox_2
 com.chuanonly.livewallpaper.R$id: int checkbox_3
+com.chuanonly.livewallpaper.R$id: int checkbox_temperC
+com.chuanonly.livewallpaper.R$id: int checkbox_temperF
 com.chuanonly.livewallpaper.R$id: int cityList
 com.chuanonly.livewallpaper.R$id: int city_info
 com.chuanonly.livewallpaper.R$id: int classic
@@ -313,6 +317,7 @@ com.chuanonly.livewallpaper.R$id: int setting_panel_layout
 com.chuanonly.livewallpaper.R$id: int setting_wallpaper
 com.chuanonly.livewallpaper.R$id: int strict_sandbox
 com.chuanonly.livewallpaper.R$id: int terrain
+com.chuanonly.livewallpaper.R$id: int thank_layout
 com.chuanonly.livewallpaper.R$id: int title
 com.chuanonly.livewallpaper.R$id: int wallpaper
 com.chuanonly.livewallpaper.R$id: int weather_info_txt
@@ -373,6 +378,7 @@ com.chuanonly.livewallpaper.R$string: int random_change
 com.chuanonly.livewallpaper.R$string: int random_change_two_hour
 com.chuanonly.livewallpaper.R$string: int set_wallpaper
 com.chuanonly.livewallpaper.R$string: int setting
+com.chuanonly.livewallpaper.R$string: int temp_f_unit
 com.chuanonly.livewallpaper.R$string: int temp_unit
 com.chuanonly.livewallpaper.R$string: int thank
 com.chuanonly.livewallpaper.R$string: int toast_exit

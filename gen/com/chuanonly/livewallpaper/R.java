@@ -520,6 +520,8 @@ containing a value of this type.
         public static final int titlebar=0x7f020069;
     }
     public static final class id {
+        public static final int TempCSelectlayout=0x7f090032;
+        public static final int TempFSelectlayout=0x7f090034;
         public static final int book_now=0x7f090010;
         public static final int btn_layout=0x7f09001c;
         public static final int buyButton=0x7f09000a;
@@ -528,10 +530,12 @@ containing a value of this type.
         public static final int checkbox_1=0x7f09002a;
         public static final int checkbox_2=0x7f09002d;
         public static final int checkbox_3=0x7f09002f;
+        public static final int checkbox_temperC=0x7f090033;
+        public static final int checkbox_temperF=0x7f090035;
         public static final int cityList=0x7f090017;
         public static final int city_info=0x7f090028;
         public static final int classic=0x7f090011;
-        public static final int contacts_listitem_texts=0x7f090034;
+        public static final int contacts_listitem_texts=0x7f090039;
         public static final int current_wallpaper=0x7f09002b;
         public static final int desc=0x7f090020;
         public static final int empty_city=0x7f090018;
@@ -541,7 +545,7 @@ containing a value of this type.
         public static final int holo_light=0x7f090006;
         public static final int hybrid=0x7f090004;
         public static final int icon=0x7f09001f;
-        public static final int last_divider=0x7f090033;
+        public static final int last_divider=0x7f090038;
         public static final int layout_1=0x7f090029;
         public static final int layout_2=0x7f09002c;
         public static final int layout_3=0x7f09002e;
@@ -555,10 +559,10 @@ containing a value of this type.
         public static final int ok=0x7f09001e;
         public static final int production=0x7f090007;
         public static final int queryCityText=0x7f090016;
-        public static final int radioText1=0x7f090035;
-        public static final int radioText2=0x7f090036;
-        public static final int radioText3=0x7f090037;
-        public static final int rate_layout=0x7f090032;
+        public static final int radioText1=0x7f09003a;
+        public static final int radioText2=0x7f09003b;
+        public static final int radioText3=0x7f09003c;
+        public static final int rate_layout=0x7f090037;
         public static final int return_btn=0x7f090014;
         public static final int sandbox=0x7f090008;
         public static final int satellite=0x7f090002;
@@ -572,6 +576,7 @@ containing a value of this type.
         public static final int setting_wallpaper=0x7f090023;
         public static final int strict_sandbox=0x7f090009;
         public static final int terrain=0x7f090003;
+        public static final int thank_layout=0x7f090036;
         public static final int title=0x7f090015;
         public static final int wallpaper=0x7f090021;
         public static final int weather_info_txt=0x7f090030;
@@ -591,7 +596,7 @@ containing a value of this type.
         public static final int cities=0x7f060000;
     }
     public static final class string {
-        public static final int about=0x7f070033;
+        public static final int about=0x7f070034;
         public static final int app_name=0x7f070021;
         public static final int auth_client_needs_enabling_title=0x7f070001;
         public static final int auth_client_needs_installation_title=0x7f070002;
@@ -599,8 +604,8 @@ containing a value of this type.
         public static final int auth_client_play_services_err_notification_msg=0x7f070004;
         public static final int auth_client_requested_by_msg=0x7f070005;
         public static final int auth_client_using_bad_version_title=0x7f070000;
-        public static final int china=0x7f070028;
-        public static final int chose_city=0x7f070032;
+        public static final int china=0x7f070029;
+        public static final int chose_city=0x7f070033;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -690,12 +695,12 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f07001e;
-        public static final int dislpay_setting=0x7f070025;
-        public static final int display_base_city=0x7f070031;
-        public static final int empty=0x7f07002b;
-        public static final int error=0x7f070027;
-        public static final int feedback=0x7f070037;
-        public static final int input_city_name=0x7f070034;
+        public static final int dislpay_setting=0x7f070026;
+        public static final int display_base_city=0x7f070032;
+        public static final int empty=0x7f07002c;
+        public static final int error=0x7f070028;
+        public static final int feedback=0x7f070038;
+        public static final int input_city_name=0x7f070035;
         /**  setting 
  setting 
  setting 
@@ -704,24 +709,25 @@ containing a value of this type.
  setting 
  setting 
          */
-        public static final int no_change=0x7f07002c;
-        public static final int no_change_desc=0x7f07002e;
-        public static final int no_change_desc_default=0x7f07002d;
-        public static final int not_find_city=0x7f070035;
-        public static final int random_change=0x7f07002f;
-        public static final int random_change_two_hour=0x7f070030;
-        public static final int set_wallpaper=0x7f070026;
-        public static final int setting=0x7f070024;
+        public static final int no_change=0x7f07002d;
+        public static final int no_change_desc=0x7f07002f;
+        public static final int no_change_desc_default=0x7f07002e;
+        public static final int not_find_city=0x7f070036;
+        public static final int random_change=0x7f070030;
+        public static final int random_change_two_hour=0x7f070031;
+        public static final int set_wallpaper=0x7f070027;
+        public static final int setting=0x7f070025;
+        public static final int temp_f_unit=0x7f070024;
         public static final int temp_unit=0x7f070023;
-        public static final int thank=0x7f070036;
+        public static final int thank=0x7f070037;
         public static final int toast_exit=0x7f070022;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
         public static final int wallet_buy_button_place_holder=0x7f07001f;
         public static final int wallpaper_name=0x7f070020;
-        public static final int weather_city=0x7f070029;
-        public static final int weather_info=0x7f07002a;
+        public static final int weather_city=0x7f07002a;
+        public static final int weather_info=0x7f07002b;
     }
     public static final class style {
         /**  Application theme. 
