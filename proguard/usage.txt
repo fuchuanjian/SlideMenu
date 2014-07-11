@@ -405,6 +405,7 @@ com.chuanonly.wallpaper.util.Util:
     public static final java.lang.String ISYAHOO
     public static final int FORECAST_INFO_MAX_SIZE
     public static final java.lang.String YAHOO_WEATHER_ERROR
+    public static final java.lang.String TEMP_TYPE
     47:47:public Util()
     267:346:public static int normalDayOrNight(int,boolean)
     415:416:public static void release()

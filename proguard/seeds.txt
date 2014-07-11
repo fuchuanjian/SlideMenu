@@ -260,6 +260,8 @@ com.chuanonly.wallpaper.R$drawable: int sunshine_1
 com.chuanonly.wallpaper.R$drawable: int sunshine_2
 com.chuanonly.wallpaper.R$drawable: int sunshine_3
 com.chuanonly.wallpaper.R$drawable: int titlebar
+com.chuanonly.wallpaper.R$id: int TempCSelectlayout
+com.chuanonly.wallpaper.R$id: int TempFSelectlayout
 com.chuanonly.wallpaper.R$id: int book_now
 com.chuanonly.wallpaper.R$id: int btn_layout
 com.chuanonly.wallpaper.R$id: int buyButton
@@ -268,6 +270,8 @@ com.chuanonly.wallpaper.R$id: int buy_with_google
 com.chuanonly.wallpaper.R$id: int checkbox_1
 com.chuanonly.wallpaper.R$id: int checkbox_2
 com.chuanonly.wallpaper.R$id: int checkbox_3
+com.chuanonly.wallpaper.R$id: int checkbox_temperC
+com.chuanonly.wallpaper.R$id: int checkbox_temperF
 com.chuanonly.wallpaper.R$id: int cityList
 com.chuanonly.wallpaper.R$id: int city_info
 com.chuanonly.wallpaper.R$id: int classic
@@ -373,6 +377,7 @@ com.chuanonly.wallpaper.R$string: int random_change
 com.chuanonly.wallpaper.R$string: int random_change_two_hour
 com.chuanonly.wallpaper.R$string: int set_wallpaper
 com.chuanonly.wallpaper.R$string: int setting
+com.chuanonly.wallpaper.R$string: int temp_f_unit
 com.chuanonly.wallpaper.R$string: int temp_unit
 com.chuanonly.wallpaper.R$string: int thank
 com.chuanonly.wallpaper.R$string: int toast_exit

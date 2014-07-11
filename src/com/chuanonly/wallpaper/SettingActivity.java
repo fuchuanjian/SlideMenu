@@ -27,6 +27,7 @@ public class SettingActivity extends Activity
 	private View layouts[] = new View[3];
 	private TextView weatherInfoTV;
 	private TextView mCurWallpaerTV;
+	private CheckBox checkBoxC, checkBoxF;
 	
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -87,8 +88,36 @@ public class SettingActivity extends Activity
 				
 			}
 		});
+		
+		
+		checkBoxC = (CheckBox) findViewById(R.id.checkbox_temperC);
+		checkBoxF = (CheckBox) findViewById(R.id.checkbox_temperF);
+		
+		int tempType = Util.getIntFromSharedPref(Util.TEMP_TYPE, 0);
+		checkBoxC.setChecked(tempType == 0? true : false);
+		checkBoxF.setChecked(tempType == 0? false : true);
+		findViewById(R.id.checkbox_temperC).setOnClickListener(tempClick);
+		findViewById(R.id.checkbox_temperF).setOnClickListener(tempClick);
 	}
 
+	private OnClickListener tempClick = new OnClickListener()
+	{
+		@Override
+		public void onClick(View v)
+		{
+			if (v.getId() == R.id.checkbox_temperC)
+			{
+				Util.setIntToSharedPref(Util.TEMP_TYPE, 0);
+			}else if (v.getId() == R.id.checkbox_temperF){
+				Util.setIntToSharedPref(Util.TEMP_TYPE, 1);
+			}
+			int tempType = Util.getIntFromSharedPref(Util.TEMP_TYPE, 0);
+			checkBoxC.setChecked(tempType == 0? true : false);
+			checkBoxF.setChecked(tempType == 0? false : true);
+			showWeatherInfo();
+		}
+		
+	};
 	private void showWeatherInfo()
 	{
 		String cityName = Util.getCityName();
@@ -96,7 +125,8 @@ public class SettingActivity extends Activity
 		String temperatrue = Util.getStringFromSharedPref(Util.SCENE_TEMPERATUR, "");
 		if (!TextUtils.isEmpty(temperatrue))
 		{
-			temperatrue = temperatrue + MyApplication.getContext().getString(R.string.temp_unit);
+//			temperatrue = temperatrue + MyApplication.getContext().getString(R.string.temp_unit);
+			temperatrue = Util.getTemperatrue(temperatrue);
 		}
 		String weatherInfo = MyApplication.getContext().getString(R.string.weather_info, cityName, info, temperatrue);
 		String total =  MyApplication.getContext().getString(R.string.weather_city) + weatherInfo;
