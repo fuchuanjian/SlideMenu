@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
 
-import android.R.integer;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.WallpaperManager;
@@ -21,7 +20,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,25 +28,25 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+import cn.domob.android.ads.DomobAdEventListener;
+import cn.domob.android.ads.DomobAdManager.ErrorCode;
+import cn.domob.android.ads.DomobAdView;
+import cn.domob.android.ads.DomobInterstitialAd;
+import cn.domob.android.ads.DomobInterstitialAdListener;
 
 import com.chuanonly.livewallpaper.model.WeatherType;
 import com.chuanonly.livewallpaper.service.WallpaperService;
 import com.chuanonly.livewallpaper.task.HTTPTask;
 import com.chuanonly.livewallpaper.task.LocateHandler;
-import com.chuanonly.livewallpaper.util.URLUtil;
 import com.chuanonly.livewallpaper.util.Util;
 import com.chuanonly.livewallpaper.view.GalleryScrollView;
 import com.chuanonly.livewallpaper.view.WallPaperGLsurfaceView;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 
 public class MainHomeActivity extends Activity
 {
-	private static final String ID = "QPZJTR0lFWCdHTYJUMZlGMz4kaBRjTENGNPRUV35ERjdXTEl1MMpXV35ERZVTTUd2dNpXW==";
-	private static final String ADID ="ca-app-pub-7608478850470067/5046918036";
+	private static final String ID = "56OJwFAYuNCAYCU5dK";
+	private static final String ADID ="16TLut4aApvPsNU05lbsDb4z";
+	private static final String FullID ="16TLut4aApvPsNU05AGbAc7s";
 	private static HashMap<Integer, BitmapDrawable> sIconMap = new HashMap<Integer, BitmapDrawable>();
 	private Integer[] imgages =
 	{ 
@@ -100,8 +98,8 @@ public class MainHomeActivity extends Activity
 	private Handler mHandler = new Handler();
 	private LinearLayout mContentLayout ;
 	private LinearLayout mSettingLayout;
-	private AdView mAdView;
-	private InterstitialAd mInterstitialAd;
+	private DomobAdView mAdView;
+	private DomobInterstitialAd mInterstitialAd;
 	private LinearLayout mADLayout;
 	private ImageView mArrowIV;
 	private TextView mWeatherInfo;
@@ -165,76 +163,88 @@ public class MainHomeActivity extends Activity
 		int loginCnt = Util.getIntFromSharedPref(Util.LOG_INT_CNT, 0);
 		if (loginCnt >= 0 && Util.isNetworkAvailable(getApplicationContext()))
 		{		
-			mAdView = new AdView(this);
-			mAdView.setAdUnitId(URLUtil.decodeURL(ID));
+			mAdView = new DomobAdView(this, ID, ADID);
+			mAdView.setKeyword("game");
 			mADLayout.addView(mAdView);
-			mAdView.setAdSize(AdSize.BANNER);
-			AdRequest adRequest = new AdRequest.Builder().build();
-			mAdView.loadAd(adRequest);
 			mADLayout.setVisibility(View.GONE);
-			mAdView.setAdListener(new AdListener()
-			{
+			mAdView.setAdEventListener(new DomobAdEventListener() {
 				@Override
-				public void onAdLoaded() {
+				public void onDomobAdReturned(DomobAdView adView) {
 					mADLayout.setVisibility(View.VISIBLE);
-					super.onAdLoaded();
 				}
+
 				@Override
-				public void onAdClosed() {
-					super.onAdClosed();
+				public void onDomobAdOverlayPresented(DomobAdView adView) {
+				}
+
+				@Override
+				public void onDomobAdOverlayDismissed(DomobAdView adView) {
+				}
+
+				@Override
+				public void onDomobAdClicked(DomobAdView arg0) {
 					Util.setIntToSharedPref(Util.LOG_INT_CNT, -1);
-					mAdView.setVisibility(View.GONE);
+					mAdView.setVisibility(View.GONE);		
+				}
+
+				@Override
+				public void onDomobAdFailed(DomobAdView arg0, ErrorCode arg1) {
+				}
+
+				@Override
+				public void onDomobLeaveApplication(DomobAdView arg0) {
+				}
+
+				@Override
+				public Context onDomobAdRequiresCurrentContext() {
+					return MainHomeActivity.this;
 				}
 			});
-//			mAdView = new AdView(this, AdSize.BANNER, URLUtil.decodeURL(ID));
-////			mAdView = new AdView(this, AdSize.BANNER, ADID);
-//			mADLayout.addView(mAdView);
-//			mAdView.loadAd(new AdRequest());
-//			mAdView.setAdListener(new AdListener()
-//			{
-//				@Override
-//				public void onReceiveAd(Ad arg0)
-//				{
-//				}
-//				@Override
-//				public void onPresentScreen(Ad arg0)
-//				{
-//				}
-//				@Override
-//				public void onLeaveApplication(Ad arg0)
-//				{
-//				}
-//				@Override
-//				public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1)
-//				{
-//				}
-//				@Override
-//				public void onDismissScreen(Ad arg0)
-//				{
-//					Util.setIntToSharedPref(Util.LOG_INT_CNT, -2);
-//					mAdView.setVisibility(View.GONE);
-//				}
-//			});
+		
 			
 		}
 		Util.setIntToSharedPref(Util.LOG_INT_CNT, loginCnt+1);
-		if (loginCnt >= 3 && Util.isNetworkAvailable(getApplicationContext()))
+		if (loginCnt > 2 && Util.isNetworkAvailable(getApplicationContext()))
 		{		
 			if (mInterstitialAd == null)
 			{
-				mInterstitialAd = new InterstitialAd(this);
-				mInterstitialAd.setAdUnitId(URLUtil.decodeURL(ID));
+				mInterstitialAd = new DomobInterstitialAd(this,ID,
+						FullID, DomobInterstitialAd.INTERSITIAL_SIZE_300X250);
 			}
-			AdRequest adRequest = new AdRequest.Builder().build();
-			mInterstitialAd.loadAd(adRequest);
-			mInterstitialAd.setAdListener(new AdListener() {
+			mInterstitialAd.loadInterstitialAd();
+			mInterstitialAd.setInterstitialAdListener(new DomobInterstitialAdListener() {
 				@Override
-				public void onAdLoaded() {
-					super.onAdLoaded();
-					if (mInterstitialAd.isLoaded())
-					{
-						mInterstitialAd.show();
-					}
+				public void onInterstitialAdReady() {
+					mInterstitialAd.showInterstitialAd(MainHomeActivity.this);
+				}
+
+				@Override
+				public void onLandingPageOpen() {
+				}
+
+				@Override
+				public void onLandingPageClose() {
+				}
+
+				@Override
+				public void onInterstitialAdPresent() {
+				}
+
+				@Override
+				public void onInterstitialAdDismiss() {
+				}
+
+				@Override
+				public void onInterstitialAdFailed(ErrorCode arg0) {
+				}
+
+				@Override
+				public void onInterstitialAdLeaveApplication() {
+					
+				}
+
+				@Override
+				public void onInterstitialAdClicked(DomobInterstitialAd arg0) {
 				}
 			});
 		}
@@ -425,10 +435,6 @@ public class MainHomeActivity extends Activity
 	@Override
 	protected void onDestroy()
 	{
-		if (mAdView != null)
-		{
-			mAdView.destroy();
-		}
 		if (mlLocateAsyncTask != null)
 		{			
 			mlLocateAsyncTask.release();
